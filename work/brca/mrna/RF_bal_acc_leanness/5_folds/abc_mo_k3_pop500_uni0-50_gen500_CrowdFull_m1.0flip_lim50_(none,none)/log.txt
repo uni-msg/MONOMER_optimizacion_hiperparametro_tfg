@@ -1,0 +1,27 @@
+
+RUNNING ARTIFICIAL BEE COLONY (3-FOLDS CREATOR, POP 500, UNIFORM(0, 50), GEN 500, SORT CROWDFULL, MUTATION 1.0 FLIP, LIMIT: 50) WITH (MULTI-VIEW NONE, MULTI-VIEW NONE)
+Date = 2026-01-19
+Machine = arcohtr04
+CPUs detected in the system = 128
+Number of outer folds = 5
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = abc_mo_k3_pop500_uni0-50_gen500_CrowdFull_m1.0flip_lim50_(none,none)
+Inner optimizer:
+Name = Artificial Bee Colony (3-folds creator, pop 500, uniform(0, 50), gen 500, sort CrowdFull, mutation 1.0 flip, Limit: 50)
+Nick = abc_mo_k3_pop500_uni0-50_gen500_CrowdFull_m1.0flip_lim50
+Population size (Bees) = 500
+Generations (Cycles) = 500
+Scout Limit = 50
+Initial features = uniform(0, 50)
+Mutation operator = flip
+Sorting strategy = NSGA2 with crowding distance full elitist
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance none
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS

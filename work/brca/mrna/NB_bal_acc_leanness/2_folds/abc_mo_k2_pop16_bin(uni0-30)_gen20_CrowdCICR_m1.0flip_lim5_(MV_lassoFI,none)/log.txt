@@ -1,0 +1,99 @@
+
+RUNNING ARTIFICIAL BEE COLONY (2-FOLDS CREATOR, POP 16, BINOMIAL(UNIFORM(0, 30)), GEN 20, SORT CROWDCICR, MUTATION 1.0 FLIP, LIMIT: 5) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
+Date = 2026-01-16
+Machine = arcohtr04
+CPUs detected in the system = 128
+Number of outer folds = 2
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = abc_mo_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_m1.0flip_lim5_(MV_lassoFI,none)
+Inner optimizer:
+Name = Artificial Bee Colony (2-folds creator, pop 16, binomial(uniform(0, 30)), gen 20, sort CrowdCICR, mutation 1.0 flip, Limit: 5)
+Nick = abc_mo_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_m1.0flip_lim5
+Population size (Bees) = 16
+Generations (Cycles) = 20
+Scout Limit = 5
+Initial features = binomial(uniform(0, 30))
+Mutation operator = flip
+Sorting strategy = NSGA2 with crowding distance with Clone Index full elitist
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance lasso
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+Computation on different folds finished in 00-00:02:09
+
+APPLYING EVALUATORS
+
+EVALUATING HALL OF FAME PARETO FRONT
+
+APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
+Mean Jaccard all vs others for each fold
+[0.03022164787747571, 0.05342053946115553]
+Mean of folds = 0.04182109366931562
+
+APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
+Stability of features by weights: 0.030159730979403054
+Stability of features by unions: 0.03539823008849563
+Stability of features by spearman: 0.03874491953649567
+Stability of features by top 50: 0.07999999999999996
+
+APPLYING USAGE OF VIEWS
+Prevalence of features selected in each view
+mrna = 1.0
+Distribution of views in each fold
+[[1.0], [1.0]]
+Stability of views = 1.0
+
+APPLYING FOLD SAVER
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/2_folds/abc_mo_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_m1.0flip_lim5_(MV_lassoFI,none)/hofs/Pareto/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/2_folds/abc_mo_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_m1.0flip_lim5_(MV_lassoFI,none)/hofs/Pareto/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/NB_bal_acc_leanness/2_folds/abc_mo_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_m1.0flip_lim5_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 naive Bayes balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 naive Bayes balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.2930870965006841
+Train hypervolume: 0.3021996471570603
+Test hypervolume: 0.27738362311120424
+Cross hypervolume: 0.2819326574379697
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.29012190407328486
+Train hypervolume: 0.3018139435927504
+Test hypervolume: 0.28639193738694013
+Cross hypervolume: 0.2865995816420218
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.2916045002869845
+Train hypervolume: 0.3020067953749054
+Test hypervolume: 0.2818877802490722
+Cross hypervolume: 0.28426611953999575
+
+
+CREATING GENERATION PLOTS IF POSSIBLE
+
+CREATING PLOTS OF EXPLORED FEATURES IF POSSIBLE
+
+CREATING PLOTS OF STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HALL OF FAME STABILITY IF POSSIBLE
+
+CREATING PLOTS OF MONOTONIC TEST FRONTS IF POSSIBLE
+
+CREATING PLOTS OF PERFORMANCE BY CLASS IF POSSIBLE

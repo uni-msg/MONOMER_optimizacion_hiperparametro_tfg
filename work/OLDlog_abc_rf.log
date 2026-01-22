@@ -1,0 +1,739 @@
+nohup: no se tendrá en cuenta la entrada
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+*c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+Writing main log to file temp/log1.txt
+Date = 2026-01-19
+Machine = arcohtr04
+CPUs detected in the system = 128
+Recursion limit = 100000
+Parsing setup file setups/brca/500x1000/rf/moabc.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 random forest balanced accuracy, leanness]
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/brca/500x1000/rf/moabc.ini
+
+RUNNING ARTIFICIAL BEE COLONY (3-FOLDS CREATOR, POP 500, UNIFORM(0, 50), GEN 500, SORT CROWDFULL, MUTATION 1.0 FLIP, LIMIT: 50) WITH (MULTI-VIEW NONE, MULTI-VIEW NONE)
+Machine = arcohtr04
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = abc_mo_k3_pop500_uni0-50_gen500_CrowdFull_m1.0flip_lim50_(none,none)
+Inner optimizer:
+Name = Artificial Bee Colony (3-folds creator, pop 500, uniform(0, 50), gen 500, sort CrowdFull, mutation 1.0 flip, Limit: 50)
+Nick = abc_mo_k3_pop500_uni0-50_gen500_CrowdFull_m1.0flip_lim50
+Population size (Bees) = 500
+Generations (Cycles) = 500
+Scout Limit = 50
+Initial features = uniform(0, 50)
+Mutation operator = flip
+Sorting strategy = NSGA2 with crowding distance full elitist
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance none
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+
+Fold 0> OPTIMIZING ON FOLD NUMBER 0
+Fold 0> Number of workers = 25
+
+Fold 0> COMPUTING LOCAL ACTIVE FEATURES (ABC)
+Fold 0> Computing active features for target column 0_Pam50
+Fold 0> Features before filter: 20203
+
+Fold 1> OPTIMIZING ON FOLD NUMBER 1
+Fold 1> Number of workers = 25
+
+Fold 1> COMPUTING LOCAL ACTIVE FEATURES (ABC)
+Fold 1> Computing active features for target column 0_Pam50
+Fold 1> Features before filter: 20203
+
+Fold 2> OPTIMIZING ON FOLD NUMBER 2
+Fold 2> Number of workers = 25
+
+Fold 2> COMPUTING LOCAL ACTIVE FEATURES (ABC)
+Fold 2> Computing active features for target column 0_Pam50
+Fold 2> Features before filter: 20203
+
+Fold 3> OPTIMIZING ON FOLD NUMBER 3
+Fold 3> Number of workers = 25
+
+Fold 3> COMPUTING LOCAL ACTIVE FEATURES (ABC)
+Fold 3> Computing active features for target column 0_Pam50
+Fold 3> Features before filter: 20203
+
+Fold 4> OPTIMIZING ON FOLD NUMBER 4
+Fold 4> Number of workers = 25
+
+Fold 4> COMPUTING LOCAL ACTIVE FEATURES (ABC)
+Fold 4> Computing active features for target column 0_Pam50
+Fold 4> Features before filter: 20203
+Fold 0> Features after any na, zero variance, and anova filters: 17852
+Fold 0> Features active in view: 17852
+
+Fold 0> CREATING INNER FOLDS
+
+Fold 0> RUNNING ARTIFICIAL BEE COLONY OPTIMIZATION
+Fold 1> Features after any na, zero variance, and anova filters: 17770
+Fold 1> Features active in view: 17770
+
+Fold 1> CREATING INNER FOLDS
+
+Fold 1> RUNNING ARTIFICIAL BEE COLONY OPTIMIZATION
+Fold 2> Features after any na, zero variance, and anova filters: 17758
+Fold 2> Features active in view: 17758
+
+Fold 2> CREATING INNER FOLDS
+
+Fold 2> RUNNING ARTIFICIAL BEE COLONY OPTIMIZATION
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Fold 3> Features after any na, zero variance, and anova filters: 17721
+Fold 3> Features active in view: 17721
+
+Fold 3> CREATING INNER FOLDS
+
+Fold 3> RUNNING ARTIFICIAL BEE COLONY OPTIMIZATION
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Fold 4> Features after any na, zero variance, and anova filters: 17646
+Fold 4> Features active in view: 17646
+
+Fold 4> CREATING INNER FOLDS
+
+Fold 4> RUNNING ARTIFICIAL BEE COLONY OPTIMIZATION
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+/home/ugmd/miniconda3/envs/biodai_env/lib/python3.9/site-packages/lifelines/datasets/__init__.py:3: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import resource_filename
+Fold 1>
+gen	evals	limit_hits	avg                    	min                    	max                    
+0  	500  	0         	[0.42949061 0.09438618]	[0.18248422 0.01960784]	[0.55837996 1.        ]
+Fold 0>
+gen	evals	limit_hits	avg                    	min                    	max                    
+0  	500  	0         	[0.42824611 0.08864495]	[0.19924374 0.01960784]	[0.56488035 1.        ]
+Fold 3>
+gen	evals	limit_hits	avg                    	min                    	max                    
+0  	500  	0         	[0.42594305 0.08517256]	[0.19740782 0.01960784]	[0.56680495 1.        ]
+Fold 4>
+gen	evals	limit_hits	avg                    	min                    	max                    
+0  	500  	0         	[0.42292399 0.08145755]	[0.2        0.01960784]	[0.53388151 1.        ]
+Fold 2>
+gen	evals	limit_hits	avg                    	min                    	max                    
+0  	500  	0         	[0.43089919 0.08926837]	[0.2        0.01960784]	[0.55837484 1.        ]
+Fold 0> 1  	1000 	0         	[0.43801738 0.06086388]	[0.19261124 0.01851852]	[0.56604883 0.5       ]
+Fold 1> 1  	1000 	0         	[0.43886945 0.06657092]	[0.2        0.01818182]	[0.56166859 1.        ]
+Fold 3> 1  	1000 	0         	[0.43496957 0.05915151]	[0.22128644 0.01818182]	[0.54701725 0.5       ]
+Fold 2> 1  	1000 	0         	[0.44087478 0.06081943]	[0.21885642 0.01818182]	[0.56106099 0.5       ]
+Fold 4> 1  	1000 	0         	[0.430918   0.05995866]	[0.2        0.01851852]	[0.53610741 1.        ]
+Fold 0> 2  	1000 	0         	[0.44708287 0.05162493]	[0.19261124 0.01754386]	[0.56604883 0.5       ]
+Fold 2> 2  	1000 	0         	[0.44768439 0.05063628]	[0.24398096 0.01785714]	[0.55748115 0.33333333]
+Fold 1> 2  	1000 	0         	[0.44704302 0.05303767]	[0.22879772 0.01754386]	[0.56405388 0.5       ]
+Fold 3> 2  	1000 	0         	[0.44306846 0.04846367]	[0.26647529 0.01587302]	[0.55423797 0.33333333]
+Fold 4> 2  	1000 	0         	[0.43742879 0.04857283]	[0.24718142 0.01666667]	[0.56546039 0.33333333]
+Fold 0> 3  	1000 	0         	[0.4528469  0.04426267]	[0.22302762 0.01694915]	[0.56481349 0.33333333]
+Fold 2> 3  	1000 	0         	[0.45296415 0.04373759]	[0.24398096 0.01666667]	[0.56813208 0.2       ]
+Fold 3> 3  	1000 	0         	[0.44636542 0.04229908]	[0.28680969 0.01492537]	[0.55311504 0.25      ]
+Fold 1> 3  	1000 	0         	[0.45287078 0.04509082]	[0.23392423 0.01724138]	[0.56057644 0.25      ]
+Fold 4> 3  	1000 	0         	[0.44184601 0.04278546]	[0.25563724 0.01587302]	[0.56546039 0.25      ]
+Fold 0> 4  	1000 	0         	[0.45798155 0.03894526]	[0.30663709 0.01612903]	[0.58099525 0.16666667]
+Fold 2> 4  	1000 	0         	[0.4565325 0.0392822]  	[0.28879249 0.01515152]	[0.56134087 0.2       ]
+Fold 3> 4  	1000 	0         	[0.45052647 0.03797144]	[0.30993707 0.01470588]	[0.55311504 0.2       ]
+Fold 1> 4  	1000 	0         	[0.45882981 0.03928471]	[0.24827152 0.01666667]	[0.565966   0.16666667]
+Fold 4> 4  	1000 	0         	[0.44663163 0.03827382]	[0.3247827  0.01492537]	[0.54644711 0.14285714]
+Fold 0> 5  	1000 	0         	[0.46136419 0.03569319]	[0.30978705 0.01538462]	[0.57828767 0.14285714]
+Fold 2> 5  	1000 	0         	[0.45965756 0.03576046]	[0.28846781 0.01449275]	[0.5641314  0.16666667]
+Fold 3> 5  	1000 	0         	[0.45444663 0.03476731]	[0.33356085 0.01470588]	[0.55203498 0.16666667]
+Fold 1> 5  	1000 	0         	[0.46342451 0.03582212]	[0.29387098 0.01587302]	[0.55925282 0.14285714]
+Fold 4> 5  	1000 	0         	[0.45015439 0.0347987 ]	[0.31398359 0.01449275]	[0.53566646 0.125     ]
+Fold 0> 6  	1000 	0         	[0.46356888 0.03277401]	[0.32587948 0.01538462]	[0.56525039 0.09090909]
+Fold 2> 6  	1000 	0         	[0.46381755 0.03293813]	[0.32905315 0.01388889]	[0.57365495 0.125     ]
+Fold 3> 6  	1000 	0         	[0.45753459 0.03195341]	[0.32065127 0.01470588]	[0.56372483 0.125     ]
+Fold 1> 6  	1000 	0         	[0.4665768  0.03282908]	[0.31791872 0.01538462]	[0.57297462 0.1       ]
+Fold 0> 7  	1000 	0         	[0.46565926 0.03047389]	[0.35139505 0.01449275]	[0.56717439 0.09090909]
+Fold 4> 6  	1000 	0         	[0.45228039 0.03229676]	[0.3514272  0.01428571]	[0.54593078 0.09090909]
+Fold 2> 7  	1000 	0         	[0.4673841  0.03050095]	[0.32835598 0.01351351]	[0.5677469  0.09090909]
+Fold 3> 7  	1000 	0         	[0.46064015 0.02987772]	[0.33086089 0.01428571]	[0.57390567 0.11111111]
+Fold 1> 7  	1000 	0         	[0.46920497 0.03048886]	[0.36246542 0.01470588]	[0.57757555 0.09090909]
+Fold 0> 8  	1000 	0         	[0.46879145 0.02870257]	[0.35661256 0.01369863]	[0.58718489 0.09090909]
+Fold 4> 7  	1000 	0         	[0.45466723 0.03025379]	[0.3514272  0.01388889]	[0.56423015 0.07142857]
+Fold 2> 8  	1000 	0         	[0.46938746 0.02859102]	[0.35151623 0.01351351]	[0.58236864 0.07692308]
+Fold 3> 8  	1000 	0         	[0.46301366 0.0278567 ]	[0.3431544  0.01369863]	[0.57148841 0.09090909]
+Fold 1> 8  	1000 	0         	[0.47155671 0.02857353]	[0.35425631 0.01351351]	[0.5758649  0.07142857]
+Fold 0> 9  	1000 	0         	[0.47198647 0.02707546]	[0.3678506  0.01315789]	[0.57603734 0.08333333]
+Fold 4> 8  	1000 	0         	[0.45734964 0.0286103 ]	[0.36010639 0.01369863]	[0.55499756 0.0625    ]
+Fold 2> 9  	1000 	0         	[0.47138004 0.02690461]	[0.36406747 0.01333333]	[0.57097153 0.07142857]
+Fold 3> 9  	1000 	0         	[0.46389586 0.02630518]	[0.36296031 0.01315789]	[0.57273091 0.07692308]
+Fold 1> 9  	1000 	0         	[0.47547494 0.02685833]	[0.36542835 0.01219512]	[0.57799282 0.07142857]
+Fold 0> 10 	1000 	0         	[0.473067   0.02566519]	[0.3716428  0.01234568]	[0.57603734 0.07692308]
+Fold 4> 9  	1000 	0         	[0.46051478 0.02707051]	[0.36211161 0.01315789]	[0.55260234 0.0625    ]
+Fold 2> 10 	1000 	0         	[0.47372903 0.02553109]	[0.36639779 0.01265823]	[0.57400614 0.06666667]
+Fold 3> 10 	1000 	0         	[0.46632405 0.02500041]	[0.36096032 0.01282051]	[0.57273091 0.07142857]
+Fold 1> 10 	1000 	0         	[0.47742143 0.02546012]	[0.36118096 0.01204819]	[0.5747366 0.0625   ]  
+Fold 0> 11 	1000 	0         	[0.47391286 0.02442147]	[0.36905405 0.01234568]	[0.59320069 0.05882353]
+Fold 4> 10 	1000 	0         	[0.46136752 0.02569609]	[0.36211161 0.01282051]	[0.56002574 0.05555556]
+Fold 2> 11 	1000 	0         	[0.4758596  0.02426022]	[0.36639779 0.0125    ]	[0.57336819 0.06666667]
+Fold 3> 11 	1000 	0         	[0.46794162 0.02376471]	[0.3615449  0.01190476]	[0.57576476 0.05882353]
+Fold 1> 11 	1000 	0         	[0.47954835 0.02419536]	[0.38751265 0.01204819]	[0.5708008  0.05882353]
+Fold 4> 11 	1000 	0         	[0.46321822 0.02447912]	[0.370363   0.01265823]	[0.56293857 0.05263158]
+Fold 0> 12 	1000 	0         	[0.47570687 0.02319446]	[0.37536312 0.01219512]	[0.59320069 0.05263158]
+Fold 3> 12 	1000 	0         	[0.46970104 0.02269494]	[0.3670907  0.01176471]	[0.56793766 0.05882353]
+Fold 2> 12 	1000 	0         	[0.47791872 0.02303942]	[0.37351786 0.01190476]	[0.57247244 0.05555556]
+Fold 4> 12 	1000 	0         	[0.46541433 0.02337815]	[0.3711903  0.01136364]	[0.55755722 0.04761905]
+Fold 1> 12 	1000 	0         	[0.48186826 0.02306695]	[0.36063729 0.01176471]	[0.59594961 0.05263158]
+Fold 0> 13 	1001 	1         	[0.47625362 0.0241394 ]	[0.2        0.01219512]	[0.59055195 1.        ]
+Fold 3> 13 	1000 	0         	[0.47086233 0.02171151]	[0.38652562 0.01176471]	[0.56897429 0.05      ]
+Fold 2> 13 	1001 	1         	[0.47936689 0.0220908 ]	[0.37833389 0.01176471]	[0.58064771 0.05555556]
+Fold 4> 13 	1000 	0         	[0.46654894 0.02244239]	[0.37447278 0.01123596]	[0.55908728 0.04166667]
+Fold 1> 13 	1000 	0         	[0.4833611  0.02204138]	[0.39242204 0.01162791]	[0.58092792 0.05      ]
+Fold 0> 14 	1002 	2         	[0.47828775 0.02342685]	[0.2        0.01204819]	[0.57781819 1.        ]
+Fold 3> 14 	1000 	0         	[0.4718917  0.02079224]	[0.3976208  0.01111111]	[0.57460639 0.04545455]
+Fold 2> 14 	1002 	2         	[0.48086525 0.02144904]	[0.37444854 0.01136364]	[0.58335609 0.1       ]
+Fold 4> 14 	1002 	2         	[0.46773296 0.02165862]	[0.38984982 0.01075269]	[0.55782063 0.09090909]
+Fold 1> 14 	1000 	0         	[0.48483603 0.02105429]	[0.40427089 0.01149425]	[0.58930692 0.04166667]
+Fold 3> 15 	1006 	6         	[0.47216085 0.02044719]	[0.34249935 0.0106383 ]	[0.57460639 0.125     ]
+Fold 0> 15 	1009 	9         	[0.47868862 0.02098856]	[0.3275984  0.01176471]	[0.57897149 0.2       ]
+Fold 4> 15 	1002 	2         	[0.46908031 0.02124772]	[0.33445023 0.01075269]	[0.55901402 0.25      ]
+Fold 2> 15 	1005 	5         	[0.48155556 0.0206169 ]	[0.38048991 0.01041667]	[0.59840029 0.08333333]
+Fold 3> 16 	1008 	8         	[0.47263083 0.02049415]	[0.29500356 0.01020408]	[0.56608431 0.16666667]
+Fold 1> 15 	1006 	6         	[0.48679477 0.02041546]	[0.36429053 0.01123596]	[0.58092792 0.05882353]
+Fold 0> 16 	1012 	12        	[0.47936872 0.02101741]	[0.2175694  0.01149425]	[0.56319002 0.33333333]
+Fold 4> 16 	1015 	15        	[0.46785279 0.02128969]	[0.2907164  0.01075269]	[0.55283451 0.25      ]
+Fold 2> 16 	1012 	12        	[0.48157363 0.02073916]	[0.25430075 0.01030928]	[0.5861203  0.33333333]
+Fold 3> 17 	1016 	16        	[0.47233372 0.02132543]	[0.29164643 0.01      ]	[0.55209986 0.25      ]
+Fold 1> 16 	1014 	14        	[0.48276996 0.02670488]	[0.2        0.01111111]	[0.60102853 1.        ]
+Fold 0> 17 	1014 	14        	[0.47986573 0.02019507]	[0.25424492 0.01111111]	[0.56412858 0.2       ]
+Fold 4> 17 	1009 	9         	[0.46724155 0.02213712]	[0.18040504 0.0106383 ]	[0.56143484 0.5       ]
+Fold 3> 18 	1026 	26        	[0.47080427 0.02182111]	[0.2785404  0.00970874]	[0.56276288 0.25      ]
+Fold 2> 17 	1013 	13        	[0.48338001 0.01988602]	[0.36600569 0.01020408]	[0.59496249 0.1       ]
+Fold 0> 18 	1025 	25        	[0.47740147 0.0233108 ]	[0.20805184 0.01075269]	[0.58534455 0.5       ]
+Fold 1> 17 	1017 	17        	[0.48288335 0.0232977 ]	[0.2        0.01098901]	[0.56665414 1.        ]
+Fold 4> 18 	1022 	22        	[0.46566497 0.02299494]	[0.23315481 0.01052632]	[0.55885092 0.33333333]
+Fold 3> 19 	1032 	32        	[0.46780738 0.02450712]	[0.2        0.00970874]	[0.55603146 1.        ]
+Fold 2> 18 	1020 	20        	[0.48149937 0.02282583]	[0.2  0.01]            	[0.6060955 1.       ]  
+Fold 0> 19 	1023 	23        	[0.47670139 0.02436809]	[0.20716658 0.01052632]	[0.56659563 0.5       ]
+Fold 4> 19 	1032 	32        	[0.46336908 0.02695199]	[0.2        0.01030928]	[0.55229831 1.        ]
+Fold 1> 18 	1022 	22        	[0.48219379 0.02336933]	[0.2        0.01075269]	[0.56665414 1.        ]
+Fold 3> 20 	1027 	27        	[0.4672269 0.0248501]  	[0.2        0.00961538]	[0.55678472 1.        ]
+Fold 2> 19 	1031 	31        	[0.47801638 0.02499171]	[0.2        0.00961538]	[0.60522825 1.        ]
+Fold 0> 20 	1026 	26        	[0.47612249 0.02636682]	[0.21637417 0.01030928]	[0.5725129 0.5      ]  
+Fold 4> 20 	1030 	30        	[0.46413721 0.02473936]	[0.25486468 0.01010101]	[0.55292498 0.33333333]
+Fold 1> 19 	1033 	33        	[0.47797808 0.02825892]	[0.2        0.01052632]	[0.58413341 1.        ]
+Fold 3> 21 	1034 	34        	[0.46439423 0.03019807]	[0.2        0.00952381]	[0.54595714 1.        ]
+Fold 2> 20 	1032 	32        	[0.47539599 0.02925893]	[0.2        0.00952381]	[0.62230861 1.        ]
+Fold 4> 21 	1033 	33        	[0.46196005 0.02749626]	[0.2  0.01]            	[0.56475271 1.        ]
+Fold 0> 21 	1032 	32        	[0.47504309 0.02547842]	[0.21803059 0.01      ]	[0.58907162 0.5       ]
+Fold 1> 20 	1021 	21        	[0.47866753 0.02669535]	[0.23641267 0.01041667]	[0.56944718 0.5       ]
+Fold 3> 22 	1026 	26        	[0.46359106 0.02941423]	[0.2        0.00943396]	[0.54535784 1.        ]
+Fold 4> 22 	1034 	34        	[0.46005025 0.02962191]	[0.2  0.01]            	[0.54563242 1.        ]
+Fold 2> 21 	1030 	30        	[0.47630932 0.02781487]	[0.2        0.00952381]	[0.59355411 1.        ]
+Fold 0> 22 	1026 	26        	[0.47392385 0.02796098]	[0.21495112 0.00980392]	[0.57880758 0.5       ]
+Fold 1> 21 	1028 	28        	[0.47747333 0.03055296]	[0.19715045 0.01010101]	[0.565381 1.      ]    
+Fold 3> 23 	1023 	23        	[0.46456359 0.03032845]	[0.2        0.00925926]	[0.55315717 1.        ]
+Fold 4> 23 	1028 	28        	[0.46035866 0.02604876]	[0.26216636 0.00970874]	[0.56100915 0.5       ]
+Fold 2> 22 	1025 	25        	[0.47543752 0.0261592 ]	[0.29111935 0.00952381]	[0.58934978 0.5       ]
+Fold 0> 23 	1029 	29        	[0.4744315  0.02674698]	[0.28033073 0.00980392]	[0.58106093 0.33333333]
+Fold 3> 24 	1014 	14        	[0.46610289 0.02749614]	[0.18747253 0.00900901]	[0.55259045 1.        ]
+Fold 1> 22 	1028 	28        	[0.47727894 0.02728497]	[0.19671185 0.01      ]	[0.576788 1.      ]    
+Fold 4> 24 	1024 	24        	[0.46034924 0.02731515]	[0.22669761 0.00952381]	[0.55683593 0.5       ]
+Fold 2> 23 	1025 	25        	[0.47722253 0.02669444]	[0.2        0.00925926]	[0.58934978 1.        ]
+Fold 0> 24 	1022 	22        	[0.474678   0.02779146]	[0.21161287 0.00961538]	[0.55088016 0.5       ]
+Fold 3> 25 	1028 	28        	[0.46456534 0.02903051]	[0.2        0.00854701]	[0.56261098 1.        ]
+Fold 1> 23 	1034 	34        	[0.47748102 0.02542464]	[0.2650535  0.00970874]	[0.59221503 0.25      ]
+Fold 4> 25 	1017 	17        	[0.46034773 0.0281605 ]	[0.18890299 0.00952381]	[0.56075203 1.        ]
+Fold 2> 24 	1025 	25        	[0.47541471 0.02786607]	[0.2        0.00900901]	[0.57461204 1.        ]
+Fold 0> 25 	1021 	21        	[0.47362907 0.02798392]	[0.22370544 0.00952381]	[0.57289116 0.5       ]
+Fold 3> 26 	1016 	16        	[0.46642492 0.02725372]	[0.2        0.00854701]	[0.56587694 1.        ]
+Fold 4> 26 	1014 	14        	[0.46254489 0.02667412]	[0.2        0.00917431]	[0.56075203 1.        ]
+Fold 1> 24 	1023 	23        	[0.47742417 0.02581784]	[0.20870976 0.00961538]	[0.57401328 0.5       ]
+Fold 2> 25 	1016 	16        	[0.47764638 0.02502828]	[0.28490788 0.00900901]	[0.58768363 0.25      ]
+Fold 0> 26 	1017 	17        	[0.47603371 0.02558349]	[0.25218186 0.00934579]	[0.57746173 0.25      ]
+Fold 3> 27 	1016 	16        	[0.46597784 0.02790749]	[0.21004746 0.008     ]	[0.56070222 0.5       ]
+Fold 4> 27 	1015 	15        	[0.46389853 0.02645196]	[0.2        0.00877193]	[0.57370477 1.        ]
+Fold 1> 25 	1011 	11        	[0.47924271 0.02541409]	[0.24298161 0.00925926]	[0.58538739 0.5       ]
+Fold 0> 27 	1014 	14        	[0.47574813 0.02556834]	[0.2373809  0.00934579]	[0.59184553 0.5       ]
+Fold 2> 26 	1018 	18        	[0.4805634  0.02322052]	[0.33705103 0.00892857]	[0.60065354 0.2       ]
+Fold 3> 28 	1020 	20        	[0.46766955 0.02674963]	[0.23236748 0.008     ]	[0.57460987 0.5       ]
+Fold 4> 28 	1015 	15        	[0.46323303 0.02828993]	[0.2        0.00854701]	[0.55901825 1.        ]
+Fold 0> 28 	1018 	18        	[0.47634867 0.02469548]	[0.25754923 0.00892857]	[0.5748825 0.25     ]  
+Fold 1> 26 	1020 	20        	[0.47912055 0.02485398]	[0.20445453 0.00892857]	[0.58538739 0.5       ]
+Fold 2> 27 	1031 	31        	[0.47937163 0.02506042]	[0.25055992 0.00892857]	[0.57184291 0.5       ]
+Fold 4> 29 	1013 	13        	[0.46519251 0.02478751]	[0.20523709 0.00833333]	[0.55901825 0.5       ]
+Fold 3> 29 	1015 	15        	[0.46702905 0.0266785 ]	[0.22195719 0.008     ]	[0.57307697 0.5       ]
+Fold 0> 29 	1021 	21        	[0.47608755 0.02511908]	[0.24224944 0.00877193]	[0.56318343 0.5       ]
+Fold 2> 28 	1008 	8         	[0.47952217 0.02373403]	[0.19156572 0.00869565]	[0.58978981 0.5       ]
+Fold 1> 27 	1022 	22        	[0.47859453 0.02642953]	[0.2        0.00877193]	[0.5830615 1.       ]  
+Fold 4> 30 	1018 	18        	[0.46521056 0.02835757]	[0.2        0.00826446]	[0.55450552 1.        ]
+Fold 3> 30 	1021 	21        	[0.46875005 0.02649307]	[0.21761886 0.0078125 ]	[0.56067734 0.5       ]
+Fold 0> 30 	1020 	20        	[0.47761842 0.02606927]	[0.23405884 0.00862069]	[0.58579515 0.5       ]
+Fold 4> 31 	1011 	11        	[0.4671123  0.02672406]	[0.2   0.008]          	[0.57172547 1.        ]
+Fold 2> 29 	1017 	17        	[0.48189889 0.02316175]	[0.22837381 0.00847458]	[0.58845547 0.33333333]
+Fold 1> 28 	1011 	11        	[0.48027582 0.02462747]	[0.17836587 0.00840336]	[0.59008796 0.5       ]
+Fold 3> 31 	1016 	16        	[0.47056683 0.02554662]	[0.22195719 0.00775194]	[0.57465547 0.5       ]
+Fold 0> 31 	1012 	12        	[0.47928024 0.02313608]	[0.2568594  0.00819672]	[0.56543614 0.2       ]
+Fold 4> 32 	1017 	17        	[0.46560792 0.02608176]	[0.2   0.008]          	[0.55735986 1.        ]
+Fold 2> 30 	1014 	14        	[0.48226331 0.02248096]	[0.31509145 0.00840336]	[0.56982228 0.25      ]
+Fold 1> 29 	1016 	16        	[0.47999434 0.02449908]	[0.17836587 0.00819672]	[0.5932332 0.5      ]  
+Fold 3> 32 	1011 	11        	[0.47176728 0.0242431 ]	[0.25613131 0.00746269]	[0.55811414 0.33333333]
+Fold 0> 32 	1014 	14        	[0.48090177 0.02287023]	[0.29900245 0.00793651]	[0.57532594 0.25      ]
+Fold 4> 33 	1019 	19        	[0.46596475 0.02491153]	[0.21766308 0.00787402]	[0.5647464 0.5      ]  
+Fold 2> 31 	1014 	14        	[0.48266916 0.02207698]	[0.24358505 0.00819672]	[0.5808883  0.33333333]
+Fold 3> 33 	1015 	15        	[0.47166309 0.02490157]	[0.2        0.00746269]	[0.56134086 1.        ]
+Fold 1> 30 	1018 	18        	[0.48003161 0.02504923]	[0.26904678 0.008     ]	[0.57718178 0.5       ]
+Fold 0> 33 	1020 	20        	[0.47920853 0.02458265]	[0.26808562 0.00787402]	[0.57606341 0.33333333]
+Fold 4> 34 	1020 	20        	[0.46516665 0.02451959]	[0.21766308 0.00763359]	[0.55498466 0.5       ]
+Fold 3> 34 	1024 	24        	[0.47103108 0.02441511]	[0.25379954 0.00735294]	[0.57932982 0.5       ]
+Fold 0> 34 	1016 	16        	[0.47931764 0.02556986]	[0.2        0.00787402]	[0.58646932 1.        ]
+Fold 2> 32 	1015 	15        	[0.48461121 0.02197671]	[0.24880788 0.00775194]	[0.56850228 0.2       ]
+Fold 1> 31 	1016 	16        	[0.48163383 0.02268706]	[0.31974058 0.00775194]	[0.59048872 0.2       ]
+Fold 4> 35 	1029 	29        	[0.46638501 0.02526037]	[0.2692432 0.0075188]  	[0.56928958 0.5       ]
+Fold 3> 35 	1021 	21        	[0.47168695 0.02431855]	[0.25379954 0.00724638]	[0.57932982 0.33333333]
+Fold 0> 35 	1020 	20        	[0.47836337 0.02580708]	[0.2       0.0078125]  	[0.57163004 1.        ]
+Fold 2> 33 	1016 	16        	[0.48384847 0.02214795]	[0.2866112  0.00763359]	[0.56662259 0.25      ]
+Fold 1> 32 	1018 	18        	[0.48222111 0.02232561]	[0.32550716 0.00757576]	[0.59390676 0.14285714]
+Fold 4> 36 	1021 	21        	[0.46597878 0.02594574]	[0.2        0.00746269]	[0.56517135 1.        ]
+Fold 3> 36 	1026 	26        	[0.47111337 0.02612368]	[0.2       0.0070922]  	[0.56683476 1.        ]
+Fold 0> 36 	1028 	28        	[0.47739539 0.02683739]	[0.19421153 0.0078125 ]	[0.58051855 1.        ]
+Fold 4> 37 	1022 	22        	[0.46710091 0.02568163]	[0.2        0.00724638]	[0.58183235 1.        ]
+Fold 2> 34 	1021 	21        	[0.48259995 0.02352091]	[0.21683199 0.00740741]	[0.56493369 0.5       ]
+Fold 1> 33 	1016 	16        	[0.48396044 0.02149673]	[0.34143195 0.00746269]	[0.59469431 0.1       ]
+Fold 0> 37 	1027 	27        	[0.47559544 0.026482  ]	[0.22454154 0.00775194]	[0.58867585 0.5       ]
+Fold 3> 37 	1033 	33        	[0.47049823 0.02689543]	[0.18498613 0.00704225]	[0.57228304 0.5       ]
+Fold 4> 38 	1033 	33        	[0.46525578 0.03007991]	[0.2        0.00699301]	[0.58455854 1.        ]
+Fold 2> 35 	1025 	25        	[0.48220527 0.02526032]	[0.2        0.00729927]	[0.56741373 1.        ]
+Fold 1> 34 	1021 	21        	[0.48209874 0.02173187]	[0.25918378 0.00729927]	[0.58062789 0.25      ]
+Fold 0> 38 	1014 	14        	[0.47856104 0.02385284]	[0.28230913 0.00757576]	[0.5672278 0.25     ]  
+Fold 3> 38 	1020 	20        	[0.46971662 0.02499599]	[0.20565228 0.00689655]	[0.56166069 0.33333333]
+Fold 4> 39 	1026 	26        	[0.46385822 0.03585545]	[0.2        0.00689655]	[0.56040232 1.        ]
+Fold 2> 36 	1023 	23        	[0.48337611 0.02385546]	[0.23180781 0.0070922 ]	[0.57593619 0.5       ]
+Fold 1> 35 	1023 	23        	[0.48177323 0.02291206]	[0.23182198 0.00729927]	[0.57586816 0.5       ]
+Fold 0> 39 	1032 	32        	[0.47696299 0.02742099]	[0.17203471 0.00740741]	[0.57412763 1.        ]
+Fold 3> 39 	1029 	29        	[0.46843334 0.0279049 ]	[0.2        0.00671141]	[0.57034689 1.        ]
+Fold 4> 40 	1021 	21        	[0.46433366 0.02706858]	[0.2483919  0.00675676]	[0.55821579 0.33333333]
+Fold 2> 37 	1023 	23        	[0.48314869 0.02494227]	[0.19531671 0.00694444]	[0.57611508 0.5       ]
+Fold 1> 36 	1019 	19        	[0.48023464 0.02604124]	[0.2        0.00714286]	[0.58258591 1.        ]
+Fold 0> 40 	1026 	26        	[0.47727867 0.02819872]	[0.2        0.00729927]	[0.57314885 1.        ]
+Fold 4> 41 	1012 	12        	[0.46522011 0.02708968]	[0.22664077 0.00628931]	[0.55683664 0.5       ]
+Fold 3> 40 	1021 	21        	[0.47044105 0.02409712]	[0.24217875 0.00653595]	[0.57475786 0.33333333]
+Fold 2> 38 	1034 	34        	[0.48242407 0.02557268]	[0.24315297 0.00689655]	[0.58333194 0.5       ]
+Fold 1> 37 	1032 	32        	[0.47705283 0.03156417]	[0.2        0.00714286]	[0.57165799 1.        ]
+Fold 0> 41 	1022 	22        	[0.47672635 0.02629561]	[0.21586906 0.00724638]	[0.57890057 0.5       ]
+Fold 4> 42 	1029 	29        	[0.46715741 0.02502358]	[0.27683884 0.00628931]	[0.55772521 0.33333333]
+Fold 3> 41 	1024 	24        	[0.4689209  0.02843628]	[0.2        0.00653595]	[0.57210489 1.        ]
+Fold 2> 39 	1023 	23        	[0.48206029 0.02808016]	[0.2        0.00666667]	[0.5666353 1.       ]  
+Fold 1> 38 	1029 	29        	[0.47538688 0.03118442]	[0.2       0.0070922]  	[0.59043149 1.        ]
+Fold 0> 42 	1020 	20        	[0.47588648 0.02731649]	[0.23127424 0.00714286]	[0.58267637 0.5       ]
+Fold 4> 43 	1019 	19        	[0.46624788 0.02688094]	[0.2     0.00625]      	[0.57067511 1.        ]
+Fold 3> 42 	1019 	19        	[0.46930563 0.02584404]	[0.23742269 0.00645161]	[0.57226513 0.5       ]
+Fold 1> 39 	1020 	20        	[0.47726808 0.02840238]	[0.2        0.00694444]	[0.56751591 1.        ]
+Fold 4> 44 	1032 	32        	[0.4679865  0.02535122]	[0.20509539 0.00617284]	[0.56039609 0.5       ]
+Fold 0> 43 	1016 	16        	[0.4778213  0.02471069]	[0.27042586 0.00704225]	[0.58944074 0.33333333]
+Fold 2> 40 	1019 	19        	[0.48201245 0.02551058]	[0.19888819 0.00662252]	[0.59612748 0.5       ]
+Fold 3> 43 	1018 	18        	[0.46989044 0.02818169]	[0.2        0.00641026]	[0.59827195 1.        ]
+Fold 4> 45 	1021 	21        	[0.46750541 0.0258557 ]	[0.2        0.00617284]	[0.57017685 1.        ]
+Fold 0> 44 	1030 	30        	[0.47754695 0.02609422]	[0.24211392 0.00689655]	[0.57608307 0.5       ]
+Fold 1> 40 	1022 	22        	[0.47797672 0.02575926]	[0.25932475 0.00689655]	[0.57835442 0.33333333]
+Fold 2> 41 	1022 	22        	[0.48253784 0.02394245]	[0.24016965 0.00662252]	[0.60698133 0.33333333]
+Fold 3> 44 	1018 	18        	[0.47089787 0.02757196]	[0.2        0.00636943]	[0.5757156 1.       ]  
+Fold 4> 46 	1015 	15        	[0.46960383 0.02277362]	[0.27849127 0.00613497]	[0.57493675 0.2       ]
+Fold 0> 45 	1017 	17        	[0.4770081  0.02505443]	[0.26668293 0.00684932]	[0.57812059 0.25      ]
+Fold 1> 41 	1026 	26        	[0.47740339 0.02692651]	[0.2        0.00684932]	[0.57835442 1.        ]
+Fold 3> 45 	1023 	23        	[0.4703615  0.02775297]	[0.2        0.00636943]	[0.54891135 1.        ]
+Fold 2> 42 	1024 	24        	[0.48204016 0.0252565 ]	[0.2        0.00649351]	[0.60056406 1.        ]
+Fold 4> 47 	1020 	20        	[0.4693409  0.02385549]	[0.27849127 0.00609756]	[0.57067025 0.5       ]
+Fold 0> 46 	1018 	18        	[0.47811828 0.02401202]	[0.27907054 0.00662252]	[0.57812059 0.2       ]
+Fold 1> 42 	1022 	22        	[0.47877616 0.02511788]	[0.27714515 0.00675676]	[0.57649147 0.33333333]
+Fold 3> 46 	1018 	18        	[0.47089031 0.0258421 ]	[0.2        0.00621118]	[0.57336803 1.        ]
+Fold 2> 43 	1018 	18        	[0.48209243 0.02718796]	[0.2        0.00649351]	[0.59481103 1.        ]
+Fold 4> 48 	1021 	21        	[0.46857241 0.02405973]	[0.24734444 0.0060241 ]	[0.56322054 0.5       ]
+Fold 0> 47 	1023 	23        	[0.47653353 0.02760621]	[0.2        0.00649351]	[0.58406411 1.        ]
+Fold 3> 47 	1020 	20        	[0.47331642 0.02370253]	[0.23845797 0.00617284]	[0.58354685 0.33333333]
+Fold 1> 43 	1020 	20        	[0.47866864 0.02395466]	[0.2839399  0.00671141]	[0.58888965 0.25      ]
+Fold 2> 44 	1023 	23        	[0.48132194 0.02587018]	[0.21330714 0.00636943]	[0.59481103 0.5       ]
+Fold 4> 49 	1014 	14        	[0.46986087 0.0247904 ]	[0.23019877 0.00595238]	[0.57238476 0.5       ]
+Fold 0> 48 	1019 	19        	[0.47720739 0.02434727]	[0.27909635 0.00632911]	[0.58554317 0.2       ]
+Fold 3> 48 	1011 	11        	[0.47443808 0.02345406]	[0.24044152 0.00613497]	[0.57742947 0.25      ]
+Fold 1> 44 	1019 	19        	[0.48099274 0.02572304]	[0.2101023  0.00632911]	[0.60395315 0.5       ]
+Fold 4> 50 	1017 	17        	[0.47178324 0.02330182]	[0.31921875 0.00591716]	[0.57159073 0.33333333]
+Fold 2> 45 	1018 	18        	[0.48254447 0.02511297]	[0.25445282 0.00636943]	[0.58569379 0.5       ]
+Fold 3> 49 	1016 	16        	[0.47448157 0.02417737]	[0.21679443 0.00606061]	[0.57033982 0.33333333]
+Fold 0> 49 	1017 	17        	[0.47870373 0.02416817]	[0.26697338 0.00625   ]	[0.60827968 0.33333333]
+Fold 4> 51 	1019 	19        	[0.4695221 0.0238008]  	[0.2784941  0.00584795]	[0.58344933 0.25      ]
+Fold 1> 45 	1019 	19        	[0.48082169 0.02553426]	[0.21284051 0.00625   ]	[0.60395315 0.33333333]
+Fold 2> 46 	1024 	24        	[0.48276688 0.02679208]	[0.2        0.00636943]	[0.61533898 1.        ]
+Fold 3> 50 	1017 	17        	[0.47658375 0.02262008]	[0.30469383 0.00591716]	[0.5734863  0.16666667]
+Fold 0> 50 	1020 	20        	[0.47720887 0.0278821 ]	[0.2        0.00617284]	[0.57939079 1.        ]
+Fold 4> 52 	1020 	20        	[0.47148972 0.0217622 ]	[0.30504562 0.00584795]	[0.56457281 0.2       ]
+Fold 1> 46 	1017 	17        	[0.4816826  0.02459119]	[0.2644526  0.00645161]	[0.60395315 0.25      ]
+Fold 2> 47 	1017 	17        	[0.48265954 0.02770512]	[0.2        0.00636943]	[0.61533898 1.        ]
+Fold 3> 51 	1025 	25        	[0.47619225 0.02296479]	[0.2568555  0.00584795]	[0.57076278 0.25      ]
+Fold 0> 51 	1016 	16        	[0.47969246 0.02381294]	[0.19836902 0.00617284]	[0.59280465 0.5       ]
+Fold 4> 53 	1016 	16        	[0.47145671 0.0218758 ]	[0.29551487 0.00581395]	[0.56438097 0.33333333]
+Fold 1> 47 	1028 	28        	[0.4819023  0.02916678]	[0.2        0.00632911]	[0.59304415 1.        ]
+Fold 0> 52 	1014 	14        	[0.47904379 0.02507853]	[0.2        0.00598802]	[0.61373427 1.        ]
+Fold 3> 52 	1013 	13        	[0.47640565 0.02147215]	[0.32184612 0.00584795]	[0.56396396 0.2       ]
+Fold 2> 48 	1023 	23        	[0.48390588 0.02614124]	[0.23892931 0.00628931]	[0.59969331 0.5       ]
+Fold 4> 54 	1016 	16        	[0.47098446 0.02305846]	[0.2        0.00578035]	[0.5654313 1.       ]  
+Fold 0> 53 	1012 	12        	[0.47975487 0.02413198]	[0.23103545 0.00591716]	[0.5864585 0.5      ]  
+Fold 3> 53 	1019 	19        	[0.47590574 0.02222323]	[0.21865471 0.00578035]	[0.56173683 0.5       ]
+Fold 1> 48 	1016 	16        	[0.48220493 0.02519892]	[0.22535702 0.00628931]	[0.59304415 0.33333333]
+Fold 2> 49 	1018 	18        	[0.48387776 0.02530999]	[0.22788467 0.00617284]	[0.57094942 0.33333333]
+Fold 4> 55 	1017 	17        	[0.47046873 0.02257076]	[0.22136638 0.00571429]	[0.57762509 0.5       ]
+Fold 0> 54 	1023 	23        	[0.48022242 0.02399941]	[0.26077612 0.00588235]	[0.59264434 0.33333333]
+Fold 3> 54 	1014 	14        	[0.47678096 0.02114814]	[0.26499671 0.00574713]	[0.57186156 0.33333333]
+Fold 1> 49 	1014 	14        	[0.48274372 0.02751241]	[0.2        0.00606061]	[0.58884266 1.        ]
+Fold 2> 50 	1022 	22        	[0.48494566 0.02445409]	[0.20924719 0.00617284]	[0.57933329 0.5       ]
+Fold 4> 56 	1015 	15        	[0.47169837 0.02020538]	[0.3282451  0.00564972]	[0.56913808 0.2       ]
+Fold 0> 55 	1025 	25        	[0.47889492 0.02534121]	[0.2        0.00568182]	[0.56955545 1.        ]
+Fold 3> 55 	1020 	20        	[0.47821966 0.02219913]	[0.2        0.00561798]	[0.57756338 1.        ]
+Fold 2> 51 	1018 	18        	[0.4867717  0.02282871]	[0.22788467 0.00617284]	[0.58286058 0.33333333]
+Fold 4> 57 	1017 	17        	[0.4706544  0.02035691]	[0.3282451  0.00555556]	[0.56512866 0.2       ]
+Fold 1> 50 	1016 	16        	[0.48314569 0.02623535]	[0.2        0.00595238]	[0.5922372 1.       ]  
+Fold 0> 56 	1015 	15        	[0.47777982 0.02710564]	[0.2        0.00568182]	[0.59715032 1.        ]
+Fold 3> 56 	1026 	26        	[0.47693618 0.02242772]	[0.2103757  0.00558659]	[0.56979598 0.5       ]
+Fold 4> 58 	1024 	24        	[0.47050014 0.02160533]	[0.30436916 0.00552486]	[0.57802453 0.25      ]
+Fold 2> 52 	1010 	10        	[0.48564946 0.02242176]	[0.22029819 0.00617284]	[0.58055861 0.33333333]
+Fold 1> 51 	1024 	24        	[0.48503148 0.02384415]	[0.26483095 0.00591716]	[0.58276388 0.33333333]
+Fold 0> 57 	1015 	15        	[0.47968881 0.02415557]	[0.2        0.00564972]	[0.59715032 1.        ]
+Fold 3> 57 	1020 	20        	[0.47814669 0.02083633]	[0.2843825  0.00574713]	[0.57997124 0.33333333]
+Fold 4> 59 	1017 	17        	[0.46723856 0.02675775]	[0.2        0.00549451]	[0.57802453 1.        ]
+Fold 2> 53 	1011 	11        	[0.48630972 0.0211665 ]	[0.31055145 0.00598802]	[0.58647971 0.16666667]
+Fold 1> 52 	1016 	16        	[0.48679804 0.02251677]	[0.27827839 0.00581395]	[0.60972407 0.16666667]
+Fold 0> 58 	1031 	31        	[0.47723542 0.02735877]	[0.2        0.00561798]	[0.611781 1.      ]    
+Fold 3> 58 	1025 	25        	[0.4763607  0.02099483]	[0.24590936 0.00574713]	[0.57925231 0.5       ]
+Fold 4> 60 	1019 	19        	[0.46884731 0.02496679]	[0.2        0.00537634]	[0.57802453 1.        ]
+Fold 2> 54 	1018 	18        	[0.48775103 0.02245901]	[0.2        0.00591716]	[0.5830528 1.       ]  
+Fold 1> 53 	1018 	18        	[0.48524716 0.02353747]	[0.25846323 0.00581395]	[0.59010013 0.33333333]
+Fold 0> 59 	1016 	16        	[0.47732086 0.02448006]	[0.19801549 0.00546448]	[0.58340994 0.5       ]
+Fold 4> 61 	1017 	17        	[0.46977957 0.02136428]	[0.27071759 0.00537634]	[0.59690496 0.33333333]
+Fold 3> 59 	1026 	26        	[0.47575563 0.02310774]	[0.2        0.00574713]	[0.5596996 1.       ]  
+Fold 2> 55 	1028 	28        	[0.48634104 0.02078168]	[0.27829491 0.00588235]	[0.58051582 0.2       ]
+Fold 1> 54 	1014 	14        	[0.48595191 0.02290141]	[0.23817163 0.00558659]	[0.61756748 0.5       ]
+Fold 0> 60 	1017 	17        	[0.47821463 0.02407736]	[0.2        0.00543478]	[0.59062079 1.        ]
+Fold 4> 62 	1019 	19        	[0.46920609 0.0238553 ]	[0.19379157 0.00537634]	[0.58337181 0.5       ]
+Fold 3> 60 	1012 	12        	[0.47585834 0.02232372]	[0.23496615 0.00564972]	[0.58895698 0.5       ]
+Fold 2> 56 	1014 	14        	[0.48729298 0.02020418]	[0.32396078 0.00581395]	[0.60282818 0.16666667]
+Fold 0> 61 	1019 	19        	[0.47837859 0.02415064]	[0.2        0.00540541]	[0.58059306 1.        ]
+Fold 1> 55 	1014 	14        	[0.48678179 0.02189333]	[0.26833165 0.00555556]	[0.59982649 0.2       ]
+Fold 4> 63 	1019 	19        	[0.46853502 0.02529072]	[0.2        0.00531915]	[0.58621701 1.        ]
+Fold 2> 57 	1017 	17        	[0.48726571 0.02016039]	[0.26787806 0.00581395]	[0.60747759 0.33333333]
+Fold 3> 61 	1019 	19        	[0.47554572 0.02125787]	[0.23496615 0.00564972]	[0.57044613 0.33333333]
+Fold 0> 62 	1015 	15        	[0.47844322 0.0225242 ]	[0.22619548 0.00534759]	[0.5702553 0.5      ]  
+Fold 4> 64 	1018 	18        	[0.4689708  0.02569041]	[0.2        0.00526316]	[0.5691539 1.       ]  
+Fold 1> 56 	1023 	23        	[0.48748973 0.02383957]	[0.2        0.00552486]	[0.59494493 1.        ]
+Fold 2> 58 	1023 	23        	[0.48616244 0.02257622]	[0.2        0.00578035]	[0.57799052 1.        ]
+Fold 3> 62 	1018 	18        	[0.47320227 0.02403816]	[0.2        0.00558659]	[0.56330328 1.        ]
+Fold 0> 63 	1014 	14        	[0.47927852 0.02095351]	[0.27784813 0.00531915]	[0.57039132 0.2       ]
+Fold 4> 65 	1012 	12        	[0.4706464 0.0228845]  	[0.17263061 0.00526316]	[0.58555487 0.5       ]
+Fold 2> 59 	1016 	16        	[0.48626935 0.02313821]	[0.2        0.00568182]	[0.57590575 1.        ]
+Fold 1> 57 	1018 	18        	[0.48623682 0.02409096]	[0.2       0.0060241]  	[0.58285654 1.        ]
+Fold 3> 63 	1017 	17        	[0.47324246 0.0244769 ]	[0.2        0.00546448]	[0.56008786 1.        ]
+Fold 0> 64 	1018 	18        	[0.47918215 0.02178902]	[0.21157352 0.00531915]	[0.578016 0.5     ]    
+Fold 4> 66 	1022 	22        	[0.46905313 0.02434962]	[0.2        0.00526316]	[0.5849012 1.       ]  
+Fold 2> 60 	1019 	19        	[0.4845857  0.02178757]	[0.24527254 0.00561798]	[0.5757335  0.33333333]
+Fold 1> 58 	1021 	21        	[0.48531774 0.02318762]	[0.23344563 0.0060241 ]	[0.59201682 0.5       ]
+Fold 3> 64 	1017 	17        	[0.47371289 0.02402707]	[0.2        0.00540541]	[0.58232154 1.        ]
+Fold 0> 65 	1019 	19        	[0.48028014 0.02123708]	[0.22400916 0.0052356 ]	[0.57746621 0.33333333]
+Fold 4> 67 	1022 	22        	[0.46935266 0.02182907]	[0.24036397 0.00512821]	[0.56624873 0.25      ]
+Fold 2> 61 	1020 	20        	[0.48536107 0.02169857]	[0.2312937  0.00549451]	[0.59364606 0.5       ]
+Fold 1> 59 	1025 	25        	[0.4841027 0.0247826]  	[0.26375096 0.00598802]	[0.59774316 0.33333333]
+Fold 3> 65 	1013 	13        	[0.47349793 0.02244247]	[0.24210482 0.00540541]	[0.5620373 0.25     ]  
+Fold 0> 66 	1016 	16        	[0.48154964 0.02064241]	[0.27213547 0.00520833]	[0.57746621 0.25      ]
+Fold 4> 68 	1010 	10        	[0.47036068 0.0226259 ]	[0.2        0.00510204]	[0.57487255 1.        ]
+Fold 2> 62 	1018 	18        	[0.48529529 0.0231458 ]	[0.2        0.00549451]	[0.59939349 1.        ]
+Fold 3> 66 	1024 	24        	[0.47235496 0.024193  ]	[0.28468448 0.00534759]	[0.56086883 0.33333333]
+Fold 1> 60 	1021 	21        	[0.48683494 0.02409744]	[0.27176993 0.00578035]	[0.57745349 0.5       ]
+Fold 0> 67 	1018 	18        	[0.48096433 0.0249686 ]	[0.2        0.00518135]	[0.58454383 1.        ]
+Fold 4> 69 	1018 	18        	[0.46975476 0.02455182]	[0.2        0.00507614]	[0.60865306 1.        ]
+Fold 2> 63 	1022 	22        	[0.48531706 0.02507918]	[0.2        0.00537634]	[0.5847311 1.       ]  
+Fold 3> 67 	1019 	19        	[0.47132603 0.02874102]	[0.2        0.00534759]	[0.5748498 1.       ]  
+Fold 1> 61 	1017 	17        	[0.48604812 0.02311077]	[0.28332333 0.00571429]	[0.58742614 0.25      ]
+Fold 4> 70 	1026 	26        	[0.46952709 0.02220686]	[0.26662502 0.00507614]	[0.597748 0.25    ]    
+Fold 0> 68 	1018 	18        	[0.48095107 0.0216569 ]	[0.21004556 0.00510204]	[0.59350775 0.5       ]
+Fold 2> 64 	1016 	16        	[0.48580787 0.02269639]	[0.20247669 0.00537634]	[0.5847311 0.5      ]  
