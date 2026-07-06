@@ -48,7 +48,8 @@ class SavedSolution(Fit):
 
     def test_soft_hyperbox(self) -> ConcreteHyperbox0B:
         """Converts fitness in position 1 from leanness to soft-leanness"""
-        fit = list(self.__train_fitnesses)
+        #BUGFIX : Using training fitness instead of testing 
+        fit = list(self.__test_fitnesses)
         fit[1] = SoftLeanness.leanness_to_soft_leanness(fit[1])
         return ConcreteHyperbox0B.create_by_b_vals(fit)
 
