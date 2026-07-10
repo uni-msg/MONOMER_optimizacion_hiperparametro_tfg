@@ -48,6 +48,8 @@ DEFAULT_INITIAL_FEATURES = BinomialFromUniformNumFeatures(
     min_num_features=DEFAULT_INITIAL_FEATURES_MIN,
     max_num_features=DEFAULT_INITIAL_FEATURES_MAX)
 
+DEFAULT_USE_HYPERPARAMETER_EVOLUTION = False # Enables the evolutionary optimisation of ML hyperparameters. If False, the algorithm behaves exactly as the original MONOMER implementation.
+
 
 def sweeping_ga_mo_optimizer_setup(
         objectives: [PersonalObjective],

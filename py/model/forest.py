@@ -5,8 +5,13 @@ from model.model_with_coef import SklearnModelWrapperWithFallback, SKLearnModelF
 
 class ForestFactory(SKLearnModelFactoryWithExtractor):
 
+    #Definicion de hiperparametros por defecto y FIJOS del modelo RandomForest
     def create(self):
-        return RandomForestClassifier(class_weight="balanced", n_estimators=30, min_samples_leaf=2, n_jobs=1)
+        return RandomForestClassifier(
+            class_weight="balanced", 
+            n_estimators=30, 
+            min_samples_leaf=2, 
+            n_jobs=1)
 
     def extractor(self) -> SklearnCoefExtractor:
         return OffCoefExtractor()

@@ -9,7 +9,7 @@ from setup.allowed_names import \
     DEFAULT_VIEWS_MV, DEFAULT_OBJECTIVE_NAMES, NONE_NAME, DEFAULT_DATASET_NAME, \
     DEFAULT_INITIAL_FEATURES_STRATEGY_NAME, SORTING_STRATEGY_DEFAULT, DEFAULT_ALGORITHM_NAME, DEFAULT_OUTER_FOLDS_NAME
 from setup.ga_mo_optimizer_setup import DEFAULT_MATING_PROB, DEFAULT_MUTATING_FREQUENCY, POP_SMALL, \
-    DEFAULT_SWEEPING_STRATEGY_SMALL, DEFAULT_INNER_N_FOLDS, DEFAULT_MUTATION_OPERATOR, DEFAULT_USE_CLONE_REPURPOSING
+    DEFAULT_SWEEPING_STRATEGY_SMALL, DEFAULT_INNER_N_FOLDS, DEFAULT_MUTATION_OPERATOR, DEFAULT_USE_CLONE_REPURPOSING, DEFAULT_USE_HYPERPARAMETER_EVOLUTION
 from individual.num_features import DEFAULT_INITIAL_FEATURES_MIN, DEFAULT_INITIAL_FEATURES_MAX
 
 
@@ -43,6 +43,7 @@ class EvaluationSetup:
     __outer_folds: str
     __load_base_dir: Optional[str]
     __limit: int
+    __use_hyperparameter_evolution: bool # Enables/disables the evolution of model hyperparameters.
 
     def __init__(self,
                  dataset: str = DEFAULT_DATASET_NAME,
@@ -73,7 +74,8 @@ class EvaluationSetup:
                  logistic_max_iter: int = DEFAULT_LOGISTIC_MAX_ITER,
                  outer_folds: str = DEFAULT_OUTER_FOLDS_NAME,
                  load_base_dir: Optional[str] = None,
-                 limit: int = 0
+                 limit: int = 0,
+                 use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION
                  ):
         self.__dataset = dataset
         self.__mvmo_algorithm = mvmo_algorithm
@@ -105,6 +107,7 @@ class EvaluationSetup:
         self.__outer_folds = outer_folds
         self.__load_base_dir = load_base_dir
         self.__limit = limit
+        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
 
     def dataset(self) -> str:
         return self.__dataset
@@ -193,3 +196,6 @@ class EvaluationSetup:
 
     def limit(self) -> int:
         return self.__limit
+
+    def use_hyperparameter_evolution(self) -> bool:
+        return self.__use_hyperparameter_evolution
