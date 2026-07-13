@@ -30,7 +30,8 @@ class LassoMO(MultiObjectiveOptimizer):
     __optimizer_type = ConcreteMOOptimizerType(
         uses_inner_models=False, nick="LASSO_MO", name="LASSO multi-view multi-objective optimizer")
 
-    def __init__(self, n_objectives: int, shrink_factor: float = 0.8):
+    def __init__(self, n_objectives: int, shrink_factor: float = 0.8, use_hyperparameter_evolution: bool = False):
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__n_objectives = n_objectives
         self.__shrink_factor = shrink_factor
 

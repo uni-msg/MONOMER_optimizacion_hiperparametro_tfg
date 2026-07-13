@@ -31,6 +31,7 @@ class MOOptimizerIncludingFeatureImportance(MultiObjectiveOptimizer):
 
     def __init__(self, feature_importance: MultiViewFeatureImportance,
                  optimizer: MultiObjectiveOptimizerAcceptingFeatureImportance):
+        super().__init__(use_hyperparameter_evolution=optimizer.use_hyperparameter_evolution())
         self.__feature_importance = feature_importance
         self.__optimizer = optimizer
         self.__optimizer_type = ConcreteMOOptimizerType(

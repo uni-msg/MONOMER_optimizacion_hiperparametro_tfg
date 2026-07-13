@@ -47,7 +47,9 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  sorting_strategy: SortingStrategy,
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
                  mutation: BitlistMutation = FlipMutation(),
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 use_hyperparameter_evolution: bool = False):
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__pop_size = pop_size
         self.__mutation_frequency = mutation_frequency
         self.__mating_prob = mating_prob

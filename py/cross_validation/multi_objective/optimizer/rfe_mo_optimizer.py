@@ -37,7 +37,9 @@ class RfeMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  recursive_fi: MultiOutcomeRecursiveFeatureImportance,
                  folds_creator: InputDataFoldsCreator,
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
-                 step: int = 1):
+                 step: int = 1, 
+                 use_hyperparameter_evolution: bool = False):
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__recursive_fi = recursive_fi
         self.__step = step
         self.__objectives = objectives

@@ -57,8 +57,10 @@ class AbcMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
                  mutation: BitlistMutation = FlipMutation(),
                  use_clone_repurposing: bool = False,
-                 mutation_frequency: float = 0.05):
+                 mutation_frequency: float = 0.05,
+                 use_hyperparameter_evolution: bool = False):
         
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__pop_size = pop_size 
         self.__n_gen = n_gen       
         self.__limit = limit       

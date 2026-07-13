@@ -48,7 +48,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
     views_to_use = setup.views_to_use()
     pop = setup.pop()
     inner_n_folds = setup.inner_n_folds()
-
+    use_hyperparameter_evolution = setup.use_hyperparameter_evolution() # Whether the optimizer should evolve the underlying ML model hyperparameters.
+    
     selection_str = setup.selection()
     if selection_str == ElitistSelection().name():
         selection = ElitistSelection()
@@ -127,7 +128,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
 
     if mvmo_algorithm == LASSO_NAME:
         mo_optimizer = SOtoMOOptimizerAdapter(
-            so_optimizer=LassoSingleObjectiveOptimizer(), n_objectives=n_objectives)
+            so_optimizer=LassoSingleObjectiveOptimizer(), n_objectives=n_objectives, use_hyperparameter_evolution=use_hyperparameter_evolution)
     
     # 2. Bloque de instanciación para ABC_MO
     elif mvmo_algorithm == ABC_MO_NAME:
@@ -146,26 +147,29 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
             hof_factories=DEFAULT_HOFS,
             use_clone_repurposing=setup.use_clone_repurposing(),
             mutation_frequency=mutation_frequency,
-            mutation=bitlist_mutation
+            mutation=bitlist_mutation,
+            use_hyperparameter_evolution=use_hyperparameter_evolution
         )
     
     elif mvmo_algorithm == LASSO_MO_NAME:
         if use_big_setup:
-            mo_optimizer = LassoMO(n_objectives=n_objectives, shrink_factor=0.99)
+            mo_optimizer = LassoMO(n_objectives=n_objectives, shrink_factor=0.99, use_hyperparameter_evolution=use_hyperparameter_evolution)
         else:
-            mo_optimizer = LassoMO(n_objectives=n_objectives)
+            mo_optimizer = LassoMO(n_objectives=n_objectives, use_hyperparameter_evolution=use_hyperparameter_evolution)
     elif mvmo_algorithm == GUIDED_FORWARD_NAME:
         mo_optimizer = GuidedForwardAcceptingFI(
             folds_creator=InputDataKFoldsCreator(n_folds=inner_n_folds),
             objectives=objectives,
-            hof_factories=DEFAULT_HOFS
+            hof_factories=DEFAULT_HOFS,
+            use_hyperparameter_evolution=use_hyperparameter_evolution
             )
     elif mvmo_algorithm == RFE_NAME:
         mo_optimizer = RfeMoOptimizer(
             objectives=objectives,
             recursive_fi=MultiOutcomeRecursiveFeatureImportanceLasso(),
             folds_creator=InputDataKFoldsCreator(n_folds=inner_n_folds),
-            hof_factories=DEFAULT_HOFS)
+            hof_factories=DEFAULT_HOFS,
+            use_hyperparameter_evolution=use_hyperparameter_evolution)
     else:
         if use_big_setup:
             if run_nsga:
@@ -178,7 +182,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     sorting_strategy=sorting_strategy,
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing())
+                    use_clone_repurposing=setup.use_clone_repurposing(),
+                    use_hyperparameter_evolution=use_hyperparameter_evolution)
             elif run_sweeping_ga:
                 mo_optimizer = big_sweeping_ga_mo_optimizer_setup(
                     objectives=objectives, sweeping_strategy=SweepingStrategy(generations),
@@ -189,7 +194,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     printer=printer,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing())
+                    use_clone_repurposing=setup.use_clone_repurposing(),
+                    use_hyperparameter_evolution=use_hyperparameter_evolution)
             else:
                 raise ValueError("Unknown MVMO algorithm.")
         else:
@@ -203,7 +209,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     sorting_strategy=sorting_strategy,
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing())
+                    use_clone_repurposing=setup.use_clone_repurposing(),
+                    use_hyperparameter_evolution=use_hyperparameter_evolution)
             elif run_sweeping_ga:
                 mo_optimizer = small_sweeping_ga_mo_optimizer_setup(
                     objectives=objectives,
@@ -215,7 +222,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
                     use_clone_repurposing=setup.use_clone_repurposing(),
-                    printer=printer)
+                    printer=printer,
+                    use_hyperparameter_evolution=use_hyperparameter_evolution)
             else:
                 raise ValueError("Unknown MVMO algorithm.")
     if isinstance(mo_optimizer, MultiObjectiveOptimizerAcceptingFeatureImportance):

@@ -88,6 +88,15 @@ class MultiObjectiveOptimizerResult(NickNamed):
 
 
 class MultiObjectiveOptimizer(NickNamed):
+    _use_hyperparameter_evolution:bool
+
+    # Store whether this optimizer performs hyperparameter evolution.
+    # This setting is shared by all multi-objective optimizers.
+    def __init__(self, use_hyperparameter_evolution: bool = False):
+        self._use_hyperparameter_evolution = use_hyperparameter_evolution
+
+    def use_hyperparameter_evolution(self) -> bool:
+        return self._use_hyperparameter_evolution
 
     @abstractmethod
     def optimize(self, input_data: InputData, printer: Printer,
@@ -106,7 +115,13 @@ class MultiObjectiveOptimizer(NickNamed):
         return self.optimizer_type().uses_inner_models()
 
     def nick(self) -> str:
-        return self.optimizer_type().nick()
+        nick = self.optimizer_type().nick()
+
+        # Prefix the optimizer nickname when hyperparameter evolution is enabled.
+        if self.use_hyperparameter_evolution():
+            nick = "HP_"+nick
+        
+        return nick
 
     def name(self) -> str:
         return self.optimizer_type().name()

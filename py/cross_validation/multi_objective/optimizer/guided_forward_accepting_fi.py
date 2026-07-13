@@ -24,7 +24,9 @@ class GuidedForwardAcceptingFI(MultiObjectiveOptimizerAcceptingFeatureImportance
     def __init__(self,
                  folds_creator: InputDataFoldsCreator,
                  objectives: Sequence[PersonalObjective],
-                 hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),)):
+                 hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
+                 use_hyperparameter_evolution: bool = False):
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__folds_creator = folds_creator
         self.__objectives = objectives
         self.__hof_factories = hof_factories
