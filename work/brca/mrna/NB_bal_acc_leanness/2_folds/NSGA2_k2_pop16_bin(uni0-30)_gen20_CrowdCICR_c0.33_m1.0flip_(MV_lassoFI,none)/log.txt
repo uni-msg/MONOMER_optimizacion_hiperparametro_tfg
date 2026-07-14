@@ -1,8 +1,8 @@
 
 RUNNING NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (2-FOLDS CREATOR, POP 16, BINOMIAL(UNIFORM(0, 30)), GEN 20, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
-Date = 2026-01-12
-Machine = arcohtr04
-CPUs detected in the system = 128
+Date = 2026-07-14
+Machine = ubuntu22-UNI
+CPUs detected in the system = 8
 Number of outer folds = 2
 
 OPTIMIZER DETAILS
@@ -29,7 +29,7 @@ Feature importance for survival: multi-view feature importance none
 
 
 STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
-Computation on different folds finished in 00-00:01:22
+Computation on different folds finished in 00-00:01:37
 
 APPLYING EVALUATORS
 
@@ -37,14 +37,14 @@ EVALUATING HALL OF FAME PARETO FRONT
 
 APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
 Mean Jaccard all vs others for each fold
-[0.24059786774885691, 0.2620470147972487]
-Mean of folds = 0.2513224412730528
+[0.16419659359286654, 0.15110359496365916]
+Mean of folds = 0.15765009427826285
 
 APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
-Stability of features by weights: 0.04166666666666674
-Stability of features by unions: 0.024390243902439046
-Stability of features by spearman: 0.0224692291912393
-Stability of features by top 50: 0.19999999999999996
+Stability of features by weights: 0.0
+Stability of features by unions: 0.0
+Stability of features by spearman: -0.002877549223948273
+Stability of features by top 50: 0.0
 
 APPLYING USAGE OF VIEWS
 Prevalence of features selected in each view
@@ -72,36 +72,36 @@ Creating plot for union of folds
 
 APPLYING HYPERVOLUME
 Hypervolumes for fold 0
-Inner cross-validation hypervolume: 0.3239112028060208
-Train hypervolume: 0.3256024545666847
-Test hypervolume: 0.2934530656371157
-Cross hypervolume: 0.3012107445152113
+Inner cross-validation hypervolume: 0.3439505825721192
+Train hypervolume: 0.35271264854521833
+Test hypervolume: 0.3330262133507882
+Cross hypervolume: 0.33773290330228545
 
 Hypervolumes for fold 1
-Inner cross-validation hypervolume: 0.3257225533083036
-Train hypervolume: 0.3321679113773614
-Test hypervolume: 0.30752041523015317
-Cross hypervolume: 0.3108617991131739
+Inner cross-validation hypervolume: 0.33018713567384694
+Train hypervolume: 0.33493538117074995
+Test hypervolume: 0.3135644603144615
+Cross hypervolume: 0.3182444565158099
 
 Mean hypervolumes
-Inner cross-validation hypervolume: 0.3248168780571622
-Train hypervolume: 0.32888518297202307
-Test hypervolume: 0.30048674043363444
-Cross hypervolume: 0.3060362718141926
+Inner cross-validation hypervolume: 0.33706885912298307
+Train hypervolume: 0.34382401485798414
+Test hypervolume: 0.32329533683262485
+Cross hypervolume: 0.3279886799090477
 
 
 EVALUATING HALL OF FAME BEST SUMS WITH SIZE 50
 
 APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
 Mean Jaccard all vs others for each fold
-[0.23978551348088536, 0.1509237654054574]
-Mean of folds = 0.19535463944317139
+[0.18265002023238364, 0.14636993444826055]
+Mean of folds = 0.16450997734032208
 
 APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
-Stability of features by weights: 0.04069419310198008
-Stability of features by unions: 0.01904761904761898
-Stability of features by spearman: 0.019667994998724587
-Stability of features by top 50: 0.020000000000000018
+Stability of features by weights: 0.0012919896640826156
+Stability of features by unions: 0.007518796992481258
+Stability of features by spearman: 0.0025705325390001383
+Stability of features by top 50: 0.0
 
 APPLYING USAGE OF VIEWS
 Prevalence of features selected in each view
@@ -129,22 +129,22 @@ Creating plot for union of folds
 
 APPLYING HYPERVOLUME
 Hypervolumes for fold 0
-Inner cross-validation hypervolume: 0.3134585724239938
-Train hypervolume: 0.3164453660263238
-Test hypervolume: 0.2845548216937819
-Cross hypervolume: 0.28796063023002083
+Inner cross-validation hypervolume: 0.3420904924933307
+Train hypervolume: 0.35120916404309976
+Test hypervolume: 0.3332128896449914
+Cross hypervolume: 0.33635631321886084
 
 Hypervolumes for fold 1
-Inner cross-validation hypervolume: 0.3242866515834716
-Train hypervolume: 0.3306052623543926
-Test hypervolume: 0.310685077935229
-Cross hypervolume: 0.30873207295334326
+Inner cross-validation hypervolume: 0.32862762097336273
+Train hypervolume: 0.33485110109901506
+Test hypervolume: 0.31932816425836325
+Cross hypervolume: 0.31454335686508983
 
 Mean hypervolumes
-Inner cross-validation hypervolume: 0.3188726120037327
-Train hypervolume: 0.3235253141903582
-Test hypervolume: 0.29761994981450546
-Cross hypervolume: 0.29834635159168205
+Inner cross-validation hypervolume: 0.3353590567333467
+Train hypervolume: 0.3430301325710574
+Test hypervolume: 0.32627052695167735
+Cross hypervolume: 0.32544983504197533
 
 
 CREATING GENERATION PLOTS IF POSSIBLE
