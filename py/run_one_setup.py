@@ -35,6 +35,8 @@ def run_one_setup(setup: EvaluationSetup, printer: Printer,
     optimizer_save_path = create_optimizer_save_path(save_path=save_path, optimizer_nick=mo_optimizer.nick())
 
     save_config_file(config_file=config_file, destination_path=optimizer_save_path, printer=printer)
+    
+    printer.print_variable("Destination folder : ", optimizer_save_path)
 
     if setup.cross_validation():
 
