@@ -48,6 +48,7 @@ DEFAULT_INITIAL_FEATURES = BinomialFromUniformNumFeatures(
     min_num_features=DEFAULT_INITIAL_FEATURES_MIN,
     max_num_features=DEFAULT_INITIAL_FEATURES_MAX)
 
+DEFAULT_USE_HYPERPARAMETER_EVOLUTION = False # Por defecto se emplea MONOMER en GA sin evolucion de hiperparametros
 
 def sweeping_ga_mo_optimizer_setup(
         objectives: [PersonalObjective],

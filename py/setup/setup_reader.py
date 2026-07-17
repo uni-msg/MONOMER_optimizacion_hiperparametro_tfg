@@ -14,7 +14,7 @@ from setup.allowed_names import \
 from setup.evaluation_setup import EvaluationSetup
 from setup.ga_mo_optimizer_setup import DEFAULT_MATING_PROB, DEFAULT_MUTATING_FREQUENCY, POP_SMALL, \
     DEFAULT_SWEEPING_STRATEGY_SMALL, DEFAULT_SWEEPING_STRATEGY_BIG, POP_BIG, CLASSIC_GENERATIONS_BIG, \
-    CLASSIC_GENERATIONS_SMALL, DEFAULT_INNER_N_FOLDS, DEFAULT_MUTATION_OPERATOR, DEFAULT_USE_CLONE_REPURPOSING
+    CLASSIC_GENERATIONS_SMALL, DEFAULT_INNER_N_FOLDS, DEFAULT_MUTATION_OPERATOR, DEFAULT_USE_CLONE_REPURPOSING, DEFAULT_USE_HYPERPARAMETER_EVOLUTION
 from individual.num_features import DEFAULT_INITIAL_FEATURES_MIN, DEFAULT_INITIAL_FEATURES_MAX
 from util.printer.printer import Printer, OutPrinter
 from util.sequence_utils import sequence_to_string
@@ -107,5 +107,6 @@ def read_setup(file: str) -> EvaluationSetup:
         logistic_max_iter=section.getint("logistic_max_iter", DEFAULT_LOGISTIC_MAX_ITER),
         outer_folds=section.get("outer_folds", DEFAULT_OUTER_FOLDS_NAME),
         load_base_dir=section.get("load_base_dir", None),
-        limit=limit  # <--- NUEVO ARGUMENTO PASADO AL CONSTRUCTOR
+        limit=limit,  # <--- NUEVO ARGUMENTO PASADO AL CONSTRUCTOR
+        use_hyperparameter_evolution=section.getboolean("use_hyperparameter_evolution", DEFAULT_USE_HYPERPARAMETER_EVOLUTION), # Nuevo parametro para la evolucion de hiperparametros en GA
     )
