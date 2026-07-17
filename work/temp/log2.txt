@@ -37,7 +37,7 @@ Removing outcomes not necessary for objectives from input data.
 Optimizer class: = <class 'cross_validation.multi_objective.optimizer.composite_mo_optimizer_by_fold.CompositeMultiObjectiveOptimizerByFold'>
 Optimizer nick: = HP_RFE_(MV_lassoFI,none)
 Final optimizer class: = <class 'cross_validation.multi_objective.optimizer.mo_optimizer_including_feature_importance.MOOptimizerIncludingFeatureImportance'>
-Final optimizer nick: = HP_HP_RFE_(MV_lassoFI,none)
+Final optimizer nick: = HP_RFE_(MV_lassoFI,none)
 Creating 5 stratified folds.
 Number of outer folds = 5
 Optimizer save path: = ./brca/mrna/NB_bal_acc_leanness/5_folds/HP_RFE_(MV_lassoFI,none)/

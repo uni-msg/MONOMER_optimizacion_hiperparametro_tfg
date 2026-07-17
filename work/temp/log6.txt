@@ -1,0 +1,52 @@
+Date = 2026-07-15
+Machine = ubuntu22-UNI
+CPUs detected in the system = 8
+Recursion limit = 100000
+Parsing setup file setups/brca/hp/nb.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Removing outcomes not necessary for objectives from input data.
+Optimizer class: = <class 'cross_validation.multi_objective.optimizer.composite_mo_optimizer_by_fold.CompositeMultiObjectiveOptimizerByFold'>
+Optimizer nick: = guided_forward_(MV_lassoFI,none)
+Final optimizer class: = <class 'cross_validation.multi_objective.optimizer.mo_optimizer_including_feature_importance.MOOptimizerIncludingFeatureImportance'>
+Final optimizer nick: = guided_forward_(MV_lassoFI,none)
+Creating 5 stratified folds.
+Number of outer folds = 5
+Optimizer save path: = ./brca/mrna/NB_bal_acc_leanness/5_folds/guided_forward_(MV_lassoFI,none)/
+Copying config file to run directory
+Copy source = setups/brca/hp/nb.ini
+Destino copy: = ./brca/mrna/NB_bal_acc_leanness/5_folds/guided_forward_(MV_lassoFI,none)/

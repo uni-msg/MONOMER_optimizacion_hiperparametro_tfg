@@ -147,7 +147,7 @@ OPTIMIZING FINAL MODEL ON WHOLE DATASET
 30
 20
 10
-RFE multi-view multi-objective optimizer with (multi-view lasso FI, multi-view none) final optimization execution time = 00-00:21:26
+RFE multi-view multi-objective optimizer with (multi-view lasso FI, multi-view none) final optimization execution time = 00-00:25:20
 
 FEATURE SETS SELECTED ON WHOLE DATASET
 
