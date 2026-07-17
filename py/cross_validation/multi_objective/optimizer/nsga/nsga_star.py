@@ -2,7 +2,7 @@ from collections import Iterable, Sequence
 
 from cross_validation.multi_objective.optimizer.ga_str_utils import nick_paste, pop_nick, gen_nick, \
     sorting_strategy_nick_part, mating_prob_nick, mutation_nick_part, name_paste, pop_name, gen_name, \
-    sorting_strategy_name_part, mating_prob_name, mutation_name_part
+    sorting_strategy_name_part, mating_prob_name, mutation_name_part, hp_name, hp_nick
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult, \
     hofs_to_results
@@ -67,7 +67,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         self.__hof_factories = hof_factories
         self.__mutation = mutation
         self.__use_clone_repurposing = use_clone_repurposing
-        self.__nick = nick_paste(parts=[self.__optimizer_type.nick(),
+        self.__nick = hp_nick(self.use_hyperparameter_evolution()) + nick_paste(parts=[self.__optimizer_type.nick(),
                                         self.__folds_creator.nick(),
                                         pop_nick(pop_size=pop_size),
                                         initial_features.nick(),
@@ -77,7 +77,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                                         mating_prob_nick(mating_prob=mating_prob),
                                         mutation_nick_part(mutation=mutation, mutation_frequency=mutation_frequency)
                                         ])
-        self.__name = self.__optimizer_type.name() + " (" + name_paste(parts=[
+        self.__name = hp_name(self.use_hyperparameter_evolution()) + self.__optimizer_type.name() + " (" + name_paste(parts=[
             self.__folds_creator.name(),
             pop_name(pop_size=pop_size),
             initial_features.name(),

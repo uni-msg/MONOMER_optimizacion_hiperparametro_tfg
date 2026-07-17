@@ -6,7 +6,7 @@ from deap import tools
 
 from cross_validation.multi_objective.optimizer.ga_str_utils import nick_paste, pop_nick, gen_nick, \
     sorting_strategy_nick_part, mutation_nick_part, name_paste, pop_name, gen_name, \
-    sorting_strategy_name_part, mutation_name_part
+    sorting_strategy_name_part, mutation_name_part, hp_nick, hp_name
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult, \
     hofs_to_results, hofers_to_results
@@ -48,6 +48,7 @@ class AbcMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
     __mutation: BitlistMutation
     __initial_features: NumFeatures
     __optimizer_type: MOOptimizerType
+    __use_hyperparameter_evolution: bool #Se adapto el optimizar para incluir el uso de hiperparametro
 
     def __init__(self, pop_size, n_gen, limit,
                  initial_features: NumFeatures,
@@ -60,7 +61,6 @@ class AbcMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  mutation_frequency: float = 0.05,
                  use_hyperparameter_evolution: bool = False):
         
-        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__pop_size = pop_size 
         self.__n_gen = n_gen       
         self.__limit = limit       
@@ -75,7 +75,10 @@ class AbcMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
         self.__mutation = mutation
         self.__optimizer_type = ABCType()
 
-        self.__nick = nick_paste(parts=[self.__optimizer_type.nick(),
+        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
+
+        self.__nick = hp_nick(self.use_hyperparameter_evolution()) + nick_paste(parts=[
+                                        self.__optimizer_type.nick(),
                                         self.__folds_creator.nick(),
                                         pop_nick(pop_size=pop_size),
                                         initial_features.nick(),
@@ -87,7 +90,7 @@ class AbcMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
                                         f"lim{limit}"
                                         ])
         
-        self.__name = self.__optimizer_type.name() + " (" + name_paste(parts=[
+        self.__name = hp_name(self.use_hyperparameter_evolution()) + self.__optimizer_type.name() + " (" + name_paste(parts=[
             self.__folds_creator.name(),
             pop_name(pop_size=pop_size),
             initial_features.name(),
@@ -359,6 +362,9 @@ class AbcMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
 
     def optimizer_type(self) -> MOOptimizerType:
         return self.__optimizer_type
+    
+    def use_hyperparameter_evolution(self) -> bool:
+        return self.__use_hyperparameter_evolution
 
     def name(self) -> str:
         return self.__name

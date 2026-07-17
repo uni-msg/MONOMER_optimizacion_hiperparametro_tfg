@@ -104,6 +104,9 @@ def save_config_file(config_file: str, destination_path: str, printer: Printer):
     if config_file is not None:
         printer.print("Copying config file to run directory")
         printer.print_variable("Copy source", config_file)
+        
+        printer.print_variable("Destino copy:", destination_path) #ELIMINAR
+
         os.makedirs(os.path.dirname(destination_path), exist_ok=True)
         shutil.copy(config_file, destination_path + "config.ini")
 

@@ -6,6 +6,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType, ConcreteMOOptimizerType
+from cross_validation.multi_objective.optimizer.ga_str_utils import hp_name, hp_nick
 from ga_components.feature_counts_saver import DummyFeatureCountsSaver
 from ga_components.logbook_saver import LogbookSaver, DummyLogbookSaver
 from hyperparam_manager.dummy_hp_manager import DummyHpManager
@@ -26,14 +27,18 @@ LASSO_STR = "LASSO"
 class LassoMO(MultiObjectiveOptimizer):
     __n_objectives: int
     __shrink_factor: float
+    __optimizer_type: ConcreteMOOptimizerType
 
-    __optimizer_type = ConcreteMOOptimizerType(
-        uses_inner_models=False, nick="LASSO_MO", name="LASSO multi-view multi-objective optimizer")
 
     def __init__(self, n_objectives: int, shrink_factor: float = 0.8, use_hyperparameter_evolution: bool = False):
         super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__n_objectives = n_objectives
         self.__shrink_factor = shrink_factor
+        self.__optimizer_type = ConcreteMOOptimizerType(
+            uses_inner_models=False, 
+            nick=hp_nick(self.use_hyperparameter_evolution())+"LASSO_MO", 
+            name=hp_name(self.use_hyperparameter_evolution())+"LASSO multi-view multi-objective optimizer")
+
 
     @staticmethod
     def optimize_with_c(x: DataFrame, y, c: float, n_jobs=None) -> SingleObjectiveOptimizerResult:

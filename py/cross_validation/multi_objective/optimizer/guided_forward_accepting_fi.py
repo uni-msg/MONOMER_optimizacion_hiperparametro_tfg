@@ -1,7 +1,7 @@
 from collections.abc import Iterable
 from typing import Sequence
 
-from cross_validation.multi_objective.optimizer.guided_forward import GUIDED_FORWARD_OPTIMIZER_TYPE, GuidedForward
+from cross_validation.multi_objective.optimizer.guided_forward import HP_GUIDED_FORWARD_OPTIMIZER_TYPE, GUIDED_FORWARD_OPTIMIZER_TYPE, GuidedForward
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer_accepting_feature_importance import \
@@ -42,11 +42,12 @@ class GuidedForwardAcceptingFI(MultiObjectiveOptimizerAcceptingFeatureImportance
             input_data=input_data,
             objectives=self.__objectives,
             folds_creator=self.__folds_creator,
-            hof_factories=self.__hof_factories)
+            hof_factories=self.__hof_factories,
+            use_hyperparameter_evolution=self.use_hyperparameter_evolution())
         return optimizer.optimize(
             input_data=input_data, printer=printer, n_proc=n_proc, workers_printer=workers_printer,
             logbook_saver=logbook_saver,
             feature_counts_saver=feature_counts_saver)
 
     def optimizer_type(self) -> MOOptimizerType:
-        return GUIDED_FORWARD_OPTIMIZER_TYPE
+        return HP_GUIDED_FORWARD_OPTIMIZER_TYPE if self.use_hyperparameter_evolution() else GUIDED_FORWARD_OPTIMIZER_TYPE

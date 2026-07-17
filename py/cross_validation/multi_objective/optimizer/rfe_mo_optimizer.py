@@ -2,6 +2,7 @@ from collections.abc import Iterable
 from typing import Sequence
 
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType, ConcreteMOOptimizerType
+from cross_validation.multi_objective.optimizer.ga_str_utils import hp_name, hp_nick
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer_accepting_feature_importance import \
     MultiObjectiveOptimizerAcceptingFeatureImportance
@@ -28,9 +29,7 @@ class RfeMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
     __objectives: Sequence[PersonalObjective]
     __folds_creator: InputDataFoldsCreator
     __hof_factories: Iterable[HallOfFameFactory]
-
-    __optimizer_type = ConcreteMOOptimizerType(
-        uses_inner_models=True, nick="RFE", name="RFE multi-view multi-objective optimizer")
+    __optimizer_type: ConcreteMOOptimizerType
 
     def __init__(self,
                  objectives: Sequence[PersonalObjective],
@@ -45,6 +44,10 @@ class RfeMoOptimizer(MultiObjectiveOptimizerAcceptingFeatureImportance):
         self.__objectives = objectives
         self.__folds_creator = folds_creator
         self.__hof_factories = hof_factories
+        self.__optimizer_type = ConcreteMOOptimizerType(
+            uses_inner_models=True, 
+            nick=hp_nick(self.use_hyperparameter_evolution())+"RFE", 
+            name=hp_name(self.use_hyperparameter_evolution())+"RFE multi-view multi-objective optimizer")
 
     def optimize_with_feature_importance(self, input_data: InputData, printer: Printer,
                                          feature_importance: Sequence[Distribution], n_proc=1,

@@ -22,6 +22,13 @@ def run_one_setup(setup: EvaluationSetup, printer: Printer,
 
     mo_optimizer, input_data, objectives = setup_to_mo_optimizer(setup=setup, printer=printer)
 
+    printer.print_variable("Optimizer class:", type(mo_optimizer))
+    printer.print_variable("Optimizer nick:", mo_optimizer.nick())
+
+    opt_all = mo_optimizer.optimizer_for_all_data()
+    printer.print_variable("Final optimizer class:", type(opt_all))
+    printer.print_variable("Final optimizer nick:", opt_all.nick())
+
     outer_folds = setup_to_folds(setup=setup, input_data=input_data, printer=printer)
     outer_n_folds = outer_folds.n_folds()
     printer.print_variable("Number of outer folds", outer_n_folds)
@@ -33,6 +40,8 @@ def run_one_setup(setup: EvaluationSetup, printer: Printer,
                                           outer_n_folds=outer_n_folds)
 
     optimizer_save_path = create_optimizer_save_path(save_path=save_path, optimizer_nick=mo_optimizer.nick())
+
+    printer.print_variable("Optimizer save path:", optimizer_save_path)
 
     save_config_file(config_file=config_file, destination_path=optimizer_save_path, printer=printer)
 

@@ -31,13 +31,15 @@ from util.sequence_utils import sort_permutation
 from util.sparse_bool_list_by_set import SparseBoolListBySet
 from util.utils import name_value
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer_by_fold import MultiObjectiveOptimizerByFold
+from cross_validation.multi_objective.optimizer.ga_str_utils import hp_name, hp_nick
 
 GUIDED_FORWARD_OPTIMIZER_TYPE = ConcreteMOOptimizerType(
         uses_inner_models=True, nick="guided_forward", name="Guided Forward")
-
+HP_GUIDED_FORWARD_OPTIMIZER_TYPE = ConcreteMOOptimizerType(
+        uses_inner_models=True, nick=hp_nick(True)+"guided_forward", name=hp_name(True)+"Guided Forward")
 
 class GuidedForward(MultiObjectiveOptimizer):
-    __optimizer_type = GUIDED_FORWARD_OPTIMIZER_TYPE
+    __optimizer_type: MOOptimizerType
 
     __feature_queue: Sequence[str]
     __feature_queue_nick: str
@@ -53,12 +55,15 @@ class GuidedForward(MultiObjectiveOptimizer):
                  folds_creator: InputDataFoldsCreator,
                  objectives: Sequence[PersonalObjective],
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
-                 feature_queue_nick: str = "unnamed_feature_queue"):
+                 feature_queue_nick: str = "unnamed_feature_queue",
+                 use_hyperparameter_evolution: bool = False):
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__feature_queue = feature_queue
         self.__feature_queue_nick = feature_queue_nick
         self.__hof_factories = hof_factories
         self.__folds_creator = folds_creator
         self.__objectives = objectives
+        self.__optimizer_type = GUIDED_FORWARD_OPTIMIZER_TYPE
 
     @staticmethod
     def feature_queue_nick(previous_optimizer_dir: str, hof_nick: str = PARETO_NICK):
@@ -116,7 +121,7 @@ class GuidedForward(MultiObjectiveOptimizer):
         return hofs_to_results(hofs)
 
     def nick(self) -> str:
-        return self.__feature_queue_nick + "_" + self.optimizer_type().nick()
+        return hp_nick(self.use_hyperparameter_evolution())+self.__feature_queue_nick + "_" + self.optimizer_type().nick()
 
     @staticmethod
     def feature_queue_name(previous_optimizer_dir: str, hof_nick: str = PARETO_NICK):
@@ -131,6 +136,7 @@ class GuidedForward(MultiObjectiveOptimizer):
             folds_creator: InputDataFoldsCreator,
             hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
             hof_nick: str = PARETO_NICK,
+            use_hyperparameter_evolution: bool = False
             ) -> GuidedForward:
         if os.path.isdir(previous_optimizer_dir):
             hofs_dir = os.path.join(previous_optimizer_dir, HOFS_STR, hof_nick)
@@ -147,7 +153,8 @@ class GuidedForward(MultiObjectiveOptimizer):
                     objectives=objectives,
                     folds_creator=folds_creator,
                     hof_factories=hof_factories,
-                    feature_queue_nick=feature_queue_nick)
+                    feature_queue_nick=feature_queue_nick,
+                    use_hyperparameter_evolution=use_hyperparameter_evolution)
             else:
                 raise ValueError("hof nicks are not directories: " + str(hof_nick))
         else:
@@ -161,6 +168,7 @@ class GuidedForward(MultiObjectiveOptimizer):
             folds_creator: InputDataFoldsCreator,
             hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
             feature_queue_nick: str = "feature_queue_from_weights",
+            use_hyperparameter_evolution: bool = False
     ) -> GuidedForward:
         """Zero weights are not considered."""
         if len(weights) != len(feature_names):
@@ -177,7 +185,8 @@ class GuidedForward(MultiObjectiveOptimizer):
             objectives=objectives,
             folds_creator=folds_creator,
             hof_factories=hof_factories,
-            feature_queue_nick=feature_queue_nick)
+            feature_queue_nick=feature_queue_nick,
+            use_hyperparameter_evolution=use_hyperparameter_evolution)
 
     @staticmethod
     def create_from_fi(
@@ -186,7 +195,8 @@ class GuidedForward(MultiObjectiveOptimizer):
             objectives: Sequence[PersonalObjective],
             folds_creator: InputDataFoldsCreator,
             hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
-            feature_queue_nick: str = "feature_queue_from_fi"
+            feature_queue_nick: str = "feature_queue_from_fi",
+            use_hyperparameter_evolution: bool = False
     ) -> GuidedForward:
         feature_names = input_data.collapsed_feature_names()
         weights = collapse_feature_importance(distributions=feature_importance)
@@ -196,7 +206,8 @@ class GuidedForward(MultiObjectiveOptimizer):
             objectives=objectives,
             folds_creator=folds_creator,
             hof_factories=hof_factories,
-            feature_queue_nick=feature_queue_nick)
+            feature_queue_nick=feature_queue_nick,
+            use_hyperparameter_evolution=use_hyperparameter_evolution)
 
 
 class GuidedForwardByFold(MultiObjectiveOptimizerByFold):
@@ -211,8 +222,9 @@ class GuidedForwardByFold(MultiObjectiveOptimizerByFold):
                  inner_folds_creator: InputDataFoldsCreator,
                  previous_optimizer_dir: str,
                  previous_hof_nick: str = PARETO_NICK,
-                 hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),)
-                 ):
+                 hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
+                 use_hyperparameter_evolution: bool = False):
+        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__objectives = objectives
         self.__inner_folds_creator = inner_folds_creator
         self.__previous_optimizer_dir = previous_optimizer_dir
@@ -226,18 +238,19 @@ class GuidedForwardByFold(MultiObjectiveOptimizerByFold):
             outer_fold_index=fold_index,
             folds_creator=self.__inner_folds_creator,
             hof_nick=self.__previous_hof_nick,
-            hof_factories=self.__hof_factories
+            hof_factories=self.__hof_factories,
+            use_hyperparameter_evolution=self.use_hyperparameter_evolution()
         )
 
     def nick(self) -> str:
         feature_queue_nick = GuidedForward.feature_queue_nick(
             previous_optimizer_dir=self.__previous_optimizer_dir, hof_nick=self.__previous_hof_nick)
-        return feature_queue_nick + "_" + GUIDED_FORWARD_OPTIMIZER_TYPE.nick()
+        return hp_nick(self.use_hyperparameter_evolution())+feature_queue_nick + "_" + GUIDED_FORWARD_OPTIMIZER_TYPE.nick()
 
     def name(self) -> str:
         feature_queue_name = GuidedForward.feature_queue_name(
             previous_optimizer_dir=self.__previous_optimizer_dir, hof_nick=self.__previous_hof_nick)
-        return feature_queue_name + " " + GUIDED_FORWARD_OPTIMIZER_TYPE.name()
+        return hp_name(self.use_hyperparameter_evolution())+feature_queue_name + " " + GUIDED_FORWARD_OPTIMIZER_TYPE.name()
 
     def __str__(self) -> str:
         res = ""

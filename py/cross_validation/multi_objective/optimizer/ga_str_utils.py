@@ -11,10 +11,20 @@ NAME_SEPARATOR = ", "
 def nick_paste(parts: Sequence[str]) -> str:
     return str_paste(parts=parts, separator=NICK_SEPARATOR)
 
-
 def name_paste(parts: Sequence[str]) -> str:
     return str_paste(parts=parts, separator=NAME_SEPARATOR)
 
+def hp_name(use_hyperparameter_evolution : bool) -> str:
+    """
+        Asigna el name correspondiente al apartado de hiperparametros
+    """
+    return "Hyperparameter " if use_hyperparameter_evolution else ""
+
+def hp_nick(use_hyperparameter_evolution : bool) -> str:
+    """
+        Asigna el nick correspondiente al apartado de hiperparametros
+    """
+    return "HP"+NICK_SEPARATOR if use_hyperparameter_evolution else ""
 
 def pop_nick(pop_size: int) -> str:
     return "pop" + str(pop_size)

@@ -14,12 +14,12 @@ class SOtoMOOptimizerAdapter(MultiObjectiveOptimizer):
     __optimizer_type: MOOptimizerType
     __n_objectives: int
 
-    def __init__(self, so_optimizer: SOOptimizer, n_objectives: int, use_hyperparameter_evolution: bool = False):
-        super().__init__(use_hyperparameter_evolution=use_hyperparameter_evolution)
+    def __init__(self, so_optimizer: SOOptimizer, n_objectives: int):
         self.__so_optimizer = so_optimizer
         self.__optimizer_type =\
             ConcreteMOOptimizerType(
-                uses_inner_models=False, nick=so_optimizer.nick(),
+                uses_inner_models=False, 
+                nick=so_optimizer.nick(),
                 name=so_optimizer.name() + " adapted to multi-objective")
         self.__n_objectives = n_objectives
 

@@ -48,7 +48,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
     views_to_use = setup.views_to_use()
     pop = setup.pop()
     inner_n_folds = setup.inner_n_folds()
-    use_hyperparameter_evolution = setup.use_hyperparameter_evolution() # Whether the optimizer should evolve the underlying ML model hyperparameters.
+    use_hyperparameter_evolution = setup.use_hyperparameter_evolution() # Condicion para aplicar Hiperparametros sobre el optimizador GA o no.
     
     selection_str = setup.selection()
     if selection_str == ElitistSelection().name():
@@ -128,7 +128,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
 
     if mvmo_algorithm == LASSO_NAME:
         mo_optimizer = SOtoMOOptimizerAdapter(
-            so_optimizer=LassoSingleObjectiveOptimizer(), n_objectives=n_objectives, use_hyperparameter_evolution=use_hyperparameter_evolution)
+            so_optimizer=LassoSingleObjectiveOptimizer(), n_objectives=n_objectives)
     
     # 2. Bloque de instanciación para ABC_MO
     elif mvmo_algorithm == ABC_MO_NAME:
