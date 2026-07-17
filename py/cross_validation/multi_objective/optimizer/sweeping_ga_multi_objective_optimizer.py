@@ -3,7 +3,7 @@ from typing import Sequence
 
 from cross_validation.multi_objective.optimizer.ga_str_utils import nick_paste, pop_nick, \
     sorting_strategy_nick_part, mating_prob_nick, mutation_nick_part, name_paste, pop_name, \
-    sorting_strategy_name_part, mating_prob_name, mutation_name_part
+    sorting_strategy_name_part, mating_prob_name, mutation_name_part, hp_nick, hp_name
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import ConcreteMOOptimizerType, MOOptimizerType
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult, \
     hofers_to_results
@@ -36,6 +36,7 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
     __mutation: BitlistMutation
     __initial_features: NumFeatures
     __use_clone_repurposing: bool
+    __use_hyperparameter_evolution: bool
 
     __optimizer_type = ConcreteMOOptimizerType(
         uses_inner_models=True, nick="Sweeping", name="Sweeping genetic algorithm multi-view multi-objective optimizer")
@@ -48,7 +49,8 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
                  sorting_strategy: SortingStrategy,
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
                  mutation: BitlistMutation = FlipMutation(),
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 use_hyperparameter_evolution: bool = False):
         self.__pop_size = pop_size
         self.__mutation_frequency = mutation_frequency
         self.__mating_prob = mating_prob
@@ -60,7 +62,10 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
         self.__hof_factories = hof_factories
         self.__mutation = mutation
         self.__use_clone_repurposing = use_clone_repurposing
-        self.__nick = nick_paste(parts=[self.__optimizer_type.nick(),
+
+        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
+
+        self.__nick = hp_nick(self.__use_hyperparameter_evolution) +  nick_paste(parts=[self.__optimizer_type.nick(),
                                         self.__folds_creator.nick(),
                                         pop_nick(pop_size=pop_size),
                                         initial_features.nick(),
@@ -70,7 +75,7 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
                                         mating_prob_nick(mating_prob=mating_prob),
                                         mutation_nick_part(mutation=mutation, mutation_frequency=mutation_frequency)
                                         ])
-        self.__name = self.__optimizer_type.name() + " (" + name_paste(parts=[
+        self.__name = hp_name(self.__use_hyperparameter_evolution) + self.__optimizer_type.name() + " (" + name_paste(parts=[
             self.__folds_creator.name(),
             pop_name(pop_size=pop_size),
             initial_features.name(),
@@ -122,6 +127,11 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
         res += name_value("Mutation operator", self.__mutation) + "\n"
         res += name_value("Sorting strategy", self.__sorting_strategy) + \
                          (" and clone repurposing" if self.__use_clone_repurposing else "") + "\n"
+        
+        #Se añadira a la respuesta el uso de evolucion de hiperparametro si esta activado
+        if self.__use_hyperparameter_evolution:
+            res += name_value("Evolution hyperparameter", self.__use_hyperparameter_evolution) + "\n"
+
         res += name_value("Objectives", self.__objectives) + "\n"
         res += name_value("Hall of fame factories", self.__hof_factories) + "\n"
         res += name_value("Folds creator", self.__folds_creator) + "\n"

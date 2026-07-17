@@ -63,7 +63,8 @@ def sweeping_ga_mo_optimizer_setup(
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
         use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
-        verbose=False) -> SweepingGAMultiObjectiveOptimizer:
+        verbose=False,
+        use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION) -> SweepingGAMultiObjectiveOptimizer:
 
     if verbose:
         printer.title_print("Setting up multi-objective GA main parameters")
@@ -77,6 +78,7 @@ def sweeping_ga_mo_optimizer_setup(
         printer.print_variable("Sorting strategy", sorting_strategy)
         printer.print_variable("Use clone repurposing", use_clone_repurposing)
         printer.print_variable("Mutation operator", mutation)
+        printer.print_variable("Use evolution hyperparameter", use_hyperparameter_evolution)
 
     inner_folds_creator = InputDataKFoldsCreator(n_folds=inner_n_folds)
 
@@ -88,7 +90,8 @@ def sweeping_ga_mo_optimizer_setup(
         hof_factories=hofs,
         sweeping_strategy=sweeping_strategy,
         mutation=mutation,
-        use_clone_repurposing=use_clone_repurposing
+        use_clone_repurposing=use_clone_repurposing,
+        use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
     )
 
 
@@ -105,7 +108,9 @@ def small_sweeping_ga_mo_optimizer_setup(
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
         use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
-        verbose=False) -> SweepingGAMultiObjectiveOptimizer:
+        verbose=False,
+        use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION
+        ) -> SweepingGAMultiObjectiveOptimizer:
     return sweeping_ga_mo_optimizer_setup(objectives=objectives,
                                           sweeping_strategy=sweeping_strategy,
                                           printer=printer,
@@ -118,7 +123,9 @@ def small_sweeping_ga_mo_optimizer_setup(
                                           inner_n_folds=inner_n_folds,
                                           mutation=mutation,
                                           use_clone_repurposing=use_clone_repurposing,
-                                          verbose=verbose)
+                                          verbose=verbose,
+                                          use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                                          )
 
 
 def big_sweeping_ga_mo_optimizer_setup(
@@ -134,7 +141,9 @@ def big_sweeping_ga_mo_optimizer_setup(
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
         use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
-        verbose=False) -> SweepingGAMultiObjectiveOptimizer:
+        verbose=False,
+        use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION
+        ) -> SweepingGAMultiObjectiveOptimizer:
     return sweeping_ga_mo_optimizer_setup(objectives=objectives,
                                           printer=printer,
                                           pop_size=pop_size,
@@ -147,7 +156,9 @@ def big_sweeping_ga_mo_optimizer_setup(
                                           inner_n_folds=inner_n_folds,
                                           mutation=mutation,
                                           use_clone_repurposing=use_clone_repurposing,
-                                          verbose=verbose)
+                                          verbose=verbose,
+                                          use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                                          )
 
 
 def nsga_setup(
@@ -161,7 +172,8 @@ def nsga_setup(
         hofs: Sequence[HallOfFameFactory] = DEFAULT_HOFS,
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
-        use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING
+        use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
+        use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION
         ) -> MultiObjectiveOptimizerAcceptingFeatureImportance:
 
     inner_folds_creator = InputDataKFoldsCreator(n_folds=inner_n_folds)
@@ -175,7 +187,8 @@ def nsga_setup(
         sorting_strategy=sorting_strategy,
         hof_factories=hofs,
         mutation=mutation,
-        use_clone_repurposing=use_clone_repurposing
+        use_clone_repurposing=use_clone_repurposing,
+        use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
     )
 
 
@@ -190,7 +203,8 @@ def small_nsga_setup(
         hofs: Sequence[HallOfFameFactory] = DEFAULT_HOFS,
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
-        use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING
+        use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
+        use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION
         ) -> MultiObjectiveOptimizerAcceptingFeatureImportance:
     return nsga_setup(objectives=objectives, pop_size=pop_size,
                       initial_features=initial_features,
@@ -201,8 +215,9 @@ def small_nsga_setup(
                       hofs=hofs,
                       inner_n_folds=inner_n_folds,
                       mutation=mutation,
-                      use_clone_repurposing=use_clone_repurposing)
-
+                      use_clone_repurposing=use_clone_repurposing,
+                      use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                      )
 
 def big_nsga_setup(
         objectives: [PersonalObjective],
@@ -215,7 +230,8 @@ def big_nsga_setup(
         hofs: Sequence[HallOfFameFactory] = DEFAULT_HOFS,
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
-        use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING
+        use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
+        use_hyperparameter_evolution: bool = DEFAULT_USE_HYPERPARAMETER_EVOLUTION
         ) -> MultiObjectiveOptimizerAcceptingFeatureImportance:
     return nsga_setup(objectives=objectives, pop_size=pop_size,
                       n_gen=n_gen,
@@ -226,4 +242,6 @@ def big_nsga_setup(
                       hofs=hofs,
                       inner_n_folds=inner_n_folds,
                       mutation=mutation,
-                      use_clone_repurposing=use_clone_repurposing)
+                      use_clone_repurposing=use_clone_repurposing,
+                      use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                      )
