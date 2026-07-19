@@ -34,6 +34,7 @@ class GAStrategySelector(GAStrategy):
         self.__hp_manager = hp_manager
 
     def create_individual(self) -> PeculiarIndividualDense:
+        print("Creacion de indiduos con HPE en GAStrategySelector:", self._GAStrategy__use_hyperparameter_evolution)
         res = PeculiarIndividualDense(n_objectives=self.n_objectives())
         for i in range(0, self.individual_size()):
             res.append(random.randint(0, self.__hp_manager.max_view_individual_index(i)))

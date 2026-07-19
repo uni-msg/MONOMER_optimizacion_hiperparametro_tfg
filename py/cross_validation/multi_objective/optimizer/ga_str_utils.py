@@ -18,13 +18,13 @@ def hp_name(use_hyperparameter_evolution : bool) -> str:
     """
         Asigna el name correspondiente al apartado de hiperparametros
     """
-    return "Hyperparameter " if use_hyperparameter_evolution else ""
+    return "Hyperparameter evolution " if use_hyperparameter_evolution else ""
 
 def hp_nick(use_hyperparameter_evolution : bool) -> str:
     """
         Asigna el nick correspondiente al apartado de hiperparametros
     """
-    return "HP"+NICK_SEPARATOR if use_hyperparameter_evolution else ""
+    return "HPE"+NICK_SEPARATOR if use_hyperparameter_evolution else ""
 
 
 def pop_nick(pop_size: int) -> str:
