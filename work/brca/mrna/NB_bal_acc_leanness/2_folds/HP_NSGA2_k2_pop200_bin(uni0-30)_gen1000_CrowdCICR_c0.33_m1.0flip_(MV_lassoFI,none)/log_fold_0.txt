@@ -1,0 +1,41 @@
+
+OPTIMIZING ON FOLD NUMBER 0
+Number of workers = 4
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 16962
+Features active in view: 16962
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Generations completed = 49
+Exception caught while optimizing on fold 0
+Original exception: Original exception: 
+while map-reducing from a packed population of size 200
+Showing first elements:
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+17 True positions:
+SortedSet([338, 3215, 5683, 6309, 6552, 6841, 7317, 9091, 9488, 9527, 11217, 13593, 15049, 17496, 18058, 18853, 19214])
+
+
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+32 True positions:
+SortedSet([642, 2080, 3215, 5683, 6552, 6816, 7317, 7369, 9091, 9176, 9488, 9989, 11044, 11217, 12943, 13593, 13728, 13999, 14166, 14230, 14561, 14948, 15293, 16936, 17076, 17283, 17496, 18204, 18853, 19214, 19568, 19777])
+
+
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+10 True positions:
+SortedSet([1924, 5397, 9558, 11146, 11341, 11515, 12068, 16186, 16773, 16843])
+
+
+
+

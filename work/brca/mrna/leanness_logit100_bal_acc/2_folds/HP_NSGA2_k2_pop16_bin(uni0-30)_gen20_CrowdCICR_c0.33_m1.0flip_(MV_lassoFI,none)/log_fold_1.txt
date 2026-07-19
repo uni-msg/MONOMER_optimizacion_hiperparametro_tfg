@@ -1,0 +1,78 @@
+
+OPTIMIZING ON FOLD NUMBER 1
+Number of workers = 4
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 16317
+Features active in view: 16317
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Exception caught while optimizing on fold 1
+Original exception: Original exception: Exception during worker evaluation
+Process pid: 255269 name: SpawnPoolWorker-2:8
+Worker:
+WorkerState object with attributes:
+Objectives:
+Pam50 logistic classifier (max_iter=100) balanced accuracy
+leanness
+
+Collapsed views:
+       0_A1BG    0_A1CF   0_A2BP1   0_A2LD1   0_A2ML1      0_A2M  0_A4GALT  ...  0_ZYG11A  0_ZYG11B      0_ZYX    0_ZZEF1     0_ZZZ3  0_psiTPTE22    0_tAKR
+0    8.728725  0.931002  0.000000  7.342165  0.000000  13.110059  9.167141  ...  8.378608  9.058492  12.414619   9.882464   8.995822     5.184205  0.000000
+1    8.076179  0.511468  2.271963  7.279566  2.138913  13.226780  8.422602  ...  3.910982  9.601297  11.981104   9.702025   9.785783     7.556383  0.000000
+2    7.677873  0.000000  0.665938  6.814235  1.119821  13.590157  8.535828  ...  4.073657  9.293437  12.012968   9.850389  10.053572     6.427212  0.000000
+3    8.353232  0.000000  0.514400  7.342923  2.146395  13.927870  8.788737  ...  6.580103  9.785005  12.383833   9.869360   8.991768     5.735121  0.892818
+4    7.407955  0.000000  2.411426  6.865879  1.485427  13.606635  9.277441  ...  1.286881  9.458872  11.512063  10.727833   9.156148     4.731200  0.000000
+..        ...       ...       ...       ...       ...        ...       ...  ...       ...       ...        ...        ...        ...          ...       ...
+536  7.135500  0.000000  0.000000  6.627945  1.473527  13.064853  8.140617  ...  7.125208  9.367866  11.361364  10.981798   9.864405     7.818831  0.000000
+537  7.539960  0.684819  0.000000  6.964915  3.338139  14.648708  9.227424  ...  5.814691  9.074876  12.615958  10.393896   8.831101     7.428983  0.000000
+538  8.335280  0.000000  0.000000  7.820780  0.000000  11.786015  5.998922  ...  3.652762  9.130144  12.449940   9.075079   8.597667     3.041926  0.000000
+539  7.808774  0.000000  0.478920  7.046887  0.478920  14.312724  8.984452  ...  4.476369  9.428756  12.321677  10.918012   9.390338     6.635540  0.000000
+540  8.000758  1.749234  1.273277  6.338587  5.826276  14.061357  9.267942  ...  7.369672  9.546531  12.419582  10.490261   9.898916     7.884100  0.959548
+
+[541 rows x 20203 columns]
+HP manager:
+dummy hyperparameter manager
+Compute feature importance: False
+Seed: 8745
+Printer: [unbuffered out printer with tag Fold 1, log printer to ./brca/mrna/leanness_logit100_bal_acc/2_folds/HP_NSGA2_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/workers_log_fold_1.txt]
+
+Processing work package:
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+16 True positions:
+SortedSet([2997, 4139, 4794, 5051, 7066, 7406, 9685, 9729, 13199, 13584, 14128, 14230, 15156, 16250, 16370, 17676])
+
+Exception content:
+The 'penalty' parameter of LogisticRegression must be a str among {'l1', 'elasticnet', 'l2'} or None. Got 'none' instead.
+
+while map-reducing from a packed population of size 16
+Showing first elements:
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+18 True positions:
+SortedSet([816, 2464, 3394, 5795, 5832, 6726, 7066, 9181, 9287, 9789, 10614, 10798, 11733, 14670, 15820, 16039, 16868, 18694])
+
+
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+10 True positions:
+SortedSet([1843, 1901, 2150, 9181, 9234, 12689, 14413, 14626, 15904, 18665])
+
+
+Individual:
+Individual object with chromosome:
+SparseBoolListBySet of size 20203
+11 True positions:
+SortedSet([3624, 3778, 6400, 6743, 7022, 9234, 9842, 11733, 14164, 14175, 18976])
+
+
+
+

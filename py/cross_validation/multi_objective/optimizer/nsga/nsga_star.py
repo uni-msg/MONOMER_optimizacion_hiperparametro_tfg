@@ -120,7 +120,8 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             sorting_strategy=self.__sorting_strategy,
             active_features=active_features,
             mutation=self.__mutation,
-            use_clone_repurposing=self.__use_clone_repurposing
+            use_clone_repurposing=self.__use_clone_repurposing,
+            use_hyperparameter_evolution=self.__use_hyperparameter_evolution
         )
         hofs = [h.create_population_observer() for h in self.__hof_factories]
         ga_result = single_view_runner.run(

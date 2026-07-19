@@ -15,10 +15,12 @@ class SelectGARunner(GARunner):
     def __init__(self, pop_size, mating_prob, mutation_frequency, hp_manager: SelectHpManager,
                  objectives: Iterable[PersonalObjective],
                  sorting_strategy: SortingStrategy,
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 use_hyperparameter_evolution: bool = False):
         super().__init__(
             pop_size=pop_size, mating_prob=mating_prob, mutation_frequency=mutation_frequency,
-            objectives=objectives, sorting_strategy=sorting_strategy, use_clone_repurposing=use_clone_repurposing)
+            objectives=objectives, sorting_strategy=sorting_strategy, use_clone_repurposing=use_clone_repurposing,
+            use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__hp_manager = hp_manager
 
     def _create_ga_strategy(self, input_data: InputData, folds_list,
@@ -33,4 +35,6 @@ class SelectGARunner(GARunner):
             objectives=self._objectives(),
             sorting_strategy=self.sorting_strategy(),
             n_workers=n_workers, workers_printer=workers_printer,
-            use_clone_repurposing=self.use_clone_repurposing())
+            use_clone_repurposing=self.use_clone_repurposing(),
+            use_hyperparameter_evolution=self.use_hyperparameter_evolution()
+        )

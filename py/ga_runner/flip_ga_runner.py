@@ -23,10 +23,12 @@ class FlipGARunner(GARunner):
                  sorting_strategy: SortingStrategy,
                  active_features: list[bool] = None,
                  mutation: BitlistMutation = FlipMutation(),
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 use_hyperparameter_evolution: bool = False):
         super().__init__(pop_size=pop_size, mating_prob=mating_prob, mutation_frequency=mutation_frequency,
                          objectives=objectives, sorting_strategy=sorting_strategy,
-                         use_clone_repurposing=use_clone_repurposing)
+                         use_clone_repurposing=use_clone_repurposing,
+                         use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__initial_features = initial_features
         self.__active_features = active_features
         self.__mutation = mutation
@@ -45,5 +47,6 @@ class FlipGARunner(GARunner):
             feature_importance=feature_importance,
             workers_printer=workers_printer,
             mutation=self.__mutation,
-            use_clone_repurposing=self.use_clone_repurposing()
+            use_clone_repurposing=self.use_clone_repurposing(),
+            use_hyperparameter_evolution=self.use_hyperparameter_evolution()
         )

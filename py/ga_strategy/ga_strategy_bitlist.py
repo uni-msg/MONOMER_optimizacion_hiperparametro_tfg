@@ -63,7 +63,8 @@ class GAStrategyBitlist(GAStrategy):
                  n_workers=1,
                  active_features: Sequence[bool] = None, workers_printer: Printer = UnbufferedOutPrinter(),
                  mutation: BitlistMutation = FlipMutation(),
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 use_hyperparameter_evolution: bool = False):
         super().__init__(
             evaluator=MaskEvaluator(input_data=input_data, folds_list=folds_list,
                                     objectives=objectives,
@@ -73,7 +74,8 @@ class GAStrategyBitlist(GAStrategy):
             mating_prob=mating_prob,
             mutation_frequency=mutation_frequency,
             sorting_strategy=sorting_strategy,
-            use_clone_repurposing=use_clone_repurposing
+            use_clone_repurposing=use_clone_repurposing,
+            use_hyperparameter_evolution=use_hyperparameter_evolution
         )
         self.__initial_features = initial_features
         if active_features is None:

@@ -104,7 +104,8 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
             sorting_strategy=self.__sorting_strategy,
             feature_importance=feature_importance,
             printer=printer, workers_printer=workers_printer,
-            hof_factories=self.__hof_factories
+            hof_factories=self.__hof_factories,
+            use_hyperparameter_evolution=self.__use_hyperparameter_evolution
         )
         logbook_saver.save(ga_result.logbook)
         return hofers_to_results(ga_result.hofers)

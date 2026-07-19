@@ -20,7 +20,8 @@ class GAStrategySelector(GAStrategy):
             sorting_strategy: SortingStrategy,
             n_workers=1,
             workers_printer: Printer = UnbufferedOutPrinter(),
-            use_clone_repurposing: bool = False):
+            use_clone_repurposing: bool = False,
+            use_hyperparameter_evolution: bool = False):
         super().__init__(SelectEvaluator(input_data=input_data, hp_manager=hp_manager,
                                          objectives=objectives,
                                          folds_list=folds_list,
@@ -28,7 +29,8 @@ class GAStrategySelector(GAStrategy):
                          objectives=objectives,
                          mating_prob=mating_prob, mutation_frequency=mutation_frequency,
                          sorting_strategy=sorting_strategy,
-                         use_clone_repurposing=use_clone_repurposing)
+                         use_clone_repurposing=use_clone_repurposing,
+                         use_hyperparameter_evolution=use_hyperparameter_evolution)
         self.__hp_manager = hp_manager
 
     def create_individual(self) -> PeculiarIndividualDense:

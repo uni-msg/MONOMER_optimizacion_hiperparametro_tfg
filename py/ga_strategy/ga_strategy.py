@@ -15,16 +15,19 @@ class GAStrategy(ABC):
     __mating_prob: float
     __mutating_prob: float
     __use_clone_repurposing: bool
+    __use_hyperparameter_evolution: bool
 
     def __init__(self, evaluator: WorkersPoolEvaluator, objectives: Iterable[PersonalObjective],
                  mating_prob: float, mutation_frequency: float, sorting_strategy: SortingStrategy,
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 use_hyperparameter_evolution: bool = False):
         self.__evaluator = evaluator
         self.__mating_prob = mating_prob
         self.__mutating_prob = mutation_frequency
         self.__objectives = list(objectives)
         self.__sorting_strategy = sorting_strategy
         self.__use_clone_repurposing = use_clone_repurposing
+        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
 
     @abstractmethod
     def create_individual(self) -> PeculiarIndividual:
