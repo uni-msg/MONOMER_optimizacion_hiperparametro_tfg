@@ -18,6 +18,7 @@ from util.distribution.distribution import Distribution
 from util.distribution.uniform_distribution import UniformDistribution
 from util.printer.printer import Printer, UnbufferedOutPrinter
 from util.sparse_bool_list_by_set import SparseBoolListBySet
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 
 
 def cx_uniform(ind1: SparseIndividual, ind2: SparseIndividual, indpb):
@@ -64,7 +65,7 @@ class GAStrategyBitlist(GAStrategy):
                  active_features: Sequence[bool] = None, workers_printer: Printer = UnbufferedOutPrinter(),
                  mutation: BitlistMutation = FlipMutation(),
                  use_clone_repurposing: bool = False,
-                 use_hyperparameter_evolution: bool = False):
+                 hyperparameter_set_factory: HyperparameterSetFactory | None = None):
         super().__init__(
             evaluator=MaskEvaluator(input_data=input_data, folds_list=folds_list,
                                     objectives=objectives,
@@ -75,7 +76,7 @@ class GAStrategyBitlist(GAStrategy):
             mutation_frequency=mutation_frequency,
             sorting_strategy=sorting_strategy,
             use_clone_repurposing=use_clone_repurposing,
-            use_hyperparameter_evolution=use_hyperparameter_evolution
+            hyperparameter_set_factory=hyperparameter_set_factory
         )
         self.__initial_features = initial_features
         if active_features is None:
@@ -102,7 +103,20 @@ class GAStrategyBitlist(GAStrategy):
                 if self.__active_features[extracted] and not res_list[extracted]:
                     res_list[extracted] = True
                     proceed = False
-        return PeculiarIndividualSparse(seq=res_list, n_objectives=self.n_objectives())
+
+        individual = PeculiarIndividualSparse(
+            seq=res_list,
+            n_objectives=self.n_objectives()
+        )
+
+        # Conjunto de hiperparametros e inicializado
+        factory = self.hyperparameter_set_factory()
+        if factory is not None:
+            hyperparameter_set = factory.create()
+            hyperparameter_set.random_initialize()
+            individual.set_hyperparameter_set(hyperparameter_set)
+
+        return individual
 
     def mate(self, ind1, ind2):
         return cx_uniform(ind1=ind1, ind2=ind2, indpb=0.5)

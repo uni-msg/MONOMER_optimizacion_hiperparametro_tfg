@@ -2,6 +2,7 @@ import random
 from abc import ABC, abstractmethod
 from collections.abc import Iterable
 from typing import Callable
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from evaluator.workers_pool_evaluator import WorkersPoolEvaluator
 from ga_components.sorter.sorting_strategy import SortingStrategy
 from individual.peculiar_individual import PeculiarIndividual
@@ -15,19 +16,19 @@ class GAStrategy(ABC):
     __mating_prob: float
     __mutating_prob: float
     __use_clone_repurposing: bool
-    __use_hyperparameter_evolution: bool
+    __hyperparameter_set_factory: HyperparameterSetFactory | None
 
     def __init__(self, evaluator: WorkersPoolEvaluator, objectives: Iterable[PersonalObjective],
                  mating_prob: float, mutation_frequency: float, sorting_strategy: SortingStrategy,
                  use_clone_repurposing: bool = False,
-                 use_hyperparameter_evolution: bool = False):
+                 hyperparameter_set_factory: HyperparameterSetFactory | None = None):
         self.__evaluator = evaluator
         self.__mating_prob = mating_prob
         self.__mutating_prob = mutation_frequency
         self.__objectives = list(objectives)
         self.__sorting_strategy = sorting_strategy
         self.__use_clone_repurposing = use_clone_repurposing
-        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
+        self.__hyperparameter_set_factory = hyperparameter_set_factory
 
     @abstractmethod
     def create_individual(self) -> PeculiarIndividual:
@@ -93,6 +94,9 @@ class GAStrategy(ABC):
 
     def select(self, pop: [PeculiarIndividual], pop_size: int) -> [PeculiarIndividual]:
         return self.__sorting_strategy.select(pop=pop, pop_size=pop_size)
+
+    def hyperparameter_set_factory(self) -> HyperparameterSetFactory | None:
+        return self.__hyperparameter_set_factory
 
 
 def one_with_prob(prob):
