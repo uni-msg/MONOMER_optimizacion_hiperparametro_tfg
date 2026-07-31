@@ -20,9 +20,9 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                 IntegerHyperparameter(
                     nick="n_estimators",
                     name="Number of trees",
-                    lower_bound=10,
-                    upper_bound=300,
-                    mutation_range=20
+                    lower_bound=15,
+                    upper_bound=100,
+                    mutation_range=10
                 ),
 
                 # Número mínimo de muestras necesarias para dividir un nodo.
