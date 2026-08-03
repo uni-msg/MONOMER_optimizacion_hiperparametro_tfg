@@ -109,13 +109,8 @@ class GAStrategyBitlist(GAStrategy):
             n_objectives=self.n_objectives()
         )
 
-        # Conjunto de hiperparametros e inicializado
-        factory = self.hyperparameter_set_factory()
-        if factory is not None:
-            hyperparameter_set = factory.create()
-            hyperparameter_set.random_initialize()
-            individual.set_hyperparameter_set(hyperparameter_set)
-
+        #Conjunto de HPE
+        individual.set_hyperparameter_set(self.create_hyperparameters())
         return individual
 
     def mate(self, ind1, ind2):

@@ -2,6 +2,7 @@ import random
 from abc import ABC, abstractmethod
 from collections.abc import Iterable
 from typing import Callable
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from evaluator.workers_pool_evaluator import WorkersPoolEvaluator
 from ga_components.sorter.sorting_strategy import SortingStrategy
@@ -97,6 +98,23 @@ class GAStrategy(ABC):
 
     def hyperparameter_set_factory(self) -> HyperparameterSetFactory | None:
         return self.__hyperparameter_set_factory
+
+    def create_hyperparameters(self) -> HyperparameterSet | None:
+        """
+        Segun la fabrica de conjunto de hiperparametros
+        Crea e inicializa de manera al azar el conjunto de hiperparametros a evolucionar
+        """
+        #Recoge la fabrica
+        factory = self.hyperparameter_set_factory()
+
+        #Si no hay fabrica, no hay evolucion de HP
+        if factory is not None:
+            return None
+
+        #Crea e inicializa el conjunto y lo añade al individuo
+        hyperparameter_set = factory.create()
+        hyperparameter_set.random_initialize()
+        return hyperparameter_set
 
 
 def one_with_prob(prob):

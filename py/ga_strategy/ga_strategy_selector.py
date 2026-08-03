@@ -38,12 +38,8 @@ class GAStrategySelector(GAStrategy):
         #Crea individuo
         res = PeculiarIndividualDense(n_objectives=self.n_objectives())
 
-        #Crea e inicializa el conjunto de hiperparametros
-        factory = self.hyperparameter_set_factory()
-        if factory is not None:
-            hyperparameter_set = factory.create()
-            hyperparameter_set.random_initialize()
-            res.set_hyperparameter_set(hyperparameter_set)
+        #Conjunto de HPE
+        res.set_hyperparameter_set(self.create_hyperparameters())
 
         for i in range(0, self.individual_size()):
             res.append(random.randint(0, self.__hp_manager.max_view_individual_index(i)))
