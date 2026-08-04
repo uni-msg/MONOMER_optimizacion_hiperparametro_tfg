@@ -108,7 +108,7 @@ class GAStrategy(ABC):
         factory = self.hyperparameter_set_factory()
 
         #Si no hay fabrica, no hay evolucion de HP
-        if factory is not None:
+        if factory is None:
             return None
 
         #Crea e inicializa el conjunto y lo añade al individuo

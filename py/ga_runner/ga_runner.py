@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from collections.abc import Iterable, Sequence
 from typing import NamedTuple, List
 
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
+from setup.ga_mo_optimizer_setup import DEFAULT_HYPERPARAMETER_SET_FACTORY
 import numpy
 from deap import base
 from deap import tools
@@ -40,20 +42,20 @@ class GARunner(ABC):
     __objectives: Iterable[PersonalObjective]
     __sorting_strategy: SortingStrategy
     __use_clone_repurposing: bool
-    __use_hyperparameter_evolution: bool # Recogemos la condicion para la evolucion de hiperparametros
+    __hyperparameter_set_factory: None | HyperparameterSetFactory  
 
     def __init__(self, pop_size, mating_prob, mutation_frequency,
                  objectives: Iterable[PersonalObjective],
                  sorting_strategy: SortingStrategy,
                  use_clone_repurposing: bool = False,
-                 use_hyperparameter_evolution: bool = False):
+                 hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY):
         self.__pop_size = pop_size
         self.__mating_prob = mating_prob
         self.__mutation_frequency = mutation_frequency
         self.__objectives = objectives
         self.__sorting_strategy = sorting_strategy
         self.__use_clone_repurposing = use_clone_repurposing
-        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
+        self.__hyperparameter_set_factory = hyperparameter_set_factory
 
     def run(self, input_data: InputData, folds_list, n_gen: int,
             feature_importance: Sequence[Distribution] = None,
@@ -90,8 +92,8 @@ class GARunner(ABC):
     def use_clone_repurposing(self) -> bool:
         return self.__use_clone_repurposing
 
-    def use_hyperparameter_evolution(self) -> bool:
-        return self.__use_hyperparameter_evolution
+    def hyperparameter_set_factory(self) -> None | HyperparameterSetFactory:
+        return self.__hyperparameter_set_factory
 
     @abstractmethod
     def _create_ga_strategy(self, input_data: InputData, folds_list, n_workers,

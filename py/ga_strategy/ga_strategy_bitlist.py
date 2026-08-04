@@ -92,7 +92,6 @@ class GAStrategyBitlist(GAStrategy):
         self.__non_zero_fi_num = sum([x > 0.0 for x in self.__collapsed_feature_importance])
 
     def create_individual(self) -> PeculiarIndividualSparse:
-        print("Creacion de indiduos con HPE en GAStrategyBitlist:", self._GAStrategy__use_hyperparameter_evolution)
         ind_size = self.individual_size()
         res_list = SparseBoolListBySet(min_size=ind_size)
         n_true_bits = self.__initial_features.extract(ind_size)

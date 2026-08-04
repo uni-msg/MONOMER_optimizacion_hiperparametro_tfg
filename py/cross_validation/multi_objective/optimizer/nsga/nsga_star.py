@@ -1,5 +1,7 @@
 from collections import Iterable, Sequence
 
+from setup.ga_mo_optimizer_setup import DEFAULT_HYPERPARAMETER_SET_FACTORY
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from cross_validation.multi_objective.optimizer.ga_str_utils import nick_paste, pop_nick, gen_nick, \
     sorting_strategy_nick_part, mating_prob_nick, mutation_nick_part, name_paste, pop_name, gen_name, \
     sorting_strategy_name_part, mating_prob_name, mutation_name_part, hp_nick, hp_name
@@ -39,7 +41,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
     __initial_features: NumFeatures
     __use_clone_repurposing: bool
     __optimizer_type: MOOptimizerType
-    __use_hyperparameter_evolution: bool
+    __hyperparameter_set_factory: None | HyperparameterSetFactory
 
     def __init__(self, pop_size, mutation_frequency, mating_prob, n_gen,
                  initial_features: NumFeatures,
@@ -49,7 +51,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
                  mutation: BitlistMutation = FlipMutation(),
                  use_clone_repurposing: bool = False,
-                 use_hyperparameter_evolution: bool = False):
+                 hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY):
         self.__pop_size = pop_size
         self.__mutation_frequency = mutation_frequency
         self.__mating_prob = mating_prob
@@ -68,9 +70,9 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         self.__mutation = mutation
         self.__use_clone_repurposing = use_clone_repurposing
 
-        self.__use_hyperparameter_evolution = use_hyperparameter_evolution
+        self.__hyperparameter_set_factory = hyperparameter_set_factory
 
-        self.__nick = hp_nick(self.__use_hyperparameter_evolution) + nick_paste(parts=[self.__optimizer_type.nick(),
+        self.__nick = hp_nick(self.__hyperparameter_set_factory is not None) + nick_paste(parts=[self.__optimizer_type.nick(),
                                         self.__folds_creator.nick(),
                                         pop_nick(pop_size=pop_size),
                                         initial_features.nick(),
@@ -80,7 +82,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                                         mating_prob_nick(mating_prob=mating_prob),
                                         mutation_nick_part(mutation=mutation, mutation_frequency=mutation_frequency)
                                         ])
-        self.__name = hp_name(self.__use_hyperparameter_evolution) + self.__optimizer_type.name() + " (" + name_paste(parts=[
+        self.__name = hp_name(self.__hyperparameter_set_factory is not None) + self.__optimizer_type.name() + " (" + name_paste(parts=[
             self.__folds_creator.name(),
             pop_name(pop_size=pop_size),
             initial_features.name(),
@@ -121,7 +123,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             active_features=active_features,
             mutation=self.__mutation,
             use_clone_repurposing=self.__use_clone_repurposing,
-            use_hyperparameter_evolution=self.__use_hyperparameter_evolution
+            hyperparameter_set_factory=self.__hyperparameter_set_factory
         )
         hofs = [h.create_population_observer() for h in self.__hof_factories]
         ga_result = single_view_runner.run(
@@ -164,8 +166,8 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             (" and clone repurposing" if self.__use_clone_repurposing else "") + "\n"
         
         #Se añadira a la respuesta el uso de evolucion de hiperparametro si esta activado
-        if self.__use_hyperparameter_evolution:
-            res += name_value("Evolution hyperparameter", self.__use_hyperparameter_evolution) + "\n"
+        if self.__hyperparameter_set_factory is not None:
+            res += name_value("Hyperparameter evolution ", self.__hyperparameter_set_factory.nick()) + "\n"
 
         res += name_value("Objectives", self.__objectives) + "\n"
         res += name_value("Hall of fame factories", self.__hof_factories) + "\n"

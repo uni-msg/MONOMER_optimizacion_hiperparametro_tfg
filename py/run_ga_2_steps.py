@@ -76,8 +76,7 @@ def run_ga_2_steps(
         return_history=False,
         workers_printer: Printer = UnbufferedOutPrinter(),
         bitlist_mutation: BitlistMutation = FlipMutation(),
-        use_clone_repurposing: bool = False,
-        use_hyperparameter_evolution: bool = False) -> RunGA2StepsResult:
+        use_clone_repurposing: bool = False) -> RunGA2StepsResult:
 
     printer.title_print("Starting 2-steps genetic algorithm")
 
@@ -104,8 +103,7 @@ def run_ga_2_steps(
             sorting_strategy=sorting_strategy,
             active_features=active_features_by_view[i],
             mutation=bitlist_mutation,
-            use_clone_repurposing=use_clone_repurposing,
-            use_hyperparameter_evolution=use_hyperparameter_evolution
+            use_clone_repurposing=use_clone_repurposing
         )
         single_view_runners.append(single_view_runner)
 
@@ -132,8 +130,7 @@ def run_ga_2_steps(
         master_runner = SelectGARunner(
             pop_size=pop_size, mating_prob=mating_prob, mutation_frequency=mutating_prob,
             hp_manager=select_hp_manager, objectives=objectives,
-            sorting_strategy=sorting_strategy, use_clone_repurposing=use_clone_repurposing,
-            use_hyperparameter_evolution=use_hyperparameter_evolution)
+            sorting_strategy=sorting_strategy, use_clone_repurposing=use_clone_repurposing)
 
         master_result = master_runner.run(
             input_data=input_data, folds_list=folds_list, n_gen=n_gen, seed=random_seed(), n_workers=n_workers,

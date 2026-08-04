@@ -79,6 +79,11 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
 
     n_objectives = len(objectives)
 
+    # HPE - Parseamos del objetivo el tipo de algoritmo de clasificacion para recoger la fabrica de conjuntos de hiperparametros o None
+    hyperparameter_set_factory = None
+    if use_hyperparameter_evolution:
+        hyperparameter_set_factory = None
+        
     if sorting_strategy_str == SOCIAL_SPACE_NAME:
         sorting_strategy = SortingStrategySocial(selection=selection)
     elif sorting_strategy_str == CROWDING_DISTANCE_NAME:
@@ -148,8 +153,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
             hof_factories=DEFAULT_HOFS,
             use_clone_repurposing=setup.use_clone_repurposing(),
             mutation_frequency=mutation_frequency,
-            mutation=bitlist_mutation,
-            use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros en ABC en el futuro
+            mutation=bitlist_mutation
         )
     
     elif mvmo_algorithm == LASSO_MO_NAME:
@@ -171,7 +175,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
             hof_factories=DEFAULT_HOFS)
     else:
         if use_big_setup:
-            if run_nsga:
+            if run_nsga: # HPE sobre la NSGA
                 mo_optimizer = big_nsga_setup(
                     objectives=objectives,
                     pop_size=pop,
@@ -182,7 +186,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
                     use_clone_repurposing=setup.use_clone_repurposing(),
-                    use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                    hyperparameter_set_factory=hyperparameter_set_factory #Inclusion de evolucion de hiperparametros GA
                     )
             elif run_sweeping_ga:
                 mo_optimizer = big_sweeping_ga_mo_optimizer_setup(
@@ -194,13 +198,12 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     printer=printer,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing(),
-                    use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                    use_clone_repurposing=setup.use_clone_repurposing()
                     )
             else:
                 raise ValueError("Unknown MVMO algorithm.")
         else:
-            if run_nsga:
+            if run_nsga: # HPE sobre la NSGA
                 mo_optimizer = small_nsga_setup(
                     objectives=objectives,
                     pop_size=pop,
@@ -211,7 +214,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
                     use_clone_repurposing=setup.use_clone_repurposing(),
-                    use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                    hyperparameter_set_factory=hyperparameter_set_factory #Inclusion de evolucion de hiperparametros GA
                     )
             elif run_sweeping_ga:
                 mo_optimizer = small_sweeping_ga_mo_optimizer_setup(
@@ -224,8 +227,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
                     use_clone_repurposing=setup.use_clone_repurposing(),
-                    printer=printer,
-                    use_hyperparameter_evolution=use_hyperparameter_evolution #Inclusion de evolucion de hiperparametros GA
+                    printer=printer
                     )
             else:
                 raise ValueError("Unknown MVMO algorithm.")
