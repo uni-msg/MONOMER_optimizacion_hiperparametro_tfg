@@ -1,7 +1,6 @@
 from collections import Iterable
-from typing import Sequence
+from typing import Optional, Sequence
 
-from setup.ga_mo_optimizer_setup import DEFAULT_HYPERPARAMETER_SET_FACTORY
 from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from ga_components.bitlist_mutation import BitlistMutation, FlipMutation
 from ga_components.sorter.sorting_strategy import SortingStrategy
@@ -26,7 +25,7 @@ class FlipGARunner(GARunner):
                  active_features: list[bool] = None,
                  mutation: BitlistMutation = FlipMutation(),
                  use_clone_repurposing: bool = False,
-                 hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY):
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         super().__init__(pop_size=pop_size, mating_prob=mating_prob, mutation_frequency=mutation_frequency,
                          objectives=objectives, sorting_strategy=sorting_strategy,
                          use_clone_repurposing=use_clone_repurposing,

@@ -1,4 +1,4 @@
-Date = 2026-07-19
+Date = 2026-08-06
 Machine = ubuntu22-UNI
 CPUs detected in the system = 8
 Recursion limit = 100000
@@ -33,11 +33,10 @@ Plotting view mrna
 
 LOADED 1081 SAMPLES.
 Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Factory HPE = <hyperparameter_evolution.nb_hyperparameter_set_factory.NBHyperparameterSetFactory object at 0x79b63a183dc0>
 Removing outcomes not necessary for objectives from input data.
 Creating 2 stratified folds.
 Number of outer folds = 2
 Copying config file to run directory
 Copy source = setups/brca/hp/test_small_nb.ini
-Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/2_folds/HP_NSGA2_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/
-Program finished
-Total execution time = 00-00:07:08
+Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/2_folds/HPE_NSGA2_k2_pop16_bin(uni0-30)_gen20_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/

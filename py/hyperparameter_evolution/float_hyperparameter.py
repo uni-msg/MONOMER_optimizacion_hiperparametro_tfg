@@ -1,4 +1,5 @@
 from random import uniform
+from typing import Optional
 
 from hyperparameter_evolution.hyperparameter import Hyperparameter
 
@@ -14,8 +15,8 @@ class FloatHyperparameter(Hyperparameter):
         name: str,
         lower_bound: float,
         upper_bound: float,
-        mutation_range: float | None = None,
-        value: float | None = None,
+        mutation_range: Optional[float] = None,
+        value: Optional[float] = None,
         mutable: bool = True
     ):
         super().__init__(nick=nick, name=name, value=value, mutable=mutable)

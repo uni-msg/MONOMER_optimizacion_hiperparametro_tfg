@@ -1,4 +1,5 @@
 import random
+from typing import Optional
 
 from deap import tools
 
@@ -22,7 +23,7 @@ class GAStrategySelector(GAStrategy):
             n_workers=1,
             workers_printer: Printer = UnbufferedOutPrinter(),
             use_clone_repurposing: bool = False,
-            hyperparameter_set_factory: HyperparameterSetFactory | None = None):
+            hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         super().__init__(SelectEvaluator(input_data=input_data, hp_manager=hp_manager,
                                          objectives=objectives,
                                          folds_list=folds_list,

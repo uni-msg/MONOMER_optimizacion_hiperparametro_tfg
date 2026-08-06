@@ -1,4 +1,5 @@
 from random import choice
+from typing import Optional
 
 from hyperparameter_evolution.hyperparameter import Hyperparameter
 
@@ -9,7 +10,7 @@ class BooleanHyperparameter(Hyperparameter):
         self,
         nick: str,
         name: str,
-        value: bool | None = None,
+        value: Optional[bool] = None,
         mutable: bool = True
     ):
         super().__init__(nick=nick, name=name, value=value, mutable=mutable)

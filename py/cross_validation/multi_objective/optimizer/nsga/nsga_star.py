@@ -1,6 +1,6 @@
 from collections import Iterable, Sequence
 
-from setup.ga_mo_optimizer_setup import DEFAULT_HYPERPARAMETER_SET_FACTORY
+from typing import Optional
 from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from cross_validation.multi_objective.optimizer.ga_str_utils import nick_paste, pop_nick, gen_nick, \
     sorting_strategy_nick_part, mating_prob_nick, mutation_nick_part, name_paste, pop_name, gen_name, \
@@ -41,7 +41,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
     __initial_features: NumFeatures
     __use_clone_repurposing: bool
     __optimizer_type: MOOptimizerType
-    __hyperparameter_set_factory: None | HyperparameterSetFactory
+    __hyperparameter_set_factory: Optional[HyperparameterSetFactory]
 
     def __init__(self, pop_size, mutation_frequency, mating_prob, n_gen,
                  initial_features: NumFeatures,
@@ -51,7 +51,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
                  mutation: BitlistMutation = FlipMutation(),
                  use_clone_repurposing: bool = False,
-                 hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY):
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         self.__pop_size = pop_size
         self.__mutation_frequency = mutation_frequency
         self.__mating_prob = mating_prob

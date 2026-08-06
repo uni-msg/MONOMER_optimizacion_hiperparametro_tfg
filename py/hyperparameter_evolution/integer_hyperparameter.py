@@ -1,4 +1,5 @@
 from random import randint
+from typing import Optional
 
 from hyperparameter_evolution.hyperparameter import Hyperparameter
 
@@ -14,8 +15,8 @@ class IntegerHyperparameter(Hyperparameter):
         name: str,
         lower_bound: int,
         upper_bound: int,
-        mutation_range: int | None = None,
-        value: int | None = None,
+        mutation_range: Optional[int] = None,
+        value: Optional[int] = None,
         mutable: bool = True
     ):
         super().__init__(nick=nick, name=name, value=value, mutable=mutable)

@@ -1,5 +1,6 @@
 from collections.abc import Sequence
 from random import choice
+from typing import Optional
 
 from hyperparameter_evolution.hyperparameter import Hyperparameter
 
@@ -12,7 +13,7 @@ class CategoricalHyperparameter(Hyperparameter):
         nick: str,
         name: str,
         option_values: Sequence[str],
-        value: str | None = None,
+        value: Optional[str] = None,
         mutable: bool = True
     ):
         super().__init__(nick=nick, name=name, value=value, mutable=mutable)

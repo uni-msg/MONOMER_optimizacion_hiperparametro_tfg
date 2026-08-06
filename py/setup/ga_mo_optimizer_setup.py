@@ -1,4 +1,5 @@
 from collections import Sequence
+from typing import Optional
 
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer_accepting_feature_importance import \
     MultiObjectiveOptimizerAcceptingFeatureImportance
@@ -50,7 +51,7 @@ DEFAULT_INITIAL_FEATURES = BinomialFromUniformNumFeatures(
     max_num_features=DEFAULT_INITIAL_FEATURES_MAX)
 
 DEFAULT_USE_HYPERPARAMETER_EVOLUTION = False # Por defecto se emplea MONOMER en GA sin evolucion de hiperparametros
-DEFAULT_HYPERPARAMETER_SET_FACTORY: HyperparameterSetFactory | None = None # Por defecto no contiene un factory para el conjunto de HPE
+DEFAULT_HYPERPARAMETER_SET_FACTORY: Optional[HyperparameterSetFactory] = None # Por defecto no contiene un factory para el conjunto de HPE
 
 def sweeping_ga_mo_optimizer_setup(
         objectives: [PersonalObjective],
@@ -168,7 +169,7 @@ def nsga_setup(
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
         use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
-        hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY
+        hyperparameter_set_factory: Optional[HyperparameterSetFactory] = DEFAULT_HYPERPARAMETER_SET_FACTORY
         ) -> MultiObjectiveOptimizerAcceptingFeatureImportance:
 
     inner_folds_creator = InputDataKFoldsCreator(n_folds=inner_n_folds)
@@ -199,7 +200,7 @@ def small_nsga_setup(
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
         use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
-        hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY
+        hyperparameter_set_factory: Optional[HyperparameterSetFactory] = DEFAULT_HYPERPARAMETER_SET_FACTORY
         ) -> MultiObjectiveOptimizerAcceptingFeatureImportance:
     return nsga_setup(objectives=objectives, pop_size=pop_size,
                       initial_features=initial_features,
@@ -226,7 +227,7 @@ def big_nsga_setup(
         inner_n_folds: int = DEFAULT_INNER_N_FOLDS,
         mutation: BitlistMutation = DEFAULT_MUTATION_OPERATOR,
         use_clone_repurposing: bool = DEFAULT_USE_CLONE_REPURPOSING,
-        hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY
+        hyperparameter_set_factory: Optional[HyperparameterSetFactory] = DEFAULT_HYPERPARAMETER_SET_FACTORY
         ) -> MultiObjectiveOptimizerAcceptingFeatureImportance:
     return nsga_setup(objectives=objectives, pop_size=pop_size,
                       n_gen=n_gen,

@@ -1,9 +1,8 @@
 from abc import ABC, abstractmethod
 from collections.abc import Iterable, Sequence
-from typing import NamedTuple, List
+from typing import NamedTuple, List, Optional
 
 from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
-from setup.ga_mo_optimizer_setup import DEFAULT_HYPERPARAMETER_SET_FACTORY
 import numpy
 from deap import base
 from deap import tools
@@ -42,13 +41,13 @@ class GARunner(ABC):
     __objectives: Iterable[PersonalObjective]
     __sorting_strategy: SortingStrategy
     __use_clone_repurposing: bool
-    __hyperparameter_set_factory: None | HyperparameterSetFactory  
+    __hyperparameter_set_factory: Optional[HyperparameterSetFactory]  
 
     def __init__(self, pop_size, mating_prob, mutation_frequency,
                  objectives: Iterable[PersonalObjective],
                  sorting_strategy: SortingStrategy,
                  use_clone_repurposing: bool = False,
-                 hyperparameter_set_factory: None | HyperparameterSetFactory = DEFAULT_HYPERPARAMETER_SET_FACTORY):
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         self.__pop_size = pop_size
         self.__mating_prob = mating_prob
         self.__mutation_frequency = mutation_frequency
@@ -92,7 +91,7 @@ class GARunner(ABC):
     def use_clone_repurposing(self) -> bool:
         return self.__use_clone_repurposing
 
-    def hyperparameter_set_factory(self) -> None | HyperparameterSetFactory:
+    def hyperparameter_set_factory(self) -> Optional[HyperparameterSetFactory]:
         return self.__hyperparameter_set_factory
 
     @abstractmethod

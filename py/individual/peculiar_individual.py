@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import Sequence
+from typing import Optional, Sequence
 import numpy as np  # Necesario para active_features_mask y sum
 
 from individual.fitness.peculiar_fitness import PeculiarFitness
@@ -9,9 +9,9 @@ from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 
 class PeculiarIndividual(PredictiveIndividual):
     fitness: PeculiarFitness
-    __hyperparameter_set: HyperparameterSet | None
+    __hyperparameter_set: Optional[HyperparameterSet]
 
-    def __init__(self, n_objectives: int, hyperparameter_set: HyperparameterSet | None = None):
+    def __init__(self, n_objectives: int, hyperparameter_set: Optional[HyperparameterSet] = None):
         PredictiveIndividual.__init__(self, fitness=PeculiarFitness(n_objectives=n_objectives))
         # Inicializamos explícitamente la lista de predictores
         self.__predictors = []
@@ -61,10 +61,10 @@ class PeculiarIndividual(PredictiveIndividual):
         return [i for i, x in enumerate(self) if x]
 
     # --- IMPLEMENTACIÓN DE HIPERPARAMETROS ---
-    def hyperparameter_set(self) -> HyperparameterSet | None:
+    def hyperparameter_set(self) -> Optional[HyperparameterSet]:
         return self.__hyperparameter_set
 
-    def set_hyperparameter_set(self, hyperparameter_set: HyperparameterSet | None):
+    def set_hyperparameter_set(self, hyperparameter_set: Optional[HyperparameterSet]):
         self.__hyperparameter_set = hyperparameter_set
 
     # Condicion si hay evolucion de HP o no

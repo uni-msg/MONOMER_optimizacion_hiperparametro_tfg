@@ -1,7 +1,7 @@
 import random
 from abc import ABC, abstractmethod
 from collections.abc import Iterable
-from typing import Callable
+from typing import Callable, Optional
 from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from evaluator.workers_pool_evaluator import WorkersPoolEvaluator
@@ -17,12 +17,12 @@ class GAStrategy(ABC):
     __mating_prob: float
     __mutating_prob: float
     __use_clone_repurposing: bool
-    __hyperparameter_set_factory: HyperparameterSetFactory | None
+    __hyperparameter_set_factory: Optional[HyperparameterSetFactory]
 
     def __init__(self, evaluator: WorkersPoolEvaluator, objectives: Iterable[PersonalObjective],
                  mating_prob: float, mutation_frequency: float, sorting_strategy: SortingStrategy,
                  use_clone_repurposing: bool = False,
-                 hyperparameter_set_factory: HyperparameterSetFactory | None = None):
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         self.__evaluator = evaluator
         self.__mating_prob = mating_prob
         self.__mutating_prob = mutation_frequency
@@ -96,10 +96,10 @@ class GAStrategy(ABC):
     def select(self, pop: [PeculiarIndividual], pop_size: int) -> [PeculiarIndividual]:
         return self.__sorting_strategy.select(pop=pop, pop_size=pop_size)
 
-    def hyperparameter_set_factory(self) -> HyperparameterSetFactory | None:
+    def hyperparameter_set_factory(self) -> Optional[HyperparameterSetFactory]:
         return self.__hyperparameter_set_factory
 
-    def create_hyperparameters(self) -> HyperparameterSet | None:
+    def create_hyperparameters(self) -> Optional[HyperparameterSet]:
         """
         Segun la fabrica de conjunto de hiperparametros
         Crea e inicializa de manera al azar el conjunto de hiperparametros a evolucionar

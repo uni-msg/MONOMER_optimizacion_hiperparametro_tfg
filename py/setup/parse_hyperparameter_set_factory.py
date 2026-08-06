@@ -1,3 +1,5 @@
+from typing import Optional
+
 from hyperparameter_evolution.svm_hyperparameter_set_factory import SVMHyperparameterSetFactory
 from hyperparameter_evolution.forest_hyperparameter_set_factory import ForestHyperparameterSetFactory
 from hyperparameter_evolution.logistic_hyperparameter_set_factory import LogisticHyperparameterSetFactory
@@ -7,7 +9,7 @@ from model.model import  DEFAULT_LOGISTIC_MAX_ITER
 from model.svm import SVMWithFallback
 from setup.allowed_names import NAIVE_BAYES_NAME, LOGISTIC_NAME, FOREST_NAME
 
-def parse_hyperparameter_set_factory(model_str: str, logistic_max_iter: int = DEFAULT_LOGISTIC_MAX_ITER, use_hyperparameter_evolution: bool = False) -> HyperparameterSetFactory | None:
+def parse_hyperparameter_set_factory(model_str: str, logistic_max_iter: int = DEFAULT_LOGISTIC_MAX_ITER, use_hyperparameter_evolution: bool = False) -> Optional[HyperparameterSetFactory]:
     """
     Devuelve la fábrica de conjuntos de hiperparámetros correspondiente al
     modelo de clasificación configurado en el setup.

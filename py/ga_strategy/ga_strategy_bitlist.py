@@ -1,6 +1,6 @@
 import random
 from collections import Iterable
-from typing import Sequence
+from typing import Optional, Sequence
 
 from evaluator.mask_evaluator import MaskEvaluator
 from ga_components.bitlist_mutation import BitlistMutation, FlipMutation
@@ -65,7 +65,7 @@ class GAStrategyBitlist(GAStrategy):
                  active_features: Sequence[bool] = None, workers_printer: Printer = UnbufferedOutPrinter(),
                  mutation: BitlistMutation = FlipMutation(),
                  use_clone_repurposing: bool = False,
-                 hyperparameter_set_factory: HyperparameterSetFactory | None = None):
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         super().__init__(
             evaluator=MaskEvaluator(input_data=input_data, folds_list=folds_list,
                                     objectives=objectives,
