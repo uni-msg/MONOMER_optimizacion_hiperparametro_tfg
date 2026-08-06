@@ -19,8 +19,14 @@ class NBHyperparameterSetFactory(HyperparameterSetFactory):
                     name="Variance smoothing",
                     lower_bound=1e-12,
                     upper_bound=1e-6,
-                    mutation_factor=0.2
+                    mutation_range=0.2
                 )
 
             ]
         )
+
+    def nick(self) -> str:
+        return "NBHyperparameterSetFactory"
+
+    def name(self) -> str:
+        return "Fabrica de conjunto Naive Bayes Hyperparameters"

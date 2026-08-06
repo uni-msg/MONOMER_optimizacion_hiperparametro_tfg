@@ -83,3 +83,9 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                 )
             ]
         )
+
+    def nick(self) -> str:
+        return "ForestHyperparameterSetFactory"
+
+    def name(self) -> str:
+        return "Fabrica de conjunto Random Forest Hyperparameters"

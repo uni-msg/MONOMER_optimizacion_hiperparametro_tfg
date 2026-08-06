@@ -95,3 +95,9 @@ class SVMHyperparameterSetFactory(HyperparameterSetFactory):
                 # un conjunto distinto de hiperparámetros (gamma, degree, coef0, etc.).
             ]
         )
+
+    def nick(self) -> str:
+        return "SVMHyperparameterSetFactory"
+
+    def name(self) -> str:
+        return "Fabrica de conjunto Support Vector Machine Hyperparameters"

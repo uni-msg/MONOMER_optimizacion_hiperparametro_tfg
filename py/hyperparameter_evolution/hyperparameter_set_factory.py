@@ -16,3 +16,20 @@ class HyperparameterSetFactory(ABC):
         correspondiente al algoritmo de clasificacion específico.
         """
         raise NotImplementedError()
+
+    @abstractmethod
+    def nick(self) -> str:
+        """
+        Nick correspondente a la factoría
+        """
+        raise NotImplementedError()
+
+    @abstractmethod
+    def name(self) -> str:
+        """
+        Name correspondente a la factoría
+        """
+        raise NotImplementedError()
+
+    def __str__(self):
+        return self.nick()

@@ -29,7 +29,7 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                     name="Inverse regularization strength",
                     lower_bound=1e-4,
                     upper_bound=100.0,
-                    mutation_factor=0.3
+                    mutation_range=0.3
                 ),
 
                 # Tolerancia empleada como criterio de parada del optimizador.
@@ -40,7 +40,7 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                     name="Stopping tolerance",
                     lower_bound=1e-6,
                     upper_bound=1e-2,
-                    mutation_factor=0.2
+                    mutation_range=0.2
                 ),
 
                 #################### FIJOS ####################
@@ -102,3 +102,9 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                 # (penalty, solver y l1_ratio).
             ]
         )
+
+    def nick(self) -> str:
+        return "LogisticHyperparameterSetFactory"
+
+    def name(self) -> str:
+        return "Fabrica de conjunto Logistic Regression Hyperparameters"
