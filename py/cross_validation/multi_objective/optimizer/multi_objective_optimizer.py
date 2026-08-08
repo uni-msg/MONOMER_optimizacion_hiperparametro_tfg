@@ -134,6 +134,12 @@ def mo_result_feature_strings(hps: list[IndividualWithContext], feature_names: l
     return res
 
 
+def mo_result_hyperparameter_string(mask: IndividualWithContext) -> str:
+    res = ""
+    res += " Hiperparameter set: [" + str(mask.hyperparameter_set()) +"]"
+    return res
+
+
 def individual_to_line(hp: IndividualWithContext, feature_names: list[str]) -> str:
     res = ""
     if isinstance(hp, FitIndividual):
@@ -141,9 +147,8 @@ def individual_to_line(hp: IndividualWithContext, feature_names: list[str]) -> s
             res += str(hp.fitness) + " "
     res += mo_result_feature_string(mask=hp, feature_names=feature_names)
 
-
-    if isinstance(hp, PeculiarIndividualWithContext):
-        res += "HP=" + str(hp.hyperparameter_set())
+    if hp.has_hyperparameter_set():
+        res += mo_result_hyperparameter_string(mask=hp)
         
     return res
 

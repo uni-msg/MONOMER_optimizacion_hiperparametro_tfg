@@ -110,9 +110,6 @@ class GAStrategyBitlist(GAStrategy):
 
         #Conjunto de HPE
         individual.set_hyperparameter_set(self.create_hyperparameters())
-
-        print("DEBUG HP SET:", individual.hyperparameter_set())
-        
         return individual
 
     def mate(self, ind1, ind2):
