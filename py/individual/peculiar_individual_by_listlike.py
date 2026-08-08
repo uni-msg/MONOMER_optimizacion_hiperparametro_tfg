@@ -11,10 +11,11 @@ class PeculiarIndividualByListlike(PeculiarIndividual, FitIndividualByListlike, 
     __predictors: [Classifier]
     __stats: dict
 
-    def __init__(self, n_objectives: int, seq=()):
+    def __init__(self, n_objectives: int, seq=(), hyperparameter_set=None):
         FitIndividualByListlike.__init__(self, fitness=PeculiarFitness(n_objectives=n_objectives), seq=seq)
         self.__stats = {}  # dictionary of key -> stat_value
         self.__predictors = [None]*n_objectives
+        self.set_hyperparameter_set(hyperparameter_set)
 
     def set_stats(self, stats):
         """Previous prediction_stats are removed."""

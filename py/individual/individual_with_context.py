@@ -1,5 +1,6 @@
-from typing import Iterable
+from typing import Iterable, Optional
 
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from hyperparam_manager.hyperparam_manager import HyperparamManager
 from individual.predictive_individual import PredictiveIndividual
 from model.model import Classifier
@@ -59,6 +60,12 @@ class IndividualWithContext(PredictiveIndividual, SparseBoolList):
 
     def has_fitness(self):
         return self.__individual.has_fitness()
+
+    def hyperparameter_set(self) -> Optional[HyperparameterSet]:
+        return self.__individual.hyperparameter_set()
+
+    def has_hyperparameter_set(self):
+        return self.__individual.has_hyperparameter_set()
 
     def __len__(self):
         return self.__len

@@ -10,7 +10,7 @@ class PeculiarIndividualSparse(PeculiarIndividualByListlike, SparseIndividual):
         return self.__deepcopy__()
 
     def __deepcopy__(self, memodict={}):
-        res = PeculiarIndividualSparse(n_objectives=self.n_objectives(), seq=self)
+        res = PeculiarIndividualSparse(n_objectives=self.n_objectives(), seq=self, hyperparameter_set=self.hyperparameter_set())
         res.fitness = deepcopy(self.fitness)
         res.set_stats(self.get_stats())
         res.set_predictors(self.get_predictors())

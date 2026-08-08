@@ -242,10 +242,16 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
         invalid_ind = individual_updater.eval_invalid(pop=pop)  # Evaluate the individuals with an invalid fitness
         contextualized = contextualize_all(invalid_ind, hp_manager)
+
+        for ind in contextualized:
+            print("HP BEFORE HOF:", ind.hyperparameter_set())
+
         gen_feats_list = union(contextualized)
         explored.update([gen_feats_list])
         for h in hofs:
             h.update(contextualized)
+
+        print("HOFS ACTUALIZADO: ",h.hofers())
 
         pop = ga_strategy.sorting_strategy_before_selection(individuals=pop)
 
