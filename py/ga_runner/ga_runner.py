@@ -10,6 +10,7 @@ from deap.tools import History, Logbook
 
 from evaluator.individual_updater import IndividualUpdater
 from ga_components.sorter.sorting_strategy import SortingStrategy
+from ga_components.ga_evolution_history import GAEvolutionHistory
 from ga_runner.explored_features import ExploredFeatures
 from ga_runner.progress_observer import ProgressObserver
 from hall_of_fame.hall_of_fame import HallOfFame
@@ -181,6 +182,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         pop = initial_pop
         initial_pop = None  # Help gc
 
+    evolution_history = GAEvolutionHistory() #Registro de Evolucion GA total
+
     evaluator = ga_strategy.evaluator()
     hp_manager = evaluator.hp_manager()
     # cross_evaluator.add_stat_creator(StatsFromConfusion())
@@ -222,6 +225,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     for o in progress_observers:
         o.notify_initial_pop(pop)
 
+    evolution_history.add_generation(generation=0, population=pop) #Mostrar poblacion inicial
+
     # Begin the generational process
     for gen in range(1, n_gen):
 
@@ -260,6 +265,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         for o in progress_observers:
             o.notify_pop_after_select(pop)
 
+        evolution_history.add_generation(generation=gen, population=pop) #Mostra siguiente generacion
+
         # Compile statistics about the new population
         record = stats.compile(pop)
         logbook.record(gen=gen, evals=len(invalid_ind), gen_feats=sum(gen_feats_list),
@@ -273,6 +280,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
             po.notify_generation_end(gen=gen)
 
     evaluator.cleanup()
+
+    evolution_history.save("ga_evolution_history.json") #Mostrar final de GA
 
     res_hofs = [h.hofers() for h in hofs]
 

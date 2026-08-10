@@ -1,0 +1,16 @@
+
+OPTIMIZING ON FOLD NUMBER 0
+Number of workers = 4
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 16962
+Features active in view: 16962
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Exception caught while optimizing on fold 0
+Original exception: __init__() got an unexpected keyword argument 'options'
+
