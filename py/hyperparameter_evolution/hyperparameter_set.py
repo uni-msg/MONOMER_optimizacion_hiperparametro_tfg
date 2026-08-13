@@ -1,4 +1,5 @@
 from copy import deepcopy
+import random
 
 from hyperparameter_evolution.hyperparameter import Hyperparameter
 
@@ -58,15 +59,14 @@ class HyperparameterSet:
         for hyperparameter in self.values():
             hyperparameter.random_initialize()
 
-    def mutate(self):
+    def mutate(self, mutation_probability: float):
         """
-        Muta todos los hiperparámetros.
-        La probabilidad de mutación de cada uno será
-        responsabilidad del algoritmo genético.
+        Muta cada hiperparámetro de forma independiente según
+        la probabilidad de mutación indicada.
         """
         for hyperparameter in self.values():
-            hyperparameter.mutate()
-
+            if hyperparameter.mutable() and random.random() < mutation_probability:
+                hyperparameter.mutate()
 
     def clone(self):
         return deepcopy(self)

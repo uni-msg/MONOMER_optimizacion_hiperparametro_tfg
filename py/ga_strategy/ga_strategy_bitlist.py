@@ -117,5 +117,17 @@ class GAStrategyBitlist(GAStrategy):
         # indpb: independent probability for each attribute to be exchanged
 
     def mutate(self, individual):
-        return self.__mutation.mutate(
-            individual=individual, frequency=self.mutation_frequency(), active_mask=self.__active_features)
+        # Mutación de features (biomarcador)
+        individual, = self.__mutation.mutate(
+            individual=individual,
+            frequency=self.mutation_frequency(),
+            active_mask=self.__active_features
+        )
+
+        # Mutación de hiperparámetros
+        if individual.has_hyperparameter_set():
+            individual.hyperparameter_set().mutate(
+                mutation_probability=self.mutation_frequency()
+            )
+
+        return individual,
