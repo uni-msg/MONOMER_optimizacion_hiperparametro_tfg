@@ -41,3 +41,25 @@ class BooleanHyperparameter(Hyperparameter):
             return
 
         self.set_value(not current)
+
+    def crossover(self, other):
+        """
+        Realiza un crossover uniforme con otro hiperparámetro booleano.
+        """
+        #Bloque seguridad
+        if not isinstance(other, BooleanHyperparameter):
+            raise TypeError("El crossover requiere otro BooleanHyperparameter")
+        if not self.mutable() or not other.mutable():
+            return self, other
+        if self.value() is None or other.value() is None:
+            return self, other
+
+        #Cruce uniforme
+        if choice([True, False]): #Probabilidad del 50% de que se intercambien los valores
+            self_value = self.value()
+            other_value = other.value()
+
+            self.set_value(other_value)
+            other.set_value(self_value)
+
+        return self, other

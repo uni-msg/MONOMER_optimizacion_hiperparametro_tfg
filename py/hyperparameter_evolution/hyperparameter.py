@@ -55,11 +55,12 @@ class Hyperparameter(ABC):
         """
         raise NotImplementedError()
 
-    def clone(self):
+    @abstractmethod
+    def crossover(self, other):
         """
-        Devuelve una copia del hiperparametro
+        Cruza un hiperparametro con otro del mismo tipo
         """
-        return deepcopy(self)
+        raise NotImplementedError()
 
     def __str__(self):
         return f"{self.nick()} = {self.value()}"

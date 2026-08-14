@@ -1,5 +1,6 @@
 from random import uniform
 from typing import Optional
+from deap import tools
 
 from hyperparameter_evolution.hyperparameter import Hyperparameter
 
@@ -74,3 +75,24 @@ class FloatHyperparameter(Hyperparameter):
         new_value = min(self.upper_bound(), new_value)
 
         self.set_value(new_value)
+
+    def crossover(self, other):
+        """
+        Realiza un Simulated Binary Crossover (SBX) con otro
+        hiperparámetro float del mismo tipo.
+        """
+        #Bloque seguridad
+        if not isinstance(other, FloatHyperparameter):
+            raise TypeError("El crossover requiere otro FloatHyperparameter")
+        if not self.mutable() or not other.mutable():
+            return self, other
+        if self.value() is None or other.value() is None:
+            return self, other
+
+        #Cruce SBX
+        child1, child2 = tools.cxSimulatedBinaryBounded([self.value()],[other.value()],eta=20.0,low=self.lower_bound(),up=self.upper_bound())
+
+        self.set_value(child1[0])
+        other.set_value(child2[0])
+
+        return self, other

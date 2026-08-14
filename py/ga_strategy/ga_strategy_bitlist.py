@@ -113,21 +113,22 @@ class GAStrategyBitlist(GAStrategy):
         return individual
 
     def mate(self, ind1, ind2):
-        return cx_uniform(ind1=ind1, ind2=ind2, indpb=0.5)
+        # Crossover de features (biomarcador)
+        ind1, ind2 = cx_uniform(ind1=ind1,ind2=ind2,indpb=0.5)
         # indpb: independent probability for each attribute to be exchanged
+
+        # Crossover de hiperparámetros
+        if ind1.has_hyperparameter_set() and ind2.has_hyperparameter_set():
+            ind1.hyperparameter_set().crossover(ind2.hyperparameter_set())
+
+        return ind1, ind2
 
     def mutate(self, individual):
         # Mutación de features (biomarcador)
-        individual, = self.__mutation.mutate(
-            individual=individual,
-            frequency=self.mutation_frequency(),
-            active_mask=self.__active_features
-        )
+        individual, = self.__mutation.mutate(individual=individual,frequency=self.mutation_frequency(),active_mask=self.__active_features)
 
         # Mutación de hiperparámetros
         if individual.has_hyperparameter_set():
-            individual.hyperparameter_set().mutate(
-                mutation_probability=self.mutation_frequency()
-            )
+            individual.hyperparameter_set().mutate(mutation_probability=self.mutation_frequency())
 
         return individual,

@@ -66,7 +66,52 @@ class HyperparameterSet:
         """
         for hyperparameter in self.values():
             if hyperparameter.mutable() and random.random() < mutation_probability:
+                old_value = hyperparameter.value()
+
                 hyperparameter.mutate()
+
+                print(
+                    f"\n[HPE MUTATION] {hyperparameter.nick()}"
+                    f"\n  Antes:  {old_value}"
+                    f"\n  Después: {hyperparameter.value()}"
+                )
+
+    def crossover(self, other):
+        """
+        Realiza el crossover entre dos conjuntos de hiperparámetros.
+
+        Cada hiperparámetro se cruza con su correspondiente hiperparámetro
+        del otro conjunto si tenen el mismo nick.
+        """
+        #Proteccion de errores
+        if not isinstance(other, HyperparameterSet):
+            raise TypeError( "El crossover requiere otro HyperparameterSet")
+        if self.nick() != other.nick():
+            raise ValueError("No se pueden cruzar HyperparameterSet de distinto tipo")
+        if set(self.__hyperparameters.keys()) != set(other.__hyperparameters.keys()):
+            raise ValueError("Los HyperparameterSet no contienen los mismos hiperparámetros")
+
+        #Bucle de crossover de mismos hp
+        for nick, hyperparameter in self.items():
+            other_hyperparameter = other.get(nick)
+            if type(hyperparameter) is not type(other_hyperparameter):
+                raise TypeError(f"Los hiperparámetros '{nick}' deben ser del mismo tipo")
+            print(
+                f"\n[HPE CROSSOVER] {nick}"
+                f"\n  Padre 1: {hyperparameter.value()}"
+                f"\n  Padre 2: {other_hyperparameter.value()}"
+            )
+
+            hyperparameter.crossover(other_hyperparameter)
+
+            print(
+                f"  Hijo 1:  {hyperparameter.value()}"
+                f"\n  Hijo 2:  {other_hyperparameter.value()}"
+            )
+
+
+
+        return self, other
 
     def clone(self):
         return deepcopy(self)
