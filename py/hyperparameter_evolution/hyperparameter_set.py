@@ -116,6 +116,14 @@ class HyperparameterSet:
     def clone(self):
         return deepcopy(self)
     
+    def hyperparameters_to_model(self):
+        """
+        Formatea los datos de nick y valor para emplearse en la definicion del modelo de manera general
+        """
+        return {
+            hyperparameter.nick(): hyperparameter.value()
+            for hyperparameter in self.values()
+        }
 
     def to_dict(self):
         return {

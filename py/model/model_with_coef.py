@@ -2,6 +2,7 @@ import warnings
 from abc import abstractmethod, ABC
 from collections import Sequence
 
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from numpy import ravel
 from sklearn.dummy import DummyClassifier
 from sklearn.linear_model import LogisticRegression
@@ -11,7 +12,7 @@ from sklearn.preprocessing import StandardScaler
 
 from feature_importance.feature_importance_by_lasso import collapse_coef
 from model.model import Predictor, Model, ClassModel, Classifier, SklearnPredictorWrapper, SKLearnModelFactory, \
-    DEFAULT_LOGISTIC_MAX_ITER
+    DEFAULT_LOGISTIC_MAX_ITER, TunableClassModel
 from util.utils import IllegalStateError
 
 
@@ -117,8 +118,9 @@ class SklearnModelWrapperWithFallback(ClassModelWithCoef, ABC):
     __sklearn_model_factory: SKLearnModelFactoryWithExtractor
     __ignore_fit_warn: bool
 
-    def __init__(self, model_factory: SKLearnModelFactoryWithExtractor, ignore_fit_warn: bool = True):
+    def __init__(self, model_factory: SKLearnModelFactoryWithExtractor, hyperparameters: HyperparameterSet = None, ignore_fit_warn: bool = True):
         self.__sklearn_model_factory = model_factory
+        self.__hyperparameters = hyperparameters #Adaptacion de modelo con hiperparametros
         self.__ignore_fit_warn = ignore_fit_warn
 
     def fit(self, x, y) -> ClassifierWithCoef:
@@ -126,7 +128,7 @@ class SklearnModelWrapperWithFallback(ClassModelWithCoef, ABC):
             sk_model = DummyClassifier(strategy="most_frequent")
             extractor = EmptyCoefExtractor()
         else:
-            sk_model = self.__sklearn_model_factory.create()
+            sk_model = self.__sklearn_model_factory.create(hyperparameters=self.__hyperparameters)
             extractor = self.__sklearn_model_factory.extractor()
         y = ravel(y)
         if self.__ignore_fit_warn:
@@ -143,8 +145,11 @@ class SklearnModelWrapperWithFallback(ClassModelWithCoef, ABC):
 
 class NBFactory(SKLearnModelFactoryWithExtractor):
 
-    def create(self):
-        return GaussianNB()  # We do not need to standardize since gaussian nb does it internally.
+    def create(self, hyperparameters: HyperparameterSet = None):
+        if hyperparameters is None:
+            return GaussianNB()   # We do not need to standardize since gaussian nb does it internally.
+
+        return GaussianNB(**hyperparameters.hyperparameters_to_model())
 
     def extractor(self) -> SklearnCoefExtractor:
         return OffCoefExtractor()
@@ -180,17 +185,19 @@ class LogisticFactory(SKLearnModelFactoryWithExtractor):
     def extractor(self) -> SklearnCoefExtractor:
         return LogisticExtractor()
 
+class NBWithFallback(SklearnModelWrapperWithFallback, TunableClassModel):
 
-class NBWithFallback(SklearnModelWrapperWithFallback):
-
-    def __init__(self):
-        SklearnModelWrapperWithFallback.__init__(self, model_factory=NBFactory())
+    def __init__(self, hyperparameters: HyperparameterSet = None):
+        SklearnModelWrapperWithFallback.__init__(self,model_factory=NBFactory(),hyperparameters=hyperparameters)
 
     def nick(self) -> str:
         return "NB"
 
     def name(self) -> str:
         return "naive Bayes"
+
+    def tune(self, hyperparameters: HyperparameterSet) -> ClassModel:
+        return NBWithFallback(hyperparameters=hyperparameters)
 
     def __str__(self) -> str:
         return self.name()
