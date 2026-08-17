@@ -6,7 +6,7 @@ from hyperparameter_evolution.hyperparameter import Hyperparameter
 
 
 class CategoricalHyperparameter(Hyperparameter):
-    __option_values: set[str]
+    __option_values: tuple[str, ...]
 
     def __init__(
         self,
@@ -18,7 +18,7 @@ class CategoricalHyperparameter(Hyperparameter):
     ):
         super().__init__(nick=nick, name=name, value=value, mutable=mutable)
 
-        self.__option_values = set(option_values)
+        self.__option_values = tuple(option_values)
 
         if len(self.__option_values) == 0:
             raise ValueError("option_values no puede estar vacío")
@@ -26,7 +26,7 @@ class CategoricalHyperparameter(Hyperparameter):
         if value is not None and value not in self.__option_values:
             raise ValueError("El valor inicial no pertenece a los valores permitidos")
 
-    def option_values(self) -> set[str]:
+    def option_values(self) -> tuple[str]:
         return self.__option_values
 
     def random_initialize(self):
@@ -36,7 +36,7 @@ class CategoricalHyperparameter(Hyperparameter):
         if not self.mutable():
             return
         
-        self.set_value(choice(tuple(self.option_values()))) #Se transforma en tupla para poder usar choice
+        self.set_value(choice(self.__option_values)) #Se transforma en tupla para poder usar choice
 
     def mutate(self):
         """

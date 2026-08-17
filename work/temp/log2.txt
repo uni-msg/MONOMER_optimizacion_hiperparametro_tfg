@@ -1,4 +1,4 @@
-Date = 2026-08-14
+Date = 2026-08-17
 Machine = ubuntu22-UNI
 CPUs detected in the system = 8
 Recursion limit = 100000
@@ -41,4 +41,4 @@ Copying config file to run directory
 Copy source = setups/brca/hp/test_small_nb.ini
 Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/2_folds/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/
 Program finished
-Total execution time = 00-00:04:43
+Total execution time = 00-00:04:35
