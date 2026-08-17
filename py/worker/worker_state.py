@@ -14,7 +14,7 @@ from worker.work_package import WorkPackage
 from individual.peculiar_individual_by_listlike import PeculiarIndividualByListlike
 from hyperparam_manager.hyperparam_manager import HyperparamManager
 from model.masked_mv_model import MaskedMVPredictor
-from model.model import Classifier, ClassModel
+from model.model import Classifier, ClassModel, TunableClassModel
 from model.multi_view_model import MVPredictor
 from multi_view_utils import filter_by_mask
 from objective.social_objective import PersonalObjective
@@ -62,6 +62,22 @@ class WorkerState:
 
     def __get_outcome(self, outcome_key) -> DataFrame:
         return self.__outcomes[outcome_key]
+
+    def __get_model(self,individual: PeculiarIndividualByListlike,objective: PersonalObjective) -> ClassModel:
+        """
+        Metodo auxiliar que devuelve el modelo de clasificacion del objetivo o el modelo tuneado con los hiperparametros del individuo
+        """
+        if not objective.has_model():
+            raise ValueError("Objective does not have a model.")
+
+        model = objective.model()
+        if individual.has_hyperparameter_set():
+            if not isinstance(model, TunableClassModel):
+                raise ValueError("El modelo de clasificacion del objetivo no es tuneable con hiperparametros.")
+
+            model = model.tune(individual.hyperparameter_set())
+
+        return model
 
     def __mask(self, individual: PeculiarIndividualByListlike):
         return self.__hp_manager.active_features_mask(hyperparams=individual)
@@ -111,7 +127,7 @@ class WorkerState:
     def __fit_model(self, individual: PeculiarIndividualByListlike, objective: PersonalObjective) -> MVPredictor:
         if objective.has_model():
             y_key = objective.outcome_label()
-            model = objective.model()
+            model = self.__get_model(individual=individual,objective=objective)
             return self.__fit_masked_model(individual=individual, y_key=y_key, model=model)
         else:
             raise ValueError("Objective does not have a model.")
@@ -129,7 +145,7 @@ class WorkerState:
         if objective.requires_predictions():
             if objective.has_model():
                 y_key = objective.outcome_label()
-                model = objective.model()
+                model = self.__get_model(individual=individual,objective=objective)
                 all_x = self.__views_filtered(individual)
                 all_y = self.__get_outcome(outcome_key=y_key)
                 o_val = objective.objective_computer().compute_with_kfold_cv(
