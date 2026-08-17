@@ -149,7 +149,7 @@ class NBFactory(SKLearnModelFactoryWithExtractor):
         if hyperparameters is None:
             return GaussianNB()   # We do not need to standardize since gaussian nb does it internally.
 
-        return GaussianNB(**hyperparameters.hyperparameters_to_model())
+        return GaussianNB(**hyperparameters.hyperparameters_to_kwargs())
 
     def extractor(self) -> SklearnCoefExtractor:
         return OffCoefExtractor()
@@ -169,15 +169,18 @@ class LogisticFactory(SKLearnModelFactoryWithExtractor):
         self.__max_iter = max_iter
         self.__penalty = penalty
 
-    def create(self):
-        solver = 'lbfgs'
-        penalty = self.__penalty
-        if penalty == 'l1':
-            solver = 'liblinear'
-        pipe = Pipeline([
-            ('scale', StandardScaler()),
-            (LOGISTIC_NAME, LogisticRegression(penalty=penalty, max_iter=self.__max_iter, solver=solver, n_jobs=1))])
-        return pipe
+    def create(self, hyperparameters: HyperparameterSet = None):
+        if hyperparameters is None:
+            solver = 'lbfgs'
+            penalty = self.__penalty
+            if penalty == 'l1':
+                solver = 'liblinear'
+            pipe = Pipeline([
+                ('scale', StandardScaler()),
+                (LOGISTIC_NAME, LogisticRegression(penalty=penalty, max_iter=self.__max_iter, solver=solver, n_jobs=1))])
+            return pipe
+
+        return Pipeline([('scale', StandardScaler()),(LOGISTIC_NAME,LogisticRegression( **hyperparameters.hyperparameters_to_kwargs()))])
 
     def max_iter(self) -> int:
         return self.__max_iter
@@ -203,11 +206,10 @@ class NBWithFallback(SklearnModelWrapperWithFallback, TunableClassModel):
         return self.name()
 
 
-class LogisticWithFallback(SklearnModelWrapperWithFallback):
+class LogisticWithFallback(SklearnModelWrapperWithFallback, TunableClassModel):
 
-    def __init__(self, max_iter: int = DEFAULT_LOGISTIC_MAX_ITER, penalty: str = 'none'):
-        SklearnModelWrapperWithFallback.__init__(
-            self, model_factory=LogisticFactory(max_iter=max_iter, penalty=penalty))
+    def __init__(self, max_iter: int = DEFAULT_LOGISTIC_MAX_ITER, penalty: str = 'none', hyperparameters: HyperparameterSet = None):
+        SklearnModelWrapperWithFallback.__init__(self, model_factory=LogisticFactory(max_iter=max_iter, penalty=penalty),hyperparameters=hyperparameters)
 
     def max_iter(self) -> int:
         return self.model_factory().max_iter()
@@ -217,6 +219,9 @@ class LogisticWithFallback(SklearnModelWrapperWithFallback):
 
     def name(self) -> str:
         return "logistic classifier (max_iter=" + str(self.max_iter()) + ")"
+
+    def tune(self, hyperparameters: HyperparameterSet) -> ClassModel:
+        return LogisticWithFallback( hyperparameters=hyperparameters )
 
     def __str__(self) -> str:
         return self.name()

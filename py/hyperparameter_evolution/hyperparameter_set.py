@@ -116,7 +116,7 @@ class HyperparameterSet:
     def clone(self):
         return deepcopy(self)
     
-    def hyperparameters_to_model(self):
+    def hyperparameters_to_kwargs(self):
         """
         Formatea los datos de nick y valor para emplearse en la definicion del modelo de manera general
         """
