@@ -72,7 +72,7 @@ class SVMHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="kernel",
                     name="Kernel",
-                    options={"rbf"},
+                    option_values={"rbf"},
                     value="rbf",
                     mutable=False
                 ),
@@ -84,7 +84,7 @@ class SVMHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="class_weight",
                     name="Class weight",
-                    options={"balanced"},
+                    option_values={"balanced"},
                     value="balanced",
                     mutable=False
                 ),

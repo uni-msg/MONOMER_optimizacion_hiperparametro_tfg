@@ -56,7 +56,7 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="max_features",
                     name="Maximum features",
-                    options={"sqrt", "log2", None}
+                    option_values={"sqrt", "log2", None}
                 ),
 
                 #################### FIJOS ####################
@@ -66,7 +66,7 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="class_weight",
                     name="Class weight",
-                    options={"balanced"},
+                    option_values={"balanced"},
                     value="balanced",
                     mutable=False
                 ),

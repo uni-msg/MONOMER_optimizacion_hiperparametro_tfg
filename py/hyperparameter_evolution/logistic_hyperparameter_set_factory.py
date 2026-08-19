@@ -64,7 +64,7 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="solver",
                     name="Solver",
-                    options={"lbfgs"},
+                    option_values={"lbfgs"},
                     value="lbfgs",
                     mutable=False
                 ),
@@ -77,8 +77,8 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="penalty",
                     name="Penalty",
-                    options={"none"},
-                    value="none",
+                    option_values={None},
+                    value=None,
                     mutable=False
                 ),
 

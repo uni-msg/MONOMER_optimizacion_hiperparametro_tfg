@@ -26,7 +26,7 @@ class CategoricalHyperparameter(Hyperparameter):
         if value is not None and value not in self.__option_values:
             raise ValueError("El valor inicial no pertenece a los valores permitidos")
 
-    def option_values(self) -> tuple[str]:
+    def option_values(self) -> tuple[str, ...]:
         return self.__option_values
 
     def random_initialize(self):

@@ -1,0 +1,92 @@
+Date = 2026-08-19
+Machine = ubuntu22-UNI
+CPUs detected in the system = 8
+Recursion limit = 100000
+Parsing setup file setups/brca/hp/test_small_lr.ini
+Parsing setup file setups/brca/hp/test_small_svm.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 logistic classifier (max_iter=100) balanced accuracy, leanness]
+Factory HPE = LogisticHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 2 stratified folds.
+Number of outer folds = 2
+Copying config file to run directory
+Copy source = setups/brca/hp/test_small_lr.ini
+Destination folder :  = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 svm balanced accuracy, leanness]
+Factory HPE = SVMHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/brca/hp/test_small_svm.ini
+Destination folder :  = ./brca/mrna/leanness_svm_bal_acc/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+Program finished
+Total execution time = 00-00:14:49

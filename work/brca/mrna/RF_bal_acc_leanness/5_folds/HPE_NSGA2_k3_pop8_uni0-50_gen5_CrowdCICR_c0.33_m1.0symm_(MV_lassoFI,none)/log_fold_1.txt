@@ -1,0 +1,94 @@
+
+OPTIMIZING ON FOLD NUMBER 1
+Number of workers = 1
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 17770
+Features active in view: 17770
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+   	     	         	        	          Pam50 random forest balanced accuracy          	                         leanness                        
+   	     	         	        	---------------------------------------------------------	---------------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std       	min      	avg      	max     	std      
+0  	8    	156      	156     	0.426595	0.569844	0.636398	0.0657249 	0.0222222	0.0814996	0.333333	0.0979814
+1  	8    	123      	208     	0.383148	0.516891	0.636398	0.0828566 	0.0277778	0.161625 	0.5     	0.157655 
+2  	8    	137      	277     	0.383148	0.551488	0.657812	0.0978416 	0.0263158	0.154797 	0.5     	0.164336 
+3  	8    	128      	311     	0.245451	0.511581	0.668009	0.136714  	0.0416667	0.233135 	0.5     	0.174975 
+4  	8    	79       	333     	0.2     	0.502708	0.668009	0.145267  	0.0416667	0.299107 	1       	0.299558 
+Optimization on fold finished in 00-00:02:23
+
+FEATURE SETS SELECTED
+
+PARETO FRONT
+Number of solutions = 10
+(np.float64(0.6680087237324079), 0.041666666666666664) 23 features: [0_C14orf145, 0_C15orf26, 0_C3orf65, 0_CCDC163P, 0_CRLF1, 0_CTAG2, 0_DISC2, 0_DISP2, 0_FOXC1, 0_GADD45G, 0_GIP, 0_GRB7, 0_GRHL3, 0_IGSF22, 0_ISX, 0_MAGEA6, 0_MASTL, 0_OR8U1, 0_PCSK9, 0_PGS1, 0_PMAIP1, 0_RPL13AP17, 0_TMEM106C] Hiperparameter set: [n_estimators = 64
+min_samples_split = 10
+min_samples_leaf = 6
+max_features = None
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.6483267061885483), 0.05555555555555555) 17 features: [0_BTG4, 0_C1orf94, 0_C2orf27A, 0_C4orf21, 0_CXCL5, 0_IQCC, 0_ISX, 0_LMO1, 0_MEX3D, 0_MIA, 0_MMACHC, 0_MPHOSPH6, 0_NANOG, 0_OR12D2, 0_OTOP2, 0_RNASE3, 0_SUSD2] Hiperparameter set: [n_estimators = 41
+min_samples_split = 16
+min_samples_leaf = 18
+max_features = None
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.6462768700597648), 0.07142857142857142) 13 features: [0_C14orf145, 0_C15orf26, 0_CRLF1, 0_DCTD, 0_FOXC1, 0_GIP, 0_GRB7, 0_GRHL3, 0_IGSF22, 0_ISX, 0_OR8U1, 0_PCSK9, 0_TMEM106C] Hiperparameter set: [n_estimators = 64
+min_samples_split = 10
+min_samples_leaf = 6
+max_features = None
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.6227912328899172), 0.08333333333333333) 11 features: [0_AR, 0_C14orf145, 0_C3orf65, 0_CCDC163P, 0_CRLF1, 0_FOXC1, 0_GADD45G, 0_GIP, 0_IGSF22, 0_ISX, 0_RPL13AP17] Hiperparameter set: [n_estimators = 55
+min_samples_split = 11
+min_samples_leaf = 19
+max_features = log2
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.5860361239637555), 0.125) 7 features: [0_ANKRD28, 0_CRHR1, 0_CRIP1, 0_HOPX, 0_LOC100130148, 0_NCAPG, 0_OR52E4] Hiperparameter set: [n_estimators = 81
+min_samples_split = 5
+min_samples_leaf = 19
+max_features = sqrt
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.5692922209369577), 0.14285714285714285) 6 features: [0_CRHR1, 0_CRIP1, 0_LOC100130148, 0_NCAPG, 0_OR52E4, 0_ZFAND3] Hiperparameter set: [n_estimators = 81
+min_samples_split = 5
+min_samples_leaf = 19
+max_features = sqrt
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.5657930884904568), 0.16666666666666666) 5 features: [0_CDH5, 0_CYP4F11, 0_FAM199X, 0_GRB7, 0_TFF1] Hiperparameter set: [n_estimators = 20
+min_samples_split = 13
+min_samples_leaf = 18
+max_features = sqrt
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.42659545498361295), 0.3333333333333333) [0_AR, 0_C20orf108] Hiperparameter set: [n_estimators = 55
+min_samples_split = 11
+min_samples_leaf = 19
+max_features = log2
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.38314825525351837), 0.5) [0_AR] Hiperparameter set: [n_estimators = 55
+min_samples_split = 11
+min_samples_leaf = 19
+max_features = log2
+class_weight = balanced
+n_jobs = 1]
+(np.float64(0.2), 1.0) [] Hiperparameter set: [n_estimators = 55
+min_samples_split = 11
+min_samples_leaf = 19
+max_features = log2
+class_weight = balanced
+n_jobs = 1]
+Features in hall of fame by prevalence:
+54 features: [0_ISX, 0_AR, 0_C14orf145, 0_CRLF1, 0_FOXC1, 0_GIP, 0_GRB7, 0_IGSF22, 0_C15orf26, 0_C3orf65, 0_CCDC163P, 0_CRHR1, 0_CRIP1, 0_GADD45G, 0_GRHL3, 0_LOC100130148, 0_NCAPG, 0_OR52E4, 0_OR8U1, 0_PCSK9, 0_RPL13AP17, 0_TMEM106C, 0_ANKRD28, 0_BTG4, 0_C1orf94, 0_C20orf108, 0_C2orf27A, 0_C4orf21, 0_CDH5, 0_CTAG2, 0_CXCL5, 0_CYP4F11, 0_DCTD, 0_DISC2, 0_DISP2, 0_FAM199X, 0_HOPX, 0_IQCC, 0_LMO1, 0_MAGEA6, 0_MASTL, 0_MEX3D, 0_MIA, 0_MMACHC, 0_MPHOSPH6, 0_NANOG, 0_OR12D2, 0_OTOP2, 0_PGS1, 0_PMAIP1, 0_RNASE3, 0_SUSD2, 0_TFF1, 0_ZFAND3]
+
+BEST SUMS WITH SIZE 50
+Number of solutions = 40
+Features in hall of fame by prevalence:
+333 features: [0_BTG4, 0_TFF1, 0_C20orf108, 0_GRB7, 0_LOC100130148, 0_ANXA3, 0_GADD45G, 0_FOXC1, 0_TMEM59L, 0_C1orf227, 0_C3orf65, 0_DCLK3, 0_IGFALS, 0_KRTAP3-2, 0_MMACHC, 0_RPL13AP17, 0_ABCG1, 0_C11orf53, 0_C14orf145, 0_CPNE6, 0_CXorf61, 0_EPS8L3, 0_FLJ43950, 0_GDF5, 0_LRRC55, 0_MOSC1, 0_MT1DP, 0_NPTX1, 0_OR52E4, 0_PCSK2, 0_STX2, 0_TMEM106C, 0_TPSD1, 0_AOX2P, 0_AR, 0_C15orf26, 0_C1orf87, 0_C1orf94, 0_CADM2, 0_CDKN2BAS, 0_CEP152, 0_CYP4F11, 0_GML, 0_IFIT1B, 0_ISX, 0_LGI1, 0_LOC148696, 0_MAGEA6, 0_MANBAL, 0_MUCL1, 0_OR2A4, 0_OR51I1, 0_OR8U1, 0_PCSK9, 0_PGS1, 0_PMAIP1, 0_PPP1R1B, 0_PSKH2, 0_PTPRJ, 0_RFX8, 0_SAE1, 0_SLC22A16, 0_SPAG6, 0_SUSD5, 0_TMEM95, 0_TMPO, 0_UMPS, 0_WDR67, 0_WNT8A, 0_ADAMTS18, 0_CCDC144C, 0_CRIP1, 0_CRLF1, 0_CTAG2, 0_DEPDC4, 0_DISC2, 0_DISP2, 0_DPRXP4, 0_FAM199X, 0_FBXO47, 0_FOXL2, 0_GIP, 0_GLRA4, 0_GRHL3, 0_HRNR, 0_IGSF22, 0_IL1F9, 0_KRT20, 0_LOC341056, 0_MASTL, 0_NCRNA00162, 0_NCRNA00189, 0_NEFH, 0_NPVF, 0_OR52I2, 0_PAR1, 0_PLA2G2C, 0_R3HDML, 0_RPTN, 0_SCEL, 0_SERPINA12, 0_SERPINA3, 0_SLC5A4, 0_TCF19, 0_TTTY23, 0_ZIC1, 0_AMBP, 0_ANKRD28, 0_ANO4, 0_APOO, 0_AQP10, 0_ASTL, 0_ATP6V0D2, 0_BAGE, 0_BDKRB2, 0_C13orf30, 0_C2orf27A, 0_CBLN1, 0_CCDC163P, 0_CCNG2, 0_CDA, 0_CDC25B, 0_CDH5, 0_CHRNA6, 0_COL20A1, 0_CRHR1, 0_CXCL5, 0_ENPP1, 0_ETV6, 0_FADS1, 0_FAM9A, 0_FLJ41941, 0_FOXB1, 0_GNAT2, 0_GPD1L, 0_GPR160, 0_GRK4, 0_HHLA2, 0_HOPX, 0_IMP5, 0_IQCC, 0_ITGA2B, 0_KCNH1, 0_KGFLP1, 0_KLHL1, 0_KRTAP1-1, 0_LECT1, 0_LECT2, 0_LMO1, 0_LOC152024, 0_LOC340357, 0_MAPK7, 0_MRGPRX2, 0_NANOG, 0_NCAPG, 0_NEURL1B, 0_NOTCH2NL, 0_OR10A6, 0_OR13C2, 0_OR2T10, 0_OR52N2, 0_OTOP2, 0_PLXNB1, 0_PPP5C, 0_RBM28, 0_RDH8, 0_RHBDL2, 0_RNASE3, 0_RNF2, 0_ROS1, 0_RPA4, 0_RPH3AL, 0_RPL10L, 0_SCN3B, 0_SEMA4G, 0_SNAPC1, 0_SNORA72, 0_SPINK13, 0_TADA2A, 0_TCHH, 0_TFDP2, 0_TPPP2, 0_TRPC2, 0_TXNDC5, 0_ZP1, 0_ABCB7, 0_ACADM, 0_AFARP1, 0_AMIGO2, 0_ANKRD30A, 0_APOL6, 0_ATP2B2, 0_BAAT, 0_BCYRN1, 0_C10orf82, 0_C14orf183, 0_C15orf23, 0_C20orf197, 0_C4orf21, 0_C6orf97, 0_C8orf4, 0_CACNG4, 0_CAMK2B, 0_CASC3, 0_CDH22, 0_CDKN1B, 0_CFHR1, 0_CLEC12B, 0_CPT1C, 0_CSRNP2, 0_CTRC, 0_CXorf40A, 0_CXorf58, 0_CYP1A1, 0_DCTD, 0_DEFB103B, 0_DEFB1, 0_DISP1, 0_DMRTC1, 0_DPYSL4, 0_EPHA6, 0_ERBB2, 0_FAM185A, 0_FAM48B1, 0_FANCL, 0_FCHO2, 0_FGB, 0_FLJ44054, 0_FOXR1, 0_GALNT9, 0_GJB6, 0_GLB1L3, 0_GLI1, 0_GPR109A, 0_GPR128, 0_GPR152, 0_GPR98, 0_GSDMA, 0_GSTA4, 0_HDAC8, 0_HORMAD1, 0_HOXA2, 0_HTR1F, 0_IL22RA2, 0_INTS10, 0_IPO9, 0_IQCF6, 0_ITLN1, 0_KIAA0146, 0_KLF12, 0_KRTAP19-3, 0_LEMD1, 0_LILRA1, 0_LMOD2, 0_LOC100129055, 0_LOC100132724, 0_LOC100133308, 0_LOC148189, 0_LOC154822, 0_LOC727896, 0_LOC732275, 0_LRIT2, 0_LUC7L3, 0_MARCH6, 0_MBOAT1, 0_METTL2A, 0_METTL9, 0_MEX3D, 0_MGAT2, 0_MGAT4C, 0_MGC26647, 0_MIA, 0_MLPH, 0_MMD, 0_MPHOSPH6, 0_MRPS30, 0_MTCP1, 0_NCRNA00164, 0_NIPAL4, 0_NKX6-3, 0_NSA2, 0_NTS, 0_OAT, 0_OR10V1, 0_OR11H6, 0_OR12D2, 0_OR5P3, 0_PAK6, 0_PARP2, 0_PLXND1, 0_PPIAL4B, 0_PPIL3, 0_PPIL5, 0_PPP1R14C, 0_PRSS37, 0_PSG7, 0_PSORS1C2, 0_PTENP1, 0_PTPRZ1, 0_RBMY1A1, 0_RNF17, 0_RPRM, 0_RPUSD4, 0_SCNN1A, 0_SEC14L4, 0_SH3BGR, 0_SLC22A25, 0_SLPI, 0_SPANXN5, 0_SPOCK3, 0_SPRR2E, 0_SRCAP, 0_SSX6, 0_SUB1, 0_SUSD2, 0_SYCE1, 0_SYT8, 0_TACC2, 0_TAF5, 0_TBX22, 0_TIPIN, 0_TMEM44, 0_TRIM49, 0_TRIM72, 0_TSHB, 0_TUBA1B, 0_USH2A, 0_WBSCR26, 0_WFIKKN2, 0_WSCD2, 0_XKR6, 0_ZFAND3, 0_ZNF473]
