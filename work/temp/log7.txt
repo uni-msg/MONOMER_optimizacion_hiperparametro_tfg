@@ -2,7 +2,7 @@ Date = 2026-08-22
 Machine = ubuntu22-UNI
 CPUs detected in the system = 8
 Recursion limit = 100000
-Parsing setup file setups/brca/hp/test_small_rf.ini
+Parsing setup file setups/brca/hp/test_small_nb.ini
 
 RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
 
@@ -10,14 +10,8 @@ LOADING BRCA COHORT
 
 LOADING VIEWS
 Input directory = ./brca/input/
-Loading view meth
-View does not exist.
-Loading view mirna
-View does not exist.
 Loading view mrna
 View loaded.
-Loading view rppaa
-View does not exist.
 Applying transformation to view mrna
 
 LOADING OUTCOMES
@@ -38,13 +32,117 @@ Directory for plots = ./brca/input/plots
 Plotting view mrna
 
 LOADED 1081 SAMPLES.
-Objectives = [Pam50 random forest balanced accuracy, leanness]
-Factory HPE = ForestHyperparameterSetFactory
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
 Removing outcomes not necessary for objectives from input data.
-Creating 5 stratified folds.
-Number of outer folds = 5
+
+LOADING SWEDISH COHORT
+
+LOADING VIEWS
+Input directory = ./swedish/input/
+Setting negative values to 0.0
+Dropping columns with 70% or more zeros.
+Columns before dropping = 4502
+Columns after dropping = 4502
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 4502
+Features after all na filter: 4502
+Features after zero variance filter: 4502
+
+PLOTTING VIEWS
+Directory for plots = ./swedish/input/plots
+Plotting view mrna
+
+LOADED 2969 SAMPLES.
+Removing outcomes not necessary for objectives from external data.
+
+REDUCING DATASETS TO COMMON FEATURES.
+
+STANDARDIZING THE FEATURES OF EACH DATASET SEPARATELY.
+Internal data
+Nick: brca
+Number of samples: 1081
+Views (number of columns):
+mrna (3696)
+Outcomes:
+Pam50 (categorical)
+Stratify outcome: Pam50
+
+External data
+Nick: swedish
+Number of samples: 2969
+Views (number of columns):
+mrna (3696)
+Outcomes:
+Pam50 (categorical)
+Stratify outcome: Pam50
+
 Copying config file to run directory
-Copy source = setups/brca/hp/test_small_rf.ini
-Destination folder :  = ./brca/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+Copy source = setups/brca/hp/test_small_nb.ini
+
+OPTIMIZER RESULTS
+Name = Pareto front
+Nick = Pareto
+Number of solutions: 17
+(np.float64(0.6799414000633514), 0.030303030303030304) [50, 86, 294, 429, 466, 504, 603, 816, 906, 1029, 1033, 1279, 1313, 1640, 1673, 1786, 2172, 2191, 2192, 2278, 2327, 2354, 2417, 2645, 2670, 2864, 3067, 3110, 3133, 3419, 3459, 3539]
+(np.float64(0.6736671640298084), 0.03125) [50, 86, 294, 429, 466, 603, 816, 906, 1029, 1033, 1279, 1313, 1640, 1673, 1786, 2172, 2191, 2192, 2278, 2327, 2354, 2417, 2645, 2670, 2864, 3067, 3110, 3133, 3419, 3459, 3539]
+(np.float64(0.6418394795191971), 0.041666666666666664) [59, 94, 498, 634, 854, 1059, 1070, 1415, 1483, 1737, 1898, 1921, 2026, 2030, 2170, 2350, 2448, 2673, 2802, 2937, 3067, 3103, 3147]
+(np.float64(0.6375127536135239), 0.045454545454545456) [59, 94, 498, 854, 1059, 1070, 1415, 1483, 1737, 1898, 1921, 2026, 2030, 2170, 2350, 2448, 2673, 2937, 3067, 3103, 3147]
+(np.float64(0.6313154977243551), 0.047619047619047616) [59, 94, 498, 854, 1070, 1415, 1483, 1737, 1898, 1921, 2026, 2030, 2170, 2350, 2448, 2673, 2937, 3067, 3103, 3147]
+(np.float64(0.6000737292232798), 0.05263157894736842) [59, 498, 854, 1070, 1415, 1483, 1737, 1898, 1921, 2026, 2030, 2424, 2448, 2891, 2937, 3067, 3103, 3354]
+(np.float64(0.568759356817765), 0.05555555555555555) [583, 677, 854, 1483, 1898, 1921, 2030, 2157, 2424, 2448, 2673, 2906, 3032, 3067, 3103, 3354, 3553]
+(np.float64(0.5641910207892237), 0.058823529411764705) [59, 498, 707, 1070, 1313, 1381, 1415, 1727, 1737, 2026, 2440, 2890, 2891, 2918, 2937, 3657]
+(np.float64(0.5318253505159796), 0.08333333333333333) [583, 677, 1313, 1381, 1727, 2157, 2440, 2673, 2890, 2906, 3553]
+(np.float64(0.4764685410866412), 0.09090909090909091) [847, 1042, 1230, 1313, 1591, 1658, 2635, 2890, 3058, 3110]
+(np.float64(0.41816573029024895), 0.1111111111111111) [94, 969, 1412, 1506, 1549, 2170, 2350, 3043]
+(np.float64(0.3991676391644299), 0.125) [94, 969, 1030, 1506, 1549, 2170, 2350]
+(np.float64(0.3910268326025707), 0.14285714285714285) [94, 969, 1506, 1549, 2170, 2350]
+(np.float64(0.3648308270676692), 0.2) [732, 1334, 2449, 2977]
+(np.float64(0.343028024606972), 0.3333333333333333) [2449, 2977]
+(np.float64(0.2745676691729323), 0.5) [1902]
+(np.float64(0.2), 1.0) []
+
+Name = best sums with size 50
+Nick = sum50
+Number of solutions: 40
+
+
+
+APPLYING EVALUATORS
+
+EVALUATING HALL OF FAME PARETO FRONT
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/external_validation/swedish/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/hofs/Pareto/
+
+APPLYING TWO-OBJECTIVES EXTERNAL PLOTTER
+Path for plots = ./brca/mrna/NB_bal_acc_leanness/external_validation/swedish/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/objective_pairs/
+Creating plot for Pam50 naive Bayes balanced accuracy vs leanness
+Creating plot for leanness vs Pam50 naive Bayes balanced accuracy
+
+APPLYING EXTERNAL CONFUSION MATRICES SAVER
+
+EVALUATING HALL OF FAME BEST SUMS WITH SIZE 50
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/external_validation/swedish/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/hofs/sum50/
+
+APPLYING TWO-OBJECTIVES EXTERNAL PLOTTER
+Path for plots = ./brca/mrna/NB_bal_acc_leanness/external_validation/swedish/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/objective_pairs/
+Creating plot for Pam50 naive Bayes balanced accuracy vs leanness
+Creating plot for leanness vs Pam50 naive Bayes balanced accuracy
+
+APPLYING EXTERNAL CONFUSION MATRICES SAVER
+
+PLOTTING PERFORMANCE BY CLASS IF POSSIBLE
 Program finished
-Total execution time = 00-00:10:38
+Total execution time = 00-00:01:06
