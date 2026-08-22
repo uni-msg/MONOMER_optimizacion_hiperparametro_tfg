@@ -1,18 +1,22 @@
 import json
 from copy import deepcopy
-from typing import Sequence
+from typing import Sequence, Optional
+from deap.tools import History
 
 from individual.peculiar_individual import PeculiarIndividual
 
 
 class GAEvolutionHistory:
     """
-    Almacena la evolución de la población del algoritmo genético.
+    Almacena la evolución de la población seleccionada del algoritmo genético.
 
-    Se guarda un registro por generación y, dentro de cada generación,
-    la información de todos los individuos de la población.
+    Para cada generación se guarda la información de todos los individuos
+    que sobreviven a la selección.
 
-    La información almacenada de cada individuo incluye:
+    La información de cada individuo incluye:
+        - ID genealógico asignado por DEAP
+        - IDs de sus padres
+        - generación
         - hiperparámetros
         - fitness
         - características activas
@@ -21,30 +25,57 @@ class GAEvolutionHistory:
     def __init__(self):
         self.__generations = []
 
-    def add_generation(self, generation: int, population: Sequence[PeculiarIndividual]):
+    def add_generation(self, generation: int, population: Sequence[PeculiarIndividual], history: Optional[History] = None):
         """
         Añade una generación al historial.
 
-        Se almacena una copia independiente de la información de los
-        individuos para evitar que posteriores modificaciones de la
+        Se almacena una copia de la información de los individuos 
+        para evitar que posteriores modificaciones de la
         población alteren el historial.
+
+        Se aprovecha el History de DEAP para la genealogía del individuo
         """
         individuals = []
 
         for individual in population:
+            #Identificador del History
+            individual_id = getattr(individual, "history_index", None)
+
             individual_data = {
-                "id": getattr(individual, "history_index", None),
+                "id": individual_id,
+                "parents": self.__get_parents(individual_id=individual_id,history=history),
                 "hyperparameters": self.__get_hyperparameters(individual),
                 "fitness": self.__get_fitness(individual),
                 "features": self.__get_features(individual)
             }
 
+            #Se añade a la lista
             individuals.append(individual_data)
 
+        #Añadis lista de individuos seleccionados por generacion
         self.__generations.append({
             "generation": generation,
             "individuals": individuals
         })
+
+    @staticmethod
+    def __get_parents(individual_id: Optional[int], history: Optional[History]) -> list[int]:
+        """
+        Obtiene los IDs de los padres directos de un individuo
+        usando la genealogía de DEAP.
+        """
+
+        if history is None or individual_id is None:
+            return []
+
+        #Recupera los padres del individuo buscado
+        parents = history.genealogy_tree.get(individual_id)
+
+        if parents is None:
+            return []
+
+        return list(parents) #1 ID = mutacion, 2 IDs = crossover
+
     @staticmethod
     def __get_hyperparameters(individual):
         """
@@ -85,15 +116,3 @@ class GAEvolutionHistory:
         return {
             "generations": deepcopy(self.__generations)
         }
-
-    def save(self, file: str):
-        """
-        Guarda el historial completo en formato JSON.
-        """
-        with open(file, "w", encoding="utf-8") as f:
-            json.dump(
-                self.to_dict(),
-                f,
-                indent=4,
-                ensure_ascii=False
-            )

@@ -14,6 +14,7 @@ from cross_validation.multi_objective.optimizer.nsga.nsga_types import NSGA2_TYP
 from folds_creator.input_data_folds_creator import InputDataFoldsCreator
 from ga_components.bitlist_mutation import BitlistMutation, FlipMutation
 from ga_components.feature_counts_saver import FeatureCountsSaver, DummyFeatureCountsSaver
+from ga_components.ga_evolution_history_saver import DummyGAEvolutionHistorySaver, GAEvolutionHistorySaver
 from ga_components.logbook_saver import LogbookSaver, DummyLogbookSaver
 from ga_components.sorter.sorting_strategy import SortingStrategy
 from ga_runner.flip_ga_runner import FlipGARunner
@@ -98,7 +99,8 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             feature_importance: Sequence[Distribution],
             n_proc=1, workers_printer: Printer = UnbufferedOutPrinter(),
             logbook_saver: LogbookSaver = DummyLogbookSaver(),
-            feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver()) -> [MultiObjectiveOptimizerResult]:
+            feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver(),
+            ga_evolution_history_saver: GAEvolutionHistorySaver = DummyGAEvolutionHistorySaver()) -> [MultiObjectiveOptimizerResult]:
         set_all_seeds(772346)
 
         # Make sure we do not include outcomes (potentially affecting feature selection) that are not in objectives.
@@ -127,7 +129,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         )
         hofs = [h.create_population_observer() for h in self.__hof_factories]
         ga_result = single_view_runner.run(
-            input_data=input_data, folds_list=folds_list, return_history=False,
+            input_data=input_data, folds_list=folds_list, return_history=True,
             n_workers=n_proc, workers_printer=workers_printer, n_gen=self.__n_gen,
             feature_importance=feature_importance,
             return_feature_counts=True,
@@ -139,8 +141,8 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         printer.print(ga_result.logbook)
         logbook_saver.save(ga_result.logbook)
         feature_names = collapsed_views.columns
-        feature_counts_saver.save(feature_counts=ga_result.feature_counts,
-                                  feature_names=feature_names)
+        feature_counts_saver.save(feature_counts=ga_result.feature_counts,feature_names=feature_names)
+        ga_evolution_history_saver.save(ga_result.ga_evolution_history) #Se añade el historial de evolucion GA
         return hofs_to_results(hofs)
 
     def optimizer_type(self) -> MOOptimizerType:

@@ -10,7 +10,7 @@ from typing import Iterable, NamedTuple, Sequence
 import numpy as np
 
 from consts import DEFAULT_RECURSION_LIMIT, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
-    FEATURE_COUNTS_EXTENSION, FINAL_STR
+    FEATURE_COUNTS_EXTENSION, FINAL_STR, GA_EVOLUTION_HISTORY_EXTENSION, GA_EVOLUTION_HISTORY_PREFIX
 from cross_validation.folds import Folds
 from cross_validation.multi_objective.cross_evaluator.hof_saver import path_for_saves, save_hof_features, \
     SOLUTION_FEATURES_PREFIX, SOLUTION_FEATURES_EXTENSION, save_hof_fitnesses
@@ -21,6 +21,7 @@ from cross_validation.multi_objective.optimizer.multi_objective_optimizer import
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer_by_fold import MultiObjectiveOptimizerByFold
 from ga_components.feature_counts_saver import FeatureCountsSaver, CsvFeatureCountsSaver
 from ga_components.logbook_saver import LogbookSaver, CsvLogbookSaver
+from ga_components.ga_evolution_history_saver import GAEvolutionHistorySaver, JsonGAEvolutionHistorySaver
 from hall_of_fame.hall_of_fame import HallOfFame
 from individual.individual_with_context import IndividualWithContext
 from input_data.input_data import InputData
@@ -106,6 +107,14 @@ class MultiObjectiveOptimizeOnFolds(ABC):
             save_interval=save_interval)
 
     @staticmethod
+    def create_fold_ga_evolution_history_saver(save_path: str, fold_index: int) -> GAEvolutionHistorySaver:
+        """
+        Funcion encargada de definir el fichero json que almacenara el historial del GA por cada fold
+        """
+        str_f = str(fold_index)
+        return JsonGAEvolutionHistorySaver(file=save_path + GA_EVOLUTION_HISTORY_PREFIX+"fold_"+ str_f + "." + GA_EVOLUTION_HISTORY_EXTENSION)
+
+    @staticmethod
     def create_fold_worker_printer(save_path: str, fold_index: int) -> Printer:
         str_f = str(fold_index)
         return CompositePrinter([
@@ -124,6 +133,11 @@ class MultiObjectiveOptimizeOnFolds(ABC):
         fold_logbook_saver = MultiObjectiveOptimizeOnFolds.create_fold_logbook_saver(save_path=save_path, fold_index=f)
         fold_feat_counts_saver = MultiObjectiveOptimizeOnFolds.create_fold_feat_counts_saver(
             save_path=save_path, fold_index=f, save_interval=100)
+
+        #Creacion del saver encargado de almacenar los datos de la evolucion GA del fold especifico
+        fold_ga_evolution_history_saver = MultiObjectiveOptimizeOnFolds.create_fold_ga_evolution_history_saver(
+                save_path=save_path,fold_index=f)
+        
         fold_printer.title_print("Optimizing on fold number " + str(f))
         fold_workers = fold_input.fold_processes
         fold_printer.print_variable("Number of workers", fold_workers)
@@ -134,7 +148,8 @@ class MultiObjectiveOptimizeOnFolds(ABC):
                 input_data=train_data, printer=fold_printer, n_proc=fold_workers,
                 workers_printer=fold_worker_printer,
                 logbook_saver=fold_logbook_saver,
-                feature_counts_saver=fold_feat_counts_saver
+                feature_counts_saver=fold_feat_counts_saver,
+                ga_evolution_history_saver=fold_ga_evolution_history_saver
             )
             # each fold_predictors_with_hyperparams is a MultiObjectiveOptimizerResult
         except BaseException as e:
@@ -248,6 +263,12 @@ def create_final_optimizer_printer(optimizer_save_path: str, additional_printer:
     log_printer = CompositePrinter([LogPrinter(log_file=optimizer_save_path + "log_final.txt"), additional_printer])
     return CompositePrinter([OutPrinter(), log_printer])
 
+def create_final_ga_evolution_history_saver(optimizer_save_path: str) -> GAEvolutionHistorySaver:
+    """
+    Funcion auxiliar que devuelve el save especifico para guardar un objeto GAEvolutionHistory en un archivo referente a la optimizacion final
+    """
+    return JsonGAEvolutionHistorySaver(file=optimizer_save_path+ GA_EVOLUTION_HISTORY_PREFIX+ FINAL_STR+ "."+ GA_EVOLUTION_HISTORY_EXTENSION)
+
 
 def do_final_optimization(
         input_data: InputData,
@@ -264,8 +285,12 @@ def do_final_optimization(
     start_time = time.time()
     workers_log_printer = LogPrinter(log_file=optimizer_save_path + "workers_log.txt")
     workers_printer = CompositePrinter([OutPrinter(), workers_log_printer])
+
+    #Creacion del saver encargado de almacenar los datos de la evolucion GA final
+    final_ga_evolution_history_saver = create_final_ga_evolution_history_saver(optimizer_save_path=optimizer_save_path)
+
     final_optimization = mo_optimizer.optimize(
-        input_data=input_data, printer=printer, n_proc=n_proc, workers_printer=workers_printer)
+        input_data=input_data, printer=printer, n_proc=n_proc, workers_printer=workers_printer, ga_evolution_history_saver=final_ga_evolution_history_saver)
     printer.print_variable(
         mo_optimizer.name() + " final optimization execution time", pretty_duration(time.time() - start_time))
     printer.title_print("Feature sets selected on whole dataset")

@@ -1,3 +1,4 @@
+from ga_components.ga_evolution_history_saver import DummyGAEvolutionHistorySaver, GAEvolutionHistorySaver
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType, ConcreteMOOptimizerType
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizer, \
     MultiObjectiveOptimizerResult
@@ -40,12 +41,14 @@ class MOOptimizerIncludingFeatureImportance(MultiObjectiveOptimizer):
 
     def optimize(self, input_data: InputData, printer: Printer, n_proc=1, workers_printer=UnbufferedOutPrinter(),
                  logbook_saver: LogbookSaver = DummyLogbookSaver(),
-                 feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver()) -> MultiObjectiveOptimizerResult:
+                 feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver(),
+                 ga_evolution_history_saver: GAEvolutionHistorySaver = DummyGAEvolutionHistorySaver() #Nuevo elemento de guardado de informacion util para metricas
+                 ) -> MultiObjectiveOptimizerResult:
         return self.__optimizer.optimize_with_feature_importance(
             input_data=input_data, printer=printer,
             feature_importance=self.__feature_importance.compute(input_data=input_data, n_proc=n_proc),
             n_proc=n_proc,
-            workers_printer=workers_printer, logbook_saver=logbook_saver, feature_counts_saver=feature_counts_saver)
+            workers_printer=workers_printer, logbook_saver=logbook_saver, feature_counts_saver=feature_counts_saver, ga_evolution_history_saver=ga_evolution_history_saver)
 
     def optimizer_type(self) -> MOOptimizerType:
         return self.__optimizer_type

@@ -66,15 +66,7 @@ class HyperparameterSet:
         """
         for hyperparameter in self.values():
             if hyperparameter.mutable() and random.random() < mutation_probability:
-                old_value = hyperparameter.value()
-
                 hyperparameter.mutate()
-
-                print(
-                    f"\n[HPE MUTATION] {hyperparameter.nick()}"
-                    f"\n  Antes:  {old_value}"
-                    f"\n  Después: {hyperparameter.value()}"
-                )
 
     def crossover(self, other):
         """
@@ -96,20 +88,7 @@ class HyperparameterSet:
             other_hyperparameter = other.get(nick)
             if type(hyperparameter) is not type(other_hyperparameter):
                 raise TypeError(f"Los hiperparámetros '{nick}' deben ser del mismo tipo")
-            print(
-                f"\n[HPE CROSSOVER] {nick}"
-                f"\n  Padre 1: {hyperparameter.value()}"
-                f"\n  Padre 2: {other_hyperparameter.value()}"
-            )
-
             hyperparameter.crossover(other_hyperparameter)
-
-            print(
-                f"  Hijo 1:  {hyperparameter.value()}"
-                f"\n  Hijo 2:  {other_hyperparameter.value()}"
-            )
-
-
 
         return self, other
 

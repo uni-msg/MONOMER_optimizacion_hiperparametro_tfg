@@ -8,6 +8,7 @@ from evaluator.workers_pool_evaluator import WorkersPoolEvaluator
 from ga_components.sorter.sorting_strategy import SortingStrategy
 from individual.peculiar_individual import PeculiarIndividual
 from objective.social_objective import PersonalObjective
+from deap.tools import History
 
 
 class GAStrategy(ABC):
@@ -56,7 +57,7 @@ class GAStrategy(ABC):
     def tournament(self, pop: [PeculiarIndividual], k: int) -> [PeculiarIndividual]:
         return self.__sorting_strategy.tournament(pop=pop, k=k)
 
-    def clone_repurposing(self, pop: [PeculiarIndividual]) -> [PeculiarIndividual]:
+    def clone_repurposing(self, pop: [PeculiarIndividual], history: Optional[History] = None) -> [PeculiarIndividual]:
         """ Passed pop might be changed in place."""
         if self.__use_clone_repurposing:
             hp_man = self.hp_manager()
@@ -64,7 +65,11 @@ class GAStrategy(ABC):
             for i in range(len(pop)):
                 ind_key = hp_man.to_tuple(hyperparams=pop[i])
                 if ind_key in uniques:
-                    pop[i] = self.create_individual()
+                    new_individual = self.create_individual()
+                    pop[i] = new_individual
+                    #Se registra el nuevo individuo
+                    if history is not None:
+                        history.update([new_individual])
                 else:
                     uniques.add(ind_key)
         return pop

@@ -36,7 +36,7 @@ class GAResult(NamedTuple):
     hofs: Sequence[Hofers]  # TODO Possibly not needed since hofs are passed from outside.
     history: History
     feature_counts: Sequence[Sequence[int]]
-
+    ga_evolution_history: GAEvolutionHistory
 
 class GARunner(ABC):
     __objectives: Iterable[PersonalObjective]
@@ -182,7 +182,6 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         pop = initial_pop
         initial_pop = None  # Help gc
 
-    evolution_history = GAEvolutionHistory() #Registro de Evolucion GA total
 
     evaluator = ga_strategy.evaluator()
     hp_manager = evaluator.hp_manager()
@@ -201,13 +200,15 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     for h in hofs:
         h.update(contextualized)
 
+    history = None
+    ga_evolution_history = None
+    #Registro de Evolucion GA total (History DEAP + GAEvolutionHistory)
     if return_history:
         history = History()
         toolbox.decorate("mate", history.decorator)
         toolbox.decorate("mutate", history.decorator)
         history.update(pop)
-    else:
-        history = None
+        ga_evolution_history = GAEvolutionHistory() 
 
     feat_count = sum_of_individuals(individuals=pop, hp_manager=hp_manager)
     # Compile statistics about the population
@@ -225,7 +226,9 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     for o in progress_observers:
         o.notify_initial_pop(pop)
 
-    evolution_history.add_generation(generation=0, population=pop) #Mostrar poblacion inicial
+    # Almacenar poblacion inicial
+    if return_history:
+        ga_evolution_history.add_generation(generation=0, population=pop, history=history) 
 
     # Begin the generational process
     for gen in range(1, n_gen):
@@ -243,7 +246,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
         pop = pop + offspring
 
-        pop = ga_strategy.clone_repurposing(pop=pop)
+        #Adaptacion clone repurposing para registrar nuevos individuos en el history
+        pop = ga_strategy.clone_repurposing(pop=pop, history=history)
 
         invalid_ind = individual_updater.eval_invalid(pop=pop)  # Evaluate the individuals with an invalid fitness
         contextualized = contextualize_all(invalid_ind, hp_manager)
@@ -265,7 +269,9 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         for o in progress_observers:
             o.notify_pop_after_select(pop)
 
-        evolution_history.add_generation(generation=gen, population=pop) #Mostra siguiente generacion
+        #Almacenar individuos seleccionado en la generacion gen
+        if return_history:
+            ga_evolution_history.add_generation(generation=gen, population=pop, history=history) 
 
         # Compile statistics about the new population
         record = stats.compile(pop)
@@ -281,9 +287,7 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
     evaluator.cleanup()
 
-    evolution_history.save("ga_evolution_history.json") #Mostrar final de GA
-
     res_hofs = [h.hofers() for h in hofs]
 
     return GAResult(pop=pop, hp_manager=hp_manager, logbook=logbook, history=history,
-                    feature_counts=feature_counts, hofs=res_hofs)
+                    feature_counts=feature_counts, hofs=res_hofs, ga_evolution_history=ga_evolution_history)
