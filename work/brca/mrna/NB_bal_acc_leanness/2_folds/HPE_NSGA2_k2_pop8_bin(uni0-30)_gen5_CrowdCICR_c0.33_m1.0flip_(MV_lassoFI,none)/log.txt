@@ -30,7 +30,7 @@ Feature importance for survival: multi-view feature importance none
 
 
 STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
-Computation on different folds finished in 00-00:00:49
+Computation on different folds finished in 00-00:00:50
 
 APPLYING EVALUATORS
 

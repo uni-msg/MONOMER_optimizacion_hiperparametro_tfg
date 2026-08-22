@@ -142,7 +142,10 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         logbook_saver.save(ga_result.logbook)
         feature_names = collapsed_views.columns
         feature_counts_saver.save(feature_counts=ga_result.feature_counts,feature_names=feature_names)
-        ga_evolution_history_saver.save(ga_result.ga_evolution_history) #Se añade el historial de evolucion GA
+        
+        #Se añade el historial de evolucion GA
+        if ga_result.ga_evolution_history is not None:
+            ga_evolution_history_saver.save(ga_result.ga_evolution_history)
         return hofs_to_results(hofs)
 
     def optimizer_type(self) -> MOOptimizerType:

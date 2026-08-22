@@ -5,6 +5,7 @@
             "individuals": [
                 {
                     "id": 1,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.6392691390765846,
@@ -51,6 +52,7 @@
                 },
                 {
                     "id": 2,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.22505494505494505,
@@ -62,6 +64,7 @@
                 },
                 {
                     "id": 3,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.3659966990647351,
@@ -74,6 +77,7 @@
                 },
                 {
                     "id": 4,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4248676099253762,
@@ -92,6 +96,7 @@
                 },
                 {
                     "id": 5,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.5304552892550325,
@@ -120,6 +125,7 @@
                 },
                 {
                     "id": 6,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4838443905260337,
@@ -147,6 +153,7 @@
                 },
                 {
                     "id": 7,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.3248624610306253,
@@ -161,6 +168,7 @@
                 },
                 {
                     "id": 8,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.5305385884975102,
@@ -212,6 +220,7 @@
             "individuals": [
                 {
                     "id": 2,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.22505494505494505,
@@ -223,6 +232,9 @@
                 },
                 {
                     "id": 13,
+                    "parents": [
+                        9
+                    ],
                     "hyperparameters": null,
                     "fitness": [
                         0.6728906459394264,
@@ -259,6 +271,7 @@
                 },
                 {
                     "id": 3,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.3659966990647351,
@@ -271,6 +284,7 @@
                 },
                 {
                     "id": 16,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.38430158416679594,
@@ -284,6 +298,7 @@
                 },
                 {
                     "id": 15,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.5330926518923952,
@@ -313,6 +328,7 @@
                 },
                 {
                     "id": 4,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4248676099253762,
@@ -331,6 +347,7 @@
                 },
                 {
                     "id": 6,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4838443905260337,
@@ -358,6 +375,7 @@
                 },
                 {
                     "id": 18,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.42777151603210645,
@@ -382,6 +400,9 @@
             "individuals": [
                 {
                     "id": 13,
+                    "parents": [
+                        9
+                    ],
                     "hyperparameters": null,
                     "fitness": [
                         0.6728906459394264,
@@ -417,7 +438,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 29,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.2,
@@ -427,6 +449,7 @@
                 },
                 {
                     "id": 2,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.22505494505494505,
@@ -438,6 +461,7 @@
                 },
                 {
                     "id": 3,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.3659966990647351,
@@ -450,6 +474,7 @@
                 },
                 {
                     "id": 18,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.42777151603210645,
@@ -468,7 +493,8 @@
                     ]
                 },
                 {
-                    "id": 25,
+                    "id": 26,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4267475913047159,
@@ -481,7 +507,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 31,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.5589814357657747,
@@ -514,7 +541,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 32,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.5111440420939779,
@@ -545,6 +573,9 @@
             "individuals": [
                 {
                     "id": 13,
+                    "parents": [
+                        9
+                    ],
                     "hyperparameters": null,
                     "fitness": [
                         0.6728906459394264,
@@ -580,7 +611,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 29,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.2,
@@ -590,6 +622,7 @@
                 },
                 {
                     "id": 2,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.22505494505494505,
@@ -601,6 +634,7 @@
                 },
                 {
                     "id": 3,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.3659966990647351,
@@ -612,7 +646,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 47,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.6026332012018789,
@@ -632,7 +667,8 @@
                     ]
                 },
                 {
-                    "id": 25,
+                    "id": 26,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4267475913047159,
@@ -645,7 +681,10 @@
                     ]
                 },
                 {
-                    "id": 29,
+                    "id": 35,
+                    "parents": [
+                        33
+                    ],
                     "hyperparameters": null,
                     "fitness": [
                         0.49386244692406434,
@@ -662,7 +701,8 @@
                     ]
                 },
                 {
-                    "id": 32,
+                    "id": 38,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.468901451565123,
@@ -683,6 +723,9 @@
             "individuals": [
                 {
                     "id": 13,
+                    "parents": [
+                        9
+                    ],
                     "hyperparameters": null,
                     "fitness": [
                         0.6728906459394264,
@@ -718,7 +761,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 29,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.2,
@@ -728,6 +772,7 @@
                 },
                 {
                     "id": 2,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.22505494505494505,
@@ -739,6 +784,7 @@
                 },
                 {
                     "id": 3,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.3659966990647351,
@@ -750,7 +796,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 47,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.6026332012018789,
@@ -770,7 +817,8 @@
                     ]
                 },
                 {
-                    "id": 25,
+                    "id": 26,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.4267475913047159,
@@ -783,7 +831,10 @@
                     ]
                 },
                 {
-                    "id": 29,
+                    "id": 35,
+                    "parents": [
+                        33
+                    ],
                     "hyperparameters": null,
                     "fitness": [
                         0.49386244692406434,
@@ -800,7 +851,8 @@
                     ]
                 },
                 {
-                    "id": null,
+                    "id": 58,
+                    "parents": [],
                     "hyperparameters": null,
                     "fitness": [
                         0.48986062717770035,

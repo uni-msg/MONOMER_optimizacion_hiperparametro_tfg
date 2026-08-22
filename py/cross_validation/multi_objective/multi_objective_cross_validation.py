@@ -12,8 +12,8 @@ import numpy as np
 from consts import DEFAULT_RECURSION_LIMIT, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
     FEATURE_COUNTS_EXTENSION, FINAL_STR, GA_EVOLUTION_HISTORY_EXTENSION, GA_EVOLUTION_HISTORY_PREFIX
 from cross_validation.folds import Folds
-from cross_validation.multi_objective.cross_evaluator.hof_saver import path_for_saves, save_hof_features, \
-    SOLUTION_FEATURES_PREFIX, SOLUTION_FEATURES_EXTENSION, save_hof_fitnesses
+from cross_validation.multi_objective.cross_evaluator.hof_saver import SOLUTION_HYPERPARAMETERS_EXTENSION, SOLUTION_HYPERPARAMETERS_STR, path_for_saves, save_hof_features, \
+    SOLUTION_FEATURES_PREFIX, SOLUTION_FEATURES_EXTENSION, save_hof_fitnesses, save_hof_hyperparameters
 from cross_validation.multi_objective.cross_evaluator.multi_objective_cross_evaluator import \
     MultiObjectiveCrossEvaluator
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizer, \
@@ -305,6 +305,10 @@ def do_final_optimization(
                           file_name=SOLUTION_FEATURES_PREFIX + FINAL_STR + SOLUTION_FEATURES_EXTENSION,
                           feature_names=input_data.collapsed_feature_names(),
                           hof=hof)
+        #Añadido guardar HPE_SET del optimizador final
+        save_hof_hyperparameters(path_saves=path_saves,
+                                file_name=SOLUTION_HYPERPARAMETERS_STR + "_" + FINAL_STR + SOLUTION_HYPERPARAMETERS_EXTENSION,
+                                hof=hof)
         save_hof_fitnesses(path_saves=path_saves,
                            file_name="solution_fitnesses_" + FINAL_STR + ".csv",
                            hof=hof,
