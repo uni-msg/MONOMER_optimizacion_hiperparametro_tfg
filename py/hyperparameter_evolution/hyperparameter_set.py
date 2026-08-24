@@ -124,7 +124,7 @@ class HyperparameterSet:
         return self.get(nick)
 
     def __str__(self):
-        return "\n".join(
+        return ", ".join(
             str(hyperparameter)
             for hyperparameter in self.values()
         )

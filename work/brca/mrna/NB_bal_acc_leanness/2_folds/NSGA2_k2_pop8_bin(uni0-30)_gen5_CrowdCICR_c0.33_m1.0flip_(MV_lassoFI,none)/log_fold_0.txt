@@ -11,6 +11,12 @@ Features active in view: 16962
 CREATING INNER FOLDS
 
 RUNNING GENETIC ALGORITHM
+=== DEBUG HYPERPARAMETER COUNTS ===
+self.__hyperparameter_set_factory = None
+Tipo de hyperparameter_counts_saver = <class 'ga_components.hyperparameter_counts_saver.CsvHyperparameterCountsSaver'>
+return_hyperparameter_counts = False
+=== DEBUG GA RESULT ===
+ga_result.hyperparameter_counts es None: True
    	     	         	        	          Pam50 naive Bayes balanced accuracy           	                    leanness                    
    	     	         	        	--------------------------------------------------------	------------------------------------------------
 gen	evals	gen_feats	explored	min     	avg     	max     	std     	min     	avg     	max	std     
@@ -19,7 +25,9 @@ gen	evals	gen_feats	explored	min     	avg     	max     	std     	min     	avg   
 2  	8    	67       	168     	0.2     	0.423573	0.672891	0.150375	0.037037	0.290567	1  	0.309272
 3  	8    	82       	213     	0.2     	0.432011	0.672891	0.15547 	0.037037	0.312868	1  	0.29444 
 4  	8    	63       	232     	0.2     	0.434631	0.672891	0.156244	0.037037	0.312868	1  	0.29444 
-Optimization on fold finished in 00-00:00:48
+=== INTENTANDO GUARDAR HYPERPARAMETER COUNTS ===
+Hyperparameter evolution DESACTIVADO: no se guardan hyperparameter_counts
+Optimization on fold finished in 00-00:00:53
 
 FEATURE SETS SELECTED
 

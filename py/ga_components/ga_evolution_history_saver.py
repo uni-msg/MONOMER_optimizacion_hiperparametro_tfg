@@ -34,7 +34,7 @@ class DummyGAEvolutionHistorySaver(GAEvolutionHistorySaver):
 
 class JsonGAEvolutionHistorySaver(GAEvolutionHistorySaver):
     """
-    Clase encargada del almacenar un objeto GAEvolutionHistory dentro de una ruta esoecifica con un archivo Json 
+    Clase encargada del almacenar un objeto GAEvolutionHistory dentro de una ruta especifica con un archivo Json 
     """
     __file: str
 

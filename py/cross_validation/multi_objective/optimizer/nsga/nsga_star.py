@@ -14,6 +14,7 @@ from cross_validation.multi_objective.optimizer.nsga.nsga_types import NSGA2_TYP
 from folds_creator.input_data_folds_creator import InputDataFoldsCreator
 from ga_components.bitlist_mutation import BitlistMutation, FlipMutation
 from ga_components.feature_counts_saver import FeatureCountsSaver, DummyFeatureCountsSaver
+from ga_components.hyperparameter_counts_saver import DummyHyperparameterCountsSaver, HyperparameterCountsSaver
 from ga_components.ga_evolution_history_saver import DummyGAEvolutionHistorySaver, GAEvolutionHistorySaver
 from ga_components.logbook_saver import LogbookSaver, DummyLogbookSaver
 from ga_components.sorter.sorting_strategy import SortingStrategy
@@ -100,6 +101,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             n_proc=1, workers_printer: Printer = UnbufferedOutPrinter(),
             logbook_saver: LogbookSaver = DummyLogbookSaver(),
             feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver(),
+            hyperparameter_counts_saver: HyperparameterCountsSaver = DummyHyperparameterCountsSaver(),
             ga_evolution_history_saver: GAEvolutionHistorySaver = DummyGAEvolutionHistorySaver()) -> [MultiObjectiveOptimizerResult]:
         set_all_seeds(772346)
 
@@ -133,6 +135,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             n_workers=n_proc, workers_printer=workers_printer, n_gen=self.__n_gen,
             feature_importance=feature_importance,
             return_feature_counts=True,
+            return_hyperparameter_counts=self.__hyperparameter_set_factory is not None,
             hofs=hofs,
             progress_observers=[SmartProgressObserver(printer=printer)
                                 # , PopNumFeaturesObserver()
@@ -142,6 +145,10 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         logbook_saver.save(ga_result.logbook)
         feature_names = collapsed_views.columns
         feature_counts_saver.save(feature_counts=ga_result.feature_counts,feature_names=feature_names)
+
+        #Se añade el contador de hyperparametros
+        if self.__hyperparameter_set_factory is not None:
+            hyperparameter_counts_saver.save(ga_result.hyperparameter_counts)
         
         #Se añade el historial de evolucion GA
         if ga_result.ga_evolution_history is not None:

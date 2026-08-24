@@ -1,6 +1,6 @@
 
 RUNNING NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (2-FOLDS CREATOR, POP 8, BINOMIAL(UNIFORM(0, 30)), GEN 5, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
-Date = 2026-08-22
+Date = 2026-08-24
 Machine = ubuntu22-UNI
 CPUs detected in the system = 8
 Number of outer folds = 2
@@ -29,7 +29,7 @@ Feature importance for survival: multi-view feature importance none
 
 
 STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
-Computation on different folds finished in 00-00:00:50
+Computation on different folds finished in 00-00:00:55
 
 APPLYING EVALUATORS
 
@@ -128,33 +128,3 @@ Creating plots for each fold
 Creating plot for union of folds
 
 APPLYING HYPERVOLUME
-Hypervolumes for fold 0
-Inner cross-validation hypervolume: 0.2986649059580244
-Train hypervolume: 0.30802423049297417
-Test hypervolume: 0.2884412676845741
-Cross hypervolume: 0.29022482278764794
-
-Hypervolumes for fold 1
-Inner cross-validation hypervolume: 0.29677638843936816
-Train hypervolume: 0.3092947081868738
-Test hypervolume: 0.2970584720382876
-Cross hypervolume: 0.2938888341795668
-
-Mean hypervolumes
-Inner cross-validation hypervolume: 0.2977206471986963
-Train hypervolume: 0.308659469339924
-Test hypervolume: 0.29274986986143087
-Cross hypervolume: 0.29205682848360737
-
-
-CREATING GENERATION PLOTS IF POSSIBLE
-
-CREATING PLOTS OF EXPLORED FEATURES IF POSSIBLE
-
-CREATING PLOTS OF STABILITY IF POSSIBLE
-
-CREATING PLOTS OF HALL OF FAME STABILITY IF POSSIBLE
-
-CREATING PLOTS OF MONOTONIC TEST FRONTS IF POSSIBLE
-
-CREATING PLOTS OF PERFORMANCE BY CLASS IF POSSIBLE

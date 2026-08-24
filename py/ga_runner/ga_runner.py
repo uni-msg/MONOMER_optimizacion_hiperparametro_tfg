@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from collections.abc import Iterable, Sequence
 from typing import NamedTuple, List, Optional
 
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 import numpy
 from deap import base
@@ -36,6 +37,7 @@ class GAResult(NamedTuple):
     hofs: Sequence[Hofers]  # TODO Possibly not needed since hofs are passed from outside.
     history: History
     feature_counts: Sequence[Sequence[int]]
+    hyperparameter_counts: Optional[list[list[HyperparameterSet]]]
     ga_evolution_history: GAEvolutionHistory
 
 class GARunner(ABC):
@@ -62,6 +64,7 @@ class GARunner(ABC):
             seed=2547, n_workers=1,
             return_history=False,
             return_feature_counts=False,
+            return_hyperparameter_counts=False,
             initial_pop=None,
             workers_printer: Printer = UnbufferedOutPrinter(),
             hofs: Iterable[HallOfFame] = (),
@@ -75,6 +78,7 @@ class GARunner(ABC):
             ga_strategy=ga_strategy, pop_size=self.pop_size(), n_gen=n_gen,
             seed=seed, return_history=return_history, initial_pop=initial_pop,
             return_feature_counts=return_feature_counts,
+            return_hyperparameter_counts=return_hyperparameter_counts,
             hofs=hofs, progress_observers=progress_observers)
 
     def pop_size(self):
@@ -133,10 +137,20 @@ def pop_short_print(pop):
     for i in pop:
         print(i.fitness)
 
+def hyperparameters_of_individuals(individuals) -> list[HyperparameterSet]:
+    """
+    Funcion auxiliar para el conteo de hiperparametros
+    """
+    return [
+        individual.hyperparameter_set().clone()
+        for individual in individuals
+        if individual.has_hyperparameter_set()
+    ]
+
 
 # If initial pop is passed pop size is ignored.
 def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_history=False,
-           initial_pop=None, return_feature_counts=False, hofs: Iterable[HallOfFame] = (),
+           initial_pop=None, return_feature_counts=False, return_hyperparameter_counts=False, hofs: Iterable[HallOfFame] = (),
            progress_observers: [ProgressObserver] = ()) -> GAResult:
     """Explored features are computed before the select.
     Feature counts are computed after the select."""
@@ -223,6 +237,11 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     else:
         feature_counts = None
 
+    #Conteo de hiperparametros
+    hyperparameter_counts = None
+    if return_hyperparameter_counts:
+        hyperparameter_counts = [hyperparameters_of_individuals(pop)]
+
     for o in progress_observers:
         o.notify_initial_pop(pop)
 
@@ -282,6 +301,10 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         if return_feature_counts:
             feature_counts.append(sum_of_individuals(individuals=pop, hp_manager=hp_manager))
 
+        #Añadimos hiperparametros de la gen
+        if return_hyperparameter_counts:
+            hyperparameter_counts.append(hyperparameters_of_individuals(pop))
+
         for po in progress_observers:
             po.notify_generation_end(gen=gen)
 
@@ -290,4 +313,4 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     res_hofs = [h.hofers() for h in hofs]
 
     return GAResult(pop=pop, hp_manager=hp_manager, logbook=logbook, history=history,
-                    feature_counts=feature_counts, hofs=res_hofs, ga_evolution_history=ga_evolution_history)
+                    feature_counts=feature_counts,hyperparameter_counts=hyperparameter_counts, hofs=res_hofs, ga_evolution_history=ga_evolution_history)

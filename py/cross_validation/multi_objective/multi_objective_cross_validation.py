@@ -7,10 +7,11 @@ import time
 from abc import ABC, abstractmethod
 from typing import Iterable, NamedTuple, Sequence
 
+from ga_components.hyperparameter_counts_saver import CsvHyperparameterCountsSaver, HyperparameterCountsSaver
 import numpy as np
 
 from consts import DEFAULT_RECURSION_LIMIT, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
-    FEATURE_COUNTS_EXTENSION, FINAL_STR, GA_EVOLUTION_HISTORY_EXTENSION, GA_EVOLUTION_HISTORY_PREFIX
+    FEATURE_COUNTS_EXTENSION, FINAL_STR, GA_EVOLUTION_HISTORY_EXTENSION, GA_EVOLUTION_HISTORY_PREFIX, HYPERPARAMETER_COUNTS_PATH
 from cross_validation.folds import Folds
 from cross_validation.multi_objective.cross_evaluator.hof_saver import SOLUTION_HYPERPARAMETERS_EXTENSION, SOLUTION_HYPERPARAMETERS_STR, path_for_saves, save_hof_features, \
     SOLUTION_FEATURES_PREFIX, SOLUTION_FEATURES_EXTENSION, save_hof_fitnesses, save_hof_hyperparameters
@@ -107,6 +108,13 @@ class MultiObjectiveOptimizeOnFolds(ABC):
             save_interval=save_interval)
 
     @staticmethod
+    def create_fold_hyperparameter_counts_saver(save_path: str, fold_index: int, save_interval: int = 1) -> HyperparameterCountsSaver:
+        return CsvHyperparameterCountsSaver( 
+            directory= save_path+HYPERPARAMETER_COUNTS_PATH,
+            complement="fold_"+str(fold_index),
+            save_interval=save_interval)
+
+    @staticmethod
     def create_fold_ga_evolution_history_saver(save_path: str, fold_index: int) -> GAEvolutionHistorySaver:
         """
         Funcion encargada de definir el fichero json que almacenara el historial del GA por cada fold
@@ -134,6 +142,10 @@ class MultiObjectiveOptimizeOnFolds(ABC):
         fold_feat_counts_saver = MultiObjectiveOptimizeOnFolds.create_fold_feat_counts_saver(
             save_path=save_path, fold_index=f, save_interval=100)
 
+        #Conteo de hiperparametros
+        fold_hyperparameter_counts_saver = MultiObjectiveOptimizeOnFolds.create_fold_hyperparameter_counts_saver(
+            save_path=save_path, fold_index=f, save_interval=100)
+
         #Creacion del saver encargado de almacenar los datos de la evolucion GA del fold especifico
         fold_ga_evolution_history_saver = MultiObjectiveOptimizeOnFolds.create_fold_ga_evolution_history_saver(
                 save_path=save_path,fold_index=f)
@@ -149,6 +161,7 @@ class MultiObjectiveOptimizeOnFolds(ABC):
                 workers_printer=fold_worker_printer,
                 logbook_saver=fold_logbook_saver,
                 feature_counts_saver=fold_feat_counts_saver,
+                hyperparameter_counts_saver=fold_hyperparameter_counts_saver,
                 ga_evolution_history_saver=fold_ga_evolution_history_saver
             )
             # each fold_predictors_with_hyperparams is a MultiObjectiveOptimizerResult
