@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+from plots.hyperparameter_diversity_plots import hyperparameter_diversity_plots_for_directory
 from cross_validation.multi_objective.cross_evaluator.hof_saver import hofs_path_from_optimizer_path
 from plots.explored_features_plot import explored_features_plots_for_directory
 from plots.feature_diversity_plots import feature_diversity_plots_for_directory
@@ -48,7 +49,16 @@ class FeatureDiversityPlotsPostprocessing(Postprocessing):
         feature_diversity_plots_for_directory(direct=optimizer_dir)
 
     def description(self) -> str:
-        return "Creating plots of stability if possible"
+        return "Creating plots of Feature stability if possible"
+
+
+class HyperparameterDiversityPlotsPostprocessing(Postprocessing):
+
+    def inner_run_postprocessing(self, optimizer_dir: str, main_hofs_dir: str):
+        hyperparameter_diversity_plots_for_directory(direct=optimizer_dir)
+
+    def description(self) -> str:
+        return "Creating plots of Hyperparameter Evolution stability if possible"
 
 
 class HofStabilityPlotsPostprocessing(Postprocessing):
@@ -82,6 +92,7 @@ POSTPROCESSING_ARCHIVE = (
     GenerationsPlotsPostprocessing(),
     ExploredFeaturesPlotsPostprocessing(),
     FeatureDiversityPlotsPostprocessing(),
+    HyperparameterDiversityPlotsPostprocessing(),
     HofStabilityPlotsPostprocessing(),
     SingleFrontPlotEveryHofPostprocessing(),
     PerformanceByClassPlotsPostprocessing()

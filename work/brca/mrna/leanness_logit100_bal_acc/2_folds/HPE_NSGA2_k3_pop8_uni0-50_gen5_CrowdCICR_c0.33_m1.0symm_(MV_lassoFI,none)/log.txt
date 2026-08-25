@@ -94,3 +94,70 @@ Cross hypervolume: 0.2844065452273233
 EVALUATING HALL OF FAME BEST SUMS WITH SIZE 50
 
 APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
+Mean Jaccard all vs others for each fold
+[0.04943924054871957, 0.046472465769032564]
+Mean of folds = 0.04795585315887607
+
+APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
+Stability of features by weights: 0.03872066237104799
+Stability of features by unions: 0.0524475524475525
+Stability of features by spearman: 0.03937483596351993
+Stability of features by top 50: 0.020000000000000018
+
+APPLYING USAGE OF VIEWS
+Prevalence of features selected in each view
+mrna = 1.0
+Distribution of views in each fold
+[[1.0], [1.0]]
+Stability of views = 1.0
+
+APPLYING FOLD SAVER
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 logistic classifier (max_iter=100) balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 logistic classifier (max_iter=100) balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.28961037569407766
+Train hypervolume: 0.3029005256771966
+Test hypervolume: 0.2829594206784515
+Cross hypervolume: 0.2839960234846205
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.29228543370767057
+Train hypervolume: 0.3087356233091507
+Test hypervolume: 0.28269766913280014
+Cross hypervolume: 0.28481706697002607
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.2909479047008741
+Train hypervolume: 0.30581807449317366
+Test hypervolume: 0.2828285449056258
+Cross hypervolume: 0.2844065452273233
+
+
+CREATING GENERATION PLOTS IF POSSIBLE
+
+CREATING PLOTS OF EXPLORED FEATURES IF POSSIBLE
+
+CREATING PLOTS OF FEATURE STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HYPERPARAMETER EVOLUTION STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HALL OF FAME STABILITY IF POSSIBLE
+
+CREATING PLOTS OF MONOTONIC TEST FRONTS IF POSSIBLE
+
+CREATING PLOTS OF PERFORMANCE BY CLASS IF POSSIBLE

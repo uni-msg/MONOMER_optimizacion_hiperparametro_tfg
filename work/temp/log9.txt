@@ -1,8 +1,8 @@
-Date = 2026-08-24
+Date = 2026-08-25
 Machine = ubuntu22-UNI
 CPUs detected in the system = 8
 Recursion limit = 100000
-Parsing setup file setups/brca/hp/test_small_svm.ini
+Parsing setup file setups/brca/hp/test_small_nb.ini
 
 RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
 
@@ -10,14 +10,8 @@ LOADING BRCA COHORT
 
 LOADING VIEWS
 Input directory = ./brca/input/
-Loading view meth
-View does not exist.
-Loading view mirna
-View does not exist.
 Loading view mrna
 View loaded.
-Loading view rppaa
-View does not exist.
 Applying transformation to view mrna
 
 LOADING OUTCOMES
@@ -38,13 +32,13 @@ Directory for plots = ./brca/input/plots
 Plotting view mrna
 
 LOADED 1081 SAMPLES.
-Objectives = [Pam50 svm balanced accuracy, leanness]
-Factory HPE = SVMHyperparameterSetFactory
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
 Removing outcomes not necessary for objectives from input data.
-Creating 5 stratified folds.
-Number of outer folds = 5
+Creating 2 stratified folds.
+Number of outer folds = 2
 Copying config file to run directory
-Copy source = setups/brca/hp/test_small_svm.ini
-Destination folder :  = ./brca/mrna/leanness_svm_bal_acc/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+Copy source = setups/brca/hp/test_small_nb.ini
+Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/2_folds/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/
 Program finished
-Total execution time = 00-00:09:53
+Total execution time = 00-00:04:58
