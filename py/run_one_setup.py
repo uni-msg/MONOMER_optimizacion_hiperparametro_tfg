@@ -1,3 +1,4 @@
+from postprocessing.postprocessing import run_postprocessing_archive
 from cross_validation.multi_objective.cross_evaluator.confusion_matrices_saver import ConfusionMatricesSaver
 from cross_validation.multi_objective.cross_evaluator.cross_hypervolume_cross_evaluator import \
     CrossHypervolumeCrossEvaluator
@@ -60,3 +61,6 @@ def run_one_setup(setup: EvaluationSetup, printer: Printer,
         do_final_optimization(input_data=input_data, mo_optimizer=mo_optimizer.optimizer_for_all_data(),
                               objectives=objectives,
                               save_path=save_path, n_proc=n_workers)
+
+    #Procesamiento de archivos de informacion recopilados durante el proceso de optimizacion
+    run_postprocessing_archive(optimizer_dir=optimizer_save_path, printer=printer)

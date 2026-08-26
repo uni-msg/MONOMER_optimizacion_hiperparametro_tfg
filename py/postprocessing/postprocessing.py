@@ -1,5 +1,8 @@
 from abc import ABC, abstractmethod
 
+from plots.hof_hyperparameter_complexity_plots import hof_hyperparameter_complexity_plots_every_hof
+from plots.hof_hyperparameter_distribution_by_fold_plots import hof_hyperparameter_distribution_by_fold_plots_every_hof
+from plots.hof_hyperparameter_accuracy_plots import hof_hyperparameter_accuracy_plots_every_hof
 from plots.hyperparameter_diversity_plots import hyperparameter_diversity_plots_for_directory
 from cross_validation.multi_objective.cross_evaluator.hof_saver import hofs_path_from_optimizer_path
 from plots.explored_features_plot import explored_features_plots_for_directory
@@ -69,6 +72,15 @@ class HofStabilityPlotsPostprocessing(Postprocessing):
     def description(self) -> str:
         return "Creating plots of hall of fame stability if possible"
 
+class HofHyperparameterAccuracyPlotsPostprocessing(Postprocessing):
+
+    def inner_run_postprocessing(self, optimizer_dir: str, main_hofs_dir: str):
+        hof_hyperparameter_accuracy_plots_every_hof( main_hofs_dir=main_hofs_dir )
+        hof_hyperparameter_complexity_plots_every_hof( main_hofs_dir=main_hofs_dir )
+        hof_hyperparameter_distribution_by_fold_plots_every_hof( main_hofs_dir=main_hofs_dir )
+
+    def description(self) -> str:
+        return ( "Creating plots of Hyperparameter hall of fame if possible" )
 
 class SingleFrontPlotEveryHofPostprocessing(Postprocessing):
 
@@ -94,6 +106,7 @@ POSTPROCESSING_ARCHIVE = (
     FeatureDiversityPlotsPostprocessing(),
     HyperparameterDiversityPlotsPostprocessing(),
     HofStabilityPlotsPostprocessing(),
+    HofHyperparameterAccuracyPlotsPostprocessing(),
     SingleFrontPlotEveryHofPostprocessing(),
     PerformanceByClassPlotsPostprocessing()
 )

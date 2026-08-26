@@ -373,5 +373,6 @@ def optimize_with_evaluation(input_data: InputData,
                 optimizer_nick=mo_optimizer_by_fold.nick(), printer=printer)
             evaluation_res.append(evaluation)
 
-    run_postprocessing_archive(optimizer_dir=optimizer_save_path, printer=printer)
+    # Decision de mover esta funcion a la llamada principal, asi puede tomar valores del optimizador final y fold
+    #run_postprocessing_archive(optimizer_dir=optimizer_save_path, printer=printer)
     return evaluation_res
