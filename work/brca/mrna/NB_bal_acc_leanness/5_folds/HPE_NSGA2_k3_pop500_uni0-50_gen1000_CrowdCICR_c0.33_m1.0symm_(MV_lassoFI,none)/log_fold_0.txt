@@ -1,0 +1,43 @@
+
+OPTIMIZING ON FOLD NUMBER 0
+Number of workers = 1
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 17852
+Features active in view: 17852
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Generations completed = 9
+Generations completed = 20
+Generations completed = 30
+Generations completed = 40
+Generations completed = 51
+Generations completed = 60
+Generations completed = 69
+Generations completed = 79
+Generations completed = 89
+Generations completed = 99
+Generations completed = 111
+Generations completed = 121
+Generations completed = 131
+Generations completed = 142
+Generations completed = 153
+Generations completed = 162
+Generations completed = 171
+Generations completed = 180
+Generations completed = 190
+Generations completed = 201
+Generations completed = 211
+Generations completed = 221
+Generations completed = 231
+Generations completed = 241
+Generations completed = 251
+Generations completed = 261
+Generations completed = 271
+Generations completed = 281
+Generations completed = 290
+Generations completed = 300

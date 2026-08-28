@@ -1,29 +1,25 @@
 import os
-import re
-from pathlib import Path
 from typing import Optional
 
 import pandas as pd
 from pandas import DataFrame
 
-from util.hyperparameter_plot_results import (
-    save_hyperparameter_multiclass_scatter
+from util.hyperparameter_plot import (
+    SOLUTION_HYPERPARAMETERS_PREFIX,
+    create_plot_directory,
+    final_file_by_prefix,
+    fold_files_by_prefix,
+    hof_subdirectories,
+    hyperparameters_final_file,
+    hyperparameters_fold_files,
+    read_hyperparameters
 )
+from util.hyperparameter_plot_results import save_hyperparameter_multiclass_scatter
 
 
 HYPERPARAMETERS_DIR = "hyperparameters"
 
-SOLUTION_HYPERPARAMETERS_PREFIX = (
-    "solution_hyperparameters"
-)
-
-SOLUTION_FITNESSES_PREFIX = (
-    "solution_fitnesses"
-)
-
-FOLD_FILE_REGEX = re.compile(
-    r"_fold_(\d+)\.csv$"
-)
+SOLUTION_FITNESSES_PREFIX = "solution_fitnesses"
 
 INNER_CV_PREFIX = "inner_cv__"
 TRAIN_PREFIX = "train_"
@@ -32,564 +28,194 @@ TEST_PREFIX = "test_"
 BALANCED_ACCURACY_SUFFIX = "_bal_acc"
 
 
-def fold_number_from_file_name(
-        file_name: str
-) -> Optional[int]:
+def fitnesses_fold_files(hof_dir: str) -> dict[int, str]:
     """
-    Returns the fold number from a file name.
-
-    Examples:
-        solution_hyperparameters_fold_0.csv -> 0
-        solution_fitnesses_fold_12.csv -> 12
-        solution_hyperparameters_final.csv -> None
+    Obtiene los archivos de fitness de cada fold
+    indexados por su numero de fold.
     """
-
-    match = FOLD_FILE_REGEX.search(
-        file_name
-    )
-
-    if match is None:
-        return None
-
-    return int(
-        match.group(1)
-    )
+    return fold_files_by_prefix(directory=hof_dir, prefix=SOLUTION_FITNESSES_PREFIX)
 
 
-def is_hyperparameters_file(
-        file_name: str
-) -> bool:
-
-    return (
-        file_name.startswith(
-            SOLUTION_HYPERPARAMETERS_PREFIX
-        )
-        and file_name.endswith(
-            ".csv"
-        )
-    )
-
-
-def is_fitnesses_file(
-        file_name: str
-) -> bool:
-
-    return (
-        file_name.startswith(
-            SOLUTION_FITNESSES_PREFIX
-        )
-        and file_name.endswith(
-            ".csv"
-        )
-    )
-
-
-def is_final_file(
-        file_name: str
-) -> bool:
-
-    return file_name.endswith(
-        "_final.csv"
-    )
-
-
-def hyperparameters_fold_files(
-        hof_dir: str
-) -> dict[int, str]:
+def fitnesses_final_file(hof_dir: str) -> Optional[str]:
     """
-    Returns the hyperparameters files indexed
-    by fold number.
+    Obtiene el archivo final de fitness
+    si existe.
     """
-
-    result = {}
-
-    if not os.path.isdir(
-            hof_dir
-    ):
-
-        return result
-
-    for file_name in os.listdir(
-            hof_dir
-    ):
-
-        if not is_hyperparameters_file(
-                file_name
-        ):
-
-            continue
-
-        fold_number = (
-            fold_number_from_file_name(
-                file_name
-            )
-        )
-
-        if fold_number is not None:
-
-            result[
-                fold_number
-            ] = os.path.join(
-                hof_dir,
-                file_name
-            )
-
-    return result
+    return final_file_by_prefix(directory=hof_dir, prefix=SOLUTION_FITNESSES_PREFIX)
 
 
-def fitnesses_fold_files(
-        hof_dir: str
-) -> dict[int, str]:
+def read_fitnesses(file_path: str) -> DataFrame:
     """
-    Returns the fitnesses files indexed
-    by fold number.
+    Lee un archivo CSV de fitness y
+    devuelve su contenido como un DataFrame.
     """
-
-    result = {}
-
-    if not os.path.isdir(
-            hof_dir
-    ):
-
-        return result
-
-    for file_name in os.listdir(
-            hof_dir
-    ):
-
-        if not is_fitnesses_file(
-                file_name
-        ):
-
-            continue
-
-        fold_number = (
-            fold_number_from_file_name(
-                file_name
-            )
-        )
-
-        if fold_number is not None:
-
-            result[
-                fold_number
-            ] = os.path.join(
-                hof_dir,
-                file_name
-            )
-
-    return result
+    return pd.read_csv(file_path)
 
 
-def hyperparameters_final_file(
-        hof_dir: str
-) -> Optional[str]:
+def balanced_accuracy_column(df: DataFrame, prefix: str) -> Optional[str]:
     """
-    Returns the final hyperparameters file
-    if it exists.
+    Busca la columna de balanced accuracy
+    correspondiente al prefijo indicado.
     """
-
-    file_path = os.path.join(
-        hof_dir,
-        SOLUTION_HYPERPARAMETERS_PREFIX
-        + "_final.csv"
-    )
-
-    if os.path.isfile(
-            file_path
-    ):
-
-        return file_path
-
-    return None
-
-
-def fitnesses_final_file(
-        hof_dir: str
-) -> Optional[str]:
-    """
-    Returns the final fitnesses file
-    if it exists.
-    """
-
-    file_path = os.path.join(
-        hof_dir,
-        SOLUTION_FITNESSES_PREFIX
-        + "_final.csv"
-    )
-
-    if os.path.isfile(
-            file_path
-    ):
-
-        return file_path
-
-    return None
-
-
-def read_hyperparameters(
-        file_path: str
-) -> DataFrame:
-
-    return pd.read_csv(
-        file_path
-    )
-
-
-def read_fitnesses(
-        file_path: str
-) -> DataFrame:
-
-    return pd.read_csv(
-        file_path
-    )
-
-
-def inner_cv_balanced_accuracy_column(
-        df: DataFrame
-) -> Optional[str]:
-    """
-    Finds the balanced accuracy column
-    corresponding to inner CV.
-    """
-
+    #Recorre todas las columnas del DataFrame
     for column in df.columns:
-
-        if (
-            column.startswith(
-                INNER_CV_PREFIX
-            )
-            and column.endswith(
-                BALANCED_ACCURACY_SUFFIX
-            )
-        ):
-
+        #Busca la columna con el prefijo y sufijo esperados
+        if column.startswith(prefix) and column.endswith(BALANCED_ACCURACY_SUFFIX):
             return column
 
     return None
 
 
-def train_balanced_accuracy_column(
-        df: DataFrame
-) -> Optional[str]:
+def inner_cv_balanced_accuracy_column(df: DataFrame) -> Optional[str]:
     """
-    Finds the balanced accuracy column
-    corresponding to train.
+    Busca la columna de balanced accuracy
+    correspondiente al inner CV.
     """
-
-    for column in df.columns:
-
-        if (
-            column.startswith(
-                TRAIN_PREFIX
-            )
-            and column.endswith(
-                BALANCED_ACCURACY_SUFFIX
-            )
-        ):
-
-            return column
-
-    return None
+    return balanced_accuracy_column(df=df, prefix=INNER_CV_PREFIX)
 
 
-def test_balanced_accuracy_column(
-        df: DataFrame
-) -> Optional[str]:
+def train_balanced_accuracy_column(df: DataFrame) -> Optional[str]:
     """
-    Finds the balanced accuracy column
-    corresponding to test.
+    Busca la columna de balanced accuracy
+    correspondiente al train.
     """
-
-    for column in df.columns:
-
-        if (
-            column.startswith(
-                TEST_PREFIX
-            )
-            and column.endswith(
-                BALANCED_ACCURACY_SUFFIX
-            )
-        ):
-
-            return column
-
-    return None
+    return balanced_accuracy_column(df=df, prefix=TRAIN_PREFIX)
 
 
-def balanced_accuracy_values_by_set(
-        fitnesses_df: DataFrame
-) -> dict[str, list[float]]:
+def test_balanced_accuracy_column(df: DataFrame) -> Optional[str]:
     """
-    Extracts balanced accuracy values for:
+    Busca la columna de balanced accuracy
+    correspondiente al test.
+    """
+    return balanced_accuracy_column(df=df, prefix=TEST_PREFIX)
+
+
+def balanced_accuracy_values_by_set(fitnesses_df: DataFrame) -> dict[str, list[float]]:
+    """
+    Obtiene los valores de balanced accuracy para:
 
         - train
         - inner cv
         - test
     """
-
     result = {}
 
-    inner_cv_column = (
-        inner_cv_balanced_accuracy_column(
-            df=fitnesses_df
-        )
-    )
+    #Busca las columnas de balanced accuracy disponibles
+    inner_cv_column = inner_cv_balanced_accuracy_column(df=fitnesses_df)
+    train_column = train_balanced_accuracy_column(df=fitnesses_df)
+    test_column = test_balanced_accuracy_column(df=fitnesses_df)
 
-    train_column = (
-        train_balanced_accuracy_column(
-            df=fitnesses_df
-        )
-    )
-
-    test_column = (
-        test_balanced_accuracy_column(
-            df=fitnesses_df
-        )
-    )
-
+    #Guarda los valores de train si existe la columna
     if train_column is not None:
+        result["train"] = fitnesses_df[train_column].tolist()
 
-        result["train"] = (
-            fitnesses_df[
-                train_column
-            ].tolist()
-        )
-
+    #Guarda los valores de inner CV si existe la columna
     if inner_cv_column is not None:
+        result["inner cv"] = fitnesses_df[inner_cv_column].tolist()
 
-        result["inner cv"] = (
-            fitnesses_df[
-                inner_cv_column
-            ].tolist()
-        )
-
+    #Guarda los valores de test si existe la columna
     if test_column is not None:
-
-        result["test"] = (
-            fitnesses_df[
-                test_column
-            ].tolist()
-        )
+        result["test"] = fitnesses_df[test_column].tolist()
 
     return result
 
 
-def plot_hyperparameter_vs_balanced_accuracy(
-        hyperparameter_values,
-        balanced_accuracies_by_set: dict[
-            str,
-            list[float]
-        ],
-        save_file: str,
-        hyperparameter_name: str
-):
+def plot_hyperparameter_vs_balanced_accuracy(hyperparameter_values, balanced_accuracies_by_set: dict[str, list[float]], save_file: str, hyperparameter_name: str):
     """
-    Creates one scatter plot.
+    Crea una gráfica de dispersión.
 
-    X:
-        Values of one hyperparameter.
+    Eje X:
+        Valores de un hiperparámetro.
 
-    Y:
+    Eje Y:
         Balanced accuracy.
 
-    Different colours:
-
+    Clases:
         - train
         - inner cv
         - test
 
-    The hyperparameter type is detected
-    automatically by the plotting function.
-
-    Supported automatically:
-
-        - integer values
-        - float values
-        - logarithmic float values
-        - categorical values
-        - boolean values
-        - missing values
-        - mixed values
+    El tipo del hiperparámetro se detecta automáticamente.
     """
-
-    if len(
-            hyperparameter_values
-    ) == 0:
-
+    #No tiene sentido crear una gráfica sin valores del hiperparámetro
+    if len(hyperparameter_values) == 0:
         return
 
     x = []
     y = []
-
     class_labels = []
 
-    for (
-            set_name,
-            balanced_accuracies
-    ) in (
-        balanced_accuracies_by_set.items()
-    ):
-
-        if len(
-                balanced_accuracies
-        ) == 0:
-
+    #Recorre los diferentes conjuntos de evaluación
+    for (set_name, balanced_accuracies) in balanced_accuracies_by_set.items():
+        #Ignora los conjuntos que no tienen valores
+        if len(balanced_accuracies) == 0:
             continue
 
-        if (
-            len(
-                hyperparameter_values
-            )
-            != len(
-                balanced_accuracies
-            )
-        ):
-
+        #Cada valor del hiperparámetro debe tener su balanced accuracy correspondiente
+        if len(hyperparameter_values) != len(balanced_accuracies):
             raise ValueError(
-                "Different number of "
-                "hyperparameter values and "
-                "balanced accuracy values for "
-                "hyperparameter "
-                f"'{hyperparameter_name}'. "
-                f"Hyperparameters: "
-                f"{len(hyperparameter_values)}. "
-                f"Balanced accuracies "
-                f"({set_name}): "
-                f"{len(balanced_accuracies)}."
+                "Different number of hyperparameter values and balanced accuracy values for "
+                f"hyperparameter '{hyperparameter_name}'. Hyperparameters: {len(hyperparameter_values)}. "
+                f"Balanced accuracies ({set_name}): {len(balanced_accuracies)}."
             )
 
-        x.append(
-            hyperparameter_values
-        )
+        #Añade los valores del hiperparámetro para este conjunto
+        x.append(hyperparameter_values)
 
-        y.append(
-            balanced_accuracies
-        )
+        #Añade los valores de balanced accuracy
+        y.append(balanced_accuracies)
 
-        class_labels.append(
-            set_name
-        )
+        #Guarda el nombre del conjunto como etiqueta de la clase
+        class_labels.append(set_name)
 
-    if len(
-            x
-    ) == 0:
-
+    #Si no hay ningún conjunto válido, no crea la gráfica
+    if len(x) == 0:
         return
 
-    save_hyperparameter_multiclass_scatter(
-        x=x,
-        y=y,
-        save_file=save_file,
-        x_label=hyperparameter_name,
-        y_label="balanced accuracy",
-        class_labels=class_labels
-    )
+    #Crea la gráfica utilizando la función común
+    save_hyperparameter_multiclass_scatter(x=x, y=y, save_file=save_file, x_label=hyperparameter_name, y_label="balanced accuracy", class_labels=class_labels)
 
 
-def fold_hyperparameters_vs_balanced_accuracy_plots(
-        hyperparameters_file: str,
-        fitnesses_file: str,
-        plot_dir: str,
-        fold_number: int
-):
+def fold_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_file: str, fitnesses_file: str, plot_dir: str, fold_number: int):
     """
-    Creates one plot for every numeric
-    hyperparameter for one fold.
+    Crea una gráfica para cada hiperparámetro de un fold.
     """
+    #Lee los hiperparámetros y fitness del fold
+    hyperparameters_df = read_hyperparameters(file_path=hyperparameters_file)
+    fitnesses_df = read_fitnesses(file_path=fitnesses_file)
 
-    hyperparameters_df = (
-        read_hyperparameters(
-            file_path=hyperparameters_file
-        )
-    )
+    #Obtiene los valores de balanced accuracy de cada conjunto
+    balanced_accuracies_by_set = balanced_accuracy_values_by_set(fitnesses_df=fitnesses_df)
 
-    fitnesses_df = (
-        read_fitnesses(
-            file_path=fitnesses_file
-        )
-    )
+    #Crea una gráfica para cada hiperparámetro
+    for hyperparameter_name in hyperparameters_df.columns:
+        hyperparameter_values = hyperparameters_df[hyperparameter_name].tolist()
 
-    balanced_accuracies_by_set = (
-        balanced_accuracy_values_by_set(
-            fitnesses_df=fitnesses_df
-        )
-    )
+        #Construye el nombre del archivo de salida
+        save_file = os.path.join(plot_dir, hyperparameter_name + "_balanced_accuracy_fold_" + str(fold_number) + ".png")
 
-    for hyperparameter_name in (
-            hyperparameters_df.columns
-    ):
-
-        hyperparameter_values = (
-            hyperparameters_df[
-                hyperparameter_name
-            ].tolist()
-        )
-
-        save_file = os.path.join(
-            plot_dir,
-            hyperparameter_name
-            + "_balanced_accuracy_fold_"
-            + str(fold_number)
-            + ".png"
-        )
-
-        plot_hyperparameter_vs_balanced_accuracy(
-            hyperparameter_values=(
-                hyperparameter_values
-            ),
-            balanced_accuracies_by_set=(
-                balanced_accuracies_by_set
-            ),
-            save_file=save_file,
-            hyperparameter_name=(
-                hyperparameter_name
-            )
-        )
+        #Crea la gráfica del hiperparámetro frente a balanced accuracy
+        plot_hyperparameter_vs_balanced_accuracy(hyperparameter_values=hyperparameter_values, balanced_accuracies_by_set=balanced_accuracies_by_set, save_file=save_file, hyperparameter_name=hyperparameter_name)
 
 
-def union_hyperparameters_vs_balanced_accuracy_plots(
-        hyperparameters_dfs: list[
-            DataFrame
-        ],
-        fitnesses_dfs: list[
-            DataFrame
-        ],
-        plot_dir: str
-):
+def union_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_dfs: list[DataFrame], fitnesses_dfs: list[DataFrame], plot_dir: str):
     """
-    Creates one plot for every numeric
-    hyperparameter using the union of all
-    solutions from all folds.
+    Crea una gráfica para cada hiperparámetro utilizando la unión de las soluciones de todos los folds.
 
-    The final solution is not included here.
+    La solución final no se incluye.
     """
-
-    if len(
-            hyperparameters_dfs
-    ) == 0:
-
+    #Si no existen dataframes, no hay nada que representar
+    if len(hyperparameters_dfs) == 0:
         return
 
-    if (
-        len(hyperparameters_dfs)
-        != len(fitnesses_dfs)
-    ):
+    #Debe existir un dataframe de fitness por cada dataframe de hiperparámetros
+    if len(hyperparameters_dfs) != len(fitnesses_dfs):
+        raise ValueError("Different number of hyperparameter and fitnesses dataframes.")
 
-        raise ValueError(
-            "Different number of "
-            "hyperparameter and fitnesses "
-            "dataframes."
-        )
+    first_hyperparameters_df = hyperparameters_dfs[0]
 
-    first_hyperparameters_df = (
-        hyperparameters_dfs[0]
-    )
-
-    for hyperparameter_name in (
-            first_hyperparameters_df.columns
-    ):
-
+    #Recorre todos los hiperparámetros
+    for hyperparameter_name in first_hyperparameters_df.columns:
         union_hyperparameter_values = []
 
         union_balanced_accuracies_by_set = {
@@ -598,170 +224,77 @@ def union_hyperparameters_vs_balanced_accuracy_plots(
             "test": []
         }
 
-        for (
-                hyperparameters_df,
-                fitnesses_df
-        ) in zip(
-            hyperparameters_dfs,
-            fitnesses_dfs
-        ):
+        #Recorre los resultados de todos los folds
+        for (hyperparameters_df, fitnesses_df) in zip(hyperparameters_dfs, fitnesses_dfs):
+            #Todos los folds deben contener el mismo hiperparámetro
+            if hyperparameter_name not in hyperparameters_df.columns:
+                raise ValueError("Hyperparameter '" + hyperparameter_name + "' is not present in every fold.")
 
-            if (
-                hyperparameter_name
-                not in hyperparameters_df.columns
-            ):
+            #Obtiene los valores del hiperparámetro del fold actual
+            hyperparameter_values = hyperparameters_df[hyperparameter_name].tolist()
 
-                raise ValueError(
-                    "Hyperparameter '"
-                    + hyperparameter_name
-                    + "' is not present "
-                    "in every fold."
-                )
+            #Obtiene los valores de balanced accuracy del fold
+            balanced_accuracies_by_set = balanced_accuracy_values_by_set(fitnesses_df=fitnesses_df)
 
-            hyperparameter_values = (
-                hyperparameters_df[
-                    hyperparameter_name
-                ].tolist()
-            )
+            #Añade los valores del hiperparámetro a la unión
+            union_hyperparameter_values.extend(hyperparameter_values)
 
-            balanced_accuracies_by_set = (
-                balanced_accuracy_values_by_set(
-                    fitnesses_df=fitnesses_df
-                )
-            )
+            #Añade los valores de balanced accuracy de cada conjunto
+            for (set_name, balanced_accuracies) in balanced_accuracies_by_set.items():
+                #Inicializa el conjunto si aparece por primera vez
+                if set_name not in union_balanced_accuracies_by_set:
+                    union_balanced_accuracies_by_set[set_name] = []
 
-            union_hyperparameter_values.extend(
-                hyperparameter_values
-            )
+                union_balanced_accuracies_by_set[set_name].extend(balanced_accuracies)
 
-            for (
-                    set_name,
-                    balanced_accuracies
-            ) in (
-                balanced_accuracies_by_set.items()
-            ):
-
-                if (
-                    set_name
-                    not in (
-                        union_balanced_accuracies_by_set
-                    )
-                ):
-
-                    union_balanced_accuracies_by_set[
-                        set_name
-                    ] = []
-
-                union_balanced_accuracies_by_set[
-                    set_name
-                ].extend(
-                    balanced_accuracies
-                )
-
+        #Elimina los conjuntos que no contienen ningún valor
         union_balanced_accuracies_by_set = {
             set_name: values
-            for (
-                set_name,
-                values
-            ) in (
-                union_balanced_accuracies_by_set.items()
-            )
+            for (set_name, values) in union_balanced_accuracies_by_set.items()
             if len(values) > 0
         }
 
-        save_file = os.path.join(
-            plot_dir,
-            hyperparameter_name
-            + "_balanced_accuracy.png"
-        )
+        #Construye el nombre del archivo de salida
+        save_file = os.path.join(plot_dir, hyperparameter_name + "_balanced_accuracy.png")
 
-        plot_hyperparameter_vs_balanced_accuracy(
-            hyperparameter_values=(
-                union_hyperparameter_values
-            ),
-            balanced_accuracies_by_set=(
-                union_balanced_accuracies_by_set
-            ),
-            save_file=save_file,
-            hyperparameter_name=(
-                hyperparameter_name
-            )
-        )
+        #Crea la gráfica utilizando la unión de todos los folds
+        plot_hyperparameter_vs_balanced_accuracy(hyperparameter_values=union_hyperparameter_values, balanced_accuracies_by_set=union_balanced_accuracies_by_set, save_file=save_file, hyperparameter_name=hyperparameter_name)
 
 
-def final_hyperparameters_vs_balanced_accuracy_plots(
-        hyperparameters_file: str,
-        fitnesses_file: str,
-        plot_dir: str
-):
+def final_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_file: str, fitnesses_file: str, plot_dir: str):
     """
-    Creates one plot for every numeric
-    hyperparameter using the final solutions.
+    Crea una gráfica para cada hiperparámetro utilizando las soluciones finales.
 
-    The final evaluation normally has:
+    La evaluación final normalmente contiene:
 
         - inner cv
         - train
 
-    but no test values.
+    pero no contiene valores de test.
     """
+    #Lee los hiperparámetros y fitness finales
+    hyperparameters_df = read_hyperparameters(file_path=hyperparameters_file)
+    fitnesses_df = read_fitnesses(file_path=fitnesses_file)
 
-    hyperparameters_df = (
-        read_hyperparameters(
-            file_path=hyperparameters_file
-        )
-    )
+    #Obtiene los valores de balanced accuracy disponibles
+    balanced_accuracies_by_set = balanced_accuracy_values_by_set(fitnesses_df=fitnesses_df)
 
-    fitnesses_df = (
-        read_fitnesses(
-            file_path=fitnesses_file
-        )
-    )
+    #Crea una gráfica para cada hiperparámetro
+    for hyperparameter_name in hyperparameters_df.columns:
+        hyperparameter_values = hyperparameters_df[hyperparameter_name].tolist()
 
-    balanced_accuracies_by_set = (
-        balanced_accuracy_values_by_set(
-            fitnesses_df=fitnesses_df
-        )
-    )
+        #Construye el nombre del archivo de salida
+        save_file = os.path.join(plot_dir, hyperparameter_name + "_balanced_accuracy_final.png")
 
-    for hyperparameter_name in (
-            hyperparameters_df.columns
-    ):
-
-        hyperparameter_values = (
-            hyperparameters_df[
-                hyperparameter_name
-            ].tolist()
-        )
-
-        save_file = os.path.join(
-            plot_dir,
-            hyperparameter_name
-            + "_balanced_accuracy_final.png"
-        )
-
-        plot_hyperparameter_vs_balanced_accuracy(
-            hyperparameter_values=(
-                hyperparameter_values
-            ),
-            balanced_accuracies_by_set=(
-                balanced_accuracies_by_set
-            ),
-            save_file=save_file,
-            hyperparameter_name=(
-                hyperparameter_name
-            )
-        )
+        #Crea la gráfica del hiperparámetro frente a balanced accuracy
+        plot_hyperparameter_vs_balanced_accuracy(hyperparameter_values=hyperparameter_values, balanced_accuracies_by_set=balanced_accuracies_by_set, save_file=save_file, hyperparameter_name=hyperparameter_name)
 
 
-def hof_hyperparameter_accuracy_plots_for_directory(
-        hof_dir: str
-):
+def hof_hyperparameter_accuracy_plots_for_directory(hof_dir: str):
     """
-    Creates hyperparameter vs balanced accuracy
-    plots for one HOF.
+    Crea gráficas de hiperparámetros frente a balanced accuracy para un HOF.
 
-    Expected input files:
+    Archivos de entrada esperados:
 
         solution_hyperparameters_fold_0.csv
         solution_fitnesses_fold_0.csv
@@ -774,132 +307,64 @@ def hof_hyperparameter_accuracy_plots_for_directory(
         solution_hyperparameters_final.csv
         solution_fitnesses_final.csv
 
-    Output:
+    Salida:
 
         hof_dir/hyperparameters/
     """
-
-    if not os.path.isdir(
-            hof_dir
-    ):
-
+    #Si el directorio no existe, no hay nada que procesar
+    if not os.path.isdir(hof_dir):
         return
 
-    plot_dir = os.path.join(
-        hof_dir,
-        HYPERPARAMETERS_DIR
-    )
+    #Crea el directorio donde se guardarán las gráficas
+    plot_dir = create_plot_directory(directory=os.path.join(hof_dir, HYPERPARAMETERS_DIR))
 
-    Path(
-        plot_dir
-    ).mkdir(
-        parents=True,
-        exist_ok=True
-    )
+    #Obtiene los archivos de hiperparámetros y fitness de todos los folds
+    hyperparameters_files_by_fold = hyperparameters_fold_files(hof_dir=hof_dir)
+    fitnesses_files_by_fold = fitnesses_fold_files(hof_dir=hof_dir)
 
-    hyperparameters_files_by_fold = (
-        hyperparameters_fold_files(
-            hof_dir=hof_dir
-        )
-    )
-
-    fitnesses_files_by_fold = (
-        fitnesses_fold_files(
-            hof_dir=hof_dir
-        )
-    )
-
-    common_folds = sorted(
-        set(
-            hyperparameters_files_by_fold.keys()
-        )
-        & set(
-            fitnesses_files_by_fold.keys()
-        )
-    )
+    #Busca los folds que tienen ambos archivos
+    common_folds = sorted(set(hyperparameters_files_by_fold.keys()) & set(fitnesses_files_by_fold.keys()))
 
     hyperparameters_dfs = []
     fitnesses_dfs = []
 
+    #Lee los resultados de todos los folds comunes
     for fold_number in common_folds:
-        hyperparameters_file = (hyperparameters_files_by_fold[fold_number])
-        fitnesses_file = (fitnesses_files_by_fold[fold_number])
+        hyperparameters_file = hyperparameters_files_by_fold[fold_number]
+        fitnesses_file = fitnesses_files_by_fold[fold_number]
 
-        # Se puede quitar la funcion comentada si buscamos obtener las graficas de HP vs accuracy x fold
-        # fold_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_file=( hyperparameters_file),fitnesses_file=fitnesses_file,plot_dir=plot_dir,fold_number=fold_number)
+        #Descomentar si se quieren crear las gráficas de cada hiperparámetro por fold
+        #fold_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_file=hyperparameters_file, fitnesses_file=fitnesses_file, plot_dir=plot_dir, fold_number=fold_number)
 
-        hyperparameters_dfs.append( read_hyperparameters( file_path=hyperparameters_file ) )
-        fitnesses_dfs.append( read_fitnesses( file_path=fitnesses_file ) )
+        hyperparameters_dfs.append(read_hyperparameters(file_path=hyperparameters_file))
+        fitnesses_dfs.append(read_fitnesses(file_path=fitnesses_file))
 
-    union_hyperparameters_vs_balanced_accuracy_plots(
-        hyperparameters_dfs=(
-            hyperparameters_dfs
-        ),
-        fitnesses_dfs=fitnesses_dfs,
-        plot_dir=plot_dir
-    )
+    #Crea las gráficas utilizando la unión de todos los folds
+    union_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_dfs=hyperparameters_dfs, fitnesses_dfs=fitnesses_dfs, plot_dir=plot_dir)
 
-    final_hyperparameters_file = (
-        hyperparameters_final_file(
-            hof_dir=hof_dir
-        )
-    )
+    #Busca los archivos de resultados finales
+    final_hyperparameters_file = hyperparameters_final_file(hof_dir=hof_dir)
+    final_fitnesses_file = fitnesses_final_file(hof_dir=hof_dir)
 
-    final_fitnesses_file = (
-        fitnesses_final_file(
-            hof_dir=hof_dir
-        )
-    )
-
-    if (
-        final_hyperparameters_file
-        is not None
-        and final_fitnesses_file
-        is not None
-    ):
-
-        final_hyperparameters_vs_balanced_accuracy_plots(
-            hyperparameters_file=(
-                final_hyperparameters_file
-            ),
-            fitnesses_file=(
-                final_fitnesses_file
-            ),
-            plot_dir=plot_dir
-        )
+    #Si existen ambos archivos finales, crea las gráficas finales
+    if final_hyperparameters_file is not None and final_fitnesses_file is not None:
+        final_hyperparameters_vs_balanced_accuracy_plots(hyperparameters_file=final_hyperparameters_file, fitnesses_file=final_fitnesses_file, plot_dir=plot_dir)
 
 
-def hof_hyperparameter_accuracy_plots_every_hof(
-        main_hofs_dir: str
-):
+def hof_hyperparameter_accuracy_plots_every_hof(main_hofs_dir: str):
     """
-    Creates hyperparameter vs balanced accuracy
-    plots for every HOF.
+    Crea gráficas de hiperparámetros frente a balanced accuracy para todos los HOF.
 
-    For example:
+    Ejemplo:
 
         hofs/
         ├── pareto/
         ├── sum50/
         └── ...
     """
+    #Obtiene todos los subdirectorios que representan un HOF
+    subfolders = hof_subdirectories(main_hofs_dir=main_hofs_dir)
 
-    if not os.path.isdir(
-            main_hofs_dir
-    ):
-
-        return
-
-    subfolders = [
-        folder.path
-        for folder in os.scandir(
-            main_hofs_dir
-        )
-        if folder.is_dir()
-    ]
-
+    #Procesa cada HOF individualmente
     for hof_dir in subfolders:
-
-        hof_hyperparameter_accuracy_plots_for_directory(
-            hof_dir=hof_dir
-        )
+        hof_hyperparameter_accuracy_plots_for_directory(hof_dir=hof_dir)

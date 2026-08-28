@@ -131,7 +131,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         )
         hofs = [h.create_population_observer() for h in self.__hof_factories]
         ga_result = single_view_runner.run(
-            input_data=input_data, folds_list=folds_list, return_history=True,
+            input_data=input_data, folds_list=folds_list, return_history=False,
             n_workers=n_proc, workers_printer=workers_printer, n_gen=self.__n_gen,
             feature_importance=feature_importance,
             return_feature_counts=True,

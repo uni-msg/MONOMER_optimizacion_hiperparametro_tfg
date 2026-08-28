@@ -1,617 +1,233 @@
 import os
-import re
-from pathlib import Path
-from typing import Optional
 
 import pandas as pd
 from pandas import DataFrame
 
-from util.hyperparameter_plot_results import (
-    save_hyperparameter_multiclass_scatter
+from util.hyperparameter_plot import (
+    create_plot_directory,
+    final_file_by_prefix,
+    fold_files_by_prefix,
+    hof_subdirectories,
+    hyperparameter_values_are_constant,
+    hyperparameters_final_file,
+    hyperparameters_fold_files,
+    read_hyperparameters
 )
+from util.hyperparameter_plot_results import save_hyperparameter_multiclass_scatter
 
 
 HYPERPARAMETERS_DIR = "hyperparameters"
-
-SOLUTION_HYPERPARAMETERS_PREFIX = (
-    "solution_hyperparameters"
-)
-
-SOLUTION_FEATURES_PREFIX = (
-    "solution_features"
-)
-
-FOLD_FILE_REGEX = re.compile(
-    r"_fold_(\d+)\.csv$"
-)
+SOLUTION_FEATURES_PREFIX = "solution_features"
 
 
-def fold_number_from_file_name(
-        file_name: str
-) -> Optional[int]:
+def features_fold_files(hof_dir: str) -> dict[int, str]:
     """
-    Returns the fold number from a file name.
-
-    Examples:
-
-        solution_hyperparameters_fold_0.csv
-            -> 0
-
-        solution_features_fold_12.csv
-            -> 12
-
-        solution_hyperparameters_final.csv
-            -> None
+    Obtiene los archivos de features indexados por número de fold.
     """
-
-    match = FOLD_FILE_REGEX.search(
-        file_name
-    )
-
-    if match is None:
-
-        return None
-
-    return int(
-        match.group(1)
-    )
+    return fold_files_by_prefix(directory=hof_dir, prefix=SOLUTION_FEATURES_PREFIX)
 
 
-def is_hyperparameters_file(
-        file_name: str
-) -> bool:
-
-    return (
-        file_name.startswith(
-            SOLUTION_HYPERPARAMETERS_PREFIX
-        )
-        and file_name.endswith(
-            ".csv"
-        )
-    )
-
-
-def is_features_file(
-        file_name: str
-) -> bool:
-
-    return (
-        file_name.startswith(
-            SOLUTION_FEATURES_PREFIX
-        )
-        and file_name.endswith(
-            ".csv"
-        )
-    )
-
-
-def hyperparameters_fold_files(
-        hof_dir: str
-) -> dict[int, str]:
+def features_final_file(hof_dir: str):
     """
-    Returns the hyperparameters files indexed
-    by fold number.
-    """
+    Obtiene el archivo final de features.
 
-    result = {}
-
-    if not os.path.isdir(
-            hof_dir
-    ):
-
-        return result
-
-    for file_name in os.listdir(
-            hof_dir
-    ):
-
-        if not is_hyperparameters_file(
-                file_name
-        ):
-
-            continue
-
-        fold_number = (
-            fold_number_from_file_name(
-                file_name
-            )
-        )
-
-        if fold_number is not None:
-
-            result[
-                fold_number
-            ] = os.path.join(
-                hof_dir,
-                file_name
-            )
-
-    return result
-
-
-def features_fold_files(
-        hof_dir: str
-) -> dict[int, str]:
-    """
-    Returns the features files indexed
-    by fold number.
-    """
-
-    result = {}
-
-    if not os.path.isdir(
-            hof_dir
-    ):
-
-        return result
-
-    for file_name in os.listdir(
-            hof_dir
-    ):
-
-        if not is_features_file(
-                file_name
-        ):
-
-            continue
-
-        fold_number = (
-            fold_number_from_file_name(
-                file_name
-            )
-        )
-
-        if fold_number is not None:
-
-            result[
-                fold_number
-            ] = os.path.join(
-                hof_dir,
-                file_name
-            )
-
-    return result
-
-
-def hyperparameters_final_file(
-        hof_dir: str
-) -> Optional[str]:
-    """
-    Returns the final hyperparameters file
-    if it exists.
-    """
-
-    file_path = os.path.join(
-        hof_dir,
-        SOLUTION_HYPERPARAMETERS_PREFIX
-        + "_final.csv"
-    )
-
-    if os.path.isfile(
-            file_path
-    ):
-
-        return file_path
-
-    return None
-
-
-def features_final_file(
-        hof_dir: str
-) -> Optional[str]:
-    """
-    Returns the final features file.
-
-    Supports both:
+    Soporta:
 
         solution_features_final.csv
 
-    and:
+    y:
 
         solution_features_fold_final.csv
     """
+    #Busca primero el archivo final con el nombre normal
+    file_path = final_file_by_prefix(directory=hof_dir, prefix=SOLUTION_FEATURES_PREFIX)
 
-    possible_file_names = [
-        (
-            SOLUTION_FEATURES_PREFIX
-            + "_final.csv"
-        ),
-        (
-            SOLUTION_FEATURES_PREFIX
-            + "_fold_final.csv"
-        )
-    ]
+    if file_path is not None:
+        return file_path
 
-    for file_name in possible_file_names:
+    #Comprueba el nombre alternativo utilizado por algunos resultados
+    alternative_file_path = os.path.join(hof_dir, SOLUTION_FEATURES_PREFIX + "_fold_final.csv")
 
-        file_path = os.path.join(
-            hof_dir,
-            file_name
-        )
-
-        if os.path.isfile(
-                file_path
-        ):
-
-            return file_path
+    if os.path.isfile(alternative_file_path):
+        return alternative_file_path
 
     return None
 
 
-def read_hyperparameters(
-        file_path: str
-) -> DataFrame:
-
-    return pd.read_csv(
-        file_path
-    )
-
-
-def read_features(
-        file_path: str
-) -> DataFrame:
-
-    return pd.read_csv(
-        file_path
-    )
-
-
-def solution_complexities(
-        features_df: DataFrame
-) -> list[int]:
+def read_features(file_path: str) -> DataFrame:
     """
-    Computes the complexity of every solution.
+    Lee un archivo CSV de features seleccionadas.
+    """
+    return pd.read_csv(file_path)
 
-    Complexity is defined as the number of
-    selected features.
 
-    A selected feature is represented by:
+def solution_complexities(features_df: DataFrame) -> list[int]:
+    """
+    Calcula la complejidad de cada solución.
+
+    La complejidad se define como el número de features seleccionadas.
+
+    Una feature seleccionada se representa con:
 
         1
 
-    A non-selected feature is represented by:
+    Una feature no seleccionada se representa con:
 
         0
 
-    Therefore, for every solution:
+    Por lo tanto, para cada solución:
 
-        complexity =
-            number of selected features
+        complejidad =
+            número de features seleccionadas
     """
+    #Convierte todos los valores a numéricos y los valores no válidos a NaN
+    numeric_features_df = features_df.apply(pd.to_numeric, errors="coerce")
 
-    numeric_features_df = (
-        features_df.apply(
-            pd.to_numeric,
-            errors="coerce"
-        )
-    )
-
-    return (
-        numeric_features_df
-        .eq(
-            1
-        )
-        .sum(
-            axis=1
-        )
-        .astype(
-            int
-        )
-        .tolist()
-    )
+    #Cuenta las features seleccionadas de cada solución
+    return numeric_features_df.eq(1).sum(axis=1).astype(int).tolist()
 
 
-def hyperparameter_values_are_constant(
-        hyperparameter_values
-) -> bool:
+def plot_hyperparameter_vs_complexity(hyperparameter_values, complexities: list[int], save_file: str, hyperparameter_name: str):
     """
-    Returns True when all non-missing values
-    of a hyperparameter are identical.
+    Crea una gráfica de:
 
-    A constant hyperparameter does not provide
-    useful information in a relationship plot.
-    """
-
-    series = pd.Series(
-        hyperparameter_values
-    )
-
-    unique_values = (
-        series
-        .dropna()
-        .drop_duplicates()
-    )
-
-    return len(
-        unique_values
-    ) <= 1
-
-
-def plot_hyperparameter_vs_complexity(
-        hyperparameter_values,
-        complexities: list[int],
-        save_file: str,
-        hyperparameter_name: str
-):
-    """
-    Creates a plot of:
-
-        hyperparameter
+        hiperparámetro
             vs
-        solution complexity
+        complejidad de la solución
 
-    Complexity is the number of selected
-    features.
+    La complejidad es el número de features seleccionadas.
 
-    The X axis is automatically selected by
-    save_hyperparameter_multiclass_scatter:
+    El eje X es seleccionado automáticamente por save_hyperparameter_multiclass_scatter:
 
-        - categorical
-        - integer
+        - categórico
+        - entero
         - float
-        - logarithmic when appropriate
+        - logarítmico cuando sea apropiado
 
-    Constant hyperparameters are skipped.
+    Los hiperparámetros constantes se ignoran.
     """
-
-    if len(
-            hyperparameter_values
-    ) == 0:
-
+    #No tiene sentido crear una gráfica sin valores
+    if len(hyperparameter_values) == 0:
         return
 
-    if (
-        hyperparameter_values_are_constant(
-            hyperparameter_values=
-            hyperparameter_values
-        )
-    ):
-
+    #Ignora los hiperparámetros que no presentan variación
+    if hyperparameter_values_are_constant(hyperparameter_values=hyperparameter_values):
         return
 
-    if (
-        len(
-            hyperparameter_values
-        )
-        != len(
-            complexities
-        )
-    ):
-
+    #Cada valor del hiperparámetro debe tener una complejidad asociada
+    if len(hyperparameter_values) != len(complexities):
         raise ValueError(
-            "Different number of "
-            "hyperparameter values and "
-            "complexity values for "
-            "hyperparameter "
-            f"'{hyperparameter_name}'. "
-            f"Hyperparameters: "
-            f"{len(hyperparameter_values)}. "
-            f"Complexities: "
-            f"{len(complexities)}."
+            "Different number of hyperparameter values and complexity values for "
+            f"hyperparameter '{hyperparameter_name}'. Hyperparameters: {len(hyperparameter_values)}. "
+            f"Complexities: {len(complexities)}."
         )
 
+    #Crea la gráfica utilizando una única clase llamada solutions
     save_hyperparameter_multiclass_scatter(
-        x=[
-            hyperparameter_values
-        ],
-        y=[
-            complexities
-        ],
+        x=[hyperparameter_values],
+        y=[complexities],
         save_file=save_file,
         x_label=hyperparameter_name,
-        y_label=(
-            "number of selected features"
-        ),
-        class_labels=[
-            "solutions"
-        ]
+        y_label="number of selected features",
+        class_labels=["solutions"]
     )
 
 
-def union_hyperparameters_vs_complexity_plots(
-        hyperparameters_dfs: list[
-            DataFrame
-        ],
-        features_dfs: list[
-            DataFrame
-        ],
-        plot_dir: str
-):
+def union_hyperparameters_vs_complexity_plots(hyperparameters_dfs: list[DataFrame], features_dfs: list[DataFrame], plot_dir: str):
     """
-    Creates one Hyperparameter vs complexity
-    plot for every non-constant hyperparameter.
+    Crea una gráfica de Hyperparameter vs complexity para cada hiperparámetro no constante.
 
-    All solutions from every fold are joined.
+    Se unen todas las soluciones de todos los folds.
 
-    The final solution is not included here.
+    La solución final no se incluye.
     """
-
-    if len(
-            hyperparameters_dfs
-    ) == 0:
-
+    #Si no existen resultados, no hay nada que representar
+    if len(hyperparameters_dfs) == 0:
         return
 
-    if (
-        len(hyperparameters_dfs)
-        != len(features_dfs)
-    ):
+    #Debe existir un dataframe de features por cada dataframe de hiperparámetros
+    if len(hyperparameters_dfs) != len(features_dfs):
+        raise ValueError("Different number of hyperparameters and features dataframes.")
 
-        raise ValueError(
-            "Different number of "
-            "hyperparameters and features "
-            "dataframes."
-        )
+    first_hyperparameters_df = hyperparameters_dfs[0]
 
-    first_hyperparameters_df = (
-        hyperparameters_dfs[0]
-    )
-
-    for hyperparameter_name in (
-            first_hyperparameters_df.columns
-    ):
-
+    #Recorre todos los hiperparámetros disponibles
+    for hyperparameter_name in first_hyperparameters_df.columns:
         union_hyperparameter_values = []
         union_complexities = []
 
-        for (
-                hyperparameters_df,
-                features_df
-        ) in zip(
-            hyperparameters_dfs,
-            features_dfs
-        ):
+        #Recorre los resultados de todos los folds
+        for (hyperparameters_df, features_df) in zip(hyperparameters_dfs, features_dfs):
+            #Todos los folds deben contener el mismo hiperparámetro
+            if hyperparameter_name not in hyperparameters_df.columns:
+                raise ValueError("Hyperparameter '" + hyperparameter_name + "' is not present in every fold.")
 
-            if (
-                hyperparameter_name
-                not in hyperparameters_df.columns
-            ):
+            #Obtiene los valores del hiperparámetro para el fold actual
+            hyperparameter_values = hyperparameters_df[hyperparameter_name].tolist()
 
+            #Calcula la complejidad de cada solución del fold
+            complexities = solution_complexities(features_df=features_df)
+
+            #Comprueba que cada solución de hiperparámetros tenga sus features correspondientes
+            if len(hyperparameter_values) != len(complexities):
                 raise ValueError(
-                    "Hyperparameter '"
-                    + hyperparameter_name
-                    + "' is not present "
-                    "in every fold."
+                    "Different number of hyperparameter values and feature solutions in one "
+                    f"fold for hyperparameter '{hyperparameter_name}'. Hyperparameters: "
+                    f"{len(hyperparameter_values)}. Feature solutions: {len(complexities)}."
                 )
 
-            hyperparameter_values = (
-                hyperparameters_df[
-                    hyperparameter_name
-                ].tolist()
-            )
+            #Añade los valores del fold a la unión
+            union_hyperparameter_values.extend(hyperparameter_values)
+            union_complexities.extend(complexities)
 
-            complexities = (
-                solution_complexities(
-                    features_df=features_df
-                )
-            )
-
-            if (
-                len(
-                    hyperparameter_values
-                )
-                != len(
-                    complexities
-                )
-            ):
-
-                raise ValueError(
-                    "Different number of "
-                    "hyperparameter values and "
-                    "feature solutions in one "
-                    "fold for hyperparameter "
-                    f"'{hyperparameter_name}'. "
-                    f"Hyperparameters: "
-                    f"{len(hyperparameter_values)}. "
-                    f"Feature solutions: "
-                    f"{len(complexities)}."
-                )
-
-            union_hyperparameter_values.extend(
-                hyperparameter_values
-            )
-
-            union_complexities.extend(
-                complexities
-            )
-
-        if (
-            hyperparameter_values_are_constant(
-                hyperparameter_values=(
-                    union_hyperparameter_values
-                )
-            )
-        ):
-
+        #No representa hiperparámetros constantes
+        if hyperparameter_values_are_constant(hyperparameter_values=union_hyperparameter_values):
             continue
 
-        save_file = os.path.join(
-            plot_dir,
-            hyperparameter_name
-            + "_complexity.png"
-        )
+        #Construye el nombre del archivo de salida
+        save_file = os.path.join(plot_dir, hyperparameter_name + "_complexity.png")
 
+        #Crea la gráfica utilizando todos los folds unidos
         plot_hyperparameter_vs_complexity(
-            hyperparameter_values=(
-                union_hyperparameter_values
-            ),
-            complexities=(
-                union_complexities
-            ),
+            hyperparameter_values=union_hyperparameter_values,
+            complexities=union_complexities,
             save_file=save_file,
-            hyperparameter_name=(
-                hyperparameter_name
-            )
+            hyperparameter_name=hyperparameter_name
         )
 
 
-def final_hyperparameters_vs_complexity_plots(
-        hyperparameters_file: str,
-        features_file: str,
-        plot_dir: str
-):
+def final_hyperparameters_vs_complexity_plots(hyperparameters_file: str, features_file: str, plot_dir: str):
     """
-    Creates one Hyperparameter vs complexity
-    plot for every non-constant hyperparameter
-    using the final solutions.
+    Crea una gráfica de Hyperparameter vs complexity para cada hiperparámetro no constante utilizando las soluciones finales.
     """
+    #Lee los hiperparámetros y features de las soluciones finales
+    hyperparameters_df = read_hyperparameters(file_path=hyperparameters_file)
+    features_df = read_features(file_path=features_file)
 
-    hyperparameters_df = (
-        read_hyperparameters(
-            file_path=hyperparameters_file
-        )
-    )
+    #Calcula la complejidad de las soluciones finales
+    complexities = solution_complexities(features_df=features_df)
 
-    features_df = (
-        read_features(
-            file_path=features_file
-        )
-    )
+    #Crea una gráfica para cada hiperparámetro
+    for hyperparameter_name in hyperparameters_df.columns:
+        hyperparameter_values = hyperparameters_df[hyperparameter_name].tolist()
 
-    complexities = (
-        solution_complexities(
-            features_df=features_df
-        )
-    )
+        #Construye el nombre del archivo de salida
+        save_file = os.path.join(plot_dir, hyperparameter_name + "_complexity_final.png")
 
-    for hyperparameter_name in (
-            hyperparameters_df.columns
-    ):
-
-        hyperparameter_values = (
-            hyperparameters_df[
-                hyperparameter_name
-            ].tolist()
-        )
-
-        save_file = os.path.join(
-            plot_dir,
-            hyperparameter_name
-            + "_complexity_final.png"
-        )
-
+        #Crea la gráfica del hiperparámetro frente a la complejidad
         plot_hyperparameter_vs_complexity(
-            hyperparameter_values=(
-                hyperparameter_values
-            ),
-            complexities=(
-                complexities
-            ),
+            hyperparameter_values=hyperparameter_values,
+            complexities=complexities,
             save_file=save_file,
-            hyperparameter_name=(
-                hyperparameter_name
-            )
+            hyperparameter_name=hyperparameter_name
         )
 
 
-def hof_hyperparameter_complexity_plots_for_directory(
-        hof_dir: str
-):
+def hof_hyperparameter_complexity_plots_for_directory(hof_dir: str):
     """
-    Creates Hyperparameter vs complexity plots
-    for one Hall Of Fame directory.
+    Crea gráficas de Hyperparameter vs complexity para un directorio Hall Of Fame.
 
-    Expected files:
+    Archivos esperados:
 
         solution_hyperparameters_fold_0.csv
         solution_features_fold_0.csv
@@ -621,153 +237,70 @@ def hof_hyperparameter_complexity_plots_for_directory(
 
         ...
 
-    Final files:
+    Archivos finales:
 
         solution_hyperparameters_final.csv
 
-    and one of:
+    y uno de:
 
         solution_features_final.csv
         solution_features_fold_final.csv
 
-    Complexity is calculated as the number of
-    selected features.
+    La complejidad se calcula como el número de features seleccionadas.
 
-    Output:
+    Salida:
 
         hof_dir/hyperparameters/
     """
+    #Crea el directorio donde se guardarán las gráficas
+    plot_dir = create_plot_directory(directory=os.path.join(hof_dir, HYPERPARAMETERS_DIR))
 
-    if not os.path.isdir(
-            hof_dir
-    ):
+    #Obtiene los archivos de hiperparámetros y features de todos los folds
+    hyperparameters_files_by_fold = hyperparameters_fold_files(hof_dir=hof_dir)
+    features_files_by_fold = features_fold_files(hof_dir=hof_dir)
 
-        return
-
-    plot_dir = os.path.join(
-        hof_dir,
-        HYPERPARAMETERS_DIR
-    )
-
-    Path(
-        plot_dir
-    ).mkdir(
-        parents=True,
-        exist_ok=True
-    )
-
-    hyperparameters_files_by_fold = (
-        hyperparameters_fold_files(
-            hof_dir=hof_dir
-        )
-    )
-
-    features_files_by_fold = (
-        features_fold_files(
-            hof_dir=hof_dir
-        )
-    )
-
+    #Busca los folds que contienen ambos archivos
     common_folds = sorted(
-        set(
-            hyperparameters_files_by_fold.keys()
-        )
-        & set(
-            features_files_by_fold.keys()
-        )
+        set(hyperparameters_files_by_fold.keys())
+        & set(features_files_by_fold.keys())
     )
 
     hyperparameters_dfs = []
     features_dfs = []
 
+    #Lee los resultados de todos los folds comunes
     for fold_number in common_folds:
+        hyperparameters_file = hyperparameters_files_by_fold[fold_number]
+        features_file = features_files_by_fold[fold_number]
 
-        hyperparameters_file = (
-            hyperparameters_files_by_fold[
-                fold_number
-            ]
-        )
+        hyperparameters_dfs.append(read_hyperparameters(file_path=hyperparameters_file))
+        features_dfs.append(read_features(file_path=features_file))
 
-        features_file = (
-            features_files_by_fold[
-                fold_number
-            ]
-        )
-
-        hyperparameters_dfs.append(
-            read_hyperparameters(
-                file_path=hyperparameters_file
-            )
-        )
-
-        features_dfs.append(
-            read_features(
-                file_path=features_file
-            )
-        )
-
+    #Crea las gráficas utilizando la unión de todos los folds
     union_hyperparameters_vs_complexity_plots(
-        hyperparameters_dfs=(
-            hyperparameters_dfs
-        ),
+        hyperparameters_dfs=hyperparameters_dfs,
         features_dfs=features_dfs,
         plot_dir=plot_dir
     )
 
-    final_hyperparameters_file = (
-        hyperparameters_final_file(
-            hof_dir=hof_dir
-        )
-    )
+    #Busca los archivos de las soluciones finales
+    final_hyperparameters_file = hyperparameters_final_file(hof_dir=hof_dir)
+    final_features_file = features_final_file(hof_dir=hof_dir)
 
-    final_features_file = (
-        features_final_file(
-            hof_dir=hof_dir
-        )
-    )
-
-    if (
-        final_hyperparameters_file
-        is not None
-        and final_features_file
-        is not None
-    ):
-
+    #Si existen ambos archivos finales, crea las gráficas finales
+    if final_hyperparameters_file is not None and final_features_file is not None:
         final_hyperparameters_vs_complexity_plots(
-            hyperparameters_file=(
-                final_hyperparameters_file
-            ),
-            features_file=(
-                final_features_file
-            ),
+            hyperparameters_file=final_hyperparameters_file,
+            features_file=final_features_file,
             plot_dir=plot_dir
         )
 
 
-def hof_hyperparameter_complexity_plots_every_hof(
-        main_hofs_dir: str
-):
+def hof_hyperparameter_complexity_plots_every_hof(main_hofs_dir: str):
     """
-    Creates Hyperparameter vs complexity plots
-    for every Hall Of Fame directory.
+    Crea gráficas de Hyperparameter vs complexity para todos los directorios Hall Of Fame.
     """
-
-    if not os.path.isdir(
-            main_hofs_dir
-    ):
-
-        return
-
-    subfolders = [
-        folder.path
-        for folder in os.scandir(
-            main_hofs_dir
-        )
-        if folder.is_dir()
-    ]
-
-    for hof_dir in subfolders:
-
-        hof_hyperparameter_complexity_plots_for_directory(
-            hof_dir=hof_dir
-        )
+    #Obtiene todos los subdirectorios que representan un Hall Of Fame
+    for hof_dir in hof_subdirectories(main_hofs_dir=main_hofs_dir):
+        #Procesa cada Hall Of Fame individualmente
+        hof_hyperparameter_complexity_plots_for_directory(hof_dir=hof_dir)
