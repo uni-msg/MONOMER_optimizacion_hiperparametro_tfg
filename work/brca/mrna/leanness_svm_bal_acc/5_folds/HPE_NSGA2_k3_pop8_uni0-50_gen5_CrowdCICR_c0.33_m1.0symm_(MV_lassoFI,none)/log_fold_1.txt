@@ -1,3 +1,10 @@
 
 OPTIMIZING ON FOLD NUMBER 1
 Number of workers = 1
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Exception caught while optimizing on fold 1
+Original exception: 
+

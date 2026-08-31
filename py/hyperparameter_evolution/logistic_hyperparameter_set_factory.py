@@ -77,8 +77,8 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                 CategoricalHyperparameter(
                     nick="penalty",
                     name="Penalty",
-                    option_values={None},
-                    value=None,
+                    option_values={"l2"},
+                    value="l2",
                     mutable=False
                 ),
 

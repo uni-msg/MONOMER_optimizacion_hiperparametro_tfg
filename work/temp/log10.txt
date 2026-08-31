@@ -1,8 +1,8 @@
-Date = 2026-08-28
+Date = 2026-08-31
 Machine = ubuntu22-UNI
 CPUs detected in the system = 8
 Recursion limit = 100000
-Parsing setup file setups/brca/hp/500x1000/nb/nsga2_chs.ini
+Parsing setup file setups/brca/hp/test_small_rf.ini
 
 RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
 
@@ -38,11 +38,11 @@ Directory for plots = ./brca/input/plots
 Plotting view mrna
 
 LOADED 1081 SAMPLES.
-Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
-Factory HPE = NBHyperparameterSetFactory
+Objectives = [Pam50 random forest balanced accuracy, leanness]
+Factory HPE = ForestHyperparameterSetFactory
 Removing outcomes not necessary for objectives from input data.
 Creating 5 stratified folds.
 Number of outer folds = 5
 Copying config file to run directory
-Copy source = setups/brca/hp/500x1000/nb/nsga2_chs.ini
-Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+Copy source = setups/brca/hp/test_small_rf.ini
+Destination folder :  = ./brca/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
