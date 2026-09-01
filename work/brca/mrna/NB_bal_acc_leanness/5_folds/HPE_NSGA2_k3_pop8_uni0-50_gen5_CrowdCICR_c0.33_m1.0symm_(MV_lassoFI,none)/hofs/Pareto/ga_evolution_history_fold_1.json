@@ -4,8 +4,6 @@
             "generation": 0,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -74,8 +72,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -141,8 +137,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -206,8 +200,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -268,8 +260,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -319,8 +309,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -361,8 +349,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -397,8 +383,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -425,8 +409,6 @@
             "generation": 1,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -483,8 +465,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -533,8 +513,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -576,8 +554,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -618,8 +594,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -654,8 +628,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -689,8 +661,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -712,8 +682,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -738,8 +706,6 @@
             "generation": 2,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -790,8 +756,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -840,8 +804,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -883,8 +845,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -925,8 +885,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -954,8 +912,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -980,8 +936,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1003,8 +957,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1029,8 +981,6 @@
             "generation": 3,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1082,8 +1032,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1134,8 +1082,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1184,8 +1130,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1227,8 +1171,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1269,8 +1211,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1306,8 +1246,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1335,8 +1273,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1363,8 +1299,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1389,8 +1323,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1413,8 +1345,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1436,8 +1366,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1462,8 +1390,6 @@
             "generation": 4,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1515,8 +1441,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1567,8 +1491,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1617,8 +1539,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1664,8 +1584,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1707,8 +1625,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1749,8 +1665,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1786,8 +1700,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1821,8 +1733,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1850,8 +1760,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1878,8 +1786,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1904,8 +1810,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1928,8 +1832,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
@@ -1951,8 +1853,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Naive Bayes Hyperparameters",
                         "nick": "NB_HPE",
