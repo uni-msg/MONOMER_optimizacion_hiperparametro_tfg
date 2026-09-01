@@ -1,0 +1,39 @@
+
+OPTIMIZING ON FOLD NUMBER 1
+Number of workers = 1
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_PanKidney
+Features before filter: 20227
+Features after any na, zero variance, and anova filters: 18648
+Features active in view: 18648
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Generations completed = 12
+Generations completed = 25
+Generations completed = 37
+Generations completed = 51
+Generations completed = 63
+Generations completed = 76
+Generations completed = 88
+Generations completed = 102
+Generations completed = 116
+Generations completed = 128
+Generations completed = 142
+Generations completed = 154
+Generations completed = 167
+Generations completed = 182
+Generations completed = 194
+Generations completed = 209
+Generations completed = 219
+Generations completed = 230
+Generations completed = 244
+Generations completed = 258
+Generations completed = 272
+Generations completed = 284
+Generations completed = 300
+Generations completed = 313
+Generations completed = 323
+Generations completed = 332
