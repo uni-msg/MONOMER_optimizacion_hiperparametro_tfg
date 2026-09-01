@@ -1,6 +1,7 @@
 import json
 from copy import deepcopy
 from typing import Optional
+from individual.peculiar_individual_with_context import PeculiarIndividualWithContext
 from deap.tools import History
 
 
@@ -34,14 +35,13 @@ class GAEvolutionHistory:
         Se aprovecha el History de DEAP para la genealogía del individuo
         """
         individuals = []
-
-        for individual in population:
+        for i, individual in enumerate(population):
             #Identificador del History
             individual_id = getattr(individual, "history_index", None)
 
             individual_data = {
-                "id": individual_id,
-                "parents": self.__get_parents(individual_id=individual_id,history=history),
+                #"id": individual_id,
+                #"parents": self.__get_parents(individual_id=individual_id,history=history),
                 "hyperparameters": self.__get_hyperparameters(individual),
                 "fitness": self.__get_fitness(individual),
                 "features": self.__get_features(individual)

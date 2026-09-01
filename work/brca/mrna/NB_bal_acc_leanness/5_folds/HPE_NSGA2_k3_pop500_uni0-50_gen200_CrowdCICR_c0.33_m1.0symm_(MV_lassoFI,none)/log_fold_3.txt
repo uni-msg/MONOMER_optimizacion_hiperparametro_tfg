@@ -13,3 +13,6 @@ CREATING INNER FOLDS
 RUNNING GENETIC ALGORITHM
 Generations completed = 11
 Generations completed = 22
+Exception caught while optimizing on fold 3
+Original exception: 
+

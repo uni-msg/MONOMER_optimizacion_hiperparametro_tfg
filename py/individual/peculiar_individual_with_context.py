@@ -102,6 +102,14 @@ class PeculiarIndividualWithContext(PeculiarIndividual, IndividualWithContext):
     def append(self, value):
         raise IllegalStateError()
 
+    @property
+    def history_index(self):
+        return getattr(self.__individual, "history_index", None)
+
+    @history_index.setter
+    def history_index(self, value):
+        self.__individual.history_index = value
+
 
 def contextualize(hp: PeculiarIndividual, hp_manager: HyperparamManager) -> PeculiarIndividualWithContext:
     return PeculiarIndividualWithContext(individual=hp, hp_manager=hp_manager)

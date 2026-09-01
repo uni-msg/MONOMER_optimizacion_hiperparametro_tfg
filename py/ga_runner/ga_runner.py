@@ -272,6 +272,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         contextualized = contextualize_all(invalid_ind, hp_manager)
         gen_feats_list = union(contextualized)
         explored.update([gen_feats_list])
+        history.update(pop)
+
         for h in hofs:
             h.update(contextualized)
             if return_history:

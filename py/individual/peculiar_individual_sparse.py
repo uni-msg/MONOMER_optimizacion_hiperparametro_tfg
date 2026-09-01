@@ -20,4 +20,6 @@ class PeculiarIndividualSparse(PeculiarIndividualByListlike, SparseIndividual):
         res.set_crowding_distance(self.get_crowding_distance())
         res.set_peculiarity(self.get_peculiarity())
         res.set_social_space(self.get_social_space())
+        if hasattr(self, "history_index"):
+            res.history_index = self.history_index
         return res
