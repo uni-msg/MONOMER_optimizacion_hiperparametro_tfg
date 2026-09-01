@@ -94,3 +94,8 @@ class IndividualWithContext(PredictiveIndividual, SparseBoolList):
     def append(self, value):
         raise IllegalStateError()
 
+    @property
+    def history_index(self):
+        """Recuperamos el id unico del DEAP.history del individuo"""
+        return getattr(self.__individual, "history_index", None)
+

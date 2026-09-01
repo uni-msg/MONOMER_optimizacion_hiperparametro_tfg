@@ -131,7 +131,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         )
         hofs = [h.create_population_observer() for h in self.__hof_factories]
         ga_result = single_view_runner.run(
-            input_data=input_data, folds_list=folds_list, return_history=False,
+            input_data=input_data, folds_list=folds_list, return_history=True,
             n_workers=n_proc, workers_printer=workers_printer, n_gen=self.__n_gen,
             feature_importance=feature_importance,
             return_feature_counts=True,
@@ -150,9 +150,9 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         if self.__hyperparameter_set_factory is not None:
             hyperparameter_counts_saver.save(ga_result.hyperparameter_counts)
         
-        #Se añade el historial de evolucion GA
-        if ga_result.ga_evolution_history is not None:
-            ga_evolution_history_saver.save(ga_result.ga_evolution_history)
+        #Se añade el historial de evolucion GA (Pareto, Sum50)
+        if ga_result.ga_evolution_histories is not None:
+            ga_evolution_history_saver.save(ga_result.ga_evolution_histories)
         return hofs_to_results(hofs)
 
     def optimizer_type(self) -> MOOptimizerType:

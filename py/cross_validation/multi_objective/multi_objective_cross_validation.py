@@ -10,7 +10,7 @@ from typing import Iterable, NamedTuple, Sequence
 from ga_components.hyperparameter_counts_saver import CsvHyperparameterCountsSaver, HyperparameterCountsSaver
 import numpy as np
 
-from consts import DEFAULT_RECURSION_LIMIT, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
+from consts import DEFAULT_RECURSION_LIMIT, DIR_HOFS, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
     FEATURE_COUNTS_EXTENSION, FINAL_STR, GA_EVOLUTION_HISTORY_EXTENSION, GA_EVOLUTION_HISTORY_PREFIX, HYPERPARAMETER_COUNTS_PATH
 from cross_validation.folds import Folds
 from cross_validation.multi_objective.cross_evaluator.hof_saver import SOLUTION_HYPERPARAMETERS_EXTENSION, SOLUTION_HYPERPARAMETERS_STR, path_for_saves, save_hof_features, \
@@ -120,7 +120,7 @@ class MultiObjectiveOptimizeOnFolds(ABC):
         Funcion encargada de definir el fichero json que almacenara el historial del GA por cada fold
         """
         str_f = str(fold_index)
-        return JsonGAEvolutionHistorySaver(file=save_path + GA_EVOLUTION_HISTORY_PREFIX+"fold_"+ str_f + "." + GA_EVOLUTION_HISTORY_EXTENSION)
+        return JsonGAEvolutionHistorySaver(directory=save_path + DIR_HOFS, final_str="fold_"+ str_f)
 
     @staticmethod
     def create_fold_worker_printer(save_path: str, fold_index: int) -> Printer:
@@ -280,7 +280,7 @@ def create_final_ga_evolution_history_saver(optimizer_save_path: str) -> GAEvolu
     """
     Funcion auxiliar que devuelve el save especifico para guardar un objeto GAEvolutionHistory en un archivo referente a la optimizacion final
     """
-    return JsonGAEvolutionHistorySaver(file=optimizer_save_path+ GA_EVOLUTION_HISTORY_PREFIX+ FINAL_STR+ "."+ GA_EVOLUTION_HISTORY_EXTENSION)
+    return JsonGAEvolutionHistorySaver(directory=optimizer_save_path + DIR_HOFS, final_str=FINAL_STR)
 
 
 def do_final_optimization(

@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
+from consts import GA_EVOLUTION_HISTORY_PREFIX
 from ga_components.ga_evolution_history import GAEvolutionHistory
 import json
+import os
+
 
 
 def ga_evolution_history_to_json(evolution_history: GAEvolutionHistory,file: str):
@@ -19,7 +22,7 @@ class GAEvolutionHistorySaver(ABC):
     """
 
     @abstractmethod
-    def save(self, evolution_history: GAEvolutionHistory):
+    def save(self, evolution_histories: dict[str, GAEvolutionHistory]):
         """
         Funcion abstracta que posibilita las diferentes formas de almacenar el archivo (Json, YAML, Csv..)
         """
@@ -28,7 +31,7 @@ class GAEvolutionHistorySaver(ABC):
 
 class DummyGAEvolutionHistorySaver(GAEvolutionHistorySaver):
 
-    def save(self, evolution_history: GAEvolutionHistory):
+    def save(self, evolution_histories: dict[str, GAEvolutionHistory]):
         pass
 
 
@@ -36,12 +39,17 @@ class JsonGAEvolutionHistorySaver(GAEvolutionHistorySaver):
     """
     Clase encargada del almacenar un objeto GAEvolutionHistory dentro de una ruta especifica con un archivo Json 
     """
-    __file: str
+    __directory: str
+    __final_str: str
 
-    def __init__(self, file: str):
-        self.__file = file
+    def __init__(self, directory: str, final_str: str):
+        self.__directory = directory
+        self.__final_str = final_str
 
-    def save(self, evolution_history: GAEvolutionHistory):
-        ga_evolution_history_to_json(
-            evolution_history=evolution_history,
-            file=self.__file)
+    def save(self, evolution_histories: dict[str, GAEvolutionHistory]):
+        for hof_nick, evolution_history in evolution_histories.items():
+            hof_dir = os.path.join(self.__directory, hof_nick)
+            os.makedirs(hof_dir, exist_ok=True)
+            file = os.path.join(hof_dir,GA_EVOLUTION_HISTORY_PREFIX + self.__final_str + ".json")
+            ga_evolution_history_to_json(evolution_history=evolution_history,file=file)
+

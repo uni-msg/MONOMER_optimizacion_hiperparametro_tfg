@@ -11,6 +11,5 @@ Features active in view: 17852
 CREATING INNER FOLDS
 
 RUNNING GENETIC ALGORITHM
-Exception caught while optimizing on fold 0
-Original exception: 
-
+Generations completed = 9
+Generations completed = 20

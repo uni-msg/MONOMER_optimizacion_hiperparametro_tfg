@@ -1,9 +1,7 @@
 import json
 from copy import deepcopy
-from typing import Sequence, Optional
+from typing import Optional
 from deap.tools import History
-
-from individual.peculiar_individual import PeculiarIndividual
 
 
 class GAEvolutionHistory:
@@ -25,7 +23,7 @@ class GAEvolutionHistory:
     def __init__(self):
         self.__generations = []
 
-    def add_generation(self, generation: int, population: Sequence[PeculiarIndividual], history: Optional[History] = None):
+    def add_generation(self, generation: int, population , history: Optional[History] = None):
         """
         Añade una generación al historial.
 

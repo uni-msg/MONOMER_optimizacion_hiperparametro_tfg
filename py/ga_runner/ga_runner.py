@@ -38,7 +38,7 @@ class GAResult(NamedTuple):
     history: History
     feature_counts: Sequence[Sequence[int]]
     hyperparameter_counts: Optional[list[list[HyperparameterSet]]]
-    ga_evolution_history: GAEvolutionHistory
+    ga_evolution_histories: dict[str, GAEvolutionHistory] #Pareto y Sum50
 
 class GARunner(ABC):
     __objectives: Iterable[PersonalObjective]
@@ -215,14 +215,18 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         h.update(contextualized)
 
     history = None
-    ga_evolution_history = None
+    ga_evolution_histories = {}
     #Registro de Evolucion GA total (History DEAP + GAEvolutionHistory)
     if return_history:
         history = History()
         toolbox.decorate("mate", history.decorator)
         toolbox.decorate("mutate", history.decorator)
         history.update(pop)
-        ga_evolution_history = GAEvolutionHistory() 
+        
+        #Pareto y Sum50
+        for h in hofs:
+            ga_evolution_histories[h.nick()] = GAEvolutionHistory() 
+            ga_evolution_histories[h.nick()].add_generation( generation=0, population=h.hofers(), history=history )
 
     feat_count = sum_of_individuals(individuals=pop, hp_manager=hp_manager)
     # Compile statistics about the population
@@ -244,10 +248,6 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
     for o in progress_observers:
         o.notify_initial_pop(pop)
-
-    # Almacenar poblacion inicial
-    if return_history:
-        ga_evolution_history.add_generation(generation=0, population=pop, history=history) 
 
     # Begin the generational process
     for gen in range(1, n_gen):
@@ -274,6 +274,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         explored.update([gen_feats_list])
         for h in hofs:
             h.update(contextualized)
+            if return_history:
+                ga_evolution_histories[h.nick()].add_generation( generation=gen, population=h.hofers(), history=history )
 
         pop = ga_strategy.sorting_strategy_before_selection(individuals=pop)
 
@@ -287,10 +289,6 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
         for o in progress_observers:
             o.notify_pop_after_select(pop)
-
-        #Almacenar individuos seleccionado en la generacion gen
-        if return_history:
-            ga_evolution_history.add_generation(generation=gen, population=pop, history=history) 
 
         # Compile statistics about the new population
         record = stats.compile(pop)
@@ -313,4 +311,4 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     res_hofs = [h.hofers() for h in hofs]
 
     return GAResult(pop=pop, hp_manager=hp_manager, logbook=logbook, history=history,
-                    feature_counts=feature_counts,hyperparameter_counts=hyperparameter_counts, hofs=res_hofs, ga_evolution_history=ga_evolution_history)
+                    feature_counts=feature_counts,hyperparameter_counts=hyperparameter_counts, hofs=res_hofs, ga_evolution_histories=ga_evolution_histories)
