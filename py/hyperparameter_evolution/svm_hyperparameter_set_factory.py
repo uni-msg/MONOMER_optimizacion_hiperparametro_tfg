@@ -23,8 +23,7 @@ class SVMHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="C",
                     name="Regularization parameter",
                     lower_bound=1e-3,
-                    upper_bound=100.0,
-                    mutation_range=0.3
+                    upper_bound=100.0
                 ),
 
                 # Determina el radio de influencia de cada muestra cuando se
@@ -36,8 +35,7 @@ class SVMHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="gamma",
                     name="Kernel coefficient",
                     lower_bound=1e-6,
-                    upper_bound=1.0,
-                    mutation_range=0.2
+                    upper_bound=1.0
                 ),
 
                 # Tolerancia utilizada por el criterio de parada del algoritmo
@@ -48,8 +46,7 @@ class SVMHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="tol",
                     name="Stopping tolerance",
                     lower_bound=1e-5,
-                    upper_bound=1e-2,
-                    mutation_range=0.2
+                    upper_bound=1e-2
                 ),
 
                 #################### FIJOS ####################

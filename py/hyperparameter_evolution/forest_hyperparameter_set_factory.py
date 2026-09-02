@@ -21,8 +21,7 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="n_estimators",
                     name="Number of trees",
                     lower_bound=15,
-                    upper_bound=100,
-                    mutation_range=10
+                    upper_bound=100
                 ),
 
                 # Número mínimo de muestras necesarias para dividir un nodo.
@@ -32,8 +31,7 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="min_samples_split",
                     name="Minimum samples split",
                     lower_bound=2,
-                    upper_bound=20,
-                    mutation_range=2
+                    upper_bound=20
                 ),
 
                 # Número mínimo de muestras que debe contener una hoja.
@@ -43,8 +41,7 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="min_samples_leaf",
                     name="Minimum samples leaf",
                     lower_bound=1,
-                    upper_bound=20,
-                    mutation_range=2
+                    upper_bound=20
                 ),
 
                 # Número máximo de características consideradas al buscar la mejor
@@ -77,7 +74,6 @@ class ForestHyperparameterSetFactory(HyperparameterSetFactory):
                     name="Number of jobs",
                     lower_bound=1,
                     upper_bound=1,
-                    mutation_range=1,
                     value=1,
                     mutable=False
                 )

@@ -18,8 +18,7 @@ class NBHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="var_smoothing",
                     name="Variance smoothing",
                     lower_bound=1e-12,
-                    upper_bound=1e-6,
-                    mutation_range=0.2
+                    upper_bound=1e-6
                 )
 
             ]

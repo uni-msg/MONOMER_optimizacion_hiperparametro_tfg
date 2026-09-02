@@ -28,8 +28,7 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="C",
                     name="Inverse regularization strength",
                     lower_bound=1e-4,
-                    upper_bound=100.0,
-                    mutation_range=0.3
+                    upper_bound=100.0
                 ),
 
                 # Tolerancia empleada como criterio de parada del optimizador.
@@ -39,8 +38,7 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                     nick="tol",
                     name="Stopping tolerance",
                     lower_bound=1e-6,
-                    upper_bound=1e-2,
-                    mutation_range=0.2
+                    upper_bound=1e-2
                 ),
 
                 #################### FIJOS ####################
@@ -53,7 +51,6 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                     name="Maximum iterations",
                     lower_bound=self.__max_iter,
                     upper_bound=self.__max_iter,
-                    mutation_range=self.__max_iter,
                     value=self.__max_iter,
                     mutable=False
                 ),
@@ -91,7 +88,6 @@ class LogisticHyperparameterSetFactory(HyperparameterSetFactory):
                     name="Number of jobs",
                     lower_bound=1,
                     upper_bound=1,
-                    mutation_range=1,
                     value=1,
                     mutable=False
                 ),
