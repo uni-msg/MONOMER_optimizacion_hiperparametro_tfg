@@ -133,3 +133,53 @@ APPLYING FOLD SAVER
 
 APPLYING HALL OF FAMES SAVER
 Path for hall of fames = ./brca/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 random forest balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 random forest balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.272065321821064
+Train hypervolume: 0.3805097806362526
+Test hypervolume: 0.2806245694797446
+Cross hypervolume: 0.26736124867421446
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.23072736698949467
+Train hypervolume: 0.32876627917071133
+Test hypervolume: 0.21762391038176898
+Cross hypervolume: 0.21237763751463978
+
+Hypervolumes for fold 2
+Inner cross-validation hypervolume: 0.2932179778990631
+Train hypervolume: 0.3986322429542287
+Test hypervolume: 0.29458307403360207
+Cross hypervolume: 0.26737330762501244
+
+Hypervolumes for fold 3
+Inner cross-validation hypervolume: 0.1543563030905118
+Train hypervolume: 0.29642699882798174
+Test hypervolume: 0.1600241696255508
+Cross hypervolume: 0.16516493790462955
+
+Hypervolumes for fold 4
+Inner cross-validation hypervolume: 0.2955744389187612
+Train hypervolume: 0.46223017608431877
+Test hypervolume: 0.3061693198700588
+Cross hypervolume: 0.2840285553394108
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.249188281743779
+Train hypervolume: 0.37331309553469866
+Test hypervolume: 0.25180500867814504
+Cross hypervolume: 0.2392611374115814
+
