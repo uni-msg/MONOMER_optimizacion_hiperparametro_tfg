@@ -8,7 +8,6 @@ from hyperparameter_evolution.hyperparameter import Hyperparameter
 class FloatHyperparameter(Hyperparameter):
     __lower_bound: float
     __upper_bound: float
-    __mutation_range: float
 
     def __init__(
         self,
@@ -16,7 +15,6 @@ class FloatHyperparameter(Hyperparameter):
         name: str,
         lower_bound: float,
         upper_bound: float,
-        mutation_range: Optional[float] = None,
         value: Optional[float] = None,
         mutable: bool = True
     ):
@@ -25,21 +23,14 @@ class FloatHyperparameter(Hyperparameter):
         if lower_bound > upper_bound:
             raise ValueError("lower_bound debe ser mas pequeño a upper_bound")
 
-        if mutation_range is not None and mutation_range <= 0:
-            raise ValueError("mutation_range debe ser mayor a 0")
-
         self.__lower_bound = lower_bound
         self.__upper_bound = upper_bound
-        self.__mutation_range = mutation_range
 
     def lower_bound(self) -> float:
         return self.__lower_bound
 
     def upper_bound(self) -> float:
         return self.__upper_bound
-
-    def mutation_range(self) -> float:
-        return self.__mutation_range
 
     def random_initialize(self):
         """
@@ -54,27 +45,27 @@ class FloatHyperparameter(Hyperparameter):
 
     def mutate(self):
         """
-        Muta el valor del hiperparámetro según el rango de mutación
+        Aplica Polynomial Mutation respetando los límites del hiperparámetro.
         """
         if not self.mutable():
             return
-        
+
         current = self.value()
 
-        # Si todavía no tiene valor o no tiene rango de mutación, lo inicializamos
-        if current is None or self.mutation_range() is None:
+        # Si no tiene valor, lo inicializamos aleatoriamente
+        if current is None:
             self.random_initialize()
             return
 
-        displacement = uniform(-self.mutation_range(),self.mutation_range())
+        mutated, = tools.mutPolynomialBounded(
+            [current],
+            eta=100.0, # Valor optimo para mutacion polinomicas (pequeña mutaciones)
+            low=self.lower_bound(),
+            up=self.upper_bound(),
+            indpb=1.0 #Probabilidad gestionada por el conjunto
+        )
 
-        new_value = current + displacement
-
-        # Respetar límites
-        new_value = max(self.lower_bound(), new_value)
-        new_value = min(self.upper_bound(), new_value)
-
-        self.set_value(new_value)
+        self.set_value(mutated)
 
     def crossover(self, other):
         """
