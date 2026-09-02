@@ -79,7 +79,6 @@ class IntegerHyperparameter(Hyperparameter):
         new_value = max(self.lower_bound(), new_value)
         new_value = min(self.upper_bound(), new_value)
         
-        print(f"INTEGER [{self.nick()}]: {current} -> {mutated[0]} -> {new_value}")
         self.set_value(new_value)
 
     def crossover(self, other):
