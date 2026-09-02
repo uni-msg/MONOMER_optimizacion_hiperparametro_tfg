@@ -129,6 +129,6 @@ class GAStrategyBitlist(GAStrategy):
 
         # Mutación de hiperparámetros
         if individual.has_hyperparameter_set():
-            individual.hyperparameter_set().mutate(mutation_probability=self.mutation_frequency())
+            individual.hyperparameter_set().mutate(mutation_frequency=self.mutation_frequency())
 
         return individual,
