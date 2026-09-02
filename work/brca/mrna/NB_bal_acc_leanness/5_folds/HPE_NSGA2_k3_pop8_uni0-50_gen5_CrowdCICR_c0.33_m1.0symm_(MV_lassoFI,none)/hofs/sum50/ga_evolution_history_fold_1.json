@@ -416,7 +416,7 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.5478534223523934e-10,
+                                "value": 2.1421762159829359e-10,
                                 "mutable": true
                             }
                         }
@@ -456,13 +456,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 6.719596195964246e-08,
+                                "value": 5.527323478076578e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.7120363408521304,
+                        0.7107205513784461,
                         0.02702702702702703
                     ],
                     "features": [
@@ -512,6 +512,27 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
+                                "value": 1.9073947592750482e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2017857142857143,
+                        0.5
+                    ],
+                    "features": [
+                        7045
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
                                 "value": 4.7559133501155926e-08,
                                 "mutable": true
                             }
@@ -528,73 +549,6 @@
                         1622,
                         1843,
                         1894,
-                        2452,
-                        2505,
-                        3398,
-                        3565,
-                        3710,
-                        4444,
-                        4627,
-                        4794,
-                        4815,
-                        5154,
-                        5634,
-                        5962,
-                        6044,
-                        6754,
-                        7045,
-                        7369,
-                        8291,
-                        8732,
-                        9091,
-                        9226,
-                        9409,
-                        9797,
-                        9857,
-                        9902,
-                        10110,
-                        11701,
-                        11989,
-                        12068,
-                        12325,
-                        12351,
-                        13855,
-                        13978,
-                        14128,
-                        14808,
-                        14982,
-                        15684,
-                        15939,
-                        16296,
-                        16999,
-                        18473,
-                        18495,
-                        19998
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 5.529465587438783e-08,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6649701176016964,
-                        0.020833333333333332
-                    ],
-                    "features": [
-                        851,
-                        1176,
-                        1349,
-                        1622,
-                        1843,
                         2452,
                         2505,
                         3398,
@@ -702,54 +656,6 @@
                         18607,
                         18886,
                         20179
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 3.2094859292456436e-11,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5970804414883363,
-                        0.034482758620689655
-                    ],
-                    "features": [
-                        844,
-                        1901,
-                        2230,
-                        2236,
-                        3058,
-                        4201,
-                        4242,
-                        4515,
-                        4903,
-                        5129,
-                        6245,
-                        6754,
-                        7446,
-                        8100,
-                        10122,
-                        10935,
-                        12726,
-                        13046,
-                        13817,
-                        13855,
-                        14808,
-                        15244,
-                        15688,
-                        15715,
-                        15871,
-                        18013,
-                        18385,
-                        19593
                     ]
                 },
                 {
@@ -872,13 +778,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 4.964153821816857e-09,
+                                "value": 4.320178453059988e-09,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5941643772893773,
+                        0.5937179487179487,
                         0.02857142857142857
                     ],
                     "features": [
@@ -986,54 +892,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.297588885880239e-09,
+                                "value": 1.399037495886481e-12,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5733677944862154,
-                        0.045454545454545456
-                    ],
-                    "features": [
-                        50,
-                        2367,
-                        3468,
-                        4477,
-                        5623,
-                        5634,
-                        6578,
-                        6999,
-                        7246,
-                        7429,
-                        9588,
-                        10822,
-                        10943,
-                        11473,
-                        13064,
-                        14659,
-                        15109,
-                        16089,
-                        16394,
-                        17508,
-                        19681
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1.687526424550238e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5475538606130712,
+                        0.546661003470214,
                         0.038461538461538464
                     ],
                     "features": [
@@ -1062,6 +927,47 @@
                         18607,
                         19161,
                         20179
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.55685533263862e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5371455080007712,
+                        0.045454545454545456
+                    ],
+                    "features": [
+                        50,
+                        2367,
+                        2849,
+                        3468,
+                        4477,
+                        5623,
+                        5634,
+                        6578,
+                        6999,
+                        7246,
+                        7429,
+                        9588,
+                        10822,
+                        10943,
+                        11473,
+                        13058,
+                        15109,
+                        16089,
+                        16394,
+                        17508,
+                        19675
                     ]
                 },
                 {
@@ -1146,7 +1052,48 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.5147653997410613e-10,
+                                "value": 1.811292158577986e-11,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.36197898592635436,
+                        0.045454545454545456
+                    ],
+                    "features": [
+                        675,
+                        1671,
+                        2849,
+                        3371,
+                        4549,
+                        4794,
+                        6445,
+                        7104,
+                        9662,
+                        10112,
+                        10116,
+                        10440,
+                        12513,
+                        12795,
+                        13855,
+                        14175,
+                        16480,
+                        17210,
+                        17312,
+                        17846,
+                        17962
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.854249682884152e-10,
                                 "mutable": true
                             }
                         }
@@ -1184,7 +1131,7 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.5478534223523934e-10,
+                                "value": 2.1421762159829359e-10,
                                 "mutable": true
                             }
                         }
@@ -1224,63 +1171,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 8.904035296282021e-08,
+                                "value": 5.527323478076578e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.71368999421631,
-                        0.03225806451612903
-                    ],
-                    "features": [
-                        1176,
-                        1622,
-                        1843,
-                        1894,
-                        2452,
-                        2505,
-                        3565,
-                        4444,
-                        4627,
-                        4794,
-                        4815,
-                        6044,
-                        7369,
-                        7930,
-                        9091,
-                        9226,
-                        9409,
-                        9797,
-                        9902,
-                        10110,
-                        12068,
-                        12325,
-                        13855,
-                        14128,
-                        14808,
-                        15655,
-                        15684,
-                        15939,
-                        18473,
-                        19998
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 6.719596195964246e-08,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.7120363408521304,
+                        0.7107205513784461,
                         0.02702702702702703
                     ],
                     "features": [
@@ -1330,51 +1227,142 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 7.398306189579619e-11,
+                                "value": 6.019763382922756e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6717611336032389,
+                        0.7021622566030461,
                         0.027777777777777776
                     ],
                     "features": [
-                        720,
-                        1105,
-                        1328,
-                        1340,
-                        2464,
+                        1176,
+                        1349,
+                        1622,
+                        1843,
+                        1894,
+                        2452,
+                        2505,
+                        3565,
+                        3710,
+                        4444,
+                        4627,
+                        4794,
+                        4815,
+                        5634,
                         6044,
-                        6146,
-                        6245,
-                        6465,
-                        6898,
-                        7403,
-                        8268,
-                        8412,
+                        6754,
+                        7045,
+                        7369,
                         8732,
-                        8848,
-                        9181,
+                        9091,
                         9226,
-                        9437,
+                        9409,
+                        9797,
                         9902,
-                        10545,
-                        11298,
-                        11702,
-                        12299,
-                        12339,
-                        12534,
-                        14729,
-                        15083,
-                        15093,
+                        10110,
+                        11701,
+                        12068,
+                        12325,
+                        13855,
+                        14128,
+                        14808,
+                        15684,
+                        15939,
+                        18473,
+                        19998
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.200027138095111e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6833288750722961,
+                        0.03333333333333333
+                    ],
+                    "features": [
+                        1894,
+                        1901,
+                        2230,
+                        2236,
+                        2452,
+                        3565,
+                        4201,
+                        4242,
+                        4444,
+                        4627,
+                        4903,
+                        5129,
+                        6044,
+                        6754,
+                        9091,
+                        9226,
+                        9902,
+                        10110,
+                        11701,
+                        12325,
+                        13817,
+                        13855,
+                        14128,
+                        14808,
                         15244,
-                        15714,
-                        16303,
-                        17210,
-                        17496,
-                        17617,
-                        19593
+                        15655,
+                        18385,
+                        19593,
+                        19998
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7797148941402543e-11,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2050595238095238,
+                        0.5
+                    ],
+                    "features": [
+                        1896
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.9073947592750482e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2017857142857143,
+                        0.5
+                    ],
+                    "features": [
+                        7045
                     ]
                 },
                 {
@@ -1453,63 +1441,87 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 5.529465587438783e-08,
+                                "value": 2.767781526042252e-11,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6649701176016964,
-                        0.020833333333333332
+                        0.6558498409485252,
+                        0.02702702702702703
                     ],
                     "features": [
-                        851,
+                        844,
                         1176,
                         1349,
                         1622,
                         1843,
-                        2452,
                         2505,
-                        3398,
-                        3565,
+                        3058,
                         3710,
-                        4444,
-                        4627,
+                        4515,
                         4794,
                         4815,
-                        5154,
                         5634,
-                        5962,
-                        6044,
+                        6245,
                         6754,
                         7045,
                         7369,
-                        8291,
+                        7446,
+                        8100,
                         8732,
-                        9091,
-                        9226,
                         9409,
                         9797,
-                        9857,
-                        9902,
-                        10110,
-                        11701,
-                        11989,
+                        10122,
+                        10935,
                         12068,
-                        12325,
-                        12351,
+                        12726,
+                        13046,
                         13855,
-                        13978,
-                        14128,
                         14808,
-                        14982,
                         15684,
+                        15688,
+                        15715,
+                        15871,
                         15939,
-                        16296,
-                        16999,
-                        18473,
-                        18495,
-                        19998
+                        17826,
+                        18013,
+                        18473
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.97464504379556e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.618777352033931,
+                        0.0625
+                    ],
+                    "features": [
+                        1176,
+                        3602,
+                        4627,
+                        4794,
+                        5114,
+                        8123,
+                        9582,
+                        10935,
+                        12386,
+                        12603,
+                        13848,
+                        15105,
+                        16480,
+                        16651,
+                        19053
                     ]
                 },
                 {
@@ -1575,54 +1587,6 @@
                         18607,
                         18886,
                         20179
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 3.2094859292456436e-11,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5970804414883363,
-                        0.034482758620689655
-                    ],
-                    "features": [
-                        844,
-                        1901,
-                        2230,
-                        2236,
-                        3058,
-                        4201,
-                        4242,
-                        4515,
-                        4903,
-                        5129,
-                        6245,
-                        6754,
-                        7446,
-                        8100,
-                        10122,
-                        10935,
-                        12726,
-                        13046,
-                        13817,
-                        13855,
-                        14808,
-                        15244,
-                        15688,
-                        15715,
-                        15871,
-                        18013,
-                        18385,
-                        19593
                     ]
                 },
                 {
@@ -1745,40 +1709,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.080495453768276e-10,
+                                "value": 4.320178453059988e-09,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5010979371505687,
-                        0.125
-                    ],
-                    "features": [
-                        1349,
-                        3710,
-                        5634,
-                        6754,
-                        7045,
-                        8732,
-                        15655
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 4.964153821816857e-09,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5941643772893773,
+                        0.5937179487179487,
                         0.02857142857142857
                     ],
                     "features": [
@@ -1886,37 +1823,18 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.297588885880239e-09,
+                                "value": 2.2611215686246637e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5733677944862154,
-                        0.045454545454545456
+                        0.26902135145556194,
+                        0.3333333333333333
                     ],
                     "features": [
-                        50,
-                        2367,
-                        3468,
-                        4477,
-                        5623,
-                        5634,
-                        6578,
-                        6999,
-                        7246,
-                        7429,
-                        9588,
-                        10822,
-                        10943,
-                        11473,
-                        13064,
-                        14659,
-                        15109,
-                        16089,
-                        16394,
-                        17508,
-                        19681
+                        7849,
+                        15655
                     ]
                 },
                 {
@@ -1927,13 +1845,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.687526424550238e-12,
+                                "value": 1.399037495886481e-12,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5475538606130712,
+                        0.546661003470214,
                         0.038461538461538464
                     ],
                     "features": [
@@ -1962,6 +1880,47 @@
                         18607,
                         19161,
                         20179
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.55685533263862e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5371455080007712,
+                        0.045454545454545456
+                    ],
+                    "features": [
+                        50,
+                        2367,
+                        2849,
+                        3468,
+                        4477,
+                        5623,
+                        5634,
+                        6578,
+                        6999,
+                        7246,
+                        7429,
+                        9588,
+                        10822,
+                        10943,
+                        11473,
+                        13058,
+                        15109,
+                        16089,
+                        16394,
+                        17508,
+                        19675
                     ]
                 },
                 {
@@ -2046,63 +2005,6 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.9116067049991957e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.33391182282629656,
-                        0.2
-                    ],
-                    "features": [
-                        582,
-                        4479,
-                        7045,
-                        11944
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.4615922016579911,
-                        0.07142857142857142
-                    ],
-                    "features": [
-                        593,
-                        736,
-                        4392,
-                        9181,
-                        12388,
-                        12593,
-                        13241,
-                        15109,
-                        15538,
-                        16784,
-                        18013,
-                        19161,
-                        19271
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
                                 "value": 1.6127248370193543e-12,
                                 "mutable": true
                             }
@@ -2160,32 +2062,37 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.9112211428360647e-10,
+                                "value": 1.811292158577986e-11,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.44324356564488143,
-                        0.058823529411764705
+                        0.36197898592635436,
+                        0.045454545454545456
                     ],
                     "features": [
-                        272,
-                        744,
-                        1443,
-                        3253,
-                        4815,
-                        7369,
-                        11603,
-                        12386,
-                        13570,
-                        13899,
-                        14413,
-                        15498,
-                        15711,
-                        16760,
-                        16841,
-                        18599
+                        675,
+                        1671,
+                        2849,
+                        3371,
+                        4549,
+                        4794,
+                        6445,
+                        7104,
+                        9662,
+                        10112,
+                        10116,
+                        10440,
+                        12513,
+                        12795,
+                        13855,
+                        14175,
+                        16480,
+                        17210,
+                        17312,
+                        17846,
+                        17962
                     ]
                 },
                 {
@@ -2196,7 +2103,7 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.5147653997410613e-10,
+                                "value": 2.854249682884152e-10,
                                 "mutable": true
                             }
                         }
@@ -2234,7 +2141,7 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.5478534223523934e-10,
+                                "value": 2.1421762159829359e-10,
                                 "mutable": true
                             }
                         }
@@ -2274,114 +2181,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 8.904035296282021e-08,
+                                "value": 5.527323478076578e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.71368999421631,
-                        0.03225806451612903
-                    ],
-                    "features": [
-                        1176,
-                        1622,
-                        1843,
-                        1894,
-                        2452,
-                        2505,
-                        3565,
-                        4444,
-                        4627,
-                        4794,
-                        4815,
-                        6044,
-                        7369,
-                        7930,
-                        9091,
-                        9226,
-                        9409,
-                        9797,
-                        9902,
-                        10110,
-                        12068,
-                        12325,
-                        13855,
-                        14128,
-                        14808,
-                        15655,
-                        15684,
-                        15939,
-                        18473,
-                        19998
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1.2629596784354486e-07,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.7140883458646616,
-                        0.03125
-                    ],
-                    "features": [
-                        1176,
-                        1622,
-                        1843,
-                        1894,
-                        2452,
-                        2505,
-                        3565,
-                        4444,
-                        4627,
-                        4794,
-                        4815,
-                        6044,
-                        7369,
-                        7849,
-                        7930,
-                        9091,
-                        9226,
-                        9409,
-                        9797,
-                        9902,
-                        10110,
-                        12068,
-                        12325,
-                        13855,
-                        14128,
-                        14808,
-                        15655,
-                        15684,
-                        15939,
-                        18473,
-                        19998
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 6.719596195964246e-08,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.7120363408521304,
+                        0.7107205513784461,
                         0.02702702702702703
                     ],
                     "features": [
@@ -2431,37 +2237,42 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.0731694121749186e-07,
+                                "value": 6.61532919099808e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.7021063475997688,
-                        0.03125
+                        0.7081907894736842,
+                        0.02702702702702703
                     ],
                     "features": [
                         1176,
+                        1349,
                         1622,
-                        1843,
                         1894,
                         2452,
                         2505,
+                        3412,
                         3565,
+                        3710,
                         4444,
                         4627,
                         4794,
                         4815,
+                        5634,
                         6044,
-                        7282,
+                        6754,
+                        7045,
                         7369,
-                        7930,
+                        8732,
                         9091,
                         9226,
                         9409,
                         9797,
                         9902,
                         10110,
+                        11701,
                         12068,
                         12325,
                         13855,
@@ -2482,17 +2293,51 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.2271835127741197e-10,
+                                "value": 6.019763382922756e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.2065521978021978,
-                        0.5
+                        0.7021622566030461,
+                        0.027777777777777776
                     ],
                     "features": [
-                        12645
+                        1176,
+                        1349,
+                        1622,
+                        1843,
+                        1894,
+                        2452,
+                        2505,
+                        3565,
+                        3710,
+                        4444,
+                        4627,
+                        4794,
+                        4815,
+                        5634,
+                        6044,
+                        6754,
+                        7045,
+                        7369,
+                        8732,
+                        9091,
+                        9226,
+                        9409,
+                        9797,
+                        9902,
+                        10110,
+                        11701,
+                        12068,
+                        12325,
+                        13855,
+                        14128,
+                        14808,
+                        15684,
+                        15939,
+                        18473,
+                        19998
                     ]
                 },
                 {
@@ -2503,51 +2348,87 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 7.398306189579619e-11,
+                                "value": 5.200027138095111e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6717611336032389,
-                        0.027777777777777776
+                        0.6833288750722961,
+                        0.03333333333333333
                     ],
                     "features": [
-                        720,
-                        1105,
-                        1328,
-                        1340,
-                        2464,
+                        1894,
+                        1901,
+                        2230,
+                        2236,
+                        2452,
+                        3565,
+                        4201,
+                        4242,
+                        4444,
+                        4627,
+                        4903,
+                        5129,
                         6044,
-                        6146,
-                        6245,
-                        6465,
-                        6898,
-                        7403,
-                        8268,
-                        8412,
-                        8732,
-                        8848,
-                        9181,
+                        6754,
+                        9091,
                         9226,
-                        9437,
                         9902,
-                        10545,
-                        11298,
-                        11702,
-                        12299,
-                        12339,
-                        12534,
-                        14729,
-                        15083,
-                        15093,
+                        10110,
+                        11701,
+                        12325,
+                        13817,
+                        13855,
+                        14128,
+                        14808,
                         15244,
-                        15714,
-                        16303,
-                        17210,
-                        17496,
-                        17617,
-                        19593
+                        15655,
+                        18385,
+                        19593,
+                        19998
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7797148941402543e-11,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2050595238095238,
+                        0.5
+                    ],
+                    "features": [
+                        1896
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.9073947592750482e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2017857142857143,
+                        0.5
+                    ],
+                    "features": [
+                        7045
                     ]
                 },
                 {
@@ -2626,63 +2507,123 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 5.529465587438783e-08,
+                                "value": 2.767781526042252e-11,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6649701176016964,
-                        0.020833333333333332
+                        0.6558498409485252,
+                        0.02702702702702703
                     ],
                     "features": [
-                        851,
+                        844,
                         1176,
                         1349,
                         1622,
                         1843,
-                        2452,
                         2505,
-                        3398,
-                        3565,
+                        3058,
                         3710,
-                        4444,
-                        4627,
+                        4515,
                         4794,
                         4815,
-                        5154,
                         5634,
-                        5962,
-                        6044,
+                        6245,
                         6754,
                         7045,
                         7369,
-                        8291,
+                        7446,
+                        8100,
                         8732,
-                        9091,
-                        9226,
                         9409,
                         9797,
-                        9857,
-                        9902,
-                        10110,
-                        11701,
-                        11989,
+                        10122,
+                        10935,
                         12068,
-                        12325,
-                        12351,
+                        12726,
+                        13046,
                         13855,
-                        13978,
-                        14128,
                         14808,
-                        14982,
                         15684,
+                        15688,
+                        15715,
+                        15871,
                         15939,
-                        16296,
-                        16999,
-                        18473,
-                        18495,
-                        19998
+                        17826,
+                        18013,
+                        18473
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.97464504379556e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.618777352033931,
+                        0.0625
+                    ],
+                    "features": [
+                        1176,
+                        3602,
+                        4627,
+                        4794,
+                        5114,
+                        8123,
+                        9582,
+                        10935,
+                        12386,
+                        12603,
+                        13848,
+                        15105,
+                        16480,
+                        16651,
+                        19053
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.210053685939586e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6202419510314248,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        1176,
+                        3602,
+                        4627,
+                        4794,
+                        5114,
+                        8123,
+                        9582,
+                        10935,
+                        12386,
+                        12603,
+                        13848,
+                        15105,
+                        16480,
+                        16651,
+                        19053,
+                        19525
                     ]
                 },
                 {
@@ -2758,66 +2699,33 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.363497072673422e-10,
+                                "value": 5.91379936596053e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.3275219298245614,
-                        0.3333333333333333
+                        0.5985560053981106,
+                        0.05555555555555555
                     ],
                     "features": [
-                        6754,
-                        8732
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 3.2094859292456436e-11,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5970804414883363,
-                        0.034482758620689655
-                    ],
-                    "features": [
-                        844,
-                        1901,
-                        2230,
-                        2236,
-                        3058,
-                        4201,
-                        4242,
-                        4515,
-                        4903,
-                        5129,
-                        6245,
-                        6754,
-                        7446,
-                        8100,
-                        10122,
-                        10935,
-                        12726,
-                        13046,
-                        13817,
-                        13855,
+                        1176,
+                        1349,
+                        1622,
+                        1843,
+                        3565,
+                        4627,
+                        4794,
+                        4815,
+                        6044,
+                        7369,
+                        8732,
+                        9226,
+                        9797,
+                        10110,
+                        14128,
                         14808,
-                        15244,
-                        15688,
-                        15715,
-                        15871,
-                        18013,
-                        18385,
-                        19593
+                        15655
                     ]
                 },
                 {
@@ -2940,40 +2848,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.080495453768276e-10,
+                                "value": 4.320178453059988e-09,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5010979371505687,
-                        0.125
-                    ],
-                    "features": [
-                        1349,
-                        3710,
-                        5634,
-                        6754,
-                        7045,
-                        8732,
-                        15655
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 4.964153821816857e-09,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5941643772893773,
+                        0.5937179487179487,
                         0.02857142857142857
                     ],
                     "features": [
@@ -3081,22 +2962,32 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.85987605829667e-10,
+                                "value": 2.4750289014520284e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.47717551089261623,
-                        0.14285714285714285
+                        0.5501143483709272,
+                        0.058823529411764705
                     ],
                     "features": [
-                        1349,
+                        1894,
+                        2452,
+                        2505,
                         3710,
                         5634,
+                        6754,
                         7045,
-                        15655,
-                        18551
+                        9091,
+                        9409,
+                        9902,
+                        11701,
+                        12068,
+                        12325,
+                        15684,
+                        15939,
+                        19998
                     ]
                 },
                 {
@@ -3107,37 +2998,18 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.297588885880239e-09,
+                                "value": 2.2611215686246637e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5733677944862154,
-                        0.045454545454545456
+                        0.26902135145556194,
+                        0.3333333333333333
                     ],
                     "features": [
-                        50,
-                        2367,
-                        3468,
-                        4477,
-                        5623,
-                        5634,
-                        6578,
-                        6999,
-                        7246,
-                        7429,
-                        9588,
-                        10822,
-                        10943,
-                        11473,
-                        13064,
-                        14659,
-                        15109,
-                        16089,
-                        16394,
-                        17508,
-                        19681
+                        7849,
+                        15655
                     ]
                 },
                 {
@@ -3148,13 +3020,49 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.687526424550238e-12,
+                                "value": 2.598183441291633e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5475538606130712,
+                        0.5286585454019664,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        75,
+                        400,
+                        1901,
+                        2236,
+                        3678,
+                        4249,
+                        9582,
+                        10351,
+                        10545,
+                        10946,
+                        12146,
+                        12334,
+                        12874,
+                        17508,
+                        18799,
+                        20135
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.399037495886481e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.546661003470214,
                         0.038461538461538464
                     ],
                     "features": [
@@ -3193,31 +3101,37 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 7.129229820606959e-10,
+                                "value": 2.55685533263862e-09,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5206421100828995,
-                        0.0625
+                        0.5371455080007712,
+                        0.045454545454545456
                     ],
                     "features": [
-                        75,
-                        2236,
-                        7045,
-                        8291,
-                        10545,
-                        10946,
-                        11914,
-                        11973,
-                        12260,
-                        15530,
-                        16783,
-                        18013,
-                        18799,
-                        19053,
-                        20135
+                        50,
+                        2367,
+                        2849,
+                        3468,
+                        4477,
+                        5623,
+                        5634,
+                        6578,
+                        6999,
+                        7246,
+                        7429,
+                        9588,
+                        10822,
+                        10943,
+                        11473,
+                        13058,
+                        15109,
+                        16089,
+                        16394,
+                        17508,
+                        19675
                     ]
                 },
                 {
@@ -3268,42 +3182,47 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 6.071230884711987e-07,
+                                "value": 2.344533099433589e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5209922643146327,
-                        0.037037037037037035
+                        0.22575754289570077,
+                        0.3333333333333333
                     ],
                     "features": [
-                        1080,
-                        2505,
-                        4392,
-                        4815,
-                        5885,
-                        6552,
-                        7654,
-                        7949,
-                        8501,
-                        10264,
-                        10294,
-                        11733,
-                        12351,
-                        13815,
-                        15105,
-                        15244,
-                        15530,
+                        6125,
+                        19051
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.2904654202002288e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.45150255446308074,
+                        0.1
+                    ],
+                    "features": [
+                        593,
+                        736,
+                        9181,
+                        12388,
+                        12593,
                         15655,
-                        16866,
-                        17210,
-                        17219,
-                        17232,
-                        17840,
-                        18914,
-                        19593,
-                        20137
+                        16784,
+                        18013,
+                        19161
                     ]
                 },
                 {
@@ -3328,63 +3247,6 @@
                         736,
                         4392,
                         8241,
-                        9181,
-                        12388,
-                        12593,
-                        13241,
-                        15109,
-                        15538,
-                        16784,
-                        18013,
-                        19161,
-                        19271
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 2.9116067049991957e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.33391182282629656,
-                        0.2
-                    ],
-                    "features": [
-                        582,
-                        4479,
-                        7045,
-                        11944
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.4615922016579911,
-                        0.07142857142857142
-                    ],
-                    "features": [
-                        593,
-                        736,
-                        4392,
                         9181,
                         12388,
                         12593,
@@ -3462,78 +3324,21 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.9112211428360647e-10,
+                                "value": 2.5520163313079676e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.44324356564488143,
-                        0.058823529411764705
+                        0.3454832995951417,
+                        0.16666666666666666
                     ],
                     "features": [
-                        272,
-                        744,
-                        1443,
-                        3253,
-                        4815,
-                        7369,
-                        11603,
-                        12386,
-                        13570,
-                        13899,
-                        14413,
-                        15498,
-                        15711,
-                        16760,
-                        16841,
-                        18599
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 3.3917008648698642e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.41638194042799304,
-                        0.037037037037037035
-                    ],
-                    "features": [
-                        215,
-                        1328,
-                        1896,
-                        4012,
-                        4479,
-                        4692,
-                        8460,
-                        9181,
-                        9226,
-                        10264,
-                        10323,
-                        12339,
-                        12564,
-                        12593,
-                        12666,
-                        13177,
+                        8241,
                         13241,
-                        13814,
-                        15871,
-                        15939,
-                        16839,
-                        17496,
-                        17840,
-                        18012,
-                        18013,
-                        19295
+                        15109,
+                        15538,
+                        19271
                     ]
                 },
                 {
@@ -3544,7 +3349,48 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.5147653997410613e-10,
+                                "value": 1.811292158577986e-11,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.36197898592635436,
+                        0.045454545454545456
+                    ],
+                    "features": [
+                        675,
+                        1671,
+                        2849,
+                        3371,
+                        4549,
+                        4794,
+                        6445,
+                        7104,
+                        9662,
+                        10112,
+                        10116,
+                        10440,
+                        12513,
+                        12795,
+                        13855,
+                        14175,
+                        16480,
+                        17210,
+                        17312,
+                        17846,
+                        17962
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.854249682884152e-10,
                                 "mutable": true
                             }
                         }
@@ -3582,7 +3428,7 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.5478534223523934e-10,
+                                "value": 2.1421762159829359e-10,
                                 "mutable": true
                             }
                         }
@@ -3622,36 +3468,42 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 8.904035296282021e-08,
+                                "value": 6.429577719742962e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.71368999421631,
-                        0.03225806451612903
+                        0.7152083333333334,
+                        0.02702702702702703
                     ],
                     "features": [
                         1176,
+                        1349,
                         1622,
                         1843,
+                        1851,
                         1894,
                         2452,
                         2505,
                         3565,
+                        3710,
                         4444,
                         4627,
                         4794,
                         4815,
+                        5634,
                         6044,
+                        6754,
+                        7045,
                         7369,
-                        7930,
+                        8732,
                         9091,
                         9226,
                         9409,
-                        9797,
                         9902,
                         10110,
+                        11701,
                         12068,
                         12325,
                         13855,
@@ -3672,85 +3524,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.2629596784354486e-07,
+                                "value": 5.527323478076578e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.7140883458646616,
-                        0.03125
-                    ],
-                    "features": [
-                        1176,
-                        1622,
-                        1843,
-                        1894,
-                        2452,
-                        2505,
-                        3565,
-                        4444,
-                        4627,
-                        4794,
-                        4815,
-                        6044,
-                        7369,
-                        7849,
-                        7930,
-                        9091,
-                        9226,
-                        9409,
-                        9797,
-                        9902,
-                        10110,
-                        12068,
-                        12325,
-                        13855,
-                        14128,
-                        14808,
-                        15655,
-                        15684,
-                        15939,
-                        18473,
-                        19998
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 2.3700359992160946e-10,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.23950501253132833,
-                        0.5
-                    ],
-                    "features": [
-                        1836
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 6.719596195964246e-08,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.7120363408521304,
+                        0.7107205513784461,
                         0.02702702702702703
                     ],
                     "features": [
@@ -3800,37 +3580,42 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.0731694121749186e-07,
+                                "value": 6.61532919099808e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.7021063475997688,
-                        0.03125
+                        0.7081907894736842,
+                        0.02702702702702703
                     ],
                     "features": [
                         1176,
+                        1349,
                         1622,
-                        1843,
                         1894,
                         2452,
                         2505,
+                        3412,
                         3565,
+                        3710,
                         4444,
                         4627,
                         4794,
                         4815,
+                        5634,
                         6044,
-                        7282,
+                        6754,
+                        7045,
                         7369,
-                        7930,
+                        8732,
                         9091,
                         9226,
                         9409,
                         9797,
                         9902,
                         10110,
+                        11701,
                         12068,
                         12325,
                         13855,
@@ -3851,36 +3636,43 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.0090325521564426e-07,
+                                "value": 6.019763382922756e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6724146905725854,
-                        0.034482758620689655
+                        0.7021622566030461,
+                        0.027777777777777776
                     ],
                     "features": [
-                        582,
                         1176,
+                        1349,
                         1622,
                         1843,
                         1894,
                         2452,
                         2505,
                         3565,
+                        3710,
                         4444,
                         4627,
                         4794,
                         4815,
+                        5634,
                         6044,
+                        6754,
                         7045,
                         7369,
-                        7849,
+                        8732,
+                        9091,
+                        9226,
                         9409,
                         9797,
+                        9902,
                         10110,
-                        11944,
+                        11701,
+                        12068,
                         12325,
                         13855,
                         14128,
@@ -3899,61 +3691,44 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.2271835127741197e-10,
+                                "value": 5.200027138095111e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.2065521978021978,
-                        0.5
+                        0.6833288750722961,
+                        0.03333333333333333
                     ],
                     "features": [
-                        12645
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1.738410140501558e-07,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6655672835935993,
-                        0.038461538461538464
-                    ],
-                    "features": [
-                        1622,
                         1894,
+                        1901,
+                        2230,
+                        2236,
                         2452,
-                        2505,
                         3565,
-                        4371,
+                        4201,
+                        4242,
                         4444,
                         4627,
-                        4794,
-                        4815,
-                        7369,
-                        7930,
-                        9409,
-                        9797,
-                        10089,
+                        4903,
+                        5129,
+                        6044,
+                        6754,
+                        9091,
+                        9226,
+                        9902,
                         10110,
+                        11701,
                         12325,
+                        13817,
                         13855,
                         14128,
                         14808,
+                        15244,
                         15655,
-                        15684,
-                        15939,
-                        18473,
+                        18385,
+                        19593,
                         19998
                     ]
                 },
@@ -3965,17 +3740,17 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.4527545141630403e-10,
+                                "value": 1.7797148941402543e-11,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.20042293233082709,
+                        0.2050595238095238,
                         0.5
                     ],
                     "features": [
-                        14905
+                        1896
                     ]
                 },
                 {
@@ -3986,51 +3761,17 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 7.398306189579619e-11,
+                                "value": 1.9073947592750482e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6717611336032389,
-                        0.027777777777777776
+                        0.2017857142857143,
+                        0.5
                     ],
                     "features": [
-                        720,
-                        1105,
-                        1328,
-                        1340,
-                        2464,
-                        6044,
-                        6146,
-                        6245,
-                        6465,
-                        6898,
-                        7403,
-                        8268,
-                        8412,
-                        8732,
-                        8848,
-                        9181,
-                        9226,
-                        9437,
-                        9902,
-                        10545,
-                        11298,
-                        11702,
-                        12299,
-                        12339,
-                        12534,
-                        14729,
-                        15083,
-                        15093,
-                        15244,
-                        15714,
-                        16303,
-                        17210,
-                        17496,
-                        17617,
-                        19593
+                        7045
                     ]
                 },
                 {
@@ -4109,63 +3850,123 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 5.529465587438783e-08,
+                                "value": 2.767781526042252e-11,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.6649701176016964,
-                        0.020833333333333332
+                        0.6558498409485252,
+                        0.02702702702702703
                     ],
                     "features": [
-                        851,
+                        844,
                         1176,
                         1349,
                         1622,
                         1843,
-                        2452,
                         2505,
-                        3398,
-                        3565,
+                        3058,
                         3710,
-                        4444,
-                        4627,
+                        4515,
                         4794,
                         4815,
-                        5154,
                         5634,
-                        5962,
-                        6044,
+                        6245,
                         6754,
                         7045,
                         7369,
-                        8291,
+                        7446,
+                        8100,
                         8732,
-                        9091,
-                        9226,
                         9409,
                         9797,
-                        9857,
-                        9902,
-                        10110,
-                        11701,
-                        11989,
+                        10122,
+                        10935,
                         12068,
-                        12325,
-                        12351,
+                        12726,
+                        13046,
                         13855,
-                        13978,
-                        14128,
                         14808,
-                        14982,
                         15684,
+                        15688,
+                        15715,
+                        15871,
                         15939,
-                        16296,
-                        16999,
-                        18473,
-                        18495,
-                        19998
+                        17826,
+                        18013,
+                        18473
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.97464504379556e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.618777352033931,
+                        0.0625
+                    ],
+                    "features": [
+                        1176,
+                        3602,
+                        4627,
+                        4794,
+                        5114,
+                        8123,
+                        9582,
+                        10935,
+                        12386,
+                        12603,
+                        13848,
+                        15105,
+                        16480,
+                        16651,
+                        19053
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.210053685939586e-08,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6202419510314248,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        1176,
+                        3602,
+                        4627,
+                        4794,
+                        5114,
+                        8123,
+                        9582,
+                        10935,
+                        12386,
+                        12603,
+                        13848,
+                        15105,
+                        16480,
+                        16651,
+                        19053,
+                        19525
                     ]
                 },
                 {
@@ -4241,18 +4042,38 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.363497072673422e-10,
+                                "value": 2.563502137703123e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.3275219298245614,
-                        0.3333333333333333
+                        0.623503349720455,
+                        0.043478260869565216
                     ],
                     "features": [
-                        6754,
-                        8732
+                        1349,
+                        1622,
+                        1843,
+                        1894,
+                        3565,
+                        3710,
+                        4444,
+                        4794,
+                        4815,
+                        5634,
+                        8732,
+                        9226,
+                        9797,
+                        9902,
+                        10110,
+                        11701,
+                        12068,
+                        12325,
+                        14128,
+                        14808,
+                        15655,
+                        18473
                     ]
                 },
                 {
@@ -4263,44 +4084,75 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 3.2094859292456436e-11,
+                                "value": 5.91379936596053e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5970804414883363,
-                        0.034482758620689655
+                        0.5985560053981106,
+                        0.05555555555555555
                     ],
                     "features": [
-                        844,
-                        1901,
-                        2230,
-                        2236,
-                        3058,
-                        4201,
-                        4242,
-                        4515,
-                        4903,
-                        5129,
-                        6245,
-                        6754,
-                        7446,
-                        8100,
-                        10122,
-                        10935,
-                        12726,
-                        13046,
-                        13817,
-                        13855,
+                        1176,
+                        1349,
+                        1622,
+                        1843,
+                        3565,
+                        4627,
+                        4794,
+                        4815,
+                        6044,
+                        7369,
+                        8732,
+                        9226,
+                        9797,
+                        10110,
+                        14128,
                         14808,
-                        15244,
-                        15688,
-                        15715,
-                        15871,
-                        18013,
-                        18385,
-                        19593
+                        15655
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.250826326538881e-07,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6059317765567765,
+                        0.043478260869565216
+                    ],
+                    "features": [
+                        1043,
+                        1622,
+                        1894,
+                        1896,
+                        5360,
+                        6245,
+                        8082,
+                        9191,
+                        9409,
+                        10428,
+                        10943,
+                        11177,
+                        11233,
+                        11973,
+                        12721,
+                        13848,
+                        15867,
+                        17331,
+                        17612,
+                        18073,
+                        18799,
+                        19214
                     ]
                 },
                 {
@@ -4423,40 +4275,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.080495453768276e-10,
+                                "value": 4.320178453059988e-09,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5010979371505687,
-                        0.125
-                    ],
-                    "features": [
-                        1349,
-                        3710,
-                        5634,
-                        6754,
-                        7045,
-                        8732,
-                        15655
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 4.964153821816857e-09,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5941643772893773,
+                        0.5937179487179487,
                         0.02857142857142857
                     ],
                     "features": [
@@ -4564,22 +4389,32 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.85987605829667e-10,
+                                "value": 2.4750289014520284e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.47717551089261623,
-                        0.14285714285714285
+                        0.5501143483709272,
+                        0.058823529411764705
                     ],
                     "features": [
-                        1349,
+                        1894,
+                        2452,
+                        2505,
                         3710,
                         5634,
+                        6754,
                         7045,
-                        15655,
-                        18551
+                        9091,
+                        9409,
+                        9902,
+                        11701,
+                        12068,
+                        12325,
+                        15684,
+                        15939,
+                        19998
                     ]
                 },
                 {
@@ -4590,37 +4425,18 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.297588885880239e-09,
+                                "value": 2.2611215686246637e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5733677944862154,
-                        0.045454545454545456
+                        0.26902135145556194,
+                        0.3333333333333333
                     ],
                     "features": [
-                        50,
-                        2367,
-                        3468,
-                        4477,
-                        5623,
-                        5634,
-                        6578,
-                        6999,
-                        7246,
-                        7429,
-                        9588,
-                        10822,
-                        10943,
-                        11473,
-                        13064,
-                        14659,
-                        15109,
-                        16089,
-                        16394,
-                        17508,
-                        19681
+                        7849,
+                        15655
                     ]
                 },
                 {
@@ -4631,29 +4447,32 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 5.857620985983759e-08,
+                                "value": 2.598183441291633e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5198002217081165,
-                        0.07142857142857142
+                        0.5286585454019664,
+                        0.058823529411764705
                     ],
                     "features": [
-                        1843,
-                        4129,
-                        4392,
-                        4815,
-                        8745,
-                        10560,
-                        10783,
-                        11421,
+                        75,
+                        400,
+                        1901,
+                        2236,
+                        3678,
+                        4249,
+                        9582,
+                        10351,
+                        10545,
+                        10946,
+                        12146,
                         12334,
-                        12339,
-                        12429,
-                        14320,
-                        16227
+                        12874,
+                        17508,
+                        18799,
+                        20135
                     ]
                 },
                 {
@@ -4664,13 +4483,13 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.687526424550238e-12,
+                                "value": 1.399037495886481e-12,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5475538606130712,
+                        0.546661003470214,
                         0.038461538461538464
                     ],
                     "features": [
@@ -4709,31 +4528,68 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 7.129229820606959e-10,
+                                "value": 5.710461470924976e-08,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5206421100828995,
-                        0.0625
+                        0.5002637603624447,
+                        0.08333333333333333
                     ],
                     "features": [
-                        75,
-                        2236,
+                        1176,
+                        2452,
+                        4627,
+                        6754,
                         7045,
-                        8291,
-                        10545,
-                        10946,
-                        11914,
-                        11973,
-                        12260,
-                        15530,
-                        16783,
-                        18013,
-                        18799,
-                        19053,
-                        20135
+                        9091,
+                        9409,
+                        13855,
+                        14927,
+                        15939,
+                        19998
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.55685533263862e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5371455080007712,
+                        0.045454545454545456
+                    ],
+                    "features": [
+                        50,
+                        2367,
+                        2849,
+                        3468,
+                        4477,
+                        5623,
+                        5634,
+                        6578,
+                        6999,
+                        7246,
+                        7429,
+                        9588,
+                        10822,
+                        10943,
+                        11473,
+                        13058,
+                        15109,
+                        16089,
+                        16394,
+                        17508,
+                        19675
                     ]
                 },
                 {
@@ -4784,42 +4640,47 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 6.071230884711987e-07,
+                                "value": 2.344533099433589e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.5209922643146327,
-                        0.037037037037037035
+                        0.22575754289570077,
+                        0.3333333333333333
                     ],
                     "features": [
-                        1080,
-                        2505,
-                        4392,
-                        4815,
-                        5885,
-                        6552,
-                        7654,
-                        7949,
-                        8501,
-                        10264,
-                        10294,
-                        11733,
-                        12351,
-                        13815,
-                        15105,
-                        15244,
-                        15530,
+                        6125,
+                        19051
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.2904654202002288e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.45150255446308074,
+                        0.1
+                    ],
+                    "features": [
+                        593,
+                        736,
+                        9181,
+                        12388,
+                        12593,
                         15655,
-                        16866,
-                        17210,
-                        17219,
-                        17232,
-                        17840,
-                        18914,
-                        19593,
-                        20137
+                        16784,
+                        18013,
+                        19161
                     ]
                 },
                 {
@@ -4864,53 +4725,26 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.9116067049991957e-12,
+                                "value": 8.688361391994078e-10,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.33391182282629656,
-                        0.2
+                        0.44244131964526695,
+                        0.09090909090909091
                     ],
                     "features": [
-                        582,
-                        4479,
-                        7045,
-                        11944
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.4615922016579911,
-                        0.07142857142857142
-                    ],
-                    "features": [
-                        593,
-                        736,
-                        4392,
-                        9181,
-                        12388,
-                        12593,
-                        13241,
-                        15109,
-                        15538,
-                        16784,
-                        18013,
-                        19161,
-                        19271
+                        744,
+                        2464,
+                        4515,
+                        4627,
+                        7504,
+                        9437,
+                        10197,
+                        16589,
+                        19562,
+                        19659
                     ]
                 },
                 {
@@ -4978,121 +4812,65 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 1.8384412299937663e-10,
+                                "value": 1.6593784957619334e-12,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.4261496288798921,
-                        0.1
+                        0.5047561210719105,
+                        0.02
                     ],
                     "features": [
-                        1176,
-                        1843,
-                        6044,
-                        7849,
-                        9091,
-                        9226,
-                        9902,
-                        12068,
-                        15655
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 1.9112211428360647e-10,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.44324356564488143,
-                        0.058823529411764705
-                    ],
-                    "features": [
-                        272,
-                        744,
-                        1443,
-                        3253,
-                        4815,
-                        7369,
-                        11603,
-                        12386,
-                        13570,
-                        13899,
-                        14413,
-                        15498,
-                        15711,
-                        16760,
-                        16841,
-                        18599
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 2.9064511554745812e-12,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.3470432089839985,
-                        0.14285714285714285
-                    ],
-                    "features": [
-                        7930,
-                        9091,
-                        9226,
-                        9902,
-                        12068,
-                        15655
-                    ]
-                },
-                {
-                    "hyperparameters": {
-                        "name": "Naive Bayes Hyperparameters",
-                        "nick": "NB_HPE",
-                        "hyperparameters": {
-                            "var_smoothing": {
-                                "name": "Variance smoothing",
-                                "nick": "var_smoothing",
-                                "value": 8.161719541447427e-09,
-                                "mutable": true
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.3999815644881434,
-                        0.06666666666666667
-                    ],
-                    "features": [
+                        75,
+                        1043,
+                        1117,
+                        1328,
+                        1728,
                         1843,
                         1864,
+                        2192,
                         2194,
+                        2236,
+                        2443,
+                        3509,
+                        3818,
                         3930,
+                        4012,
                         4209,
+                        4392,
                         4627,
                         4636,
+                        5304,
                         7317,
+                        7949,
+                        9091,
                         9437,
-                        10128,
+                        9634,
+                        9667,
+                        10061,
+                        10122,
+                        10622,
+                        10943,
+                        11072,
+                        11733,
                         12339,
-                        13261,
+                        12425,
+                        13799,
+                        14128,
                         14175,
-                        15034
+                        14862,
+                        14863,
+                        14948,
+                        15034,
+                        16296,
+                        16480,
+                        16783,
+                        17366,
+                        17826,
+                        18310,
+                        18535,
+                        20157
                     ]
                 },
                 {
@@ -5103,42 +4881,29 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 3.3917008648698642e-12,
+                                "value": 1.3695385854018657e-12,
                                 "mutable": true
                             }
                         }
                     },
                     "fitness": [
-                        0.41638194042799304,
-                        0.037037037037037035
+                        0.44311524002313485,
+                        0.07142857142857142
                     ],
                     "features": [
-                        215,
-                        1328,
-                        1896,
-                        4012,
-                        4479,
-                        4692,
-                        8460,
+                        593,
+                        736,
+                        4392,
+                        8241,
                         9181,
-                        9226,
-                        10264,
-                        10323,
-                        12339,
-                        12564,
+                        12388,
                         12593,
-                        12666,
-                        13177,
                         13241,
-                        13814,
-                        15871,
-                        15939,
-                        16839,
-                        17496,
-                        17840,
-                        18012,
+                        15109,
+                        16784,
                         18013,
-                        19295
+                        19161,
+                        19271
                     ]
                 },
                 {
@@ -5149,7 +4914,97 @@
                             "var_smoothing": {
                                 "name": "Variance smoothing",
                                 "nick": "var_smoothing",
-                                "value": 2.5147653997410613e-10,
+                                "value": 2.5520163313079676e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3454832995951417,
+                        0.16666666666666666
+                    ],
+                    "features": [
+                        8241,
+                        13241,
+                        15109,
+                        15538,
+                        19271
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.0823675308053966e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3071400857914016,
+                        0.2
+                    ],
+                    "features": [
+                        4391,
+                        7849,
+                        10113,
+                        15655
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.811292158577986e-11,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.36197898592635436,
+                        0.045454545454545456
+                    ],
+                    "features": [
+                        675,
+                        1671,
+                        2849,
+                        3371,
+                        4549,
+                        4794,
+                        6445,
+                        7104,
+                        9662,
+                        10112,
+                        10116,
+                        10440,
+                        12513,
+                        12795,
+                        13855,
+                        14175,
+                        16480,
+                        17210,
+                        17312,
+                        17846,
+                        17962
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.854249682884152e-10,
                                 "mutable": true
                             }
                         }

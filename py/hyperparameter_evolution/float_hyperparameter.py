@@ -65,7 +65,8 @@ class FloatHyperparameter(Hyperparameter):
             indpb=1.0 #Probabilidad gestionada por el conjunto
         )
 
-        self.set_value(mutated)
+        print(f"FLOAT: {current} -> {mutated[0]}")
+        self.set_value(mutated[0])
 
     def crossover(self, other):
         """

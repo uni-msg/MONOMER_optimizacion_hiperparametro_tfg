@@ -4,8 +4,6 @@
             "generation": 0,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -31,7 +29,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": "sqrt",
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -49,7 +47,7 @@
                         }
                     },
                     "fitness": [
-                        0.6934167473324029,
+                        0.6496688577731755,
                         0.03125
                     ],
                     "features": [
@@ -87,8 +85,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -159,8 +155,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -186,7 +180,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": "sqrt",
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -227,8 +221,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -254,7 +246,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": "sqrt",
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -291,8 +283,6 @@
             "generation": 1,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -318,7 +308,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": "sqrt",
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -336,7 +326,89 @@
                         }
                     },
                     "fitness": [
-                        0.6934167473324029,
+                        0.6620221940445309,
+                        0.030303030303030304
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6384,
+                        6712,
+                        6793,
+                        7309,
+                        7730,
+                        7741,
+                        7857,
+                        8014,
+                        8557,
+                        9417,
+                        9477,
+                        11733,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6496688577731755,
                         0.03125
                     ],
                     "features": [
@@ -374,8 +446,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -401,7 +471,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": null,
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -419,8 +489,8 @@
                         }
                     },
                     "fitness": [
-                        0.5922710009420142,
-                        0.047619047619047616
+                        0.6070355515112055,
+                        0.05
                     ],
                     "features": [
                         446,
@@ -439,15 +509,12 @@
                         11392,
                         12395,
                         12443,
-                        14823,
                         16254,
                         16424,
                         17609
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -473,7 +540,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": "sqrt",
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -514,8 +581,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -523,88 +588,21 @@
                             "n_estimators": {
                                 "name": "Number of trees",
                                 "nick": "n_estimators",
-                                "value": 73,
+                                "value": 45,
                                 "mutable": true
                             },
                             "min_samples_split": {
                                 "name": "Minimum samples split",
                                 "nick": "min_samples_split",
-                                "value": 4,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 7,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.46595025030909837,
-                        0.0625
-                    ],
-                    "features": [
-                        2069,
-                        2822,
-                        3975,
-                        6292,
-                        7263,
-                        7603,
-                        9038,
-                        9728,
-                        13204,
-                        15316,
-                        15474,
-                        16278,
-                        17452,
-                        17962,
-                        18827
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 24,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
                                 "value": 12,
                                 "mutable": true
                             },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 2,
+                                "mutable": true
+                            },
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
@@ -626,12 +624,78 @@
                         }
                     },
                     "fitness": [
-                        0.43383323361951637,
-                        0.3333333333333333
+                        0.5165778196354543,
+                        0.0625
                     ],
                     "features": [
-                        5795,
-                        7317
+                        1455,
+                        1752,
+                        2326,
+                        4127,
+                        5599,
+                        9037,
+                        11973,
+                        12293,
+                        12418,
+                        12600,
+                        13339,
+                        13707,
+                        16841,
+                        17999,
+                        19977
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 15,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 15,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 16,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.33824904413267165,
+                        0.25
+                    ],
+                    "features": [
+                        3774,
+                        6364,
+                        10275
                     ]
                 }
             ]
@@ -640,8 +704,6 @@
             "generation": 2,
             "individuals": [
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -667,7 +729,7 @@
                             "max_features": {
                                 "name": "Maximum features",
                                 "nick": "max_features",
-                                "value": "sqrt",
+                                "value": "log2",
                                 "mutable": true
                             },
                             "class_weight": {
@@ -685,7 +747,89 @@
                         }
                     },
                     "fitness": [
-                        0.6934167473324029,
+                        0.6620221940445309,
+                        0.030303030303030304
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6384,
+                        6712,
+                        6793,
+                        7309,
+                        7730,
+                        7741,
+                        7857,
+                        8014,
+                        8557,
+                        9417,
+                        9477,
+                        11733,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6496688577731755,
                         0.03125
                     ],
                     "features": [
@@ -723,8 +867,6 @@
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -732,658 +874,13 @@
                             "n_estimators": {
                                 "name": "Number of trees",
                                 "nick": "n_estimators",
-                                "value": 16,
+                                "value": 26,
                                 "mutable": true
                             },
                             "min_samples_split": {
                                 "name": "Minimum samples split",
                                 "nick": "min_samples_split",
                                 "value": 10,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 19,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6285317674367864,
-                        0.03225806451612903
-                    ],
-                    "features": [
-                        58,
-                        1622,
-                        2269,
-                        3598,
-                        4565,
-                        6384,
-                        6712,
-                        6953,
-                        7309,
-                        7730,
-                        7741,
-                        7857,
-                        8557,
-                        9417,
-                        9477,
-                        11733,
-                        12593,
-                        13046,
-                        13203,
-                        13855,
-                        14687,
-                        15547,
-                        15735,
-                        15904,
-                        18264,
-                        18936,
-                        19214,
-                        19251,
-                        19322,
-                        19768
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 25,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 12,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5947701913985793,
-                        0.09090909090909091
-                    ],
-                    "features": [
-                        446,
-                        2326,
-                        5795,
-                        7317,
-                        7369,
-                        9181,
-                        9752,
-                        10539,
-                        11392,
-                        17609
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 24,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 12,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.43383323361951637,
-                        0.3333333333333333
-                    ],
-                    "features": [
-                        5795,
-                        7317
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 19,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 13,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": "sqrt",
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.26864404505044276,
-                        0.5
-                    ],
-                    "features": [
-                        5795
-                    ]
-                }
-            ]
-        },
-        {
-            "generation": 3,
-            "individuals": [
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 19,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 10,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": "sqrt",
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6934167473324029,
-                        0.03125
-                    ],
-                    "features": [
-                        58,
-                        1622,
-                        2269,
-                        3598,
-                        4565,
-                        6384,
-                        6712,
-                        6793,
-                        7309,
-                        7730,
-                        7741,
-                        7857,
-                        8557,
-                        9417,
-                        9477,
-                        11733,
-                        12530,
-                        12593,
-                        13046,
-                        13203,
-                        13855,
-                        14687,
-                        15547,
-                        15735,
-                        15904,
-                        18264,
-                        18936,
-                        19214,
-                        19251,
-                        19322,
-                        19768
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 16,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 10,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 19,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6285317674367864,
-                        0.03225806451612903
-                    ],
-                    "features": [
-                        58,
-                        1622,
-                        2269,
-                        3598,
-                        4565,
-                        6384,
-                        6712,
-                        6953,
-                        7309,
-                        7730,
-                        7741,
-                        7857,
-                        8557,
-                        9417,
-                        9477,
-                        11733,
-                        12593,
-                        13046,
-                        13203,
-                        13855,
-                        14687,
-                        15547,
-                        15735,
-                        15904,
-                        18264,
-                        18936,
-                        19214,
-                        19251,
-                        19322,
-                        19768
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 31,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 13,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": "log2",
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.5953558094914856,
-                        0.1
-                    ],
-                    "features": [
-                        446,
-                        5643,
-                        5795,
-                        7317,
-                        7369,
-                        9181,
-                        9752,
-                        10539,
-                        17609
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 24,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 12,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.43383323361951637,
-                        0.3333333333333333
-                    ],
-                    "features": [
-                        5795,
-                        7317
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 25,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 12,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": "log2",
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.38965465613019185,
-                        0.5
-                    ],
-                    "features": [
-                        7317
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 21,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 15,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.2,
-                        1.0
-                    ],
-                    "features": []
-                }
-            ]
-        },
-        {
-            "generation": 4,
-            "individuals": [
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 23,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 19,
                                 "mutable": true
                             },
                             "min_samples_leaf": {
@@ -1413,185 +910,32 @@
                         }
                     },
                     "fitness": [
-                        0.7054757409703438,
-                        0.03125
+                        0.6070355515112055,
+                        0.05
                     ],
                     "features": [
-                        582,
-                        1105,
-                        2374,
-                        2382,
-                        2891,
-                        3598,
-                        4392,
-                        4430,
-                        4514,
-                        5599,
-                        6324,
-                        7631,
-                        7730,
-                        7948,
-                        8565,
-                        9552,
-                        9733,
-                        10935,
-                        11464,
-                        12259,
-                        12465,
-                        12593,
-                        12711,
-                        13978,
-                        14098,
-                        14167,
-                        16278,
-                        17496,
-                        19214,
-                        19422,
-                        20184
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 16,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 10,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 19,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6285317674367864,
-                        0.03225806451612903
-                    ],
-                    "features": [
-                        58,
-                        1622,
-                        2269,
-                        3598,
-                        4565,
-                        6384,
-                        6712,
-                        6953,
-                        7309,
-                        7730,
-                        7741,
-                        7857,
-                        8557,
-                        9417,
-                        9477,
-                        11733,
-                        12593,
-                        13046,
-                        13203,
-                        13855,
-                        14687,
-                        15547,
-                        15735,
-                        15904,
-                        18264,
-                        18936,
-                        19214,
-                        19251,
-                        19322,
-                        19768
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 21,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 12,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.6140670531406822,
-                        0.16666666666666666
-                    ],
-                    "features": [
-                        5643,
-                        5795,
-                        7317,
+                        446,
+                        2326,
+                        2751,
+                        4036,
+                        5308,
+                        6437,
+                        6754,
                         7369,
+                        9181,
+                        9752,
+                        9842,
+                        10539,
+                        10622,
+                        11392,
+                        12395,
+                        12443,
+                        16254,
+                        16424,
                         17609
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -1599,73 +943,19 @@
                             "n_estimators": {
                                 "name": "Number of trees",
                                 "nick": "n_estimators",
-                                "value": 24,
+                                "value": 33,
                                 "mutable": true
                             },
                             "min_samples_split": {
                                 "name": "Minimum samples split",
                                 "nick": "min_samples_split",
-                                "value": 20,
+                                "value": 5,
                                 "mutable": true
                             },
                             "min_samples_leaf": {
                                 "name": "Minimum samples leaf",
                                 "nick": "min_samples_leaf",
-                                "value": 12,
-                                "mutable": true
-                            },
-                            "max_features": {
-                                "name": "Maximum features",
-                                "nick": "max_features",
-                                "value": null,
-                                "mutable": true
-                            },
-                            "class_weight": {
-                                "name": "Class weight",
-                                "nick": "class_weight",
-                                "value": "balanced",
-                                "mutable": false
-                            },
-                            "n_jobs": {
-                                "name": "Number of jobs",
-                                "nick": "n_jobs",
-                                "value": 1,
-                                "mutable": false
-                            }
-                        }
-                    },
-                    "fitness": [
-                        0.43383323361951637,
-                        0.3333333333333333
-                    ],
-                    "features": [
-                        5795,
-                        7317
-                    ]
-                },
-                {
-                    "id": null,
-                    "parents": [],
-                    "hyperparameters": {
-                        "name": "Random Forest Hyperparameters",
-                        "nick": "RF_HPE",
-                        "hyperparameters": {
-                            "n_estimators": {
-                                "name": "Number of trees",
-                                "nick": "n_estimators",
-                                "value": 25,
-                                "mutable": true
-                            },
-                            "min_samples_split": {
-                                "name": "Minimum samples split",
-                                "nick": "min_samples_split",
-                                "value": 20,
-                                "mutable": true
-                            },
-                            "min_samples_leaf": {
-                                "name": "Minimum samples leaf",
-                                "nick": "min_samples_leaf",
-                                "value": 12,
+                                "value": 13,
                                 "mutable": true
                             },
                             "max_features": {
@@ -1689,16 +979,29 @@
                         }
                     },
                     "fitness": [
-                        0.38965465613019185,
-                        0.5
+                        0.5798308032575681,
+                        0.058823529411764705
                     ],
                     "features": [
-                        7317
+                        411,
+                        582,
+                        3774,
+                        5627,
+                        7738,
+                        9181,
+                        10622,
+                        10965,
+                        12388,
+                        13203,
+                        13809,
+                        13893,
+                        15714,
+                        18310,
+                        18853,
+                        19072
                     ]
                 },
                 {
-                    "id": null,
-                    "parents": [],
                     "hyperparameters": {
                         "name": "Random Forest Hyperparameters",
                         "nick": "RF_HPE",
@@ -1706,19 +1009,725 @@
                             "n_estimators": {
                                 "name": "Number of trees",
                                 "nick": "n_estimators",
-                                "value": 21,
+                                "value": 33,
                                 "mutable": true
                             },
                             "min_samples_split": {
                                 "name": "Minimum samples split",
                                 "nick": "min_samples_split",
-                                "value": 20,
+                                "value": 5,
                                 "mutable": true
                             },
                             "min_samples_leaf": {
                                 "name": "Minimum samples leaf",
                                 "nick": "min_samples_leaf",
-                                "value": 15,
+                                "value": 14,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5617003226052233,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        411,
+                        582,
+                        3774,
+                        5627,
+                        7738,
+                        9181,
+                        10622,
+                        10965,
+                        12388,
+                        13203,
+                        13893,
+                        18310,
+                        18853,
+                        19072
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 13,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.44666183033008594,
+                        0.08333333333333333
+                    ],
+                    "features": [
+                        13,
+                        1166,
+                        2464,
+                        7738,
+                        8268,
+                        8565,
+                        9667,
+                        11610,
+                        14056,
+                        15115,
+                        16751
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 90,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 9,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37007138484742486,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        1263,
+                        4014
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 3,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6690019844636926,
+                        0.029411764705882353
+                    ],
+                    "features": [
+                        58,
+                        411,
+                        1622,
+                        3598,
+                        3774,
+                        5368,
+                        5627,
+                        6712,
+                        7730,
+                        7738,
+                        7741,
+                        7857,
+                        8014,
+                        9417,
+                        9477,
+                        10622,
+                        10965,
+                        11733,
+                        12388,
+                        12530,
+                        12593,
+                        13203,
+                        13893,
+                        14687,
+                        15547,
+                        15904,
+                        18264,
+                        18310,
+                        18853,
+                        18936,
+                        19072,
+                        19214,
+                        19322
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6620221940445309,
+                        0.030303030303030304
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6384,
+                        6712,
+                        6793,
+                        7309,
+                        7730,
+                        7741,
+                        7857,
+                        8014,
+                        8557,
+                        9417,
+                        9477,
+                        11733,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6496688577731755,
+                        0.03125
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6384,
+                        6712,
+                        6793,
+                        7309,
+                        7730,
+                        7741,
+                        7857,
+                        8557,
+                        9417,
+                        9477,
+                        11733,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6327540559424817,
+                        0.03333333333333333
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6114,
+                        6384,
+                        6712,
+                        7309,
+                        7730,
+                        7857,
+                        8557,
+                        9417,
+                        9477,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 26,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 14,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6070355515112055,
+                        0.05
+                    ],
+                    "features": [
+                        446,
+                        2326,
+                        2751,
+                        4036,
+                        5308,
+                        6437,
+                        6754,
+                        7369,
+                        9181,
+                        9752,
+                        9842,
+                        10539,
+                        10622,
+                        11392,
+                        12395,
+                        12443,
+                        16254,
+                        16424,
+                        17609
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 33,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 13,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5798308032575681,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        411,
+                        582,
+                        3774,
+                        5627,
+                        7738,
+                        9181,
+                        10622,
+                        10965,
+                        12388,
+                        13203,
+                        13809,
+                        13893,
+                        15714,
+                        18310,
+                        18853,
+                        19072
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 33,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 14,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5617003226052233,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        411,
+                        582,
+                        3774,
+                        5627,
+                        7738,
+                        9181,
+                        10622,
+                        10965,
+                        12388,
+                        13203,
+                        13893,
+                        18310,
+                        18853,
+                        19072
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 33,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 14,
                                 "mutable": true
                             },
                             "max_features": {
@@ -1742,10 +1751,1023 @@
                         }
                     },
                     "fitness": [
-                        0.2,
-                        1.0
+                        0.4888421732301735,
+                        0.08333333333333333
                     ],
-                    "features": []
+                    "features": [
+                        2269,
+                        6384,
+                        6793,
+                        7309,
+                        8557,
+                        9181,
+                        13046,
+                        13203,
+                        13855,
+                        15735,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 9,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 13,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.435369987324368,
+                        0.09090909090909091
+                    ],
+                    "features": [
+                        13,
+                        1166,
+                        1263,
+                        7738,
+                        8268,
+                        9667,
+                        11610,
+                        15115,
+                        16751,
+                        17318
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 90,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": null,
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3857221084147494,
+                        0.25
+                    ],
+                    "features": [
+                        1149,
+                        2464,
+                        14056
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 90,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 9,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37007138484742486,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        1263,
+                        4014
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 4,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 59,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 7,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6811258389813778,
+                        0.022727272727272728
+                    ],
+                    "features": [
+                        271,
+                        841,
+                        1176,
+                        1752,
+                        2236,
+                        3502,
+                        4149,
+                        4514,
+                        4794,
+                        4886,
+                        6248,
+                        6439,
+                        6726,
+                        9176,
+                        11866,
+                        11973,
+                        11990,
+                        12114,
+                        12325,
+                        12593,
+                        12923,
+                        13051,
+                        13855,
+                        13989,
+                        14297,
+                        14627,
+                        14772,
+                        15083,
+                        16369,
+                        16424,
+                        16713,
+                        16716,
+                        17496,
+                        17603,
+                        17962,
+                        18013,
+                        18472,
+                        18495,
+                        19567,
+                        19573,
+                        19977,
+                        20135,
+                        20194
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6690019844636926,
+                        0.029411764705882353
+                    ],
+                    "features": [
+                        58,
+                        411,
+                        1622,
+                        3598,
+                        3774,
+                        5368,
+                        5627,
+                        6712,
+                        7730,
+                        7738,
+                        7741,
+                        7857,
+                        8014,
+                        9417,
+                        9477,
+                        10622,
+                        10965,
+                        11733,
+                        12388,
+                        12530,
+                        12593,
+                        13203,
+                        13893,
+                        14687,
+                        15547,
+                        15904,
+                        18264,
+                        18310,
+                        18853,
+                        18936,
+                        19072,
+                        19214,
+                        19322
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6620221940445309,
+                        0.030303030303030304
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6384,
+                        6712,
+                        6793,
+                        7309,
+                        7730,
+                        7741,
+                        7857,
+                        8014,
+                        8557,
+                        9417,
+                        9477,
+                        11733,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6496688577731755,
+                        0.03125
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6384,
+                        6712,
+                        6793,
+                        7309,
+                        7730,
+                        7741,
+                        7857,
+                        8557,
+                        9417,
+                        9477,
+                        11733,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 19,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6327540559424817,
+                        0.03333333333333333
+                    ],
+                    "features": [
+                        58,
+                        1622,
+                        2269,
+                        3598,
+                        4565,
+                        6114,
+                        6384,
+                        6712,
+                        7309,
+                        7730,
+                        7857,
+                        8557,
+                        9417,
+                        9477,
+                        12530,
+                        12593,
+                        13046,
+                        13203,
+                        13855,
+                        14687,
+                        15547,
+                        15735,
+                        15904,
+                        18264,
+                        18936,
+                        19214,
+                        19251,
+                        19322,
+                        19768
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 26,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 14,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.614404548335371,
+                        0.05263157894736842
+                    ],
+                    "features": [
+                        446,
+                        2326,
+                        2751,
+                        5308,
+                        6437,
+                        6754,
+                        7369,
+                        9181,
+                        9752,
+                        9842,
+                        10539,
+                        10622,
+                        11392,
+                        12395,
+                        12443,
+                        16254,
+                        16424,
+                        17609
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 33,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 13,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5798308032575681,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        411,
+                        582,
+                        3774,
+                        5627,
+                        7738,
+                        9181,
+                        10622,
+                        10965,
+                        12388,
+                        13203,
+                        13809,
+                        13893,
+                        15714,
+                        18310,
+                        18853,
+                        19072
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 33,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 14,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "log2",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5617003226052233,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        411,
+                        582,
+                        3774,
+                        5627,
+                        7738,
+                        9181,
+                        10622,
+                        10965,
+                        12388,
+                        13203,
+                        13893,
+                        18310,
+                        18853,
+                        19072
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 20,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 9,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 12,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.49665793196718183,
+                        0.1
+                    ],
+                    "features": [
+                        13,
+                        1166,
+                        1263,
+                        8268,
+                        9667,
+                        11610,
+                        12270,
+                        15115,
+                        17318
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 90,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 5,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": null,
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3857221084147494,
+                        0.25
+                    ],
+                    "features": [
+                        1149,
+                        2464,
+                        14056
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 90,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 9,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37007138484742486,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        1263,
+                        4014
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Random Forest Hyperparameters",
+                        "nick": "RF_HPE",
+                        "hyperparameters": {
+                            "n_estimators": {
+                                "name": "Number of trees",
+                                "nick": "n_estimators",
+                                "value": 90,
+                                "mutable": true
+                            },
+                            "min_samples_split": {
+                                "name": "Minimum samples split",
+                                "nick": "min_samples_split",
+                                "value": 9,
+                                "mutable": true
+                            },
+                            "min_samples_leaf": {
+                                "name": "Minimum samples leaf",
+                                "nick": "min_samples_leaf",
+                                "value": 10,
+                                "mutable": true
+                            },
+                            "max_features": {
+                                "name": "Maximum features",
+                                "nick": "max_features",
+                                "value": "sqrt",
+                                "mutable": true
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.26662414976293797,
+                        0.5
+                    ],
+                    "features": [
+                        1263
+                    ]
                 }
             ]
         }

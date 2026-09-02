@@ -50,7 +50,8 @@ class LogFloatHyperparameter(FloatHyperparameter):
             indpb=1.0
         )
 
-        self.set_value(10 ** mutated)
+        print(f"LOGFLOAT: {current} -> {10 ** mutated[0]}")
+        self.set_value(10 ** mutated[0])
 
     def crossover(self, other):
         """

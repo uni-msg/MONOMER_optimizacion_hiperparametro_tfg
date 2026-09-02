@@ -60,18 +60,26 @@ class IntegerHyperparameter(Hyperparameter):
 
         mutated, = tools.mutPolynomialBounded(
             [current],
-            eta=100.0,
+            eta=20.0,
             low=self.lower_bound(),
             up=self.upper_bound(),
             indpb=1.0
         )
 
         # Convertir a entero y respetar los límites
-        new_value = int(round(mutated))
+        new_value = int(round(mutated[0]))
+
+        # En el caso que el redondeo haya ocultado valor se va a un vecino proximo
+        if new_value == current:
+            if mutated[0] > current:
+                new_value = current + 1
+            elif mutated[0] < current:
+                new_value = current - 1
 
         new_value = max(self.lower_bound(), new_value)
         new_value = min(self.upper_bound(), new_value)
-
+        
+        print(f"INTEGER [{self.nick()}]: {current} -> {mutated[0]} -> {new_value}")
         self.set_value(new_value)
 
     def crossover(self, other):
