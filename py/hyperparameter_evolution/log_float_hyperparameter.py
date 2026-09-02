@@ -28,7 +28,8 @@ class LogFloatHyperparameter(FloatHyperparameter):
 
     def mutate(self):
         """
-        Muta el hiperparámetro desplazando su exponente en escala logarítmica.
+        Aplica Polynomial Mutation sobre la escala logarítmica
+        del hiperparámetro.
         """
         if not self.mutable():
             return
@@ -41,17 +42,15 @@ class LogFloatHyperparameter(FloatHyperparameter):
 
         exponent = log10(current)
 
-        exponent += uniform(
-            -self.mutation_range(),
-            self.mutation_range()
+        mutated, = tools.mutPolynomialBounded(
+            [exponent],
+            eta=100.0,
+            low=log10(self.lower_bound()),
+            up=log10(self.upper_bound()),
+            indpb=1.0
         )
 
-        lower = log10(self.lower_bound())
-        upper = log10(self.upper_bound())
-
-        exponent = max(lower, min(upper, exponent))
-
-        self.set_value(10 ** exponent)
+        self.set_value(10 ** mutated)
 
     def crossover(self, other):
         """
