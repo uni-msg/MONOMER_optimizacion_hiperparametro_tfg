@@ -59,13 +59,27 @@ class HyperparameterSet:
         for hyperparameter in self.values():
             hyperparameter.random_initialize()
 
-    def mutate(self, mutation_probability: float):
+    def mutate(self, mutation_frequency: float):
         """
-        Muta cada hiperparámetro de forma independiente según
-        la probabilidad de mutación indicada.
+        Muta los hiperparámetros mutables de forma independiente.
+
+        La probabilidad individual de mutación se obtiene dividiendo
+        la frecuencia de mutación (1.0 por defecto) entre el número de hiperparámetros mutables.
         """
-        for hyperparameter in self.values():
-            if hyperparameter.mutable() and random.random() < mutation_probability:
+        # Conjunto de hiperparametros mutables
+        mutable_hyperparameters = [
+            hyperparameter
+            for hyperparameter in self.values()
+            if hyperparameter.mutable()
+        ]
+
+        if not mutable_hyperparameters:
+            return
+
+        #Probabilidad de mutar 1 hiperparametro
+        mutation_probability = mutation_frequency / len(mutable_hyperparameters)
+        for hyperparameter in mutable_hyperparameters:
+            if random.random() < mutation_probability:
                 hyperparameter.mutate()
 
     def crossover(self, other):
