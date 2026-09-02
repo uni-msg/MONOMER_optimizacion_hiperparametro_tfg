@@ -59,7 +59,7 @@ class FloatHyperparameter(Hyperparameter):
 
         mutated, = tools.mutPolynomialBounded(
             [current],
-            eta=100.0, # Valor optimo para mutacion polinomicas (pequeña mutaciones)
+            eta=100.0, # Valor recomendado para Polynomial Mutation según Deb & Deb (2014)
             low=self.lower_bound(),
             up=self.upper_bound(),
             indpb=1.0 #Probabilidad gestionada por el conjunto

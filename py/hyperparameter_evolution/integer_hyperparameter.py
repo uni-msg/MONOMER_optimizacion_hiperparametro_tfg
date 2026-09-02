@@ -8,7 +8,6 @@ from hyperparameter_evolution.hyperparameter import Hyperparameter
 class IntegerHyperparameter(Hyperparameter):
     __lower_bound: int
     __upper_bound: int
-    __mutation_range: int
 
     def __init__(
         self,
@@ -16,7 +15,6 @@ class IntegerHyperparameter(Hyperparameter):
         name: str,
         lower_bound: int,
         upper_bound: int,
-        mutation_range: Optional[int] = None,
         value: Optional[int] = None,
         mutable: bool = True
     ):
@@ -25,21 +23,14 @@ class IntegerHyperparameter(Hyperparameter):
         if lower_bound > upper_bound:
             raise ValueError("lower_bound debe ser mas pequeño a upper_bound")
 
-        if mutation_range is not None and mutation_range < 0:
-            raise ValueError("mutation_range debe ser mayor a 0")
-
         self.__lower_bound = lower_bound
         self.__upper_bound = upper_bound
-        self.__mutation_range = mutation_range
 
     def lower_bound(self) -> int:
         return self.__lower_bound
 
     def upper_bound(self) -> int:
         return self.__upper_bound
-
-    def mutation_range(self) -> int:
-        return self.__mutation_range
 
     def random_initialize(self):
         """
@@ -54,23 +45,30 @@ class IntegerHyperparameter(Hyperparameter):
 
     def mutate(self):
         """
-        Muta el valor del hiperparametro según el rango de mutación
+        Aplica Polynomial Mutation respetando los límites del hiperparámetro.
+        El resultado se redondea para mantener el valor entero.
         """
         if not self.mutable():
             return
-        
+
         current = self.value()
 
-        # Si todavía no tiene valor o no tiene rango de mutación, lo inicializamos
-        if current is None or self.mutation_range() is None:
+        # Si no tiene valor, lo inicializamos aleatoriamente
+        if current is None:
             self.random_initialize()
             return
 
-        displacement = randint(-self.mutation_range(), self.mutation_range())
+        mutated, = tools.mutPolynomialBounded(
+            [current],
+            eta=100.0,
+            low=self.lower_bound(),
+            up=self.upper_bound(),
+            indpb=1.0
+        )
 
-        new_value = current + displacement
+        # Convertir a entero y respetar los límites
+        new_value = int(round(mutated))
 
-        # Respetar límites
         new_value = max(self.lower_bound(), new_value)
         new_value = min(self.upper_bound(), new_value)
 
