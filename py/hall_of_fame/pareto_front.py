@@ -33,6 +33,15 @@ class ParetoFront(HallOfFame):
         res.sort(key=lambda e: e.get_test_fitness(), reverse=True)
         return Hofers(elems=res, name=self.name(), nick=self.nick())
 
+    def peek(self):
+        """
+        Devuelve los individuos internos del frente de Pareto sin copiarlos.
+
+        Uso exclusivamente de lectura inmediata. No modificar ni conservar
+        la referencia devuelta.
+        """
+        return self.__elems
+
     def name(self) -> str:
         return "Pareto front"
 

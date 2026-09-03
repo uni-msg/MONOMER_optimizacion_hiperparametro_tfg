@@ -68,7 +68,8 @@ class GARunner(ABC):
             initial_pop=None,
             workers_printer: Printer = UnbufferedOutPrinter(),
             hofs: Iterable[HallOfFame] = (),
-            progress_observers: [ProgressObserver] = ()) -> GAResult:
+            progress_observers: [ProgressObserver] = (),
+            history_every_n_gen: int = 1) -> GAResult:
         """We pass hofs instead of hofs factories so that a hof can be used for more than one run."""
         ga_strategy = self._create_ga_strategy(
             input_data=input_data, folds_list=folds_list, n_workers=n_workers,
@@ -79,7 +80,8 @@ class GARunner(ABC):
             seed=seed, return_history=return_history, initial_pop=initial_pop,
             return_feature_counts=return_feature_counts,
             return_hyperparameter_counts=return_hyperparameter_counts,
-            hofs=hofs, progress_observers=progress_observers)
+            hofs=hofs, progress_observers=progress_observers,
+            history_every_n_gen=history_every_n_gen)
 
     def pop_size(self):
         return self.__pop_size
@@ -151,7 +153,8 @@ def hyperparameters_of_individuals(individuals) -> list[HyperparameterSet]:
 # If initial pop is passed pop size is ignored.
 def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_history=False,
            initial_pop=None, return_feature_counts=False, return_hyperparameter_counts=False, hofs: Iterable[HallOfFame] = (),
-           progress_observers: [ProgressObserver] = ()) -> GAResult:
+           progress_observers: [ProgressObserver] = () ,
+           history_every_n_gen: int = 1) -> GAResult:
     """Explored features are computed before the select.
     Feature counts are computed after the select."""
 
@@ -225,8 +228,9 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         
         #Pareto y Sum50
         for h in hofs:
-            ga_evolution_histories[h.nick()] = GAEvolutionHistory() 
-            ga_evolution_histories[h.nick()].add_generation( generation=0, population=h.hofers(), history=history )
+            if h.nick() == "Pareto":
+                ga_evolution_histories[h.nick()] = GAEvolutionHistory() 
+                ga_evolution_histories[h.nick()].add_generation( generation=0, population=h.peek(), history=history )
 
     feat_count = sum_of_individuals(individuals=pop, hp_manager=hp_manager)
     # Compile statistics about the population
@@ -276,8 +280,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
         for h in hofs:
             h.update(contextualized)
-            if return_history:
-                ga_evolution_histories[h.nick()].add_generation( generation=gen, population=h.hofers(), history=history )
+            if return_history and h.nick() == "Pareto" and (gen % history_every_n_gen == 0 or gen == n_gen-1 ):
+                    ga_evolution_histories[h.nick()].add_generation( generation=gen, population=h.peek(), history=history )
 
         pop = ga_strategy.sorting_strategy_before_selection(individuals=pop)
 
