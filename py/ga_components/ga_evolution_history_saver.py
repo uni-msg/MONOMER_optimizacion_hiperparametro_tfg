@@ -20,6 +20,9 @@ class GAEvolutionHistorySaver(ABC):
     Clase base encargada de definir un  metodo de guardado permanente de datos de un objeto GaEvolutionHistory
     Sigue implementaciones similares a logbook_saver.py
     """
+    @abstractmethod
+    def create(self, hof_nick: str) -> GAEvolutionHistory:
+        raise NotImplementedError()
 
     @abstractmethod
     def save(self, evolution_histories: dict[str, GAEvolutionHistory]):
@@ -31,6 +34,9 @@ class GAEvolutionHistorySaver(ABC):
 
 class DummyGAEvolutionHistorySaver(GAEvolutionHistorySaver):
 
+    def create(self, hof_nick: str) -> GAEvolutionHistory:
+        return GAEvolutionHistory()
+
     def save(self, evolution_histories: dict[str, GAEvolutionHistory]):
         pass
 
@@ -39,6 +45,7 @@ class JsonGAEvolutionHistorySaver(GAEvolutionHistorySaver):
     """
     Clase encargada del almacenar un objeto GAEvolutionHistory dentro de una ruta especifica con un archivo Json 
     """
+
     __directory: str
     __final_str: str
 
@@ -46,10 +53,30 @@ class JsonGAEvolutionHistorySaver(GAEvolutionHistorySaver):
         self.__directory = directory
         self.__final_str = final_str
 
+    def create(self, hof_nick: str) -> GAEvolutionHistory:
+        hof_dir = os.path.join(self.__directory, hof_nick)
+        os.makedirs(hof_dir, exist_ok=True)
+
+        file = os.path.join(
+            hof_dir,
+            GA_EVOLUTION_HISTORY_PREFIX
+            + self.__final_str
+            + ".jsonl"
+        )
+
+        # Creamos/vaciamos el fichero al comenzar el GA.
+        try:
+            with open(file, "w", encoding="utf-8"):
+                pass
+
+        except Exception as e:
+            print(
+                f"WARNING: Could not initialize GA evolution history "
+                f"file '{file}': {e}"
+            )
+
+        return GAEvolutionHistory(file=file)
+
     def save(self, evolution_histories: dict[str, GAEvolutionHistory]):
-        for hof_nick, evolution_history in evolution_histories.items():
-            hof_dir = os.path.join(self.__directory, hof_nick)
-            os.makedirs(hof_dir, exist_ok=True)
-            file = os.path.join(hof_dir,GA_EVOLUTION_HISTORY_PREFIX + self.__final_str + ".json")
-            ga_evolution_history_to_json(evolution_history=evolution_history,file=file)
+        pass
 

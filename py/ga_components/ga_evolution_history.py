@@ -7,22 +7,20 @@ from deap.tools import History
 
 class GAEvolutionHistory:
     """
-    Almacena la evolución de la población seleccionada del algoritmo genético.
+    Almacena la evolución de los resultados del HOF del algoritmo genético.
 
-    Para cada generación se guarda la información de todos los individuos
-    que sobreviven a la selección.
+    Para cada generación se guarda la información de los individuos del HOF.
 
     La información de cada individuo incluye:
-        - ID genealógico asignado por DEAP
-        - IDs de sus padres
         - generación
         - hiperparámetros
         - fitness
         - características activas
     """
 
-    def __init__(self):
-        self.__generations = []
+    def __init__(self, file: Optional[str] = None):
+        self.__file = file
+        self.__generations = [] if file is None else None
 
     def add_generation(self, generation: int, population , history: Optional[History] = None):
         """
@@ -31,16 +29,11 @@ class GAEvolutionHistory:
         Se almacena una copia de la información de los individuos 
         para evitar que posteriores modificaciones de la
         población alteren el historial.
-
-        Se aprovecha el History de DEAP para la genealogía del individuo
         """
         individuals = []
-        for i, individual in enumerate(population):
-            #Identificador del History
-            individual_id = getattr(individual, "history_index", None)
-
+        for individual in population:
             individual_data = {
-                #"id": individual_id,
+                #"id": getattr(individual, "history_index", None),
                 #"parents": self.__get_parents(individual_id=individual_id,history=history),
                 "hyperparameters": self.__get_hyperparameters(individual),
                 "fitness": self.__get_fitness(individual),
@@ -51,10 +44,32 @@ class GAEvolutionHistory:
             individuals.append(individual_data)
 
         #Añadis lista de individuos seleccionados por generacion
-        self.__generations.append({
+        generation_data={
             "generation": generation,
             "individuals": individuals
-        })
+        }
+
+        # Si tenemos fichero, escribimos esta generación inmediatamente.
+        if self.__file is not None:
+            try:
+                with open(self.__file, "a", encoding="utf-8") as file_w:
+                    json.dump(
+                        generation_data,
+                        file_w,
+                        ensure_ascii=False
+                    )
+                    file_w.write("\n")
+                    file_w.flush() 
+
+            except Exception as e:
+                print(
+                    f"WARNING: Could not save GA evolution history "
+                    f"to '{self.__file}': {e}"
+                )
+
+        # Si no tenemos fichero, mantenemos el comportamiento antiguo.
+        else:
+            self.__generations.append(generation_data)
 
     @staticmethod
     def __get_parents(individual_id: Optional[int], history: Optional[History]) -> list[int]:
@@ -114,3 +129,4 @@ class GAEvolutionHistory:
         return {
             "generations": deepcopy(self.__generations)
         }
+

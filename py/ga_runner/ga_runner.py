@@ -38,7 +38,6 @@ class GAResult(NamedTuple):
     history: History
     feature_counts: Sequence[Sequence[int]]
     hyperparameter_counts: Optional[list[list[HyperparameterSet]]]
-    ga_evolution_histories: dict[str, GAEvolutionHistory] #Pareto y Sum50
 
 class GARunner(ABC):
     __objectives: Iterable[PersonalObjective]
@@ -69,6 +68,7 @@ class GARunner(ABC):
             workers_printer: Printer = UnbufferedOutPrinter(),
             hofs: Iterable[HallOfFame] = (),
             progress_observers: [ProgressObserver] = (),
+            ga_evolution_history: GAEvolutionHistory = None,
             history_every_n_gen: int = 1) -> GAResult:
         """We pass hofs instead of hofs factories so that a hof can be used for more than one run."""
         ga_strategy = self._create_ga_strategy(
@@ -81,6 +81,7 @@ class GARunner(ABC):
             return_feature_counts=return_feature_counts,
             return_hyperparameter_counts=return_hyperparameter_counts,
             hofs=hofs, progress_observers=progress_observers,
+            ga_evolution_history=ga_evolution_history,
             history_every_n_gen=history_every_n_gen)
 
     def pop_size(self):
@@ -154,6 +155,7 @@ def hyperparameters_of_individuals(individuals) -> list[HyperparameterSet]:
 def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_history=False,
            initial_pop=None, return_feature_counts=False, return_hyperparameter_counts=False, hofs: Iterable[HallOfFame] = (),
            progress_observers: [ProgressObserver] = () ,
+           ga_evolution_history: GAEvolutionHistory = None,
            history_every_n_gen: int = 1) -> GAResult:
     """Explored features are computed before the select.
     Feature counts are computed after the select."""
@@ -218,7 +220,6 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         h.update(contextualized)
 
     history = None
-    ga_evolution_histories = {}
     #Registro de Evolucion GA total (History DEAP + GAEvolutionHistory)
     if return_history:
         history = History()
@@ -226,11 +227,10 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         toolbox.decorate("mutate", history.decorator)
         history.update(pop)
         
-        #Pareto y Sum50
+        #Pareto
         for h in hofs:
-            if h.nick() == "Pareto":
-                ga_evolution_histories[h.nick()] = GAEvolutionHistory() 
-                ga_evolution_histories[h.nick()].add_generation( generation=0, population=h.peek(), history=history )
+            if h.nick() == "Pareto" and ga_evolution_history is not None:
+                ga_evolution_history.add_generation(generation=0,population=h.peek(),history=history)
 
     feat_count = sum_of_individuals(individuals=pop, hp_manager=hp_manager)
     # Compile statistics about the population
@@ -280,8 +280,8 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
         for h in hofs:
             h.update(contextualized)
-            if return_history and h.nick() == "Pareto" and (gen % history_every_n_gen == 0 or gen == n_gen-1 ):
-                    ga_evolution_histories[h.nick()].add_generation( generation=gen, population=h.peek(), history=history )
+            if (return_history and h.nick() == "Pareto" and ga_evolution_history is not None and (gen % history_every_n_gen == 0 or gen == n_gen - 1)):
+                ga_evolution_history.add_generation( generation=gen, population=h.peek(), history=history)
 
         pop = ga_strategy.sorting_strategy_before_selection(individuals=pop)
 
@@ -316,5 +316,10 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
     res_hofs = [h.hofers() for h in hofs]
 
-    return GAResult(pop=pop, hp_manager=hp_manager, logbook=logbook, history=history,
-                    feature_counts=feature_counts,hyperparameter_counts=hyperparameter_counts, hofs=res_hofs, ga_evolution_histories=ga_evolution_histories)
+    return GAResult(pop=pop, 
+                    hp_manager=hp_manager, 
+                    logbook=logbook, 
+                    history=history,
+                    feature_counts=feature_counts,
+                    hyperparameter_counts=hyperparameter_counts, 
+                    hofs=res_hofs)

@@ -4,7 +4,7 @@ from collections.abc import Sequence, Iterable
 from pandas import DataFrame
 
 from ga_components.hyperparameter_counts_saver import DummyHyperparameterCountsSaver, HyperparameterCountsSaver
-from ga_components.ga_evolution_history_saver import DummyGAEvolutionHistorySaver, GAEvolutionHistorySaver
+from ga_components.ga_evolution_history import GAEvolutionHistory
 from individual.peculiar_individual_with_context import PeculiarIndividualWithContext
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType
 from ga_components.feature_counts_saver import FeatureCountsSaver, DummyFeatureCountsSaver
@@ -99,7 +99,7 @@ class MultiObjectiveOptimizer(NickNamed):
                  logbook_saver: LogbookSaver = DummyLogbookSaver(),
                  feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver(),
                  hyperparameter_counts_saver: HyperparameterCountsSaver = DummyHyperparameterCountsSaver(), # Nuevo elemento para el conteo de hiperparametros
-                 ga_evolution_history_saver: GAEvolutionHistorySaver = DummyGAEvolutionHistorySaver() #Nuevo elemento de guardado de informacion util para metricas
+                 ga_evolution_history: GAEvolutionHistory = None #Nuevo elemento de guardado de informacion util para metricas
                  ) -> Sequence[MultiObjectiveOptimizerResult]:
         raise NotImplementedError()
 

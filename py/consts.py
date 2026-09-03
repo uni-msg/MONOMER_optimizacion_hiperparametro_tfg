@@ -15,7 +15,7 @@ HYPERPARAMETER_COUNTS_PATH = "hyperparameters/"
 
 #Historial de la evolcion de los individuos
 GA_EVOLUTION_HISTORY_PREFIX = "ga_evolution_history_"
-GA_EVOLUTION_HISTORY_EXTENSION = "json"
+GA_EVOLUTION_HISTORY_EXTENSION = "jsonl"
 DIR_HOFS = "hofs"
 
 FINAL_STR = "final"
