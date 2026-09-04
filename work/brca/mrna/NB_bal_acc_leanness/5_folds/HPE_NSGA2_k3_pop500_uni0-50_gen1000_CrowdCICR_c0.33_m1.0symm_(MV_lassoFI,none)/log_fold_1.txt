@@ -13,3 +13,4 @@ CREATING INNER FOLDS
 RUNNING GENETIC ALGORITHM
 Generations completed = 29
 Generations completed = 59
+Generations completed = 89
