@@ -227,10 +227,10 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         toolbox.decorate("mutate", history.decorator)
         history.update(pop)
         
-        #Pareto
-        for h in hofs:
-            if h.nick() == "Pareto" and ga_evolution_history is not None:
-                ga_evolution_history.add_generation(generation=0,population=h.peek(),history=history)
+    #Pareto
+    for h in hofs:
+        if h.nick() == "Pareto" and ga_evolution_history is not None:
+            ga_evolution_history.add_generation(generation=0,population=h.peek())
 
     feat_count = sum_of_individuals(individuals=pop, hp_manager=hp_manager)
     # Compile statistics about the population
@@ -276,12 +276,14 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         contextualized = contextualize_all(invalid_ind, hp_manager)
         gen_feats_list = union(contextualized)
         explored.update([gen_feats_list])
-        history.update(pop)
+        
+        if return_history :
+            history.update(pop)
 
         for h in hofs:
             h.update(contextualized)
-            if (return_history and h.nick() == "Pareto" and ga_evolution_history is not None and (gen % history_every_n_gen == 0 or gen == n_gen - 1)):
-                ga_evolution_history.add_generation( generation=gen, population=h.peek(), history=history)
+            if (h.nick() == "Pareto" and ga_evolution_history is not None and (gen % history_every_n_gen == 0 or gen == n_gen - 1)):
+                ga_evolution_history.add_generation( generation=gen, population=h.peek())
 
         pop = ga_strategy.sorting_strategy_before_selection(individuals=pop)
 

@@ -18,7 +18,7 @@ gen	evals	gen_feats	explored	min     	avg     	max     	std       	min      	avg
 2  	8    	157      	291     	0.2     	0.498196	0.675108	0.172621  	0.0196078	0.304534	1  	0.301497
 3  	8    	113      	315     	0.2     	0.498316	0.676073	0.172745  	0.0204082	0.304634	1  	0.301403
 4  	8    	113      	342     	0.2     	0.503537	0.684477	0.171033  	0.02     	0.30258 	1  	0.303239
-Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 8, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip) with (multi-view lasso FI, multi-view none) final optimization execution time = 00-00:01:07
+Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 8, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip) with (multi-view lasso FI, multi-view none) final optimization execution time = 00-00:04:10
 
 FEATURE SETS SELECTED ON WHOLE DATASET
 

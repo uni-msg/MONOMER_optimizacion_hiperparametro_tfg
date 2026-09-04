@@ -1,0 +1,183 @@
+nohup: no se tendrá en cuenta la entrada
+/home/ugmd/Manuel_TFG/MONOMER_optimizacion_hiperparametro_tfg/py/plots/plot_utils.py:148: UserWarning: *c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+  ax.scatter(x, y, c=color, s=point_size)
+Writing main log to file temp/log16.txt
+Date = 2026-09-04
+Machine = arcohtr04
+CPUs detected in the system = 128
+Recursion limit = 100000
+Parsing setup file setups/brca/hp/500x1000/nb/nsga2_chs.ini
+Parsing setup file setups/luad_lusc/hp/500x1000/nb/nsga2_chs.ini
+Parsing setup file setups/tcga_kir/hp/500x1000/nb/nsga2_chs.ini
+Parsing setup file setups/tcga_ov/hp/500x1000/nb/nsga2_chs.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/brca/hp/500x1000/nb/nsga2_chs.ini
+Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+
+RUNNING HYPERPARAMETER EVOLUTION NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (3-FOLDS CREATOR, POP 500, UNIFORM(0, 50), GEN 1000, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 SYMMETRIC FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
+Machine = arcohtr04
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)
+Inner optimizer:
+Name = Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 500, uniform(0, 50), gen 1000, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip)
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm
+Population size = 500
+Number of features in initial individuals = uniform(0, 50)
+Number of generations = 1000
+Crossover probability = 0.33
+Mutation frequency = 1.0
+Mutation operator = symmetric flip
+Sorting strategy = NSGA2 with crowding distance with Clone Index full elitist and clone repurposing
+Hyperparameter evolution  = NBHyperparameterSetFactory
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Hall of fame factories = [Pareto front factory, Best 50 by sum factory]
+Folds creator = 3-folds creator
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance lasso
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+
+Fold 0> OPTIMIZING ON FOLD NUMBER 0
+Fold 0> Number of workers = 25
+
+Fold 1> OPTIMIZING ON FOLD NUMBER 1
+Fold 1> Number of workers = 25
+
+Fold 2> OPTIMIZING ON FOLD NUMBER 2
+Fold 2> Number of workers = 25
+
+Fold 3> OPTIMIZING ON FOLD NUMBER 3
+Fold 3> Number of workers = 25
+
+Fold 4> OPTIMIZING ON FOLD NUMBER 4
+Fold 4> Number of workers = 25
+
+Fold 0> COMPUTING LOCAL ACTIVE FEATURES
+Fold 0> Computing active features for target column 0_Pam50
+Fold 0> Features before filter: 20203
+
+Fold 1> COMPUTING LOCAL ACTIVE FEATURES
+Fold 1> Computing active features for target column 0_Pam50
+Fold 1> Features before filter: 20203
+
+Fold 2> COMPUTING LOCAL ACTIVE FEATURES
+Fold 2> Computing active features for target column 0_Pam50
+Fold 2> Features before filter: 20203
+
+Fold 3> COMPUTING LOCAL ACTIVE FEATURES
+Fold 3> Computing active features for target column 0_Pam50
+Fold 3> Features before filter: 20203
+
+Fold 4> COMPUTING LOCAL ACTIVE FEATURES
+Fold 4> Computing active features for target column 0_Pam50
+Fold 4> Features before filter: 20203
+Fold 0> Features after any na, zero variance, and anova filters: 17852
+Fold 0> Features active in view: 17852
+
+Fold 0> CREATING INNER FOLDS
+
+Fold 0> RUNNING GENETIC ALGORITHM
+Fold 1> Features after any na, zero variance, and anova filters: 17770
+Fold 1> Features active in view: 17770
+
+Fold 1> CREATING INNER FOLDS
+
+Fold 1> RUNNING GENETIC ALGORITHM
+Fold 2> Features after any na, zero variance, and anova filters: 17758
+Fold 2> Features active in view: 17758
+
+Fold 2> CREATING INNER FOLDS
+
+Fold 2> RUNNING GENETIC ALGORITHM
+Fold 3> Features after any na, zero variance, and anova filters: 17721
+Fold 3> Features active in view: 17721
+
+Fold 3> CREATING INNER FOLDS
+
+Fold 3> RUNNING GENETIC ALGORITHM
+Fold 4> Features after any na, zero variance, and anova filters: 17646
+Fold 4> Features active in view: 17646
+
+Fold 4> CREATING INNER FOLDS
+
+Fold 4> RUNNING GENETIC ALGORITHM
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:513: RuntimeWarning: divide by zero encountered in log
+  n_ij = -0.5 * np.sum(np.log(2.0 * np.pi * self.var_[i, :]))
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: invalid value encountered in divide
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:513: RuntimeWarning: divide by zero encountered in log
+  n_ij = -0.5 * np.sum(np.log(2.0 * np.pi * self.var_[i, :]))
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: divide by zero encountered in divide
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: invalid value encountered in divide
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: invalid value encountered in subtract
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+Fold 1> Generations completed = 29
+Fold 3> Generations completed = 29
+Fold 2> Generations completed = 29
+Fold 0> Generations completed = 29
+Fold 4> Generations completed = 29
+Fold 4> Generations completed = 58
+Fold 0> Generations completed = 59
+Fold 1> Generations completed = 59
+Fold 3> Generations completed = 59
+Fold 2> Generations completed = 59
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:513: RuntimeWarning: divide by zero encountered in log
+  n_ij = -0.5 * np.sum(np.log(2.0 * np.pi * self.var_[i, :]))
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: invalid value encountered in divide
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:513: RuntimeWarning: divide by zero encountered in log
+  n_ij = -0.5 * np.sum(np.log(2.0 * np.pi * self.var_[i, :]))
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: divide by zero encountered in divide
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: invalid value encountered in divide
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/site-packages/sklearn/naive_bayes.py:514: RuntimeWarning: invalid value encountered in subtract
+  n_ij -= 0.5 * np.sum(((X - self.theta_[i, :]) ** 2) / (self.var_[i, :]), 1)

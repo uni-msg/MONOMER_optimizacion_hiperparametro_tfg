@@ -1,6 +1,6 @@
 
 OPTIMIZING ON FOLD NUMBER 4
-Number of workers = 1
+Number of workers = 25
 
 COMPUTING LOCAL ACTIVE FEATURES
 Computing active features for target column 0_Pam50
@@ -19,7 +19,7 @@ gen	evals	gen_feats	explored	min     	avg     	max     	std     	min      	avg  
 2  	8    	148      	276     	0.2     	0.471262	0.67864 	0.156196	0.0238095	0.246391	1  	0.321332
 3  	8    	89       	299     	0.2     	0.442634	0.67864 	0.159803	0.0238095	0.285556	1  	0.310306
 4  	8    	94       	327     	0.2     	0.444886	0.67864 	0.158337	0.0238095	0.285556	1  	0.310306
-Optimization on fold finished in 00-00:01:45
+Optimization on fold finished in 00-00:01:00
 
 FEATURE SETS SELECTED
 

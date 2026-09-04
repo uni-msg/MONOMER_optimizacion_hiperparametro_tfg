@@ -1,8 +1,8 @@
 
 RUNNING HYPERPARAMETER EVOLUTION NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (3-FOLDS CREATOR, POP 8, UNIFORM(0, 50), GEN 5, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 SYMMETRIC FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
-Date = 2026-09-02
-Machine = ubuntu22-UNI
-CPUs detected in the system = 8
+Date = 2026-09-03
+Machine = arcohtr04
+CPUs detected in the system = 128
 Number of outer folds = 2
 
 OPTIMIZER DETAILS
@@ -30,7 +30,7 @@ Feature importance for survival: multi-view feature importance none
 
 
 STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
-Computation on different folds finished in 00-00:00:56
+Computation on different folds finished in 00-00:01:55
 
 APPLYING EVALUATORS
 
