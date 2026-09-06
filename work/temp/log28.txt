@@ -1,0 +1,46 @@
+Date = 2026-09-06
+Machine = arcohtr04
+Workers = 21
+Setup = setups/brca/hp/200x1000/lr/nsga2_chs.ini
+Recursion limit = 100000
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 logistic classifier (max_iter=100) balanced accuracy, leanness]
+Factory HPE = LogisticHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/brca/hp/200x1000/lr/nsga2_chs.ini
+Destination folder :  = ./brca/mrna/leanness_logit100_bal_acc/5_folds/HPE_NSGA2_k3_pop200_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/

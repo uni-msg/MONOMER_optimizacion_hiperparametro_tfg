@@ -1,0 +1,13 @@
+
+OPTIMIZING ON FOLD NUMBER 0
+Number of workers = 25
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_expression_subtype
+Features before filter: 20202
+Features after any na, zero variance, and anova filters: 17588
+Features active in view: 17588
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM

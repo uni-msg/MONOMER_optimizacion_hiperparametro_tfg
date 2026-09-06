@@ -1,0 +1,10 @@
+Parsing setup file setups/brca/hp/500x1000/svm/nsga2_chs.ini
+Parsing setup file setups/luad_lusc/hp/500x1000/svm/nsga2_chs.ini
+Parsing setup file setups/tcga_kir/hp/500x1000/svm/nsga2_chs.ini
+Parsing setup file setups/tcga_ov/hp/500x1000/svm/nsga2_chs.ini
+Parsing setup file setups/brca/hp/200x1000/lr/nsga2_chs.ini
+Parsing setup file setups/luad_lusc/hp/200x1000/lr/nsga2_chs.ini
+Parsing setup file setups/tcga_kir/hp/200x1000/lr/nsga2_chs.ini
+Parsing setup file setups/tcga_ov/hp/200x1000/lr/nsga2_chs.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
