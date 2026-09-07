@@ -1,0 +1,32 @@
+
+OPTIMIZING FINAL MODEL ON WHOLE DATASET
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_type
+Features before filter: 20149
+Features after any na, zero variance, and anova filters: 14658
+Features active in view: 14658
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Generations completed = 27
+Generations completed = 54
+Generations completed = 81
+Generations completed = 108
+Generations completed = 134
+Generations completed = 160
+Generations completed = 186
+Generations completed = 212
+Generations completed = 238
+Generations completed = 264
+Generations completed = 290
+Generations completed = 316
+Generations completed = 341
+Generations completed = 366
+Generations completed = 391
+Generations completed = 417
+Generations completed = 443
+Generations completed = 469
+Generations completed = 494
+Generations completed = 519
