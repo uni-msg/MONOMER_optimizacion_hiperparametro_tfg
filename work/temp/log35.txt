@@ -1,13 +1,13 @@
-Date = 2026-09-06
+Date = 2026-09-07
 Machine = arcohtr04
-Workers = 16
-Setup = setups/luad_lusc/hp/200x1000/lr/nsga2_chs.ini
+Workers = 18
+Setup = setups/tcga_kir/hp/500x1000/nb/nsga2_chs.ini
 Recursion limit = 100000
 
-LOADING LUAD_LUSC COHORT
+LOADING TCGA_KIR COHORT
 
 LOADING VIEWS
-Input directory = ./luad_lusc/input/
+Input directory = ./tcga_kir/input/
 Loading view meth
 View does not exist.
 Loading view mirna
@@ -18,7 +18,7 @@ Loading view rppaa
 View does not exist.
 Applying transformation to view mrna
 
-LOADING OUTCOME
+LOADING OUTCOMES
 
 GLOBAL PREPROCESSING OF VIEWS
 Preprocessing view mrna
@@ -29,36 +29,18 @@ Filtering views using whole dataset.
 Filtering view mrna
 Features before filter: 20501
 Features after all na filter: 20501
-Features after zero variance filter: 20202
+Features after zero variance filter: 20227
 
 PLOTTING VIEWS
-Directory for plots = ./luad_lusc/input/plots
+Directory for plots = ./tcga_kir/input/plots
 Plotting view mrna
 
-LOADED 408 SAMPLES.
-Objectives = [expression_subtype logistic classifier (max_iter=100) balanced accuracy, leanness]
-Factory HPE = LogisticHyperparameterSetFactory
+LOADED 795 SAMPLES.
+Objectives = [PanKidney naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
 Removing outcomes not necessary for objectives from input data.
 Creating 5 stratified folds.
 Number of outer folds = 5
 Copying config file to run directory
-Copy source = setups/luad_lusc/hp/200x1000/lr/nsga2_chs.ini
-Destination folder :  = ./luad_lusc/mrna/leanness_logit100_bal_acc/5_folds/HPE_NSGA2_k3_pop200_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
-
-CREATING GENERATION PLOTS IF POSSIBLE
-
-CREATING PLOTS OF EXPLORED FEATURES IF POSSIBLE
-
-CREATING PLOTS OF FEATURE STABILITY IF POSSIBLE
-
-CREATING PLOTS OF HYPERPARAMETER EVOLUTION STABILITY IF POSSIBLE
-
-CREATING PLOTS OF HALL OF FAME STABILITY IF POSSIBLE
-
-CREATING PLOTS OF HYPERPARAMETER HALL OF FAME IF POSSIBLE
-
-CREATING PLOTS OF MONOTONIC TEST FRONTS IF POSSIBLE
-
-CREATING PLOTS OF PERFORMANCE BY CLASS IF POSSIBLE
-Setup finished
-Execution time = 00-17:54:51
+Copy source = setups/tcga_kir/hp/500x1000/nb/nsga2_chs.ini
+Destination folder :  = ./tcga_kir/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/

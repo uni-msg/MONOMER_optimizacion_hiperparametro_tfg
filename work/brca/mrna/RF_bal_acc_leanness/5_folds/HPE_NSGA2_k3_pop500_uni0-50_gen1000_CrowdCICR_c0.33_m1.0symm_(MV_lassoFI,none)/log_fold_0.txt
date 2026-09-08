@@ -1,6 +1,6 @@
 
 OPTIMIZING ON FOLD NUMBER 0
-Number of workers = 1
+Number of workers = 3
 
 COMPUTING LOCAL ACTIVE FEATURES
 Computing active features for target column 0_Pam50
@@ -11,11 +11,7 @@ Features active in view: 17852
 CREATING INNER FOLDS
 
 RUNNING GENETIC ALGORITHM
-Generations completed = 1
-Generations completed = 4
-Generations completed = 7
-Generations completed = 10
-Generations completed = 14
-Exception caught while optimizing on fold 0
-Original exception: 
-
+Generations completed = 9
+Generations completed = 18
+Generations completed = 26
+Generations completed = 34

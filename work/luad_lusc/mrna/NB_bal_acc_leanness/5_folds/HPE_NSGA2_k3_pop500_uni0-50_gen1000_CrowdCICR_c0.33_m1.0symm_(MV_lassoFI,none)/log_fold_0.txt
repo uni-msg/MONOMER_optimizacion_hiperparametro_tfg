@@ -1,6 +1,6 @@
 
 OPTIMIZING ON FOLD NUMBER 0
-Number of workers = 25
+Number of workers = 8
 
 COMPUTING LOCAL ACTIVE FEATURES
 Computing active features for target column 0_expression_subtype
@@ -11,3 +11,42 @@ Features active in view: 17588
 CREATING INNER FOLDS
 
 RUNNING GENETIC ALGORITHM
+Generations completed = 23
+Generations completed = 47
+Generations completed = 70
+Generations completed = 93
+Generations completed = 116
+Generations completed = 139
+Generations completed = 162
+Generations completed = 185
+Generations completed = 208
+Generations completed = 231
+Generations completed = 254
+Generations completed = 277
+Generations completed = 300
+Generations completed = 323
+Generations completed = 346
+Generations completed = 369
+Generations completed = 392
+Generations completed = 415
+Generations completed = 438
+Generations completed = 461
+Generations completed = 484
+Generations completed = 507
+Generations completed = 530
+Generations completed = 553
+Generations completed = 576
+Generations completed = 599
+Generations completed = 622
+Generations completed = 645
+Generations completed = 668
+Generations completed = 691
+Generations completed = 713
+Generations completed = 736
+Generations completed = 759
+Generations completed = 782
+Generations completed = 805
+Generations completed = 827
+Generations completed = 850
+Generations completed = 873
+Generations completed = 896
