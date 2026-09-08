@@ -1,6 +1,6 @@
 
 OPTIMIZING ON FOLD NUMBER 4
-Number of workers = 3
+Number of workers = 12
 
 COMPUTING LOCAL ACTIVE FEATURES
 Computing active features for target column 0_expression_subtype
@@ -11,7 +11,10 @@ Features active in view: 17878
 CREATING INNER FOLDS
 
 RUNNING GENETIC ALGORITHM
-Generations completed = 12
-Generations completed = 23
-Generations completed = 33
-Generations completed = 43
+Generations completed = 20
+Generations completed = 38
+Generations completed = 54
+Generations completed = 68
+Generations completed = 81
+Generations completed = 94
+Generations completed = 107
