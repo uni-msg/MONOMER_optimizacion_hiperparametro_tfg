@@ -3,7 +3,7 @@ from plots.archives.shallow_saved_hofs_archive_external import all_external_vali
 from plots.default_labels_map import default_labels_map
 from plots.archives.automated_hofs_archive import nested_hofs_for_dataset_cv
 from plots.hofs_plotter.plot_setup import PlotSetup
-from plots.plot_labels import ALL_CV_DATASETS, ALL_MAIN_NO_NSGA3
+from plots.plot_labels import ALL_CV_DATASETS, ALL_MAIN_NO_NSGA3, ALL_MAIN_HPE_LABS
 from plots.saved_external_val import SavedExternalVal
 from plots.subplots_by_strategy import subscatterplots, subtradeplots
 
@@ -12,7 +12,7 @@ SUBSCATTERPLOTS_EXTERNAL_DIR = "subscatterplots_external"
 SUBTRADEPLOTS_CV_DIR = "subtradeplots_cv"
 SUBTRADEPLOTS_EXTERNAL_DIR = "subtradeplots_external"
 
-MAIN_LABS = ALL_MAIN_NO_NSGA3
+MAIN_LABS = ALL_MAIN_HPE_LABS
 
 X_MIN = -1
 X_MAX = 59
@@ -63,20 +63,20 @@ def save_path_trade_external(plot_name: str) -> str:
 
 
 if __name__ == '__main__':
-    for ext in all_external_validations(main_labs=MAIN_LABS):
-        external_hofs = ext.nested_hofs()
-        internal_label = ext.internal_label()
-        print("Processing external validation " + str(ext.internal_label() + " - " + str(ext.external_nick())))
-        subscatterplots(
-            hofs=external_hofs,
-            save_path=save_path_scatter_from_saved_ext_val(saved_ext_val=ext), ncols=2, col_x=COL_I, col_y=COL_J,
-            x_label="number of features", y_label="balanced accuracy",
-            setup=SETUP)
-        subtradeplots(
-            hofs=external_hofs,
-            save_path=save_path_trade_from_saved_ext_val(saved_ext_val=ext), ncols=2, col_x=COL_I, col_y=COL_J,
-            x_label="number of features", y_label="balanced accuracy",
-            setup=SETUP)
+    # for ext in all_external_validations(main_labs=MAIN_LABS):
+    #     external_hofs = ext.nested_hofs()
+    #     internal_label = ext.internal_label()
+    #     print("Processing external validation " + str(ext.internal_label() + " - " + str(ext.external_nick())))
+    #     subscatterplots(
+    #         hofs=external_hofs,
+    #         save_path=save_path_scatter_from_saved_ext_val(saved_ext_val=ext), ncols=2, col_x=COL_I, col_y=COL_J,
+    #         x_label="number of features", y_label="balanced accuracy",
+    #         setup=SETUP)
+    #     subtradeplots(
+    #         hofs=external_hofs,
+    #         save_path=save_path_trade_from_saved_ext_val(saved_ext_val=ext), ncols=2, col_x=COL_I, col_y=COL_J,
+    #         x_label="number of features", y_label="balanced accuracy",
+    #         setup=SETUP)
 
     for dataset_label in ALL_CV_DATASETS:
         print("Processing dataset " + str(dataset_label))

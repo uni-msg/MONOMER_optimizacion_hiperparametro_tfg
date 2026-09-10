@@ -3,7 +3,7 @@ import os
 from plots.archives.automated_hofs_archive import flatten_hofs_for_dataset_cv, flatten_hofs_for_dataset_external
 from plots.archives.shallow_saved_hofs_archive_external import all_external_validations
 from plots.barplot import barplot_with_std_to_file, barplot_to_file
-from plots.plot_labels import ALL_CV_DATASETS, ALL_MAIN_NO_NSGA3
+from plots.plot_labels import ALL_CV_DATASETS, ALL_MAIN_HPE_LABS, ALL_MAIN_NO_NSGA3
 from saved_solutions.run_best_dice import RunBestDice
 from saved_solutions.run_cross_hypervolume import RunCrossHypervolume
 from saved_solutions.run_fold_jaccard import RunFoldJaccard
@@ -13,7 +13,7 @@ from saved_solutions.run_weight_overlap import RunWeightOverlap
 from saved_solutions.solutions_from_files import solutions_from_files
 
 SUMMARY_STAT_DIR = "summary_stats"
-MAIN_LABS = ALL_MAIN_NO_NSGA3
+MAIN_LABS = ALL_MAIN_HPE_LABS
 
 if __name__ == '__main__':
     global_measures = [RunWeightOverlap(), RunBestDice()]
