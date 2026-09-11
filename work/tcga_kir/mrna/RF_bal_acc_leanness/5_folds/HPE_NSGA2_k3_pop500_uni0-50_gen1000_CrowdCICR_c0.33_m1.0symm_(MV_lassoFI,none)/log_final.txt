@@ -1,0 +1,12 @@
+
+OPTIMIZING FINAL MODEL ON WHOLE DATASET
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_PanKidney
+Features before filter: 20227
+Features after any na, zero variance, and anova filters: 18853
+Features active in view: 18853
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM

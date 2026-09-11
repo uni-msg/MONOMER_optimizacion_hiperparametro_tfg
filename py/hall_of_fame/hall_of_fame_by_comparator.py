@@ -63,3 +63,12 @@ class HallOfFameByComparator(HallOfFame):
         for h in self.__elems:
             res.append(deepcopy(h))
         return Hofers(elems=res, name=self.name(), nick=self.nick())
+
+    def peek(self):
+        """
+        Devuelve los individuos internos sin realizar una copia.
+
+        Uso exclusivamente de lectura inmediata. No modificar ni conservar
+        la referencia devuelta.
+        """
+        return self.__elems

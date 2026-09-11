@@ -1,0 +1,2682 @@
+{
+    "generations": [
+        {
+            "generation": 0,
+            "individuals": [
+                {
+                    "id": 1,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0023764695001335235,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 6.598998355537985e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00022510296718376466,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.20186411149825784,
+                        0.5
+                    ],
+                    "features": [
+                        15083
+                    ]
+                },
+                {
+                    "id": 2,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.09896087719398017,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.018503172243172307,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 9.38105842728778e-05,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.7097643915776135,
+                        0.02127659574468085
+                    ],
+                    "features": [
+                        75,
+                        757,
+                        1843,
+                        2244,
+                        2927,
+                        3415,
+                        3941,
+                        4127,
+                        4666,
+                        5238,
+                        5397,
+                        6044,
+                        6146,
+                        6364,
+                        7822,
+                        7836,
+                        7884,
+                        8495,
+                        8958,
+                        9204,
+                        9623,
+                        9902,
+                        10352,
+                        10822,
+                        10997,
+                        11210,
+                        11373,
+                        12259,
+                        12351,
+                        13046,
+                        13855,
+                        14413,
+                        14940,
+                        15084,
+                        15655,
+                        16031,
+                        17219,
+                        17496,
+                        17777,
+                        18413,
+                        18427,
+                        18472,
+                        19066,
+                        19322,
+                        19372,
+                        19914
+                    ]
+                },
+                {
+                    "id": 3,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.4916917305383395,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.05403758778403237,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0020248637055870706,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.47959150926095734,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        2244,
+                        2464,
+                        5019,
+                        7966,
+                        10687,
+                        18480
+                    ]
+                },
+                {
+                    "id": 4,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 1.0857867446296459,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.000626802594516057,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0008752951208861288,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5022140023006518,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        286,
+                        1439,
+                        8210,
+                        9418,
+                        10275,
+                        11728,
+                        13855,
+                        15530,
+                        16186,
+                        16843,
+                        17219,
+                        18473,
+                        19132,
+                        19214
+                    ]
+                },
+                {
+                    "id": 5,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.020681614919571895,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.00016911629326783374,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0007710956782277863,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.20027832885984362,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        2828,
+                        3825,
+                        13829,
+                        15899,
+                        17388,
+                        18381
+                    ]
+                },
+                {
+                    "id": 6,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 26.63234062151802,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 4.590296342812888e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.005671267111862217,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.19848523748395377,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        3142,
+                        3371,
+                        6324,
+                        13757,
+                        15389,
+                        17612
+                    ]
+                },
+                {
+                    "id": 7,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 3.1746901046677385,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 5.799968418273132e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00041403727028542145,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.19980006835269992,
+                        0.02631578947368421
+                    ],
+                    "features": [
+                        757,
+                        829,
+                        1752,
+                        2342,
+                        2863,
+                        2870,
+                        4014,
+                        5751,
+                        5832,
+                        6146,
+                        7143,
+                        7246,
+                        8054,
+                        9037,
+                        9657,
+                        10943,
+                        10965,
+                        11733,
+                        11973,
+                        12002,
+                        12384,
+                        12529,
+                        12534,
+                        13046,
+                        13177,
+                        14771,
+                        16089,
+                        16254,
+                        16324,
+                        16617,
+                        16845,
+                        17604,
+                        17840,
+                        18013,
+                        18492,
+                        19372,
+                        20179
+                    ]
+                },
+                {
+                    "id": 8,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.1442103445231916,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 4.531651096630857e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 8.814965156382626e-05,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.19914634146341462,
+                        0.047619047619047616
+                    ],
+                    "features": [
+                        2440,
+                        2896,
+                        4209,
+                        5238,
+                        5308,
+                        6475,
+                        6754,
+                        7395,
+                        9290,
+                        9842,
+                        9902,
+                        10679,
+                        10839,
+                        11703,
+                        12446,
+                        14766,
+                        16278,
+                        16502,
+                        17573,
+                        19053
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 1,
+            "individuals": [
+                {
+                    "id": 1,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0023764695001335235,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 6.598998355537985e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00022510296718376466,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.20186411149825784,
+                        0.5
+                    ],
+                    "features": [
+                        15083
+                    ]
+                },
+                {
+                    "id": 16,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.16120910508420438,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.01712768321795071,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00010177849169110019,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.711343505659937,
+                        0.022222222222222223
+                    ],
+                    "features": [
+                        75,
+                        757,
+                        1843,
+                        2244,
+                        2927,
+                        3415,
+                        3941,
+                        4127,
+                        4666,
+                        5238,
+                        5397,
+                        6044,
+                        6146,
+                        6364,
+                        7822,
+                        7836,
+                        7884,
+                        8495,
+                        8958,
+                        9204,
+                        9623,
+                        9902,
+                        10352,
+                        10997,
+                        11373,
+                        12259,
+                        12351,
+                        13046,
+                        13855,
+                        14413,
+                        14940,
+                        15084,
+                        15655,
+                        16031,
+                        17219,
+                        17496,
+                        17777,
+                        18413,
+                        18427,
+                        18472,
+                        19066,
+                        19322,
+                        19372,
+                        19914
+                    ]
+                },
+                {
+                    "id": 14,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 3.9055963970967014,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.03493206015118892,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002688930586865588,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3748838837670673,
+                        0.2
+                    ],
+                    "features": [
+                        2244,
+                        2464,
+                        5019,
+                        10687
+                    ]
+                },
+                {
+                    "id": 4,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 1.0857867446296459,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.000626802594516057,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0008752951208861288,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5022140023006518,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        286,
+                        1439,
+                        8210,
+                        9418,
+                        10275,
+                        11728,
+                        13855,
+                        15530,
+                        16186,
+                        16843,
+                        17219,
+                        18473,
+                        19132,
+                        19214
+                    ]
+                },
+                {
+                    "id": 3,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.4916917305383395,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.05403758778403237,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0020248637055870706,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.47959150926095734,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        2244,
+                        2464,
+                        5019,
+                        7966,
+                        10687,
+                        18480
+                    ]
+                },
+                {
+                    "id": 15,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0012214816390380316,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 4.323499240699547e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00023807119445432834,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.19933014354066986,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        10464,
+                        17180
+                    ]
+                },
+                {
+                    "id": 2,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.09896087719398017,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.018503172243172307,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 9.38105842728778e-05,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.7097643915776135,
+                        0.02127659574468085
+                    ],
+                    "features": [
+                        75,
+                        757,
+                        1843,
+                        2244,
+                        2927,
+                        3415,
+                        3941,
+                        4127,
+                        4666,
+                        5238,
+                        5397,
+                        6044,
+                        6146,
+                        6364,
+                        7822,
+                        7836,
+                        7884,
+                        8495,
+                        8958,
+                        9204,
+                        9623,
+                        9902,
+                        10352,
+                        10822,
+                        10997,
+                        11210,
+                        11373,
+                        12259,
+                        12351,
+                        13046,
+                        13855,
+                        14413,
+                        14940,
+                        15084,
+                        15655,
+                        16031,
+                        17219,
+                        17496,
+                        17777,
+                        18413,
+                        18427,
+                        18472,
+                        19066,
+                        19322,
+                        19372,
+                        19914
+                    ]
+                },
+                {
+                    "id": 18,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.038617862819084046,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.04383603902416932,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00016286098261010656,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3437105096443992,
+                        0.030303030303030304
+                    ],
+                    "features": [
+                        256,
+                        968,
+                        1622,
+                        1843,
+                        2176,
+                        2464,
+                        2617,
+                        2989,
+                        3094,
+                        3142,
+                        4161,
+                        4903,
+                        6146,
+                        6726,
+                        7045,
+                        7426,
+                        7872,
+                        8270,
+                        10539,
+                        11233,
+                        12146,
+                        13051,
+                        13261,
+                        13893,
+                        14627,
+                        16845,
+                        17255,
+                        18104,
+                        18310,
+                        18427,
+                        19214,
+                        19284
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 2,
+            "individuals": [
+                {
+                    "id": 16,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.16120910508420438,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.01712768321795071,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00010177849169110019,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.711343505659937,
+                        0.022222222222222223
+                    ],
+                    "features": [
+                        75,
+                        757,
+                        1843,
+                        2244,
+                        2927,
+                        3415,
+                        3941,
+                        4127,
+                        4666,
+                        5238,
+                        5397,
+                        6044,
+                        6146,
+                        6364,
+                        7822,
+                        7836,
+                        7884,
+                        8495,
+                        8958,
+                        9204,
+                        9623,
+                        9902,
+                        10352,
+                        10997,
+                        11373,
+                        12259,
+                        12351,
+                        13046,
+                        13855,
+                        14413,
+                        14940,
+                        15084,
+                        15655,
+                        16031,
+                        17219,
+                        17496,
+                        17777,
+                        18413,
+                        18427,
+                        18472,
+                        19066,
+                        19322,
+                        19372,
+                        19914
+                    ]
+                },
+                {
+                    "id": 25,
+                    "parents": [
+                        19
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.001,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 7.459450345335459e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00014747096876781946,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                },
+                {
+                    "id": 26,
+                    "parents": [
+                        20
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0012219041088338677,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 4.146240648323493e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0001955892017504464,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2037713602187286,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        10464,
+                        15083
+                    ]
+                },
+                {
+                    "id": 31,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.204245060406192,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.03476985880869385,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.001722284406930653,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.44456137572312154,
+                        0.2
+                    ],
+                    "features": [
+                        2244,
+                        5019,
+                        10687,
+                        18480
+                    ]
+                },
+                {
+                    "id": 1,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0023764695001335235,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 6.598998355537985e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00022510296718376466,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.20186411149825784,
+                        0.5
+                    ],
+                    "features": [
+                        15083
+                    ]
+                },
+                {
+                    "id": 28,
+                    "parents": [
+                        22
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.1207821516006047,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.017857740205469156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00025622655959627695,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6043564843372289,
+                        0.041666666666666664
+                    ],
+                    "features": [
+                        757,
+                        1843,
+                        1908,
+                        2244,
+                        3415,
+                        3941,
+                        4127,
+                        4614,
+                        4666,
+                        5238,
+                        6044,
+                        6146,
+                        7822,
+                        8495,
+                        10352,
+                        11979,
+                        14413,
+                        15084,
+                        15655,
+                        17219,
+                        18413,
+                        19322,
+                        19692
+                    ]
+                },
+                {
+                    "id": 4,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 1.0857867446296459,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.000626802594516057,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0008752951208861288,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5022140023006518,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        286,
+                        1439,
+                        8210,
+                        9418,
+                        10275,
+                        11728,
+                        13855,
+                        15530,
+                        16186,
+                        16843,
+                        17219,
+                        18473,
+                        19132,
+                        19214
+                    ]
+                },
+                {
+                    "id": 3,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.4916917305383395,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.05403758778403237,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0020248637055870706,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.47959150926095734,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        2244,
+                        2464,
+                        5019,
+                        7966,
+                        10687,
+                        18480
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 3,
+            "individuals": [
+                {
+                    "id": 16,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.16120910508420438,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.01712768321795071,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00010177849169110019,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.711343505659937,
+                        0.022222222222222223
+                    ],
+                    "features": [
+                        75,
+                        757,
+                        1843,
+                        2244,
+                        2927,
+                        3415,
+                        3941,
+                        4127,
+                        4666,
+                        5238,
+                        5397,
+                        6044,
+                        6146,
+                        6364,
+                        7822,
+                        7836,
+                        7884,
+                        8495,
+                        8958,
+                        9204,
+                        9623,
+                        9902,
+                        10352,
+                        10997,
+                        11373,
+                        12259,
+                        12351,
+                        13046,
+                        13855,
+                        14413,
+                        14940,
+                        15084,
+                        15655,
+                        16031,
+                        17219,
+                        17496,
+                        17777,
+                        18413,
+                        18427,
+                        18472,
+                        19066,
+                        19322,
+                        19372,
+                        19914
+                    ]
+                },
+                {
+                    "id": 25,
+                    "parents": [
+                        19
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.001,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 7.459450345335459e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00014747096876781946,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                },
+                {
+                    "id": 26,
+                    "parents": [
+                        20
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0012219041088338677,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 4.146240648323493e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0001955892017504464,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2037713602187286,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        10464,
+                        15083
+                    ]
+                },
+                {
+                    "id": 31,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.204245060406192,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.03476985880869385,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.001722284406930653,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.44456137572312154,
+                        0.2
+                    ],
+                    "features": [
+                        2244,
+                        5019,
+                        10687,
+                        18480
+                    ]
+                },
+                {
+                    "id": 1,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0023764695001335235,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 6.598998355537985e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00022510296718376466,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.20186411149825784,
+                        0.5
+                    ],
+                    "features": [
+                        15083
+                    ]
+                },
+                {
+                    "id": 28,
+                    "parents": [
+                        22
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.1207821516006047,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.017857740205469156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00025622655959627695,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6043564843372289,
+                        0.041666666666666664
+                    ],
+                    "features": [
+                        757,
+                        1843,
+                        1908,
+                        2244,
+                        3415,
+                        3941,
+                        4127,
+                        4614,
+                        4666,
+                        5238,
+                        6044,
+                        6146,
+                        7822,
+                        8495,
+                        10352,
+                        11979,
+                        14413,
+                        15084,
+                        15655,
+                        17219,
+                        18413,
+                        19322,
+                        19692
+                    ]
+                },
+                {
+                    "id": 4,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 1.0857867446296459,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.000626802594516057,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0008752951208861288,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5022140023006518,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        286,
+                        1439,
+                        8210,
+                        9418,
+                        10275,
+                        11728,
+                        13855,
+                        15530,
+                        16186,
+                        16843,
+                        17219,
+                        18473,
+                        19132,
+                        19214
+                    ]
+                },
+                {
+                    "id": 3,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.4916917305383395,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.05403758778403237,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0020248637055870706,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.47959150926095734,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        2244,
+                        2464,
+                        5019,
+                        7966,
+                        10687,
+                        18480
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 4,
+            "individuals": [
+                {
+                    "id": 25,
+                    "parents": [
+                        19
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.001,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 7.459450345335459e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00014747096876781946,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                },
+                {
+                    "id": 51,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.1803993502846167,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.011509582671861404,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 8.584192857611165e-05,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.725790390610673,
+                        0.021739130434782608
+                    ],
+                    "features": [
+                        75,
+                        757,
+                        1843,
+                        2244,
+                        2927,
+                        3415,
+                        3941,
+                        4127,
+                        4470,
+                        4666,
+                        5238,
+                        5397,
+                        6044,
+                        6146,
+                        6364,
+                        7822,
+                        7836,
+                        7884,
+                        8495,
+                        8958,
+                        9204,
+                        9623,
+                        9902,
+                        10352,
+                        10997,
+                        11373,
+                        12259,
+                        12351,
+                        13046,
+                        13855,
+                        14413,
+                        14940,
+                        15084,
+                        15655,
+                        16031,
+                        17219,
+                        17496,
+                        17777,
+                        18413,
+                        18427,
+                        18472,
+                        19066,
+                        19322,
+                        19372,
+                        19914
+                    ]
+                },
+                {
+                    "id": 1,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.0023764695001335235,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 6.598998355537985e-06,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00022510296718376466,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.20186411149825784,
+                        0.5
+                    ],
+                    "features": [
+                        15083
+                    ]
+                },
+                {
+                    "id": 58,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 2.4764750509775975,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.5553487755665517,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.883429918222458e-05,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37879874297717686,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        2751,
+                        3092
+                    ]
+                },
+                {
+                    "id": 53,
+                    "parents": [
+                        47
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.13043590320300535,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.014739265850550784,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.001904106840682818,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6256943217244887,
+                        0.0625
+                    ],
+                    "features": [
+                        1843,
+                        2244,
+                        2927,
+                        3941,
+                        4127,
+                        10352,
+                        10687,
+                        10997,
+                        13046,
+                        13390,
+                        17219,
+                        17777,
+                        18480,
+                        18985,
+                        19066
+                    ]
+                },
+                {
+                    "id": 31,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.204245060406192,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.03476985880869385,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.001722284406930653,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.44456137572312154,
+                        0.2
+                    ],
+                    "features": [
+                        2244,
+                        5019,
+                        10687,
+                        18480
+                    ]
+                },
+                {
+                    "id": 55,
+                    "parents": [
+                        49
+                    ],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 0.08045427949946457,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.05839780052334208,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0003913879311965321,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5074045562909492,
+                        0.07692307692307693
+                    ],
+                    "features": [
+                        757,
+                        1843,
+                        4127,
+                        6044,
+                        8495,
+                        14413,
+                        15083,
+                        15084,
+                        15655,
+                        17219,
+                        18413,
+                        19322
+                    ]
+                },
+                {
+                    "id": 3,
+                    "parents": [],
+                    "hyperparameters": {
+                        "name": "Support Vector Machine Hyperparameters",
+                        "nick": "SVM_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Regularization parameter",
+                                "nick": "C",
+                                "value": 4.4916917305383395,
+                                "mutable": true
+                            },
+                            "gamma": {
+                                "name": "Kernel coefficient",
+                                "nick": "gamma",
+                                "value": 0.05403758778403237,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0020248637055870706,
+                                "mutable": true
+                            },
+                            "shrinking": {
+                                "name": "Use shrinking heuristic",
+                                "nick": "shrinking",
+                                "value": true,
+                                "mutable": false
+                            },
+                            "kernel": {
+                                "name": "Kernel",
+                                "nick": "kernel",
+                                "value": "rbf",
+                                "mutable": false
+                            },
+                            "class_weight": {
+                                "name": "Class weight",
+                                "nick": "class_weight",
+                                "value": "balanced",
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.47959150926095734,
+                        0.14285714285714285
+                    ],
+                    "features": [
+                        2244,
+                        2464,
+                        5019,
+                        7966,
+                        10687,
+                        18480
+                    ]
+                }
+            ]
+        }
+    ]
+}

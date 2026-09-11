@@ -1,8 +1,11 @@
-Date = 2026-01-21
-Machine = arcohtr04
-CPUs detected in the system = 128
+Date = 2026-08-18
+Machine = ubuntu22-UNI
+CPUs detected in the system = 8
 Recursion limit = 100000
-Parsing setup file setups/brca/500x1000/nb/moabc_chs.ini
+Parsing setup file setups/brca/hp/test_small_nb.ini
+Parsing setup file setups/luad_lusc/hp/test_small_nb.ini
+Parsing setup file setups/tcga_kir/hp/test_small_nb.ini
+Parsing setup file setups/tcga_ov/hp/test_small_nb.ini
 
 RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
 
@@ -10,14 +13,8 @@ LOADING BRCA COHORT
 
 LOADING VIEWS
 Input directory = ./brca/input/
-Loading view meth
-View does not exist.
-Loading view mirna
-View does not exist.
 Loading view mrna
 View loaded.
-Loading view rppaa
-View does not exist.
 Applying transformation to view mrna
 
 LOADING OUTCOMES
@@ -39,10 +36,51 @@ Plotting view mrna
 
 LOADED 1081 SAMPLES.
 Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 2 stratified folds.
+Number of outer folds = 2
+Copying config file to run directory
+Copy source = setups/brca/hp/test_small_nb.ini
+Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/2_folds/HPE_NSGA2_k2_pop8_bin(uni0-30)_gen5_CrowdCICR_c0.33_m1.0flip_(MV_lassoFI,none)/
+
+LOADING LUAD_LUSC COHORT
+
+LOADING VIEWS
+Input directory = ./luad_lusc/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOME
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20202
+
+PLOTTING VIEWS
+Directory for plots = ./luad_lusc/input/plots
+Plotting view mrna
+
+LOADED 408 SAMPLES.
+Objectives = [expression_subtype naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
 Removing outcomes not necessary for objectives from input data.
 Creating 5 stratified folds.
 Number of outer folds = 5
 Copying config file to run directory
-Copy source = setups/brca/500x1000/nb/moabc_chs.ini
-Program finished
-Total execution time = 00-10:45:28
+Copy source = setups/luad_lusc/hp/test_small_nb.ini
+Destination folder :  = ./luad_lusc/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k2_pop8_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/

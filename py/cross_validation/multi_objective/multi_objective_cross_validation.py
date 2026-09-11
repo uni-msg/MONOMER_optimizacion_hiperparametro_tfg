@@ -7,13 +7,15 @@ import time
 from abc import ABC, abstractmethod
 from typing import Iterable, NamedTuple, Sequence
 
+from ga_components.hyperparameter_counts_saver import CsvHyperparameterCountsSaver, HyperparameterCountsSaver
 import numpy as np
+import os
 
-from consts import DEFAULT_RECURSION_LIMIT, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
-    FEATURE_COUNTS_EXTENSION, FINAL_STR
+from consts import DEFAULT_RECURSION_LIMIT, DIR_HOFS, FOLD_RES_DATA_PREFIX, FOLD_RES_DATA_EXTENSION, FEATURE_COUNTS_PREFIX, \
+    FEATURE_COUNTS_EXTENSION, FINAL_STR, GA_EVOLUTION_HISTORY_EXTENSION, GA_EVOLUTION_HISTORY_PREFIX, HYPERPARAMETER_COUNTS_PATH
 from cross_validation.folds import Folds
-from cross_validation.multi_objective.cross_evaluator.hof_saver import path_for_saves, save_hof_features, \
-    SOLUTION_FEATURES_PREFIX, SOLUTION_FEATURES_EXTENSION, save_hof_fitnesses
+from cross_validation.multi_objective.cross_evaluator.hof_saver import SOLUTION_HYPERPARAMETERS_EXTENSION, SOLUTION_HYPERPARAMETERS_STR, path_for_saves, save_hof_features, \
+    SOLUTION_FEATURES_PREFIX, SOLUTION_FEATURES_EXTENSION, save_hof_fitnesses, save_hof_hyperparameters
 from cross_validation.multi_objective.cross_evaluator.multi_objective_cross_evaluator import \
     MultiObjectiveCrossEvaluator
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizer, \
@@ -21,6 +23,7 @@ from cross_validation.multi_objective.optimizer.multi_objective_optimizer import
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer_by_fold import MultiObjectiveOptimizerByFold
 from ga_components.feature_counts_saver import FeatureCountsSaver, CsvFeatureCountsSaver
 from ga_components.logbook_saver import LogbookSaver, CsvLogbookSaver
+from ga_components.ga_evolution_history import GAEvolutionHistory
 from hall_of_fame.hall_of_fame import HallOfFame
 from individual.individual_with_context import IndividualWithContext
 from input_data.input_data import InputData
@@ -106,6 +109,36 @@ class MultiObjectiveOptimizeOnFolds(ABC):
             save_interval=save_interval)
 
     @staticmethod
+    def create_fold_hyperparameter_counts_saver(save_path: str, fold_index: int, save_interval: int = 1) -> HyperparameterCountsSaver:
+        return CsvHyperparameterCountsSaver( 
+            directory= save_path+HYPERPARAMETER_COUNTS_PATH,
+            complement="fold_"+str(fold_index),
+            save_interval=save_interval)
+
+    @staticmethod
+    def create_fold_ga_evolution_history(save_path: str, fold_index: int) -> GAEvolutionHistory:
+        """
+        Crea el historial de evolución del GA correspondiente a un fold.
+        El historial se almacenará incrementalmente en un fichero JSONL.
+        """
+        str_f = str(fold_index)
+        hof_dir = os.path.join(save_path, DIR_HOFS, "Pareto")
+        os.makedirs(hof_dir, exist_ok=True)
+        file = os.path.join( hof_dir,GA_EVOLUTION_HISTORY_PREFIX + "fold_" + str_f + "." + GA_EVOLUTION_HISTORY_EXTENSION)
+
+        # Empezamos un fichero nuevo para este fold
+        try:
+            with open(file, "w", encoding="utf-8"):
+                pass
+        except Exception as e:
+            print(
+                f"WARNING: Could not initialize GA evolution history "
+                f"file '{file}': {e}"
+            )
+
+        return GAEvolutionHistory(file=file)
+
+    @staticmethod
     def create_fold_worker_printer(save_path: str, fold_index: int) -> Printer:
         str_f = str(fold_index)
         return CompositePrinter([
@@ -124,6 +157,15 @@ class MultiObjectiveOptimizeOnFolds(ABC):
         fold_logbook_saver = MultiObjectiveOptimizeOnFolds.create_fold_logbook_saver(save_path=save_path, fold_index=f)
         fold_feat_counts_saver = MultiObjectiveOptimizeOnFolds.create_fold_feat_counts_saver(
             save_path=save_path, fold_index=f, save_interval=100)
+
+        #Conteo de hiperparametros
+        fold_hyperparameter_counts_saver = MultiObjectiveOptimizeOnFolds.create_fold_hyperparameter_counts_saver(
+            save_path=save_path, fold_index=f, save_interval=100)
+
+        #Creacion del historial encargado de almacenar los datos de la evolucion GA del fold especifico
+        fold_ga_evolution_history = MultiObjectiveOptimizeOnFolds.create_fold_ga_evolution_history(
+                save_path=save_path,fold_index=f)
+        
         fold_printer.title_print("Optimizing on fold number " + str(f))
         fold_workers = fold_input.fold_processes
         fold_printer.print_variable("Number of workers", fold_workers)
@@ -134,7 +176,9 @@ class MultiObjectiveOptimizeOnFolds(ABC):
                 input_data=train_data, printer=fold_printer, n_proc=fold_workers,
                 workers_printer=fold_worker_printer,
                 logbook_saver=fold_logbook_saver,
-                feature_counts_saver=fold_feat_counts_saver
+                feature_counts_saver=fold_feat_counts_saver,
+                hyperparameter_counts_saver=fold_hyperparameter_counts_saver,
+                ga_evolution_history=fold_ga_evolution_history
             )
             # each fold_predictors_with_hyperparams is a MultiObjectiveOptimizerResult
         except BaseException as e:
@@ -248,6 +292,26 @@ def create_final_optimizer_printer(optimizer_save_path: str, additional_printer:
     log_printer = CompositePrinter([LogPrinter(log_file=optimizer_save_path + "log_final.txt"), additional_printer])
     return CompositePrinter([OutPrinter(), log_printer])
 
+def create_final_ga_evolution_history(optimizer_save_path: str) -> GAEvolutionHistory:
+    """
+    Crea el historial de evolución del GA correspondiente a la optimización final.
+    """
+    hof_dir = os.path.join(optimizer_save_path, DIR_HOFS, "Pareto")
+    os.makedirs(hof_dir, exist_ok=True)
+    file = os.path.join( hof_dir, GA_EVOLUTION_HISTORY_PREFIX + FINAL_STR + "." + GA_EVOLUTION_HISTORY_EXTENSION )
+
+    # Empezamos un fichero nuevo para la optimización final
+    try:
+        with open(file, "w", encoding="utf-8"):
+            pass
+    except Exception as e:
+        print(
+            f"WARNING: Could not initialize GA evolution history "
+            f"file '{file}': {e}"
+        )
+
+    return GAEvolutionHistory(file=file)
+
 
 def do_final_optimization(
         input_data: InputData,
@@ -264,8 +328,12 @@ def do_final_optimization(
     start_time = time.time()
     workers_log_printer = LogPrinter(log_file=optimizer_save_path + "workers_log.txt")
     workers_printer = CompositePrinter([OutPrinter(), workers_log_printer])
+
+    #Creacion del historial encargado de almacenar los datos de la evolucion GA del fold final
+    final_ga_evolution_history = create_final_ga_evolution_history(optimizer_save_path=optimizer_save_path)
+
     final_optimization = mo_optimizer.optimize(
-        input_data=input_data, printer=printer, n_proc=n_proc, workers_printer=workers_printer)
+        input_data=input_data, printer=printer, n_proc=n_proc, workers_printer=workers_printer, ga_evolution_history=final_ga_evolution_history)
     printer.print_variable(
         mo_optimizer.name() + " final optimization execution time", pretty_duration(time.time() - start_time))
     printer.title_print("Feature sets selected on whole dataset")
@@ -280,6 +348,10 @@ def do_final_optimization(
                           file_name=SOLUTION_FEATURES_PREFIX + FINAL_STR + SOLUTION_FEATURES_EXTENSION,
                           feature_names=input_data.collapsed_feature_names(),
                           hof=hof)
+        #Añadido guardar HPE_SET del optimizador final
+        save_hof_hyperparameters(path_saves=path_saves,
+                                file_name=SOLUTION_HYPERPARAMETERS_STR + "_" + FINAL_STR + SOLUTION_HYPERPARAMETERS_EXTENSION,
+                                hof=hof)
         save_hof_fitnesses(path_saves=path_saves,
                            file_name="solution_fitnesses_" + FINAL_STR + ".csv",
                            hof=hof,
@@ -331,5 +403,6 @@ def optimize_with_evaluation(input_data: InputData,
                 optimizer_nick=mo_optimizer_by_fold.nick(), printer=printer)
             evaluation_res.append(evaluation)
 
-    run_postprocessing_archive(optimizer_dir=optimizer_save_path, printer=printer)
+    # Decision de mover esta funcion a la llamada principal, asi puede tomar valores del optimizador final y fold
+    #run_postprocessing_archive(optimizer_dir=optimizer_save_path, printer=printer)
     return evaluation_res

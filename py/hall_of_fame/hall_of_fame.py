@@ -22,3 +22,13 @@ class HallOfFame(PopulationObserver, NickNamed):
     def hofers(self) -> Hofers:
         """The returned Hofers are a deepcopy of the internal data."""
         raise NotImplementedError()
+
+    @abstractmethod
+    def peek(self) -> Iterable:
+        """
+        Devuelve la colección interna del Hall of Fame sin realizar una copia.
+
+        Este método es únicamente de lectura inmediata. No se debe modificar
+        la colección ni conservar la referencia devuelta.
+        """
+        raise NotImplementedError()

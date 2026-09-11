@@ -1,0 +1,48 @@
+
+OPTIMIZING ON FOLD NUMBER 0
+Number of workers = 25
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 17852
+Features active in view: 17852
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+   	     	         	        	         Pam50 random forest balanced accuracy          	                         leanness                        
+   	     	         	        	--------------------------------------------------------	---------------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std       	min      	avg      	max     	std      
+0  	8    	181      	181     	0.286677	0.554032	0.627321	0.109267  	0.0243902	0.0474696	0.125   	0.0313257
+1  	8    	108      	188     	0.286677	0.499518	0.627321	0.132398  	0.0344828	0.0890487	0.25    	0.0665726
+2  	8    	76       	201     	0.2961  	0.477832	0.677203	0.14177   	0.0333333	0.121197 	0.333333	0.102647 
+3  	8    	47       	206     	0.230081	0.445532	0.677203	0.148121  	0.0333333	0.166336 	0.5     	0.155182 
+4  	8    	92       	244     	0.2     	0.422037	0.677203	0.167777  	0.0333333	0.279816 	1       	0.31197  
+Optimization on fold finished in 00-00:01:06
+
+FEATURE SETS SELECTED
+
+PARETO FRONT
+Number of solutions = 14
+(np.float64(0.6772027590279245), 0.03333333333333333) 29 features: [0_AIM1, 0_C11orf88, 0_C20orf195, 0_C9orf170, 0_FIGLA, 0_G6PC2, 0_GALNT9, 0_GPR61, 0_GRB7, 0_HHLA2, 0_ISL2, 0_KIR3DL1, 0_KRT20, 0_LCTL, 0_LGI1, 0_MBOAT1, 0_MYO1D, 0_OR2B11, 0_OR2W5, 0_OR5P3, 0_PCSK2, 0_PF4V1, 0_PPP1R1B, 0_SERPINE1, 0_SHD, 0_UGT1A9, 0_USP26, 0_WDR67, 0_WFDC3] Hiperparameter set: [n_estimators = 20, min_samples_split = 8, min_samples_leaf = 20, max_features = sqrt, class_weight = balanced, n_jobs = 1]
+(np.float64(0.6757667328731779), 0.038461538461538464) 25 features: [0_AGR3, 0_AIM1, 0_C11orf88, 0_C20orf195, 0_C9orf170, 0_G6PC2, 0_GALNT9, 0_GPR61, 0_GRB7, 0_HHIPL2, 0_ISL2, 0_KRT20, 0_LGI1, 0_MBOAT1, 0_MMP25, 0_MYO1D, 0_OR2A7, 0_OR2W5, 0_OR5P3, 0_PPIE, 0_SERPINE1, 0_UGT1A9, 0_USP26, 0_WDR67, 0_WFDC3] Hiperparameter set: [n_estimators = 20, min_samples_split = 8, min_samples_leaf = 15, max_features = sqrt, class_weight = balanced, n_jobs = 1]
+(np.float64(0.6273205043065978), 0.047619047619047616) 20 features: [0_AIM1, 0_C21orf88, 0_C9orf170, 0_COL6A4P2, 0_ECHS1, 0_FLJ25363, 0_GADD45G, 0_GRB7, 0_KRT20, 0_LOC148189, 0_LOC284632, 0_MAPK15, 0_MBOAT1, 0_MYO1D, 0_OR2B11, 0_OR2W5, 0_RGN, 0_SLC39A2, 0_SMC1B, 0_TFCP2L1] Hiperparameter set: [n_estimators = 26, min_samples_split = 10, min_samples_leaf = 14, max_features = sqrt, class_weight = balanced, n_jobs = 1]
+(np.float64(0.597538643793962), 0.05) 19 features: [0_BTG4, 0_C21orf88, 0_CFB, 0_COL6A4P2, 0_CYP7A1, 0_ECHS1, 0_FLJ25363, 0_GADD45G, 0_HGFAC, 0_LOC148189, 0_LOC284632, 0_MAPK15, 0_RGN, 0_SCRG1, 0_SLC39A2, 0_SMC1B, 0_TFCP2L1, 0_XAGE2, 0_ZNF331] Hiperparameter set: [n_estimators = 26, min_samples_split = 10, min_samples_leaf = 13, max_features = sqrt, class_weight = balanced, n_jobs = 1]
+(np.float64(0.5948063676002535), 0.05263157894736842) 18 features: [0_AIM1, 0_C21orf88, 0_C9orf170, 0_COL6A4P2, 0_ECHS1, 0_FLJ25363, 0_GRB7, 0_KRT20, 0_LOC148189, 0_LOC284632, 0_MBOAT1, 0_MYO1D, 0_OR2B11, 0_OR2W5, 0_RGN, 0_SLC39A2, 0_SMC1B, 0_TFCP2L1] Hiperparameter set: [n_estimators = 32, min_samples_split = 10, min_samples_leaf = 15, max_features = sqrt, class_weight = balanced, n_jobs = 1]
+(np.float64(0.5879780483855885), 0.05555555555555555) 17 features: [0_AGR3, 0_CKMT1A, 0_EPX, 0_HHIPL2, 0_KRT20, 0_MARCO, 0_MBOAT1, 0_MMP25, 0_MYC, 0_OR2A7, 0_PF4V1, 0_PPIE, 0_PPP3R2, 0_SERPINA3, 0_TREH, 0_UMOD, 0_VPREB1] Hiperparameter set: [n_estimators = 35, min_samples_split = 5, min_samples_leaf = 13, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.5560815262188175), 0.058823529411764705) 16 features: [0_AGR3, 0_AMBP, 0_CKMT1A, 0_EPX, 0_HHIPL2, 0_KRT20, 0_MBOAT1, 0_MMP25, 0_OR2A7, 0_PF4V1, 0_PPIE, 0_PPP3R2, 0_SERPINA3, 0_TREH, 0_UMOD, 0_VPREB1] Hiperparameter set: [n_estimators = 33, min_samples_split = 5, min_samples_leaf = 13, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.5517629063734878), 0.06666666666666667) 14 features: [0_CPA6, 0_FARS2, 0_FIGLA, 0_KRT6B, 0_MAPK15, 0_MRPS30, 0_MYO18B, 0_OR2B11, 0_OR52I1, 0_RAET1E, 0_RNF39, 0_SERP2, 0_SLC22A7, 0_TMEM59L] Hiperparameter set: [n_estimators = 34, min_samples_split = 13, min_samples_leaf = 3, max_features = log2, class_weight = balanced, n_jobs = 1]
+(np.float64(0.41725091603952313), 0.09090909090909091) 10 features: [0_ABCC2, 0_CABP2, 0_CYP26C1, 0_FHOD3, 0_HLA-DQA1, 0_LPPR4, 0_NEURL1B, 0_OPTC, 0_OR52E6, 0_RTP1] Hiperparameter set: [n_estimators = 75, min_samples_split = 5, min_samples_leaf = 9, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.39785433542977666), 0.1) 9 features: [0_ABCC2, 0_CABP2, 0_CKMT1A, 0_CYP26C1, 0_HLA-DQA1, 0_LPPR4, 0_NEURL1B, 0_OR52E6, 0_RBMY1A1] Hiperparameter set: [n_estimators = 75, min_samples_split = 4, min_samples_leaf = 9, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.34762058517435923), 0.16666666666666666) 5 features: [0_FGG, 0_LRRC7, 0_OPTC, 0_RTP1, 0_SLC26A4] Hiperparameter set: [n_estimators = 15, min_samples_split = 15, min_samples_leaf = 16, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.3250566896859837), 0.3333333333333333) [0_BCL2L10, 0_LRRC7] Hiperparameter set: [n_estimators = 15, min_samples_split = 15, min_samples_leaf = 16, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.23008106257121383), 0.5) [0_LRRC7] Hiperparameter set: [n_estimators = 15, min_samples_split = 15, min_samples_leaf = 16, max_features = None, class_weight = balanced, n_jobs = 1]
+(np.float64(0.2), 1.0) [] Hiperparameter set: [n_estimators = 15, min_samples_split = 15, min_samples_leaf = 16, max_features = None, class_weight = balanced, n_jobs = 1]
+Features in hall of fame by prevalence:
+89 features: [0_KRT20, 0_MBOAT1, 0_AIM1, 0_C9orf170, 0_GRB7, 0_MYO1D, 0_OR2B11, 0_OR2W5, 0_AGR3, 0_C21orf88, 0_CKMT1A, 0_COL6A4P2, 0_ECHS1, 0_FLJ25363, 0_HHIPL2, 0_LOC148189, 0_LOC284632, 0_LRRC7, 0_MAPK15, 0_MMP25, 0_OR2A7, 0_PF4V1, 0_PPIE, 0_RGN, 0_SLC39A2, 0_SMC1B, 0_TFCP2L1, 0_ABCC2, 0_C11orf88, 0_C20orf195, 0_CABP2, 0_CYP26C1, 0_EPX, 0_FIGLA, 0_G6PC2, 0_GADD45G, 0_GALNT9, 0_GPR61, 0_HLA-DQA1, 0_ISL2, 0_LGI1, 0_LPPR4, 0_NEURL1B, 0_OPTC, 0_OR52E6, 0_OR5P3, 0_PPP3R2, 0_RTP1, 0_SERPINA3, 0_SERPINE1, 0_TREH, 0_UGT1A9, 0_UMOD, 0_USP26, 0_VPREB1, 0_WDR67, 0_WFDC3, 0_AMBP, 0_BCL2L10, 0_BTG4, 0_CFB, 0_CPA6, 0_CYP7A1, 0_FARS2, 0_FGG, 0_FHOD3, 0_HGFAC, 0_HHLA2, 0_KIR3DL1, 0_KRT6B, 0_LCTL, 0_MARCO, 0_MRPS30, 0_MYC, 0_MYO18B, 0_OR52I1, 0_PCSK2, 0_PPP1R1B, 0_RAET1E, 0_RBMY1A1, 0_RNF39, 0_SCRG1, 0_SERP2, 0_SHD, 0_SLC22A7, 0_SLC26A4, 0_TMEM59L, 0_XAGE2, 0_ZNF331]
+
+BEST SUMS WITH SIZE 50
+Number of solutions = 40
+Features in hall of fame by prevalence:
+244 features: [0_MBOAT1, 0_KRT20, 0_OR2B11, 0_PF4V1, 0_PPP1R1B, 0_AIM1, 0_C9orf170, 0_FIGLA, 0_GRB7, 0_HHLA2, 0_LRRC7, 0_MYO1D, 0_WDR67, 0_C11orf88, 0_C20orf195, 0_G6PC2, 0_GALNT9, 0_GPR61, 0_ISL2, 0_KIR3DL1, 0_LCTL, 0_LGI1, 0_LOC284632, 0_OR2W5, 0_OR5P3, 0_PCSK2, 0_RTP1, 0_SERPINE1, 0_SHD, 0_UGT1A9, 0_USP26, 0_WFDC3, 0_ECHS1, 0_OPTC, 0_C21orf88, 0_CABP2, 0_CKMT1A, 0_HLA-DQA1, 0_NEURL1B, 0_OR52E6, 0_RBMY1A1, 0_SCRG1, 0_TREH, 0_ABCC2, 0_BTG4, 0_COL6A4P2, 0_FLJ25363, 0_HGFAC, 0_LOC148189, 0_RGN, 0_SMC1B, 0_TFCP2L1, 0_ZNF331, 0_CFB, 0_CYP26C1, 0_CYP7A1, 0_FGG, 0_GADD45G, 0_LPPR4, 0_MAPK15, 0_PAR1, 0_SERPINA3, 0_SLC39A2, 0_TMEM215, 0_VPREB1, 0_XAGE2, 0_AGR3, 0_C1orf187, 0_C1orf94, 0_CDC25B, 0_CPA6, 0_EPHA8, 0_EPX, 0_FGD3, 0_HHIPL2, 0_MBIP, 0_MMP25, 0_OR2A7, 0_PPIE, 0_TMEM45B, 0_UMOD, 0_AMBP, 0_ANO4, 0_ARL17B, 0_ATP13A2, 0_C19orf40, 0_CAMK4, 0_CBLC, 0_CDH9, 0_CENPW, 0_DLX6, 0_EMR3, 0_FAM9A, 0_FBXO5, 0_FOXR1, 0_GRIN2A, 0_ISX, 0_KRT6B, 0_LOC100133985, 0_LOC339240, 0_LRRC41, 0_MLPH, 0_NCRNA00175, 0_NDST4, 0_NLRP10, 0_NUAK1, 0_OR4D11, 0_OR6A2, 0_P2RY4, 0_PAX8, 0_PLA2G2C, 0_PPP3R2, 0_RNF8, 0_SLC13A1, 0_SPINK1, 0_TMED6, 0_TMEM59L, 0_TRIM74, 0_AADACL3, 0_AADAC, 0_ADAMTS19, 0_ANXA3, 0_ATP1B3, 0_BCL2L10, 0_BEND7, 0_C11orf53, 0_C12orf39, 0_C20orf108, 0_C4orf45, 0_C6orf227, 0_CCDC163P, 0_CCDC18, 0_CDH1, 0_CDK2, 0_CLEC12B, 0_CNTN3, 0_CRBN, 0_CSN3, 0_CST2, 0_CTSL2, 0_CXorf58, 0_CXorf61, 0_CYP2C19, 0_DEFB1, 0_DUSP27, 0_EHD4, 0_ERAP1, 0_F13B, 0_FAM48B1, 0_FAM5B, 0_FARS2, 0_FCRLB, 0_FHOD3, 0_FLJ43950, 0_GGTLC1, 0_GLRA2, 0_GPR151, 0_HAVCR1, 0_HMX1, 0_HRASLS5, 0_HSP90B3P, 0_IGFL1, 0_INSL3, 0_INSL6, 0_INTS4L1, 0_KCNQ1DN, 0_KIAA1486, 0_KIR2DS4, 0_LCE4A, 0_LCT, 0_LIPG, 0_LOC116437, 0_LOC221122, 0_LOC340357, 0_LOC91149, 0_MAP2K7, 0_MARCO, 0_MLF1, 0_MRPS30, 0_MT1DP, 0_MTHFD1, 0_MYC, 0_MYO18B, 0_NCRNA00171, 0_NEFL, 0_NPFFR1, 0_NPTX1, 0_NPTXR, 0_NUDT6, 0_OLFM3, 0_OR13J1, 0_OR1N2, 0_OR2M1P, 0_OR52B6, 0_OR52I1, 0_OTUD5, 0_PATL1, 0_PCCB, 0_PF4, 0_PHF16, 0_PIF1, 0_PIRT, 0_PM20D1, 0_POLE2, 0_POLR3E, 0_PTPN18, 0_RAET1E, 0_RAX2, 0_RFX8, 0_RNF2, 0_RNF39, 0_RPL13AP3, 0_RPS14, 0_SCARNA12, 0_SCN3B, 0_SERHL2, 0_SERP2, 0_SLC22A7, 0_SLC26A4, 0_SLC2A7, 0_SLC38A6, 0_SLC45A3, 0_SLC6A5, 0_SLC7A4, 0_SMARCAD1, 0_SOX17, 0_SPINK13, 0_SPRY4, 0_STX2, 0_TAC4, 0_TBPL2, 0_TCF19, 0_TCHH, 0_TIMM10, 0_TPSG1, 0_TREML4, 0_TRIM21, 0_TSHB, 0_UBE2V1, 0_USP17L2, 0_WDR92, 0_WNT11, 0_ZNF626, 0_ZNF880]

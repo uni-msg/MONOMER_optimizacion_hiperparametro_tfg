@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from collections.abc import Sequence
 
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from util.named import NickNamed
 from util.utils import IllegalStateError
 
@@ -70,10 +71,10 @@ class ClassModel(Model):
 
 
 class TunableClassModel(ABC):
-    """A model that has tunable hyperparameters."""
+    """El modelo puede ser tuneado con el conjunto de hiperparametros del individo."""
 
     @abstractmethod
-    def tune(self, hyperparameters) -> ClassModel:
+    def tune(self, hyperparameters: HyperparameterSet) -> ClassModel:
         raise NotImplementedError()
 
 
@@ -95,5 +96,5 @@ class SklearnPredictorWrapper(Classifier):
 class SKLearnModelFactory(ABC):
 
     @abstractmethod
-    def create(self):
+    def create(self, hyperparameters: HyperparameterSet = None):
         raise NotImplementedError()

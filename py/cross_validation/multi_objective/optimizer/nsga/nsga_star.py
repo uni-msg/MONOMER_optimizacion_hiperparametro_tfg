@@ -1,8 +1,10 @@
 from collections import Iterable, Sequence
 
+from typing import Optional
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from cross_validation.multi_objective.optimizer.ga_str_utils import nick_paste, pop_nick, gen_nick, \
     sorting_strategy_nick_part, mating_prob_nick, mutation_nick_part, name_paste, pop_name, gen_name, \
-    sorting_strategy_name_part, mating_prob_name, mutation_name_part
+    sorting_strategy_name_part, mating_prob_name, mutation_name_part, hp_nick, hp_name
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult, \
     hofs_to_results
@@ -12,6 +14,8 @@ from cross_validation.multi_objective.optimizer.nsga.nsga_types import NSGA2_TYP
 from folds_creator.input_data_folds_creator import InputDataFoldsCreator
 from ga_components.bitlist_mutation import BitlistMutation, FlipMutation
 from ga_components.feature_counts_saver import FeatureCountsSaver, DummyFeatureCountsSaver
+from ga_components.hyperparameter_counts_saver import DummyHyperparameterCountsSaver, HyperparameterCountsSaver
+from ga_components.ga_evolution_history import GAEvolutionHistory
 from ga_components.logbook_saver import LogbookSaver, DummyLogbookSaver
 from ga_components.sorter.sorting_strategy import SortingStrategy
 from ga_runner.flip_ga_runner import FlipGARunner
@@ -39,6 +43,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
     __initial_features: NumFeatures
     __use_clone_repurposing: bool
     __optimizer_type: MOOptimizerType
+    __hyperparameter_set_factory: Optional[HyperparameterSetFactory]
 
     def __init__(self, pop_size, mutation_frequency, mating_prob, n_gen,
                  initial_features: NumFeatures,
@@ -47,7 +52,8 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                  sorting_strategy: SortingStrategy,
                  hof_factories: Iterable[HallOfFameFactory] = (ParetoFrontFactory(),),
                  mutation: BitlistMutation = FlipMutation(),
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         self.__pop_size = pop_size
         self.__mutation_frequency = mutation_frequency
         self.__mating_prob = mating_prob
@@ -65,7 +71,10 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         self.__hof_factories = hof_factories
         self.__mutation = mutation
         self.__use_clone_repurposing = use_clone_repurposing
-        self.__nick = nick_paste(parts=[self.__optimizer_type.nick(),
+
+        self.__hyperparameter_set_factory = hyperparameter_set_factory
+
+        self.__nick = hp_nick(self.__hyperparameter_set_factory is not None) + nick_paste(parts=[self.__optimizer_type.nick(),
                                         self.__folds_creator.nick(),
                                         pop_nick(pop_size=pop_size),
                                         initial_features.nick(),
@@ -75,7 +84,7 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
                                         mating_prob_nick(mating_prob=mating_prob),
                                         mutation_nick_part(mutation=mutation, mutation_frequency=mutation_frequency)
                                         ])
-        self.__name = self.__optimizer_type.name() + " (" + name_paste(parts=[
+        self.__name = hp_name(self.__hyperparameter_set_factory is not None) + self.__optimizer_type.name() + " (" + name_paste(parts=[
             self.__folds_creator.name(),
             pop_name(pop_size=pop_size),
             initial_features.name(),
@@ -91,7 +100,9 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             feature_importance: Sequence[Distribution],
             n_proc=1, workers_printer: Printer = UnbufferedOutPrinter(),
             logbook_saver: LogbookSaver = DummyLogbookSaver(),
-            feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver()) -> [MultiObjectiveOptimizerResult]:
+            feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver(),
+            hyperparameter_counts_saver: HyperparameterCountsSaver = DummyHyperparameterCountsSaver(),
+            ga_evolution_history: GAEvolutionHistory = None) -> [MultiObjectiveOptimizerResult]:
         set_all_seeds(772346)
 
         # Make sure we do not include outcomes (potentially affecting feature selection) that are not in objectives.
@@ -115,15 +126,22 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
             sorting_strategy=self.__sorting_strategy,
             active_features=active_features,
             mutation=self.__mutation,
-            use_clone_repurposing=self.__use_clone_repurposing
+            use_clone_repurposing=self.__use_clone_repurposing,
+            hyperparameter_set_factory=self.__hyperparameter_set_factory
         )
         hofs = [h.create_population_observer() for h in self.__hof_factories]
         ga_result = single_view_runner.run(
-            input_data=input_data, folds_list=folds_list, return_history=False,
-            n_workers=n_proc, workers_printer=workers_printer, n_gen=self.__n_gen,
+            input_data=input_data, 
+            folds_list=folds_list, 
+            return_history=False,
+            n_workers=n_proc, 
+            workers_printer=workers_printer, 
+            n_gen=self.__n_gen,
             feature_importance=feature_importance,
             return_feature_counts=True,
+            return_hyperparameter_counts=self.__hyperparameter_set_factory is not None,
             hofs=hofs,
+            ga_evolution_history=ga_evolution_history,
             progress_observers=[SmartProgressObserver(printer=printer)
                                 # , PopNumFeaturesObserver()
                                 ]
@@ -131,8 +149,12 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         printer.print(ga_result.logbook)
         logbook_saver.save(ga_result.logbook)
         feature_names = collapsed_views.columns
-        feature_counts_saver.save(feature_counts=ga_result.feature_counts,
-                                  feature_names=feature_names)
+        feature_counts_saver.save(feature_counts=ga_result.feature_counts,feature_names=feature_names)
+
+        #Se añade el contador de hyperparametros
+        if self.__hyperparameter_set_factory is not None:
+            hyperparameter_counts_saver.save(ga_result.hyperparameter_counts)
+        
         return hofs_to_results(hofs)
 
     def optimizer_type(self) -> MOOptimizerType:
@@ -156,6 +178,11 @@ class NsgaStar(MultiObjectiveOptimizerAcceptingFeatureImportance):
         res += name_value("Mutation operator", self.__mutation) + "\n"
         res += name_value("Sorting strategy", self.__sorting_strategy) + \
             (" and clone repurposing" if self.__use_clone_repurposing else "") + "\n"
+        
+        #Se añadira a la respuesta el uso de evolucion de hiperparametro si esta activado
+        if self.__hyperparameter_set_factory is not None:
+            res += name_value("Hyperparameter evolution ", self.__hyperparameter_set_factory.nick()) + "\n"
+
         res += name_value("Objectives", self.__objectives) + "\n"
         res += name_value("Hall of fame factories", self.__hof_factories) + "\n"
         res += name_value("Folds creator", self.__folds_creator) + "\n"

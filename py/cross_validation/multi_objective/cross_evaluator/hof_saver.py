@@ -15,6 +15,12 @@ from util.printer.printer import Printer
 SOLUTION_FEATURES_STR = "solution_features"
 SOLUTION_FEATURES_PREFIX = SOLUTION_FEATURES_STR + "_fold_"
 SOLUTION_FEATURES_EXTENSION = ".csv"
+
+#Constantes para almacenar los hiperparametros de las soluciones
+SOLUTION_HYPERPARAMETERS_STR = "solution_hyperparameters"
+SOLUTION_HYPERPARAMETERS_PREFIX = SOLUTION_HYPERPARAMETERS_STR + "_fold_"
+SOLUTION_HYPERPARAMETERS_EXTENSION = ".csv"
+
 SOLUTION_FITNESSES_STR = "solution_fitnesses"
 SOLUTION_FITNESSES_FOLD_PREFIX = SOLUTION_FITNESSES_STR + "_fold_"
 SOLUTION_FITNESSES_EXTENSION = ".csv"
@@ -35,6 +41,27 @@ def save_hof_features(path_saves: str, file_name: str, feature_names: [str], hof
     df.columns = feature_names
     df = df.astype(int)
     df = df.loc[:, (df != 0).any(axis=0)]  # Remove features that are never used.
+    file = path_saves + file_name
+    df.to_csv(file, index=False)
+
+def save_hof_hyperparameters(path_saves: str, file_name: str, hof: MultiObjectiveOptimizerResult):
+    """
+    Funcion encargada de generar un archivo csv con los datos de los hiperparametros de los individuos en el HOFS
+    """
+    individuals = hof.hyperparams()
+    if len(individuals) == 0:
+        return
+
+    # Comprobacion de HPE_SET para todos los individuos
+    if not all(individual.has_hyperparameter_set() for individual in individuals):
+        return
+
+    Path(path_saves).mkdir(parents=True, exist_ok=True)
+    df = DataFrame([
+        individual.hyperparameter_set().hyperparameters_to_kwargs()
+        for individual in individuals
+    ])
+
     file = path_saves + file_name
     df.to_csv(file, index=False)
 
@@ -95,6 +122,13 @@ def solution_features_file_name(fold_index: int) -> str:
     return SOLUTION_FEATURES_PREFIX + str(fold_index) + SOLUTION_FEATURES_EXTENSION
 
 
+def solution_hyperparameter_file_name(fold_index: int) -> str:
+    """
+    Funcion encargada de establecer el archivo que almacenara los datos de los hiperparametros de cada solucion
+    """
+    return SOLUTION_HYPERPARAMETERS_PREFIX + str(fold_index) + SOLUTION_HYPERPARAMETERS_EXTENSION
+
+
 def solution_fitnesses_file_name(fold_index: int) -> str:
     return SOLUTION_FITNESSES_FOLD_PREFIX + str(fold_index) + SOLUTION_FITNESSES_EXTENSION
 
@@ -122,11 +156,19 @@ class HofsSaver(MultiObjectiveCrossEvaluator):
 
         for fold in range(n_folds):
             hof = non_dominated_predictors_with_hyperparams[fold]
+
             save_hof_features(
                 path_saves=path_saves,
                 file_name=solution_features_file_name(fold_index=fold),
                 feature_names=feature_names,
                 hof=hof)
+
+            # Almacenar datos de HPE de las soluciones del HOFS
+            save_hof_hyperparameters(
+                path_saves=path_saves,
+                file_name=solution_hyperparameter_file_name(fold_index=fold),
+                hof=hof)
+            
             x_train, y_train, x_test, y_test =\
                 input_data.select_all_sets(
                     train_indices=folds.train_indices(fold), test_indices=folds.test_indices(fold))

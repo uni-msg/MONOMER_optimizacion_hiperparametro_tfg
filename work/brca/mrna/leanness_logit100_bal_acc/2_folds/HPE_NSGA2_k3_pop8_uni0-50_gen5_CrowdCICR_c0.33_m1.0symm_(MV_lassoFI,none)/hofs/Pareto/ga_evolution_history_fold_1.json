@@ -1,0 +1,2474 @@
+{
+    "generations": [
+        {
+            "generation": 0,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6600204780243291,
+                        0.034482758620689655
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.473120802028447,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00907844672809618,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5271190170548321,
+                        0.0625
+                    ],
+                    "features": [
+                        2150,
+                        5051,
+                        5795,
+                        7151,
+                        8188,
+                        9181,
+                        9765,
+                        10170,
+                        13586,
+                        14290,
+                        15541,
+                        16039,
+                        17649,
+                        18751,
+                        19285
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 38.92152660564676,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.9447666933598393e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37203007518796993,
+                        0.25
+                    ],
+                    "features": [
+                        6479,
+                        16572,
+                        17619
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 11.159032177766257,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009205226708630769,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.21261904761904762,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        2568,
+                        11733
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 1,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6600204780243291,
+                        0.034482758620689655
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 27.04680461103631,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0023596470197857376,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6398835503392628,
+                        0.05
+                    ],
+                    "features": [
+                        1087,
+                        1901,
+                        3361,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10780,
+                        12189,
+                        13158,
+                        15812,
+                        16076,
+                        16122,
+                        17152,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5766244880493917,
+                        0.0625
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9181,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.9483281021702712,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.5618085896370096e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.4699459013387125,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        1843,
+                        4245,
+                        6479,
+                        7930,
+                        10837,
+                        10845,
+                        11990,
+                        12190,
+                        14175,
+                        16572,
+                        16878,
+                        17619,
+                        19285,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 38.92152660564676,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.9447666933598393e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37203007518796993,
+                        0.25
+                    ],
+                    "features": [
+                        6479,
+                        16572,
+                        17619
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 11.159032177766257,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009205226708630769,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.21261904761904762,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        2568,
+                        11733
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009205226708630769,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        },
+        {
+            "generation": 2,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6600204780243291,
+                        0.034482758620689655
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 27.04680461103631,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0023596470197857376,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6398835503392628,
+                        0.05
+                    ],
+                    "features": [
+                        1087,
+                        1901,
+                        3361,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10780,
+                        12189,
+                        13158,
+                        15812,
+                        16076,
+                        16122,
+                        17152,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5766244880493917,
+                        0.0625
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9181,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5417990097194205,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 38.92152660564676,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.9447666933598393e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37203007518796993,
+                        0.25
+                    ],
+                    "features": [
+                        6479,
+                        16572,
+                        17619
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009481745744137232,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.28411027568922304,
+                        0.5
+                    ],
+                    "features": [
+                        6553
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009205226708630769,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        },
+        {
+            "generation": 3,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.8507257993393629,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002295716487818857,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6892193899382603,
+                        0.03333333333333333
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11143,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6600204780243291,
+                        0.034482758620689655
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6410856409315973,
+                        0.037037037037037035
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 27.04680461103631,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0023596470197857376,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6398835503392628,
+                        0.05
+                    ],
+                    "features": [
+                        1087,
+                        1901,
+                        3361,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10780,
+                        12189,
+                        13158,
+                        15812,
+                        16076,
+                        16122,
+                        17152,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5766244880493917,
+                        0.0625
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9181,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5417990097194205,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 1.3470872705103967,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00016157757058800787,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.4443016076777309,
+                        0.1
+                    ],
+                    "features": [
+                        1335,
+                        2878,
+                        4139,
+                        4553,
+                        5418,
+                        6552,
+                        9287,
+                        17473,
+                        17776
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 38.92152660564676,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.9447666933598393e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37203007518796993,
+                        0.25
+                    ],
+                    "features": [
+                        6479,
+                        16572,
+                        17619
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009481745744137232,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.28411027568922304,
+                        0.5
+                    ],
+                    "features": [
+                        6553
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009205226708630769,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        },
+        {
+            "generation": 4,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.8507257993393629,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002295716487818857,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6892193899382603,
+                        0.03333333333333333
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11143,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6600204780243291,
+                        0.034482758620689655
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        10845,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.776274517799156,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6410856409315973,
+                        0.037037037037037035
+                    ],
+                    "features": [
+                        1087,
+                        1843,
+                        1901,
+                        3361,
+                        4245,
+                        4260,
+                        6245,
+                        7369,
+                        7930,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10837,
+                        11990,
+                        12189,
+                        12190,
+                        13158,
+                        14175,
+                        15812,
+                        16076,
+                        16122,
+                        16878,
+                        19285,
+                        19898,
+                        20181
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 27.04680461103631,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.0023596470197857376,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6398835503392628,
+                        0.05
+                    ],
+                    "features": [
+                        1087,
+                        1901,
+                        3361,
+                        4260,
+                        6245,
+                        6479,
+                        7369,
+                        9181,
+                        9234,
+                        9634,
+                        9842,
+                        10780,
+                        12189,
+                        13158,
+                        15812,
+                        16076,
+                        16122,
+                        17152,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5766244880493917,
+                        0.0625
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9181,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 0.6610979352862226,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.002361439643746723,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5417990097194205,
+                        0.06666666666666667
+                    ],
+                    "features": [
+                        1087,
+                        3361,
+                        6479,
+                        7369,
+                        9842,
+                        10845,
+                        12189,
+                        13158,
+                        13806,
+                        14175,
+                        14669,
+                        16076,
+                        19285,
+                        19898
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 1.3470872705103967,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.00016157757058800787,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.4443016076777309,
+                        0.1
+                    ],
+                    "features": [
+                        1335,
+                        2878,
+                        4139,
+                        4553,
+                        5418,
+                        6552,
+                        9287,
+                        17473,
+                        17776
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 38.92152660564676,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.9447666933598393e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.37203007518796993,
+                        0.25
+                    ],
+                    "features": [
+                        6479,
+                        16572,
+                        17619
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 36.59545364039949,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 1.9447666933598393e-06,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.36552631578947364,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        16572,
+                        17619
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009481745744137232,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.28411027568922304,
+                        0.5
+                    ],
+                    "features": [
+                        6553
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Logistic Regression Hyperparameters",
+                        "nick": "LOGIT_HPE",
+                        "hyperparameters": {
+                            "C": {
+                                "name": "Inverse regularization strength",
+                                "nick": "C",
+                                "value": 10.26154708488164,
+                                "mutable": true
+                            },
+                            "tol": {
+                                "name": "Stopping tolerance",
+                                "nick": "tol",
+                                "value": 0.009205226708630769,
+                                "mutable": true
+                            },
+                            "max_iter": {
+                                "name": "Maximum iterations",
+                                "nick": "max_iter",
+                                "value": 100,
+                                "mutable": false
+                            },
+                            "solver": {
+                                "name": "Solver",
+                                "nick": "solver",
+                                "value": "lbfgs",
+                                "mutable": false
+                            },
+                            "penalty": {
+                                "name": "Penalty",
+                                "nick": "penalty",
+                                "value": "l2",
+                                "mutable": false
+                            },
+                            "n_jobs": {
+                                "name": "Number of jobs",
+                                "nick": "n_jobs",
+                                "value": 1,
+                                "mutable": false
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        }
+    ]
+}

@@ -3,6 +3,9 @@ from collections.abc import Sequence, Iterable
 
 from pandas import DataFrame
 
+from ga_components.hyperparameter_counts_saver import DummyHyperparameterCountsSaver, HyperparameterCountsSaver
+from ga_components.ga_evolution_history import GAEvolutionHistory
+from individual.peculiar_individual_with_context import PeculiarIndividualWithContext
 from cross_validation.multi_objective.optimizer.mo_optimizer_type import MOOptimizerType
 from ga_components.feature_counts_saver import FeatureCountsSaver, DummyFeatureCountsSaver
 from ga_components.logbook_saver import LogbookSaver, DummyLogbookSaver
@@ -94,7 +97,9 @@ class MultiObjectiveOptimizer(NickNamed):
                  n_proc=1,
                  workers_printer=UnbufferedOutPrinter(),
                  logbook_saver: LogbookSaver = DummyLogbookSaver(),
-                 feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver()
+                 feature_counts_saver: FeatureCountsSaver = DummyFeatureCountsSaver(),
+                 hyperparameter_counts_saver: HyperparameterCountsSaver = DummyHyperparameterCountsSaver(), # Nuevo elemento para el conteo de hiperparametros
+                 ga_evolution_history: GAEvolutionHistory = None #Nuevo elemento de guardado de informacion util para metricas
                  ) -> Sequence[MultiObjectiveOptimizerResult]:
         raise NotImplementedError()
 
@@ -133,12 +138,22 @@ def mo_result_feature_strings(hps: list[IndividualWithContext], feature_names: l
     return res
 
 
+def mo_result_hyperparameter_string(mask: IndividualWithContext) -> str:
+    res = ""
+    res += " Hiperparameter set: [" + str(mask.hyperparameter_set()) +"]"
+    return res
+
+
 def individual_to_line(hp: IndividualWithContext, feature_names: list[str]) -> str:
     res = ""
     if isinstance(hp, FitIndividual):
         if hp.has_fitness():
             res += str(hp.fitness) + " "
     res += mo_result_feature_string(mask=hp, feature_names=feature_names)
+
+    if hp.has_hyperparameter_set():
+        res += mo_result_hyperparameter_string(mask=hp)
+        
     return res
 
 

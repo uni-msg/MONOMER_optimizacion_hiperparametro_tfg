@@ -33,4 +33,5 @@ class SelectGARunner(GARunner):
             objectives=self._objectives(),
             sorting_strategy=self.sorting_strategy(),
             n_workers=n_workers, workers_printer=workers_printer,
-            use_clone_repurposing=self.use_clone_repurposing())
+            use_clone_repurposing=self.use_clone_repurposing()
+        )

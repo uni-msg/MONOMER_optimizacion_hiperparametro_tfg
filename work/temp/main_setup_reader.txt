@@ -1,0 +1,3 @@
+Parsing setup file setups/luad_lusc/hp/500x1000/rf/nsga2_chs.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS

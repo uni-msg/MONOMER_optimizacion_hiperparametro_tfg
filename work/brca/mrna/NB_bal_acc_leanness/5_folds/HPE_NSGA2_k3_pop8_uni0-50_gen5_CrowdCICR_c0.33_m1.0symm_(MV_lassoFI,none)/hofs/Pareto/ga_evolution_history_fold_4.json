@@ -1,0 +1,1623 @@
+{
+    "generations": [
+        {
+            "generation": 0,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.858021162522745e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6729289370677647,
+                        0.025
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7119666189904944e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5387248614527609,
+                        0.038461538461538464
+                    ],
+                    "features": [
+                        1901,
+                        2568,
+                        2641,
+                        6897,
+                        7143,
+                        7246,
+                        7538,
+                        8188,
+                        8210,
+                        8320,
+                        9751,
+                        11914,
+                        12571,
+                        12638,
+                        13051,
+                        13245,
+                        13855,
+                        14413,
+                        14473,
+                        15307,
+                        15711,
+                        16860,
+                        17939,
+                        19214,
+                        19324
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.6562446900624456e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.43847342481816953,
+                        0.1111111111111111
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        8260,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.8256521277936137e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.32341238575480624,
+                        0.5
+                    ],
+                    "features": [
+                        14863
+                    ]
+                }
+            ]
+        },
+        {
+            "generation": 1,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.952962040438325e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6786399219674117,
+                        0.023809523809523808
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5411,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.858021162522745e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6729289370677647,
+                        0.025
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 3.467882205823209e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5854966459766728,
+                        0.03571428571428571
+                    ],
+                    "features": [
+                        58,
+                        1176,
+                        1946,
+                        2381,
+                        2896,
+                        3323,
+                        3542,
+                        3565,
+                        3778,
+                        3791,
+                        6248,
+                        6476,
+                        8584,
+                        9651,
+                        9751,
+                        10173,
+                        10389,
+                        10965,
+                        11973,
+                        12156,
+                        13791,
+                        13910,
+                        14401,
+                        14659,
+                        14687,
+                        16751,
+                        20160
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7119666189904944e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5387248614527609,
+                        0.038461538461538464
+                    ],
+                    "features": [
+                        1901,
+                        2568,
+                        2641,
+                        6897,
+                        7143,
+                        7246,
+                        7538,
+                        8188,
+                        8210,
+                        8320,
+                        9751,
+                        11914,
+                        12571,
+                        12638,
+                        13051,
+                        13245,
+                        13855,
+                        14413,
+                        14473,
+                        15307,
+                        15711,
+                        16860,
+                        17939,
+                        19214,
+                        19324
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 6.10460855617155e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.4804389938509856,
+                        0.047619047619047616
+                    ],
+                    "features": [
+                        2046,
+                        2381,
+                        3323,
+                        3502,
+                        4903,
+                        5602,
+                        7271,
+                        9751,
+                        9990,
+                        10089,
+                        11703,
+                        11898,
+                        12541,
+                        13658,
+                        15904,
+                        17141,
+                        17312,
+                        17464,
+                        19024,
+                        19432
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 7.352978470078084e-11,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.4422201862508749,
+                        0.05
+                    ],
+                    "features": [
+                        501,
+                        2568,
+                        3404,
+                        4456,
+                        5751,
+                        5795,
+                        6989,
+                        7631,
+                        9204,
+                        9549,
+                        9900,
+                        10622,
+                        11615,
+                        12436,
+                        14626,
+                        15084,
+                        16076,
+                        16254,
+                        18886
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.6562446900624456e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.43847342481816953,
+                        0.1111111111111111
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        8260,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7680001387559968e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.40731669777328455,
+                        0.125
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.8256521277936137e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.32341238575480624,
+                        0.5
+                    ],
+                    "features": [
+                        14863
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.9465644944662103e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        },
+        {
+            "generation": 2,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.952962040438325e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6786399219674117,
+                        0.023809523809523808
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5411,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.858021162522745e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6729289370677647,
+                        0.025
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 6.664932859287063e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6385794414247377,
+                        0.027777777777777776
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2381,
+                        2464,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5634,
+                        5688,
+                        6897,
+                        8123,
+                        8366,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        12384,
+                        12615,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15904,
+                        16037,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 3.467882205823209e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.5854966459766728,
+                        0.03571428571428571
+                    ],
+                    "features": [
+                        58,
+                        1176,
+                        1946,
+                        2381,
+                        2896,
+                        3323,
+                        3542,
+                        3565,
+                        3778,
+                        3791,
+                        6248,
+                        6476,
+                        8584,
+                        9651,
+                        9751,
+                        10173,
+                        10389,
+                        10965,
+                        11973,
+                        12156,
+                        13791,
+                        13910,
+                        14401,
+                        14659,
+                        14687,
+                        16751,
+                        20160
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.4376156290390775e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.544416579520385,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        13,
+                        2665,
+                        3142,
+                        3361,
+                        5411,
+                        5886,
+                        6552,
+                        7910,
+                        9203,
+                        9204,
+                        10739,
+                        11286,
+                        15125,
+                        16201,
+                        18246,
+                        18572
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.6562446900624456e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.43847342481816953,
+                        0.1111111111111111
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        8260,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7680001387559968e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.40731669777328455,
+                        0.125
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.881006062146239e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.39223560312730654,
+                        0.2
+                    ],
+                    "features": [
+                        2381,
+                        3502,
+                        7271,
+                        9990
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.8256521277936137e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.32341238575480624,
+                        0.5
+                    ],
+                    "features": [
+                        14863
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.9465644944662103e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        },
+        {
+            "generation": 3,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.952962040438325e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6786399219674117,
+                        0.023809523809523808
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5411,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.858021162522745e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6729289370677647,
+                        0.025
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.351289002940056e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6638657450990022,
+                        0.043478260869565216
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        3361,
+                        4014,
+                        5411,
+                        5688,
+                        6552,
+                        6897,
+                        8366,
+                        9203,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        13328,
+                        13456,
+                        15125,
+                        15904,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.4376156290390775e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.544416579520385,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        13,
+                        2665,
+                        3142,
+                        3361,
+                        5411,
+                        5886,
+                        6552,
+                        7910,
+                        9203,
+                        9204,
+                        10739,
+                        11286,
+                        15125,
+                        16201,
+                        18246,
+                        18572
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.6562446900624456e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.43847342481816953,
+                        0.1111111111111111
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        8260,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7680001387559968e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.40731669777328455,
+                        0.125
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.881006062146239e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.39223560312730654,
+                        0.2
+                    ],
+                    "features": [
+                        2381,
+                        3502,
+                        7271,
+                        9990
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 3.1697387821166317e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.3311840135518437,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        1456,
+                        14863
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.8256521277936137e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.32341238575480624,
+                        0.5
+                    ],
+                    "features": [
+                        14863
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.9465644944662103e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        },
+        {
+            "generation": 4,
+            "individuals": [
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.952962040438325e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6786399219674117,
+                        0.023809523809523808
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5411,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.858021162522745e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6729289370677647,
+                        0.025
+                    ],
+                    "features": [
+                        13,
+                        1030,
+                        2464,
+                        3142,
+                        3361,
+                        3547,
+                        3710,
+                        4014,
+                        4692,
+                        5688,
+                        5886,
+                        6552,
+                        6897,
+                        8123,
+                        8366,
+                        9203,
+                        9204,
+                        9779,
+                        9908,
+                        10560,
+                        10965,
+                        12010,
+                        12196,
+                        12384,
+                        13328,
+                        13456,
+                        13586,
+                        13855,
+                        14230,
+                        14970,
+                        15125,
+                        15904,
+                        16037,
+                        16201,
+                        16254,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 5.351289002940056e-10,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.6638657450990022,
+                        0.043478260869565216
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        3361,
+                        4014,
+                        5411,
+                        5688,
+                        6552,
+                        6897,
+                        8366,
+                        9203,
+                        10965,
+                        11104,
+                        12010,
+                        12196,
+                        13328,
+                        13456,
+                        15125,
+                        15904,
+                        16844,
+                        17210,
+                        17274,
+                        19214
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.4376156290390775e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.544416579520385,
+                        0.058823529411764705
+                    ],
+                    "features": [
+                        13,
+                        2665,
+                        3142,
+                        3361,
+                        5411,
+                        5886,
+                        6552,
+                        7910,
+                        9203,
+                        9204,
+                        10739,
+                        11286,
+                        15125,
+                        16201,
+                        18246,
+                        18572
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.6562446900624456e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.43847342481816953,
+                        0.1111111111111111
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        8260,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 1.7680001387559968e-09,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.40731669777328455,
+                        0.125
+                    ],
+                    "features": [
+                        13,
+                        2381,
+                        2665,
+                        5634,
+                        11286,
+                        12615,
+                        18246
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.881006062146239e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.39223560312730654,
+                        0.2
+                    ],
+                    "features": [
+                        2381,
+                        3502,
+                        7271,
+                        9990
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.369272067297975e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.34919971233200037,
+                        0.3333333333333333
+                    ],
+                    "features": [
+                        3502,
+                        7271
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.8256521277936137e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.32341238575480624,
+                        0.5
+                    ],
+                    "features": [
+                        14863
+                    ]
+                },
+                {
+                    "hyperparameters": {
+                        "name": "Naive Bayes Hyperparameters",
+                        "nick": "NB_HPE",
+                        "hyperparameters": {
+                            "var_smoothing": {
+                                "name": "Variance smoothing",
+                                "nick": "var_smoothing",
+                                "value": 2.9465644944662103e-12,
+                                "mutable": true
+                            }
+                        }
+                    },
+                    "fitness": [
+                        0.2,
+                        1.0
+                    ],
+                    "features": []
+                }
+            ]
+        }
+    ]
+}

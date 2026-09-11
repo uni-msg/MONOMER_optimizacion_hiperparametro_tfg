@@ -1,6 +1,7 @@
-from typing import Iterable
+from typing import Iterable, Optional
 
 from hyperparam_manager.hyperparam_manager import HyperparamManager
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
 from individual.individual_with_context import IndividualWithContext
 from individual.peculiar_individual import PeculiarIndividual
 from model.model import Classifier
@@ -52,6 +53,12 @@ class PeculiarIndividualWithContext(PeculiarIndividual, IndividualWithContext):
 
     def has_fitness(self):
         return self.__individual.has_fitness()
+    
+    def hyperparameter_set(self) -> Optional[HyperparameterSet]:
+        return self.__individual.hyperparameter_set()
+
+    def has_hyperparameter_set(self) -> bool:
+        return self.__individual.has_hyperparameter_set()
 
     def __len__(self):
         return self.__len
@@ -94,6 +101,14 @@ class PeculiarIndividualWithContext(PeculiarIndividual, IndividualWithContext):
 
     def append(self, value):
         raise IllegalStateError()
+
+    @property
+    def history_index(self):
+        return getattr(self.__individual, "history_index", None)
+
+    @history_index.setter
+    def history_index(self, value):
+        self.__individual.history_index = value
 
 
 def contextualize(hp: PeculiarIndividual, hp_manager: HyperparamManager) -> PeculiarIndividualWithContext:

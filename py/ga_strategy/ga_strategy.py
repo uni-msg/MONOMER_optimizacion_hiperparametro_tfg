@@ -1,11 +1,14 @@
 import random
 from abc import ABC, abstractmethod
 from collections.abc import Iterable
-from typing import Callable
+from typing import Callable, Optional
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 from evaluator.workers_pool_evaluator import WorkersPoolEvaluator
 from ga_components.sorter.sorting_strategy import SortingStrategy
 from individual.peculiar_individual import PeculiarIndividual
 from objective.social_objective import PersonalObjective
+from deap.tools import History
 
 
 class GAStrategy(ABC):
@@ -15,16 +18,19 @@ class GAStrategy(ABC):
     __mating_prob: float
     __mutating_prob: float
     __use_clone_repurposing: bool
+    __hyperparameter_set_factory: Optional[HyperparameterSetFactory]
 
     def __init__(self, evaluator: WorkersPoolEvaluator, objectives: Iterable[PersonalObjective],
                  mating_prob: float, mutation_frequency: float, sorting_strategy: SortingStrategy,
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         self.__evaluator = evaluator
         self.__mating_prob = mating_prob
         self.__mutating_prob = mutation_frequency
         self.__objectives = list(objectives)
         self.__sorting_strategy = sorting_strategy
         self.__use_clone_repurposing = use_clone_repurposing
+        self.__hyperparameter_set_factory = hyperparameter_set_factory
 
     @abstractmethod
     def create_individual(self) -> PeculiarIndividual:
@@ -51,7 +57,7 @@ class GAStrategy(ABC):
     def tournament(self, pop: [PeculiarIndividual], k: int) -> [PeculiarIndividual]:
         return self.__sorting_strategy.tournament(pop=pop, k=k)
 
-    def clone_repurposing(self, pop: [PeculiarIndividual]) -> [PeculiarIndividual]:
+    def clone_repurposing(self, pop: [PeculiarIndividual], history: Optional[History] = None) -> [PeculiarIndividual]:
         """ Passed pop might be changed in place."""
         if self.__use_clone_repurposing:
             hp_man = self.hp_manager()
@@ -59,7 +65,11 @@ class GAStrategy(ABC):
             for i in range(len(pop)):
                 ind_key = hp_man.to_tuple(hyperparams=pop[i])
                 if ind_key in uniques:
-                    pop[i] = self.create_individual()
+                    new_individual = self.create_individual()
+                    pop[i] = new_individual
+                    #Se registra el nuevo individuo
+                    if history is not None:
+                        history.update([new_individual])
                 else:
                     uniques.add(ind_key)
         return pop
@@ -90,6 +100,26 @@ class GAStrategy(ABC):
 
     def select(self, pop: [PeculiarIndividual], pop_size: int) -> [PeculiarIndividual]:
         return self.__sorting_strategy.select(pop=pop, pop_size=pop_size)
+
+    def hyperparameter_set_factory(self) -> Optional[HyperparameterSetFactory]:
+        return self.__hyperparameter_set_factory
+
+    def create_hyperparameters(self) -> Optional[HyperparameterSet]:
+        """
+        Segun la fabrica de conjunto de hiperparametros
+        Crea e inicializa de manera al azar el conjunto de hiperparametros a evolucionar
+        """
+        #Recoge la fabrica
+        factory = self.hyperparameter_set_factory()
+
+        #Si no hay fabrica, no hay evolucion de HP
+        if factory is None:
+            return None
+
+        #Crea e inicializa el conjunto y lo añade al individuo
+        hyperparameter_set = factory.create()
+        hyperparameter_set.random_initialize()
+        return hyperparameter_set
 
 
 def one_with_prob(prob):

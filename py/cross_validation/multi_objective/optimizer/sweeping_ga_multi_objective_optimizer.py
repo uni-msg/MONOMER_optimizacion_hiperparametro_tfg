@@ -60,6 +60,7 @@ class SweepingGAMultiObjectiveOptimizer(MultiObjectiveOptimizerAcceptingFeatureI
         self.__hof_factories = hof_factories
         self.__mutation = mutation
         self.__use_clone_repurposing = use_clone_repurposing
+
         self.__nick = nick_paste(parts=[self.__optimizer_type.nick(),
                                         self.__folds_creator.nick(),
                                         pop_nick(pop_size=pop_size),

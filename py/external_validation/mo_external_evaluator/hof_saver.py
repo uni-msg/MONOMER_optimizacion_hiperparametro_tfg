@@ -1,6 +1,6 @@
 from typing import Sequence
-from cross_validation.multi_objective.cross_evaluator.hof_saver import save_hof_features, save_hof_fitnesses, \
-    SOLUTION_FEATURES_STR, SOLUTION_FEATURES_EXTENSION
+from cross_validation.multi_objective.cross_evaluator.hof_saver import SOLUTION_HYPERPARAMETERS_EXTENSION, SOLUTION_HYPERPARAMETERS_STR, save_hof_features, save_hof_fitnesses, \
+    SOLUTION_FEATURES_STR, SOLUTION_FEATURES_EXTENSION, save_hof_hyperparameters
 from cross_validation.multi_objective.optimizer.multi_objective_optimizer import MultiObjectiveOptimizerResult
 from external_validation.mo_external_evaluator.mo_external_evaluator import MultiObjectiveExternalEvaluator
 from input_data.input_data import InputData
@@ -9,6 +9,7 @@ from util.printer.printer import Printer
 
 
 SOLUTION_FEATURES_EXTERNAL = SOLUTION_FEATURES_STR + SOLUTION_FEATURES_EXTENSION
+SOLUTION_HYPERPARAMETERS_EXTERNAL = SOLUTION_HYPERPARAMETERS_STR + SOLUTION_HYPERPARAMETERS_EXTENSION
 TRAIN_STR = "internal"
 EXTERNAL_STR = "external"
 INTERNAL_CV_STR = "internal_cv"
@@ -28,6 +29,12 @@ class ExternalHofsSaver(MultiObjectiveExternalEvaluator):
             path_saves=path_saves,
             file_name=SOLUTION_FEATURES_EXTERNAL,
             feature_names=feature_names,
+            hof=optimizer_result)
+
+        # Almacenar datos de HPE de las soluciones del HOFS externo
+        save_hof_hyperparameters(
+            path_saves=path_saves,
+            file_name=SOLUTION_HYPERPARAMETERS_EXTERNAL,
             hof=optimizer_result)
 
         x_train = input_data.x().as_cached()

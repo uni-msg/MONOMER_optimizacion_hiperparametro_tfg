@@ -1,7 +1,9 @@
 from abc import ABC, abstractmethod
 from collections.abc import Iterable, Sequence
-from typing import NamedTuple, List
+from typing import NamedTuple, List, Optional
 
+from hyperparameter_evolution.hyperparameter_set import HyperparameterSet
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 import numpy
 from deap import base
 from deap import tools
@@ -9,6 +11,7 @@ from deap.tools import History, Logbook
 
 from evaluator.individual_updater import IndividualUpdater
 from ga_components.sorter.sorting_strategy import SortingStrategy
+from ga_components.ga_evolution_history import GAEvolutionHistory
 from ga_runner.explored_features import ExploredFeatures
 from ga_runner.progress_observer import ProgressObserver
 from hall_of_fame.hall_of_fame import HallOfFame
@@ -34,33 +37,39 @@ class GAResult(NamedTuple):
     hofs: Sequence[Hofers]  # TODO Possibly not needed since hofs are passed from outside.
     history: History
     feature_counts: Sequence[Sequence[int]]
-
+    hyperparameter_counts: Optional[list[list[HyperparameterSet]]]
 
 class GARunner(ABC):
     __objectives: Iterable[PersonalObjective]
     __sorting_strategy: SortingStrategy
     __use_clone_repurposing: bool
+    __hyperparameter_set_factory: Optional[HyperparameterSetFactory]  
 
     def __init__(self, pop_size, mating_prob, mutation_frequency,
                  objectives: Iterable[PersonalObjective],
                  sorting_strategy: SortingStrategy,
-                 use_clone_repurposing: bool = False):
+                 use_clone_repurposing: bool = False,
+                 hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         self.__pop_size = pop_size
         self.__mating_prob = mating_prob
         self.__mutation_frequency = mutation_frequency
         self.__objectives = objectives
         self.__sorting_strategy = sorting_strategy
         self.__use_clone_repurposing = use_clone_repurposing
+        self.__hyperparameter_set_factory = hyperparameter_set_factory
 
     def run(self, input_data: InputData, folds_list, n_gen: int,
             feature_importance: Sequence[Distribution] = None,
             seed=2547, n_workers=1,
             return_history=False,
             return_feature_counts=False,
+            return_hyperparameter_counts=False,
             initial_pop=None,
             workers_printer: Printer = UnbufferedOutPrinter(),
             hofs: Iterable[HallOfFame] = (),
-            progress_observers: [ProgressObserver] = ()) -> GAResult:
+            progress_observers: [ProgressObserver] = (),
+            ga_evolution_history: GAEvolutionHistory = None,
+            history_every_n_gen: int = 1) -> GAResult:
         """We pass hofs instead of hofs factories so that a hof can be used for more than one run."""
         ga_strategy = self._create_ga_strategy(
             input_data=input_data, folds_list=folds_list, n_workers=n_workers,
@@ -70,7 +79,10 @@ class GARunner(ABC):
             ga_strategy=ga_strategy, pop_size=self.pop_size(), n_gen=n_gen,
             seed=seed, return_history=return_history, initial_pop=initial_pop,
             return_feature_counts=return_feature_counts,
-            hofs=hofs, progress_observers=progress_observers)
+            return_hyperparameter_counts=return_hyperparameter_counts,
+            hofs=hofs, progress_observers=progress_observers,
+            ga_evolution_history=ga_evolution_history,
+            history_every_n_gen=history_every_n_gen)
 
     def pop_size(self):
         return self.__pop_size
@@ -86,6 +98,9 @@ class GARunner(ABC):
 
     def use_clone_repurposing(self) -> bool:
         return self.__use_clone_repurposing
+
+    def hyperparameter_set_factory(self) -> Optional[HyperparameterSetFactory]:
+        return self.__hyperparameter_set_factory
 
     @abstractmethod
     def _create_ga_strategy(self, input_data: InputData, folds_list, n_workers,
@@ -125,11 +140,23 @@ def pop_short_print(pop):
     for i in pop:
         print(i.fitness)
 
+def hyperparameters_of_individuals(individuals) -> list[HyperparameterSet]:
+    """
+    Funcion auxiliar para el conteo de hiperparametros
+    """
+    return [
+        individual.hyperparameter_set().clone()
+        for individual in individuals
+        if individual.has_hyperparameter_set()
+    ]
+
 
 # If initial pop is passed pop size is ignored.
 def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_history=False,
-           initial_pop=None, return_feature_counts=False, hofs: Iterable[HallOfFame] = (),
-           progress_observers: [ProgressObserver] = ()) -> GAResult:
+           initial_pop=None, return_feature_counts=False, return_hyperparameter_counts=False, hofs: Iterable[HallOfFame] = (),
+           progress_observers: [ProgressObserver] = () ,
+           ga_evolution_history: GAEvolutionHistory = None,
+           history_every_n_gen: int = 1) -> GAResult:
     """Explored features are computed before the select.
     Feature counts are computed after the select."""
 
@@ -174,6 +201,7 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         pop = initial_pop
         initial_pop = None  # Help gc
 
+
     evaluator = ga_strategy.evaluator()
     hp_manager = evaluator.hp_manager()
     # cross_evaluator.add_stat_creator(StatsFromConfusion())
@@ -191,13 +219,18 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
     for h in hofs:
         h.update(contextualized)
 
+    history = None
+    #Registro de Evolucion GA total (History DEAP + GAEvolutionHistory)
     if return_history:
         history = History()
         toolbox.decorate("mate", history.decorator)
         toolbox.decorate("mutate", history.decorator)
         history.update(pop)
-    else:
-        history = None
+        
+    #Pareto
+    for h in hofs:
+        if h.nick() == "Pareto" and ga_evolution_history is not None:
+            ga_evolution_history.add_generation(generation=0,population=h.peek())
 
     feat_count = sum_of_individuals(individuals=pop, hp_manager=hp_manager)
     # Compile statistics about the population
@@ -211,6 +244,11 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         feature_counts = [feat_count]
     else:
         feature_counts = None
+
+    #Conteo de hiperparametros
+    hyperparameter_counts = None
+    if return_hyperparameter_counts:
+        hyperparameter_counts = [hyperparameters_of_individuals(pop)]
 
     for o in progress_observers:
         o.notify_initial_pop(pop)
@@ -231,14 +269,21 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
         pop = pop + offspring
 
-        pop = ga_strategy.clone_repurposing(pop=pop)
+        #Adaptacion clone repurposing para registrar nuevos individuos en el history
+        pop = ga_strategy.clone_repurposing(pop=pop, history=history)
 
         invalid_ind = individual_updater.eval_invalid(pop=pop)  # Evaluate the individuals with an invalid fitness
         contextualized = contextualize_all(invalid_ind, hp_manager)
         gen_feats_list = union(contextualized)
         explored.update([gen_feats_list])
+        
+        if return_history :
+            history.update(pop)
+
         for h in hofs:
             h.update(contextualized)
+            if (h.nick() == "Pareto" and ga_evolution_history is not None and (gen % history_every_n_gen == 0 or gen == n_gen - 1)):
+                ga_evolution_history.add_generation( generation=gen, population=h.peek())
 
         pop = ga_strategy.sorting_strategy_before_selection(individuals=pop)
 
@@ -262,6 +307,10 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
         if return_feature_counts:
             feature_counts.append(sum_of_individuals(individuals=pop, hp_manager=hp_manager))
 
+        #Añadimos hiperparametros de la gen
+        if return_hyperparameter_counts:
+            hyperparameter_counts.append(hyperparameters_of_individuals(pop))
+
         for po in progress_observers:
             po.notify_generation_end(gen=gen)
 
@@ -269,5 +318,10 @@ def run_ga(ga_strategy: GAStrategy, pop_size, n_gen: int, seed=2547, return_hist
 
     res_hofs = [h.hofers() for h in hofs]
 
-    return GAResult(pop=pop, hp_manager=hp_manager, logbook=logbook, history=history,
-                    feature_counts=feature_counts, hofs=res_hofs)
+    return GAResult(pop=pop, 
+                    hp_manager=hp_manager, 
+                    logbook=logbook, 
+                    history=history,
+                    feature_counts=feature_counts,
+                    hyperparameter_counts=hyperparameter_counts, 
+                    hofs=res_hofs)

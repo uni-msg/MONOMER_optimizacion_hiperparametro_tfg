@@ -1,0 +1,225 @@
+nohup: no se tendrá en cuenta la entrada
+CPUs detected in the system: 64
+Parsing setup file setups/luad_lusc/hp/500x1000/rf/nsga2_chs.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
+Running 1 setups in parallel with 64 workers each.
+Total workers: 64
+/home/ugmd/Manuel_TFG/MONOMER_optimizacion_hiperparametro_tfg/py/plots/plot_utils.py:148: UserWarning: *c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+  ax.scatter(x, y, c=color, s=point_size)
+Starting setup setups/luad_lusc/hp/500x1000/rf/nsga2_chs.ini with 64 workers
+Date = 2026-09-08
+Machine = arcohtr04
+Workers = 64
+Setup = setups/luad_lusc/hp/500x1000/rf/nsga2_chs.ini
+Recursion limit = 100000
+
+LOADING LUAD_LUSC COHORT
+
+LOADING VIEWS
+Input directory = ./luad_lusc/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOME
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20202
+
+PLOTTING VIEWS
+Directory for plots = ./luad_lusc/input/plots
+Plotting view mrna
+
+LOADED 408 SAMPLES.
+Objectives = [expression_subtype random forest balanced accuracy, leanness]
+Factory HPE = ForestHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/luad_lusc/hp/500x1000/rf/nsga2_chs.ini
+Destination folder :  = ./luad_lusc/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+
+RUNNING HYPERPARAMETER EVOLUTION NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (3-FOLDS CREATOR, POP 500, UNIFORM(0, 50), GEN 1000, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 SYMMETRIC FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
+Machine = arcohtr04
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)
+Inner optimizer:
+Name = Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 500, uniform(0, 50), gen 1000, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip)
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm
+Population size = 500
+Number of features in initial individuals = uniform(0, 50)
+Number of generations = 1000
+Crossover probability = 0.33
+Mutation frequency = 1.0
+Mutation operator = symmetric flip
+Sorting strategy = NSGA2 with crowding distance with Clone Index full elitist and clone repurposing
+Hyperparameter evolution  = ForestHyperparameterSetFactory
+Objectives = [expression_subtype random forest balanced accuracy, leanness]
+Hall of fame factories = [Pareto front factory, Best 50 by sum factory]
+Folds creator = 3-folds creator
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance lasso
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+
+Fold 0> OPTIMIZING ON FOLD NUMBER 0
+Fold 0> Number of workers = 12
+
+Fold 1> OPTIMIZING ON FOLD NUMBER 1
+Fold 1> Number of workers = 12
+
+Fold 2> OPTIMIZING ON FOLD NUMBER 2
+Fold 2> Number of workers = 12
+
+Fold 3> OPTIMIZING ON FOLD NUMBER 3
+Fold 3> Number of workers = 12
+
+Fold 4> OPTIMIZING ON FOLD NUMBER 4
+Fold 4> Number of workers = 12
+
+Fold 0> COMPUTING LOCAL ACTIVE FEATURES
+Fold 0> Computing active features for target column 0_expression_subtype
+Fold 0> Features before filter: 20202
+
+Fold 1> COMPUTING LOCAL ACTIVE FEATURES
+Fold 1> Computing active features for target column 0_expression_subtype
+Fold 1> Features before filter: 20202
+
+Fold 2> COMPUTING LOCAL ACTIVE FEATURES
+Fold 2> Computing active features for target column 0_expression_subtype
+Fold 2> Features before filter: 20202
+
+Fold 3> COMPUTING LOCAL ACTIVE FEATURES
+Fold 3> Computing active features for target column 0_expression_subtype
+Fold 3> Features before filter: 20202
+
+Fold 4> COMPUTING LOCAL ACTIVE FEATURES
+Fold 4> Computing active features for target column 0_expression_subtype
+Fold 4> Features before filter: 20202
+Fold 0> Features after any na, zero variance, and anova filters: 17588
+Fold 0> Features active in view: 17588
+
+Fold 0> CREATING INNER FOLDS
+
+Fold 0> RUNNING GENETIC ALGORITHM
+Fold 1> Features after any na, zero variance, and anova filters: 17891
+Fold 1> Features active in view: 17891
+
+Fold 1> CREATING INNER FOLDS
+
+Fold 1> RUNNING GENETIC ALGORITHM
+Fold 2> Features after any na, zero variance, and anova filters: 17798
+Fold 2> Features active in view: 17798
+
+Fold 2> CREATING INNER FOLDS
+
+Fold 2> RUNNING GENETIC ALGORITHM
+Fold 3> Features after any na, zero variance, and anova filters: 17566
+Fold 3> Features active in view: 17566
+
+Fold 3> CREATING INNER FOLDS
+
+Fold 3> RUNNING GENETIC ALGORITHM
+Fold 4> Features after any na, zero variance, and anova filters: 17878
+Fold 4> Features active in view: 17878
+
+Fold 4> CREATING INNER FOLDS
+
+Fold 4> RUNNING GENETIC ALGORITHM
+Fold 0> Generations completed = 19
+Fold 1> Generations completed = 19
+Fold 3> Generations completed = 20
+Fold 2> Generations completed = 20
+Fold 4> Generations completed = 20
+Fold 0> Generations completed = 34
+Fold 1> Generations completed = 35
+Fold 3> Generations completed = 37
+Fold 4> Generations completed = 38
+Fold 2> Generations completed = 37
+Fold 0> Generations completed = 48
+Fold 3> Generations completed = 53
+Fold 4> Generations completed = 54
+Fold 1> Generations completed = 50
+Fold 2> Generations completed = 52
+Fold 3> Generations completed = 67
+Fold 0> Generations completed = 61
+Fold 4> Generations completed = 68
+Fold 1> Generations completed = 65
+Fold 2> Generations completed = 66
+Fold 0> Generations completed = 73
+Fold 3> Generations completed = 81
+Fold 1> Generations completed = 79
+Fold 4> Generations completed = 81
+Fold 2> Generations completed = 78
+Fold 0> Generations completed = 83
+Fold 3> Generations completed = 94
+Fold 4> Generations completed = 94
+Fold 1> Generations completed = 93
+Fold 2> Generations completed = 90
+Fold 0> Generations completed = 95
+Fold 3> Generations completed = 108
+Fold 4> Generations completed = 107
+Fold 2> Generations completed = 101
+Fold 1> Generations completed = 107
+Fold 3> Generations completed = 121
+Fold 4> Generations completed = 120
+Fold 0> Generations completed = 107
+Fold 2> Generations completed = 113
+Fold 1> Generations completed = 119
+Fold 4> Generations completed = 133
+Fold 3> Generations completed = 134
+Fold 0> Generations completed = 118
+Fold 2> Generations completed = 125
+Fold 1> Generations completed = 130
+Fold 3> Generations completed = 147
+Fold 4> Generations completed = 146
+Fold 0> Generations completed = 128
+Fold 2> Generations completed = 135
+Fold 1> Generations completed = 142
+Fold 3> Generations completed = 160
+Fold 4> Generations completed = 157
+Fold 0> Generations completed = 139
+Fold 2> Generations completed = 146
+Fold 1> Generations completed = 154
+Fold 3> Generations completed = 173
+Fold 4> Generations completed = 170
+Fold 0> Generations completed = 150
+Fold 1> Generations completed = 164
+Fold 2> Generations completed = 157
+Fold 3> Generations completed = 186
+Fold 4> Generations completed = 183
+Fold 0> Generations completed = 161
+Fold 2> Generations completed = 166
+Fold 1> Generations completed = 176
+Fold 3> Generations completed = 199
+Fold 4> Generations completed = 196
+Fold 0> Generations completed = 171
+Fold 1> Generations completed = 186
+Fold 2> Generations completed = 176
+Fold 3> Generations completed = 211
+Fold 0> Generations completed = 182
+Fold 4> Generations completed = 209
+Fold 1> Generations completed = 196
+Fold 2> Generations completed = 187

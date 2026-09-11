@@ -1,0 +1,27 @@
+
+OPTIMIZING FINAL MODEL ON WHOLE DATASET
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_PanKidney
+Features before filter: 20227
+Features after any na, zero variance, and anova filters: 18853
+Features active in view: 18853
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Generations completed = 26
+Generations completed = 53
+Generations completed = 80
+Generations completed = 106
+Generations completed = 132
+Generations completed = 158
+Generations completed = 184
+Generations completed = 210
+Generations completed = 235
+Generations completed = 260
+Generations completed = 284
+Generations completed = 308
+Generations completed = 332
+Generations completed = 356
+Generations completed = 380

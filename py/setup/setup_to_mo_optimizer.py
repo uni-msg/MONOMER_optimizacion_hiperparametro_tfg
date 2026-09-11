@@ -1,3 +1,4 @@
+
 from cross_validation.multi_objective.optimizer.abc.abc_mo_optimizer import AbcMoOptimizer
 from cross_validation.multi_objective.optimizer.composite_mo_optimizer_by_fold import \
     CompositeMultiObjectiveOptimizerByFold
@@ -30,6 +31,7 @@ from setup.ga_mo_optimizer_setup import big_nsga_setup, big_sweeping_ga_mo_optim
 from setup.parse_feature_importance import parse_feature_importance_by_fold
 from setup.parse_initial_features import parse_initial_features
 from setup.parse_objectives import parse_objectives
+from setup.parse_hyperparameter_set_factory import parse_hyperparameter_set_factory
 from setup.setup_utils import load_input_data
 from util.printer.printer import Printer
 from util.recursive_feature_importance import MultiOutcomeRecursiveFeatureImportanceLasso
@@ -48,6 +50,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
     views_to_use = setup.views_to_use()
     pop = setup.pop()
     inner_n_folds = setup.inner_n_folds()
+
+    use_hyperparameter_evolution = setup.use_hyperparameter_evolution() # Variable con la condicion de uso de evolucion de hiperparametros
 
     selection_str = setup.selection()
     if selection_str == ElitistSelection().name():
@@ -77,6 +81,13 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
 
     n_objectives = len(objectives)
 
+    # HPE - Parseamos del objetivo el tipo de algoritmo de clasificacion para recoger la fabrica de conjuntos de hiperparametros o None
+    hyperparameter_set_factory = parse_hyperparameter_set_factory(
+        model_str=setup.objectives()[0][1],
+        logistic_max_iter=setup.logistic_max_iter(),
+        use_hyperparameter_evolution=use_hyperparameter_evolution)
+    printer.print_variable("Factory HPE", hyperparameter_set_factory)
+        
     if sorting_strategy_str == SOCIAL_SPACE_NAME:
         sorting_strategy = SortingStrategySocial(selection=selection)
     elif sorting_strategy_str == CROWDING_DISTANCE_NAME:
@@ -168,7 +179,7 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
             hof_factories=DEFAULT_HOFS)
     else:
         if use_big_setup:
-            if run_nsga:
+            if run_nsga: # HPE sobre la NSGA
                 mo_optimizer = big_nsga_setup(
                     objectives=objectives,
                     pop_size=pop,
@@ -178,7 +189,9 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     sorting_strategy=sorting_strategy,
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing())
+                    use_clone_repurposing=setup.use_clone_repurposing(),
+                    hyperparameter_set_factory=hyperparameter_set_factory #Inclusion de evolucion de hiperparametros GA
+                    )
             elif run_sweeping_ga:
                 mo_optimizer = big_sweeping_ga_mo_optimizer_setup(
                     objectives=objectives, sweeping_strategy=SweepingStrategy(generations),
@@ -189,11 +202,12 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     printer=printer,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing())
+                    use_clone_repurposing=setup.use_clone_repurposing()
+                    )
             else:
                 raise ValueError("Unknown MVMO algorithm.")
         else:
-            if run_nsga:
+            if run_nsga: # HPE sobre la NSGA
                 mo_optimizer = small_nsga_setup(
                     objectives=objectives,
                     pop_size=pop,
@@ -203,7 +217,9 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     sorting_strategy=sorting_strategy,
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
-                    use_clone_repurposing=setup.use_clone_repurposing())
+                    use_clone_repurposing=setup.use_clone_repurposing(),
+                    hyperparameter_set_factory=hyperparameter_set_factory #Inclusion de evolucion de hiperparametros GA
+                    )
             elif run_sweeping_ga:
                 mo_optimizer = small_sweeping_ga_mo_optimizer_setup(
                     objectives=objectives,
@@ -215,7 +231,8 @@ def setup_to_mo_optimizer(setup: EvaluationSetup, printer: Printer
                     inner_n_folds=inner_n_folds,
                     mutation=bitlist_mutation,
                     use_clone_repurposing=setup.use_clone_repurposing(),
-                    printer=printer)
+                    printer=printer
+                    )
             else:
                 raise ValueError("Unknown MVMO algorithm.")
     if isinstance(mo_optimizer, MultiObjectiveOptimizerAcceptingFeatureImportance):

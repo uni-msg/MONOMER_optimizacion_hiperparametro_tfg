@@ -1,0 +1,1014 @@
+nohup: no se tendrá en cuenta la entrada
+/home/ugmd/Manuel_TFG/MONOMER_optimizacion_hiperparametro_tfg/py/plots/plot_utils.py:148: UserWarning: *c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+  ax.scatter(x, y, c=color, s=point_size)
+Writing main log to file temp/log17.txt
+Date = 2026-09-06
+Machine = arcohtr04
+CPUs detected in the system = 128
+Recursion limit = 100000
+Parsing setup file setups/brca/hp/test_small_lr.ini
+Parsing setup file setups/brca/hp/test_small_nb.ini
+Parsing setup file setups/brca/hp/test_small_rf.ini
+Parsing setup file setups/brca/hp/test_small_svm.ini
+Parsing setup file setups/luad_lusc/hp/test_small_lr.ini
+Parsing setup file setups/luad_lusc/hp/test_small_nb.ini
+Parsing setup file setups/luad_lusc/hp/test_small_rf.ini
+Parsing setup file setups/luad_lusc/hp/test_small_svm.ini
+
+RUNNING OPTIMIZERS SEQUENTIALLY ACCORDING TO SETUPS
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 logistic classifier (max_iter=100) balanced accuracy, leanness]
+Factory HPE = LogisticHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 2 stratified folds.
+Number of outer folds = 2
+Copying config file to run directory
+Copy source = setups/brca/hp/test_small_lr.ini
+Destination folder :  = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+
+RUNNING HYPERPARAMETER EVOLUTION NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (3-FOLDS CREATOR, POP 200, UNIFORM(0, 50), GEN 5, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 SYMMETRIC FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
+Machine = arcohtr04
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)
+Inner optimizer:
+Name = Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 200, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip)
+Nick = HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm
+Population size = 200
+Number of features in initial individuals = uniform(0, 50)
+Number of generations = 5
+Crossover probability = 0.33
+Mutation frequency = 1.0
+Mutation operator = symmetric flip
+Sorting strategy = NSGA2 with crowding distance with Clone Index full elitist and clone repurposing
+Hyperparameter evolution  = LogisticHyperparameterSetFactory
+Objectives = [Pam50 logistic classifier (max_iter=100) balanced accuracy, leanness]
+Hall of fame factories = [Pareto front factory, Best 50 by sum factory]
+Folds creator = 3-folds creator
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance lasso
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+
+Fold 0> OPTIMIZING ON FOLD NUMBER 0
+Fold 0> Number of workers = 64
+
+Fold 1> OPTIMIZING ON FOLD NUMBER 1
+Fold 1> Number of workers = 64
+
+Fold 1> COMPUTING LOCAL ACTIVE FEATURES
+Fold 1> Computing active features for target column 0_Pam50
+Fold 1> Features before filter: 20203
+
+Fold 0> COMPUTING LOCAL ACTIVE FEATURES
+Fold 0> Computing active features for target column 0_Pam50
+Fold 0> Features before filter: 20203
+Fold 1> Features after any na, zero variance, and anova filters: 16317
+Fold 1> Features active in view: 16317
+
+Fold 1> CREATING INNER FOLDS
+
+Fold 1> RUNNING GENETIC ALGORITHM
+Fold 0> Features after any na, zero variance, and anova filters: 16962
+Fold 0> Features active in view: 16962
+
+Fold 0> CREATING INNER FOLDS
+
+Fold 0> RUNNING GENETIC ALGORITHM
+Fold 0>
+   	     	         	        	Pam50 logistic classifier (max_iter=100) balanced accuracy	                    leanness                    
+   	     	         	        	--------------------------------------------------------  	------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std                            	min      	avg      	max	std     
+0  	200  	611      	611     	0.198571	0.462584	0.746762	0.188357                       	0.0196078	0.0935596	1  	0.158769
+1  	203  	692      	725     	0.2     	0.529014	0.752404	0.164568                       	0.0196078	0.108921 	1  	0.135577
+2  	200  	698      	842     	0.2     	0.558184	0.754868	0.151814                       	0.0196078	0.108905 	1  	0.133758
+3  	200  	695      	940     	0.2     	0.572335	0.754868	0.14664                        	0.0196078	0.108961 	1  	0.127985
+4  	200  	695      	1046    	0.2     	0.583537	0.764295	0.141176                       	0.0192308	0.1098   	1  	0.127228
+Fold 0> Optimization on fold finished in 00-00:03:29
+
+Fold 0> FEATURE SETS SELECTED
+
+Fold 0> PARETO FRONT
+Fold 0> Number of solutions = 14
+Fold 0> (np.float64(0.7642945308863153), 0.021739130434782608) 45 features: [0_AQP10, 0_ARSF, 0_BTNL2, 0_C10orf88, 0_C11orf86, 0_C11orf88, 0_C14orf145, 0_C17orf47, 0_C3orf65, 0_CTSL2, 0_CXorf61, 0_DCLK3, 0_DGAT2L6, 0_EFCAB3, 0_ERBB2, 0_FADS1, 0_FAM46D, 0_FIGLA, 0_FLJ40852, 0_GALR2, 0_LOC100128977, 0_LOC647288, 0_LRRC55, 0_MRPS30, 0_MTCP1, 0_NEUROD4, 0_OR2B11, 0_PCCB, 0_PGAP3, 0_PLA2G2C, 0_PPP1R14C, 0_PPP1R1B, 0_PRDM13, 0_RFX8, 0_RNF8, 0_SCRT1, 0_SNTN, 0_STRN3, 0_SV2C, 0_TFCP2L1, 0_TMEM59L, 0_TSPAN19, 0_TULP1, 0_TULP2, 0_WDR67] Hiperparameter set: [C = 2.6423785749076734, tol = 0.003893136594187057, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.7626572528883184), 0.03125) 31 features: [0_APOO, 0_C17orf98, 0_C19orf40, 0_CYP1A1, 0_EHD4, 0_ESR1, 0_FOXC1, 0_GML, 0_GPD1L, 0_GRB7, 0_HEATR7B2, 0_HHLA2, 0_KLK2, 0_LOC154449, 0_MRPS30, 0_NUDT2, 0_OLFM3, 0_OR2B11, 0_PARP2, 0_PCCB, 0_PPIL5, 0_PVRL4, 0_RARA, 0_RFPL1, 0_RFX8, 0_SERPINA3, 0_TFCP2L1, 0_TMEM59L, 0_TRIM13, 0_TSPAN19, 0_WDR67] Hiperparameter set: [C = 1.4614450138175172, tol = 3.0243638958291924e-05, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.7282949399765831), 0.03225806451612903) 30 features: [0_ADCYAP1, 0_BTG4, 0_C19orf40, 0_CYP1A1, 0_CYP2C9, 0_DAD1, 0_EHD4, 0_ESR1, 0_FDFT1, 0_FOXC1, 0_GPR89B, 0_HHLA2, 0_LEUTX, 0_LOC154449, 0_MAGEB3, 0_MMP10, 0_MRPS30, 0_OLFM3, 0_OR10A6, 0_PARP2, 0_PDCD10, 0_PNPT1, 0_PRG3, 0_PSRC1, 0_RMRP, 0_RNASE3, 0_SFT2D3, 0_TCF19, 0_TCF25, 0_TMEM59L] Hiperparameter set: [C = 3.376422679641306, tol = 0.0008366882388693292, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.7199592320388213), 0.037037037037037035) 26 features: [0_ADCYAP1, 0_BAAT, 0_C1orf174, 0_C3orf38, 0_C3orf65, 0_C4orf50, 0_C6orf203, 0_CPT1A, 0_DEPDC4, 0_FOXC1, 0_GLYCAM1, 0_KRT16, 0_LOC285375, 0_LRRTM1, 0_MAPK7, 0_NANOG, 0_NPAS2, 0_OR2W5, 0_PBOV1, 0_PSKH2, 0_RARA, 0_SPRYD5, 0_TMEM14A, 0_TMEM59L, 0_TNNC1, 0_WDR67] Hiperparameter set: [C = 6.2747357954360625, tol = 6.121679062932932e-05, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.7177536712324903), 0.043478260869565216) 22 features: [0_AURKAPS1, 0_BTG4, 0_C19orf40, 0_CWC22, 0_CYP1A1, 0_CYP2C9, 0_DAD1, 0_EHD4, 0_ESR1, 0_FOXC1, 0_GPR89B, 0_HSPA1B, 0_LEUTX, 0_MAGEB3, 0_MMP10, 0_OLFM3, 0_PDCD10, 0_PNPT1, 0_SFT2D3, 0_SLC2A7, 0_TCF19, 0_TMEM59L] Hiperparameter set: [C = 2.700459736790958, tol = 0.0008381568103021397, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.7077763122628334), 0.07142857142857142) 13 features: [0_C19orf40, 0_CYP2C9, 0_DAD1, 0_EHD4, 0_ESR1, 0_FOXC1, 0_HSPA1B, 0_LEUTX, 0_MMP10, 0_OLFM3, 0_PDCD10, 0_TCF19, 0_TMEM59L] Hiperparameter set: [C = 2.700459736790958, tol = 5.857677890908428e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.6865501699840596), 0.07692307692307693) 12 features: [0_C19orf40, 0_CYP2C9, 0_EHD4, 0_ESR1, 0_FOXC1, 0_HSPA1B, 0_LEUTX, 0_MMP10, 0_OLFM3, 0_PDCD10, 0_TCF19, 0_TMEM59L] Hiperparameter set: [C = 2.8680888490496166, tol = 5.857677890908428e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.6049042869838762), 0.1) 9 features: [0_ASCL3, 0_BTNL2, 0_EBAG9, 0_GLRA4, 0_GRB7, 0_KLHL1, 0_MLPH, 0_SV2C, 0_TCF19] Hiperparameter set: [C = 3.7296986445065885, tol = 0.003744889500551226, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.5350816064551622), 0.125) 7 features: [0_ASCL4, 0_CXorf40A, 0_KCNC2, 0_KRT16, 0_MPHOSPH6, 0_OR51I2, 0_RAX] Hiperparameter set: [C = 0.19811295058699363, tol = 0.0012275754379709447, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.5000902819901536), 0.2) 4 features: [0_CXorf40A, 0_KRT16, 0_MPHOSPH6, 0_OR51I2] Hiperparameter set: [C = 0.22506097360389915, tol = 0.0012275754379709447, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.4320561017929439), 0.25) [0_C11orf86, 0_MYLIP, 0_WDR67] Hiperparameter set: [C = 0.13958874406891092, tol = 4.606421613654168e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.42255639097744363), 0.3333333333333333) [0_C11orf86, 0_WDR67] Hiperparameter set: [C = 0.12895190063132736, tol = 0.0001861547532716435, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.34522556390977444), 0.5) [0_HORMAD1] Hiperparameter set: [C = 0.08352245955910395, tol = 3.6727666150537145e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> (np.float64(0.2), 1.0) [] Hiperparameter set: [C = 6.989264458097533, tol = 0.009626106343176597, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Fold 0> Features in hall of fame by prevalence:
+Fold 0> 124 features: [0_TMEM59L, 0_FOXC1, 0_C19orf40, 0_EHD4, 0_ESR1, 0_OLFM3, 0_TCF19, 0_WDR67, 0_CYP2C9, 0_LEUTX, 0_MMP10, 0_PDCD10, 0_C11orf86, 0_CYP1A1, 0_DAD1, 0_HSPA1B, 0_KRT16, 0_MRPS30, 0_ADCYAP1, 0_BTG4, 0_BTNL2, 0_C3orf65, 0_CXorf40A, 0_GPR89B, 0_GRB7, 0_HHLA2, 0_LOC154449, 0_MAGEB3, 0_MPHOSPH6, 0_OR2B11, 0_OR51I2, 0_PARP2, 0_PCCB, 0_PNPT1, 0_RARA, 0_RFX8, 0_SFT2D3, 0_SV2C, 0_TFCP2L1, 0_TSPAN19, 0_APOO, 0_AQP10, 0_ARSF, 0_ASCL3, 0_ASCL4, 0_AURKAPS1, 0_BAAT, 0_C10orf88, 0_C11orf88, 0_C14orf145, 0_C17orf47, 0_C17orf98, 0_C1orf174, 0_C3orf38, 0_C4orf50, 0_C6orf203, 0_CPT1A, 0_CTSL2, 0_CWC22, 0_CXorf61, 0_DCLK3, 0_DEPDC4, 0_DGAT2L6, 0_EBAG9, 0_EFCAB3, 0_ERBB2, 0_FADS1, 0_FAM46D, 0_FDFT1, 0_FIGLA, 0_FLJ40852, 0_GALR2, 0_GLRA4, 0_GLYCAM1, 0_GML, 0_GPD1L, 0_HEATR7B2, 0_HORMAD1, 0_KCNC2, 0_KLHL1, 0_KLK2, 0_LOC100128977, 0_LOC285375, 0_LOC647288, 0_LRRC55, 0_LRRTM1, 0_MAPK7, 0_MLPH, 0_MTCP1, 0_MYLIP, 0_NANOG, 0_NEUROD4, 0_NPAS2, 0_NUDT2, 0_OR10A6, 0_OR2W5, 0_PBOV1, 0_PGAP3, 0_PLA2G2C, 0_PPIL5, 0_PPP1R14C, 0_PPP1R1B, 0_PRDM13, 0_PRG3, 0_PSKH2, 0_PSRC1, 0_PVRL4, 0_RAX, 0_RFPL1, 0_RMRP, 0_RNASE3, 0_RNF8, 0_SCRT1, 0_SERPINA3, 0_SLC2A7, 0_SNTN, 0_SPRYD5, 0_STRN3, 0_TCF25, 0_TMEM14A, 0_TNNC1, 0_TRIM13, 0_TULP1, 0_TULP2]
+
+Fold 0> BEST SUMS WITH SIZE 50
+Fold 0> Number of solutions = 50
+Fold 0> Features in hall of fame by prevalence:
+Fold 0> 257 features: [0_TSPAN19, 0_SV2C, 0_TMEM59L, 0_TFCP2L1, 0_OR2B11, 0_WDR67, 0_BTNL2, 0_PPP1R1B, 0_MTCP1, 0_ARSF, 0_PMAIP1, 0_CDH1, 0_CPA2, 0_FAM9C, 0_CLEC12B, 0_C14orf145, 0_KCNS2, 0_LPA, 0_PRDM13, 0_EFCAB3, 0_KIR3DP1, 0_LOC285375, 0_PCCB, 0_ERBB2, 0_FLJ40852, 0_GPR160, 0_AQP10, 0_C3orf65, 0_CTSL2, 0_LRRC55, 0_RFX8, 0_AR, 0_ATXN7L3, 0_BLVRA, 0_C11orf86, 0_C3orf20, 0_CACNA1A, 0_CDK2, 0_CHEK2, 0_EDARADD, 0_EHD4, 0_ESR1, 0_MRPS30, 0_NANOS1, 0_NUDT2, 0_OR13J1, 0_OR5E1P, 0_PADI1, 0_PPP1R14C, 0_ZNF627, 0_CXorf61, 0_FAM46D, 0_FOXC1, 0_GPR77, 0_KIAA1967, 0_KISS1R, 0_RNF8, 0_SNTN, 0_TRIM67, 0_C10orf88, 0_C11orf88, 0_C17orf47, 0_C1orf187, 0_DCLK3, 0_FADS1, 0_FIGLA, 0_LOC100128977, 0_LOC647288, 0_NEUROD4, 0_RNASE3, 0_SCRT1, 0_SLC9A11, 0_TCF19, 0_TULP1, 0_CES4, 0_DEPDC4, 0_DGAT2L6, 0_GSDMA, 0_MT1B, 0_PGAP3, 0_PLA2G2C, 0_HEATR7B2, 0_MAGEB3, 0_TMEM14A, 0_C19orf40, 0_C1orf94, 0_GLRA4, 0_KRT16, 0_NPAS2, 0_OLFM3, 0_OR51I2, 0_PARP2, 0_PDCD10, 0_PRG3, 0_RARA, 0_RAX, 0_ADCYAP1, 0_C15orf60, 0_CCR9, 0_CST2, 0_CYP2C9, 0_DAD1, 0_DLX6, 0_GCSH, 0_HMGB2, 0_HORMAD1, 0_HSPB3, 0_LEUTX, 0_LOC84740, 0_LRRTM1, 0_MT1DP, 0_PXT1, 0_RFPL1, 0_SCARB1, 0_TNNC1, 0_ZDHHC19, 0_C9orf170, 0_CD5L, 0_CYP1A1, 0_DIO1, 0_ISL2, 0_MMP10, 0_OR7E24, 0_PBOV1, 0_PNPT1, 0_RYBP, 0_UMOD, 0_ABCG1, 0_ACCSL, 0_ANKRD28, 0_BEND5, 0_BTG4, 0_CAV3, 0_DNM1P35, 0_EPHA8, 0_GML, 0_GMNN, 0_GPR89B, 0_GRXCR2, 0_HHLA2, 0_HRNR, 0_IGFL1, 0_KLK2, 0_LOC729668, 0_LRRC27, 0_NAT1, 0_PPIL5, 0_RAP1GDS1, 0_RGS10, 0_RNF133, 0_SERPINA3, 0_SFT2D3, 0_SPATA1, 0_TMEM106C, 0_TRIM13, 0_BAAT, 0_C1orf174, 0_C4orf50, 0_C6orf203, 0_CDRT15P, 0_CFC1B, 0_CPT1A, 0_DOCK3, 0_E2F2, 0_FOLH1, 0_GPD1L, 0_GSTP1, 0_HSPA1B, 0_ISX, 0_KIAA0146, 0_LOC100132724, 0_LOC154449, 0_LOC220594, 0_LYPD5, 0_MAPK7, 0_MYLIP, 0_NANOG, 0_OR10A6, 0_OR2F2, 0_OR2W5, 0_PPIL3, 0_PSKH2, 0_PSRC1, 0_PVRL4, 0_REM2, 0_RGL1, 0_RMRP, 0_SCRG1, 0_SPRYD5, 0_STRN3, 0_TCF25, 0_WNT8A, 0_ANKRD19, 0_CASP5, 0_CDCP2, 0_EHF, 0_FDFT1, 0_GLRA2, 0_GLTPD2, 0_HIST1H2BA, 0_ITGB1BP3, 0_KCNQ1DN, 0_KLHL1, 0_LOC727896, 0_MEMO1, 0_MRGPRX2, 0_NEFL, 0_OR3A1, 0_OR5P3, 0_PCSK2, 0_PPP1R2, 0_PROKR1, 0_PRUNE, 0_SLC2A7, 0_STARD3, 0_SYCP1, 0_THNSL1, 0_TMPO, 0_AMIGO2, 0_APOO, 0_ASCL3, 0_AURKAPS1, 0_BCDIN3D, 0_C17orf98, 0_C3orf38, 0_C4orf45, 0_CASP12, 0_CCND1, 0_CEL, 0_CWC22, 0_FAM122A, 0_FAM125B, 0_FKBP1A, 0_GALR2, 0_GLYCAM1, 0_GOLGA7, 0_GRB7, 0_ICOS, 0_KRT34, 0_LOC220429, 0_LRIT2, 0_MMACHC, 0_MPHOSPH6, 0_MRPL37, 0_OLFML3, 0_OR2A25, 0_PCYOX1L, 0_PEX12, 0_POLL, 0_PRH2, 0_RNF17, 0_SCNN1A, 0_SLPI, 0_TMC8, 0_TULP2, 0_WFDC10A, 0_ZP2]
+Fold 1>
+   	     	         	        	Pam50 logistic classifier (max_iter=100) balanced accuracy	                     leanness                    
+   	     	         	        	--------------------------------------------------------  	-------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std                            	min      	avg      	max	std      
+0  	200  	613      	613     	0.2     	0.45375 	0.735947	0.172494                       	0.0196078	0.0615715	1  	0.0912027
+1  	200  	679      	713     	0.198571	0.517829	0.735947	0.151955                       	0.016129 	0.0981528	1  	0.126415 
+2  	200  	679      	826     	0.198571	0.53695 	0.735947	0.149597                       	0.016129 	0.112647 	1  	0.134626 
+3  	200  	673      	932     	0.2     	0.551754	0.743015	0.143422                       	0.016129 	0.114999 	1  	0.132658 
+4  	200  	667      	1041    	0.2     	0.585544	0.766566	0.131922                       	0.0169492	0.102344 	1  	0.123698 
+Fold 1> Optimization on fold finished in 00-00:03:31
+
+Fold 1> FEATURE SETS SELECTED
+
+Fold 1> PARETO FRONT
+Fold 1> Number of solutions = 22
+Fold 1> Features in hall of fame by prevalence:
+Fold 1> 131 features: [0_C15orf32, 0_C9orf117, 0_FOXC1, 0_LOC100130148, 0_SCEL, 0_TFF3, 0_WDR67, 0_C18orf56, 0_CEP152, 0_CTSL2, 0_ENPP1, 0_FBN3, 0_FBXO5, 0_FLJ35024, 0_LCTL, 0_PARP2, 0_PRSS33, 0_PSPN, 0_SLC25A13, 0_SULT2B1, 0_ATP1B3, 0_CLDN20, 0_CST2, 0_ERBB2, 0_FAM111B, 0_FGF2, 0_FKBP1AP1, 0_GDF5, 0_GPR160, 0_GRB7, 0_GRK7, 0_HAUS4, 0_ISX, 0_LMOD2, 0_LY6G6E, 0_MRGPRX4, 0_MRPS30, 0_NEFL, 0_NEURL1B, 0_NOX3, 0_NXF3, 0_PRMT8, 0_RP1-177G6.2, 0_SERPINA3, 0_SLC25A18, 0_SNW1, 0_SRD5A2, 0_TRIM60, 0_XK, 0_ZIC1, 0_ZNF785, 0_ADSSL1, 0_DEFB1, 0_IDI2, 0_PDZRN3, 0_ALG1L2, 0_APOLD1, 0_CSN1S2A, 0_FADS1, 0_FAM9A, 0_KRT17, 0_KRT5, 0_OR2T4, 0_OTX1, 0_PCSK6, 0_PSKH2, 0_SEMA3B, 0_SLC22A11, 0_TMEM206, 0_TMPRSS6, 0_ACADM, 0_ADAL, 0_C10orf71, 0_C20orf108, 0_C6orf127, 0_C9orf109, 0_CD207, 0_CDC25B, 0_CDKN2A, 0_CKS1B, 0_DLX6, 0_DPP8, 0_DYDC2, 0_FAF1, 0_FAM48B1, 0_FGF21, 0_GABRR2, 0_GMNN, 0_GPR68, 0_GRIN3A, 0_HBBP1, 0_HNRNPH3, 0_IRF2BP2, 0_IRS1, 0_KHDRBS2, 0_KRTAP5-5, 0_LCT, 0_LDHD, 0_LOC100169752, 0_LOC150622, 0_LOC442454, 0_LPO, 0_MGC23270, 0_MKRN3, 0_MRAP2, 0_NPFFR1, 0_OR5P3, 0_OR7E24, 0_ORMDL3, 0_PABPC5, 0_PATL1, 0_PCSK9, 0_PLEKHG4, 0_PLXNA3, 0_RBM46, 0_RNF2, 0_SAMM50, 0_SDSL, 0_SIDT1, 0_SLC14A1, 0_SLC18A1, 0_SPACA4, 0_SPON2, 0_STAC2, 0_TCF19, 0_TEX14, 0_TEX19, 0_USP6, 0_ZNF534, 0_ZNRF2, 0_ZPBP2]
+
+Fold 1> BEST SUMS WITH SIZE 50
+Fold 1> Number of solutions = 50
+Fold 1> Features in hall of fame by prevalence:
+Fold 1> 293 features: [0_C15orf32, 0_C15orf26, 0_FBXO5, 0_PARP2, 0_KRT20, 0_TFF3, 0_NEFL, 0_CEP152, 0_FOXC1, 0_MAPT, 0_GRB7, 0_WDR67, 0_CNGA2, 0_ENPP1, 0_FAM9A, 0_FAM189A2, 0_PDZRN3, 0_PSKH2, 0_SLC25A13, 0_SNORD94, 0_DPY19L2P2, 0_ORMDL3, 0_SLC25A18, 0_C12orf39, 0_C18orf56, 0_C9orf109, 0_FBN3, 0_PLXNB1, 0_DCX, 0_ERBB2, 0_GPR160, 0_GRK7, 0_HAUS4, 0_KIAA1683, 0_NRSN2, 0_OR5AN1, 0_PRSS33, 0_PSPN, 0_RP1-177G6.2, 0_SOX11, 0_ZNF785, 0_C21orf81, 0_CA12, 0_CHIT1, 0_CLDN20, 0_DEFB1, 0_FKBP1AP1, 0_IDI2, 0_LOC100130148, 0_MRPS30, 0_NEURL1B, 0_OTX1, 0_AR, 0_CAMK2B, 0_CGNL1, 0_DEFB103B, 0_IQCG, 0_MAGEB18, 0_MBOAT1, 0_NPFFR1, 0_PRND, 0_SERPINA12, 0_SFT2D2, 0_SNORA58, 0_ZIC1, 0_C10orf40, 0_C15orf55, 0_C6orf127, 0_C9orf117, 0_CNTD2, 0_FGF2, 0_GSTA3, 0_MAFA, 0_MECR, 0_NPPB, 0_NXF3, 0_OR10G4, 0_PCSK6, 0_PRMT8, 0_SLC22A11, 0_WIPI1, 0_ALG1L2, 0_APOLD1, 0_ATP1B3, 0_C6orf218, 0_CDKN3, 0_CDR2, 0_CST2, 0_CTSL2, 0_FAM111B, 0_FLJ35024, 0_IRS1, 0_ISX, 0_LCTL, 0_LMOD2, 0_LOC145474, 0_LPO, 0_MPHOSPH6, 0_MRAP2, 0_MRGPRX4, 0_NOX3, 0_PATL1, 0_PM20D1, 0_PM20D2, 0_QRFP, 0_RTL1, 0_SERPINA3, 0_SIDT1, 0_SLC18A1, 0_SNORA69, 0_SNW1, 0_SPACA4, 0_SRD5A2, 0_SULT2B1, 0_TRIM60, 0_WNT16, 0_XK, 0_GSTA4, 0_KRT14, 0_KRTAP5-5, 0_MMP25, 0_NR1I3, 0_PTPLA, 0_SCEL, 0_TGM7, 0_ADSSL1, 0_ANKRD34C, 0_CSN1S2A, 0_GDF5, 0_LOC100131496, 0_LOC442454, 0_LOC613037, 0_MGC23270, 0_OR7E24, 0_SLC14A1, 0_AADACL3, 0_ACE2, 0_C10orf27, 0_C6orf155, 0_CABP5, 0_CBLC, 0_CEACAM20, 0_CH25H, 0_COL9A3, 0_COX6A2, 0_CXorf61, 0_CYP4B1, 0_EXT1, 0_FAM194A, 0_FAM48B1, 0_GABBR2, 0_GPX5, 0_KIF17, 0_LOC100128076, 0_LTC4S, 0_OR7A17, 0_PCSK9, 0_PEX5L, 0_PLA2G12A, 0_RPS5, 0_SIGLEC14, 0_SMPX, 0_STH, 0_TCAM1P, 0_TEX19, 0_TLX1, 0_TMEM74, 0_VIPAR, 0_WISP1, 0_ABCD3, 0_AK3L1, 0_C16orf68, 0_C2orf51, 0_CGB5, 0_CHMP4C, 0_CHN2, 0_CPE, 0_DDO, 0_EIF2B2, 0_FAM177B, 0_HOXD13, 0_KRT6B, 0_LCT, 0_LOC100169752, 0_MNX1, 0_OR2C3, 0_OR2L13, 0_OR5E1P, 0_OSR1, 0_PLXNA3, 0_POLR2J3, 0_R3HDML, 0_RERGL, 0_RP1, 0_SFRP1, 0_SLC16A12, 0_SMR3A, 0_SNORA71A, 0_SPRED3, 0_TCF19, 0_TNFAIP6, 0_UBE2V1, 0_ZNRF2, 0_APBA3, 0_AQP6, 0_ART3, 0_BRD3, 0_BTN1A1, 0_C14orf145, 0_CDA, 0_DAZAP2, 0_DPP8, 0_FAF1, 0_FOSL1, 0_HIST3H3, 0_IGSF5, 0_ISL2, 0_LY6G6E, 0_MAP4K3, 0_PUSL1, 0_RBMXL2, 0_SLC17A8, 0_SPATA13, 0_THNSL1, 0_TMEM206, 0_TP53TG3B, 0_ACADM, 0_ACN9, 0_BAZ2A, 0_C10orf71, 0_C12orf34, 0_C20orf108, 0_CACNG4, 0_CCDC6, 0_CD207, 0_CDC25B, 0_CDKN2A, 0_CDYL2, 0_CHADL, 0_CKS1B, 0_CTAG1B, 0_CYP2F1, 0_DHDH, 0_DSEL, 0_DUOXA2, 0_DYDC2, 0_ECHS1, 0_EYA1, 0_FADS1, 0_FGF21, 0_GABRR2, 0_GRAMD3, 0_HBBP1, 0_HCK, 0_HCRTR1, 0_HNRNPH3, 0_LOC154761, 0_LOC407835, 0_LOC647946, 0_LRRC4C, 0_MBD3, 0_METAP2, 0_MKRN3, 0_MUC7, 0_NANOS1, 0_OLAH, 0_OR5P3, 0_PABPC5, 0_PAX7, 0_PKD1L1, 0_PLEKHG4, 0_PPP1R2P9, 0_PRPH2, 0_RASSF9, 0_RBM46, 0_RNF2, 0_SEL1L3, 0_SEMA3B, 0_SERPINA6, 0_SIRPB1, 0_SLC22A5, 0_SPON2, 0_ST7OT3, 0_STAC2, 0_TCP11L1, 0_TEX14, 0_TSC22D3, 0_UBE2Z, 0_USP6, 0_WDR34, 0_WNT11, 0_ZNF534, 0_ZPBP2]
+Computation on different folds finished in 00-00:03:33
+
+APPLYING EVALUATORS
+
+EVALUATING HALL OF FAME PARETO FRONT
+
+APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
+Mean Jaccard all vs others for each fold
+[0.06917936522713702, 0.07342229759309064]
+Mean of folds = 0.07130083141011384
+
+APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
+Stability of features by weights: 0.09419829701255589
+Stability of features by unions: 0.08396946564885499
+Stability of features by spearman: 0.08090057212265717
+Stability of features by top 50: 0.09999999999999998
+
+APPLYING USAGE OF VIEWS
+Prevalence of features selected in each view
+mrna = 1.0
+Distribution of views in each fold
+[[1.0], [1.0]]
+Stability of views = 1.0
+
+APPLYING FOLD SAVER
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/Pareto/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/Pareto/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 logistic classifier (max_iter=100) balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 logistic classifier (max_iter=100) balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.3354180719597152
+Train hypervolume: 0.34744915461405307
+Test hypervolume: 0.3102912533001345
+Cross hypervolume: 0.3167537144185588
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.32292646736386355
+Train hypervolume: 0.33485310608647834
+Test hypervolume: 0.3109365655535654
+Cross hypervolume: 0.31164323588958937
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.32917226966178936
+Train hypervolume: 0.3411511303502657
+Test hypervolume: 0.31061390942684997
+Cross hypervolume: 0.31419847515407406
+
+
+EVALUATING HALL OF FAME BEST SUMS WITH SIZE 50
+
+APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
+Mean Jaccard all vs others for each fold
+[0.1435961082907775, 0.10928625286228182]
+Mean of folds = 0.12644118057652967
+
+APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
+Stability of features by weights: 0.0752879781072997
+Stability of features by unions: 0.0853242320819112
+Stability of features by spearman: 0.079155295361647
+Stability of features by top 50: 0.07999999999999996
+
+APPLYING USAGE OF VIEWS
+Prevalence of features selected in each view
+mrna = 1.0
+Distribution of views in each fold
+[[1.0], [1.0]]
+Stability of views = 1.0
+
+APPLYING FOLD SAVER
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/leanness_logit100_bal_acc/2_folds/HPE_NSGA2_k3_pop200_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 logistic classifier (max_iter=100) balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 logistic classifier (max_iter=100) balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.32210688583666475
+Train hypervolume: 0.33427548234021837
+Test hypervolume: 0.2969670491521329
+Cross hypervolume: 0.30363146167380917
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.28864607147808985
+Train hypervolume: 0.2970296539879324
+Test hypervolume: 0.2837059230288459
+Cross hypervolume: 0.28085025086284066
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.30537647865737727
+Train hypervolume: 0.3156525681640754
+Test hypervolume: 0.2903364860904894
+Cross hypervolume: 0.2922408562683249
+
+
+OPTIMIZING FINAL MODEL ON WHOLE DATASET
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 18133
+Features active in view: 18133
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+   	     	         	        	Pam50 logistic classifier (max_iter=100) balanced accuracy	                    leanness                    
+   	     	         	        	------------------------------------------------          	------------------------------------------------
+gen	evals	gen_feats	explored	min	avg     	max     	std                                 	min      	avg      	max	std     
+0  	200  	935      	935     	0.2	0.435756	0.678039	0.159214                            	0.0196078	0.0974937	1  	0.166798
+1  	204  	998      	1088    	0.2	0.523047	0.694621	0.126242                            	0.02     	0.0916623	1  	0.121793
+2  	200  	964      	1219    	0.2	0.535777	0.697442	0.12722                             	0.0196078	0.0999051	1  	0.129651
+3  	200  	950      	1334    	0.2	0.537107	0.722447	0.123931                            	0.0192308	0.107549 	1  	0.127869
+4  	200  	954      	1453    	0.2	0.556414	0.73699 	0.12485                             	0.0188679	0.104782 	1  	0.129358
+Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 200, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip) with (multi-view lasso FI, multi-view none) final optimization execution time = 00-00:05:33
+
+FEATURE SETS SELECTED ON WHOLE DATASET
+
+PARETO FRONT
+Number of solutions = 16
+(np.float64(0.7369901055299002), 0.022222222222222223) 44 features: [0_ABCA3, 0_BAAT, 0_C1orf94, 0_CDKN2C, 0_CEBPD, 0_CEP152, 0_CLCN4, 0_CPT1C, 0_CXorf40A, 0_DISP2, 0_DMRTC1, 0_DVWA, 0_ENPP1, 0_EPB41L4B, 0_ESRRB, 0_GRB7, 0_HAO2, 0_IGF1R, 0_KIAA1586, 0_KRT5, 0_LGALS7B, 0_LOC150622, 0_LOC283856, 0_MAP1LC3A, 0_MAPK15, 0_MGC3771, 0_NETO2, 0_OR52E4, 0_PAK6, 0_PBOV1, 0_PCDHGA7, 0_PIGN, 0_PSKH2, 0_RAX2, 0_RBMX2, 0_RNF2, 0_SHD, 0_TFF1, 0_TPSD1, 0_TSHR, 0_VIPR1, 0_VMAC, 0_YPEL2, 0_ZNF556] Hiperparameter set: [C = 3.2616392127499845, tol = 0.0006746878795129005, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.7224470683360286), 0.022727272727272728) 43 features: [0_ABCA3, 0_BAAT, 0_C1orf94, 0_CDKN2C, 0_CEBPD, 0_CEP152, 0_CLCN4, 0_CPT1C, 0_CXorf40A, 0_DISP2, 0_DMRTC1, 0_DVWA, 0_ENPP1, 0_EPB41L4B, 0_ESRRB, 0_GRB7, 0_HAO2, 0_IGF1R, 0_KIAA1586, 0_KRT5, 0_LGALS7B, 0_LOC150622, 0_LOC283856, 0_MAP1LC3A, 0_MAPK15, 0_MGC3771, 0_NETO2, 0_OR52E4, 0_PAK6, 0_PBOV1, 0_PCDHGA7, 0_PIGN, 0_PSKH2, 0_RAX2, 0_RNF2, 0_SHD, 0_TFF1, 0_TPSD1, 0_TSHR, 0_VIPR1, 0_VMAC, 0_YPEL2, 0_ZNF556] Hiperparameter set: [C = 3.4873803933880976, tol = 0.0005777275881223642, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.7163865178467232), 0.023255813953488372) 42 features: [0_ACSBG1, 0_AMBP, 0_BAAT, 0_C12orf39, 0_C14orf145, 0_CAMK2N2, 0_CCDC163P, 0_CDC25B, 0_CDKN2C, 0_CLRN3, 0_COL28A1, 0_CRLF1, 0_CST2, 0_CXorf61, 0_DEFB1, 0_DLX6, 0_DNAJC25-GNG10, 0_EVX1, 0_FOXB1, 0_GRB7, 0_IFIT1B, 0_IMP5, 0_IPO9, 0_KRT20, 0_NCRNA00162, 0_NEURL1B, 0_OR5E1P, 0_PBOV1, 0_PCSK9, 0_PELI2, 0_PM20D1, 0_PMAIP1, 0_POTEC, 0_PPP3R2, 0_PRUNE, 0_SCRG1, 0_SLC45A3, 0_SUSD5, 0_SYNJ2, 0_TMEM106C, 0_VIPR1, 0_WDR67] Hiperparameter set: [C = 1.9551819871098086, tol = 0.006807376754854803, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.6786648717136522), 0.03333333333333333) 29 features: [0_ABCG1, 0_AMBP, 0_ATP1B3, 0_BAAT, 0_C1orf187, 0_C21orf81, 0_C2orf27A, 0_CCL24, 0_CES4, 0_CRELD1, 0_DCAF12L1, 0_ENPP1, 0_EPHA8, 0_FAM48B1, 0_FOXC1, 0_GADD45G, 0_GSTA4, 0_HBBP1, 0_KATNAL2, 0_MGC3771, 0_NPVF, 0_PARP2, 0_PSPN, 0_RNF133, 0_RPL23AP32, 0_SLC22A11, 0_SLC6A5, 0_SMR3A, 0_XAGE2] Hiperparameter set: [C = 10.966094536506224, tol = 0.0018014049043692851, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.6484257622993181), 0.034482758620689655) 28 features: [0_ACSL1, 0_ARSF, 0_CEACAM5, 0_CKS1B, 0_CPA6, 0_CRIP1, 0_CSDC2, 0_CTSL2, 0_ECHS1, 0_GRB7, 0_HHIPL2, 0_LCT, 0_LECT2, 0_LOC100128191, 0_LOC100130148, 0_LOC100132247, 0_LOC116437, 0_LOC126536, 0_LOC284661, 0_LOC341056, 0_MLPH, 0_PLA2G2C, 0_RP1-177G6.2, 0_TSPAN16, 0_TULP1, 0_UBE2V1, 0_VWA2, 0_WSCD2] Hiperparameter set: [C = 8.760297386128473, tol = 1.2697049052757027e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.6391301285364187), 0.037037037037037035) 26 features: [0_ABCA3, 0_C14orf145, 0_C15orf32, 0_C4orf50, 0_C8orf4, 0_C9orf140, 0_CACNA1A, 0_CDC25B, 0_CEACAM5, 0_EHD4, 0_FAM48B1, 0_FGB, 0_FGD3, 0_GRXCR2, 0_IL1RL2, 0_KIAA1586, 0_KRT17, 0_LOC284632, 0_NPVF, 0_OPN1MW, 0_ROS1, 0_SPINK1, 0_TDGF3, 0_TRPC2, 0_TSHB, 0_ZSCAN4] Hiperparameter set: [C = 0.805466667329078, tol = 0.0003902810247493631, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.6363127469449678), 0.043478260869565216) 22 features: [0_ADAM29, 0_AMBP, 0_CALR3, 0_CXorf58, 0_GRB7, 0_IGF1R, 0_KCNQ1DN, 0_MAPT, 0_MRGPRX4, 0_PARP2, 0_PCBD1, 0_PDZD9, 0_PHF16, 0_PLA2G2C, 0_RP1-177G6.2, 0_SERPINA12, 0_SLC14A1, 0_SLC16A10, 0_SLC6A5, 0_SNAPC1, 0_TCF19, 0_TGM7] Hiperparameter set: [C = 36.49196584141509, tol = 0.0005470306105988894, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.6254887218045113), 0.058823529411764705) 16 features: [0_ANKRD28, 0_ARMS2, 0_C14orf145, 0_C21orf88, 0_C2orf40, 0_CALB1, 0_DUSP5P, 0_HORMAD1, 0_INTS4L1, 0_IPO9, 0_MGC3771, 0_OTOP2, 0_PARP2, 0_TMEM86A, 0_TULP1, 0_WDR67] Hiperparameter set: [C = 3.338790308940609, tol = 1.153280207624705e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.594150550989447), 0.1) 9 features: [0_CKS1B, 0_COL28A1, 0_GRB7, 0_MGC3771, 0_MLPH, 0_TSPAN16, 0_TULP1, 0_WDR67, 0_WSCD2] Hiperparameter set: [C = 49.12653773360462, tol = 2.8347324620809454e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.509413500491806), 0.1111111111111111) 8 features: [0_C14orf145, 0_LY6G6E, 0_PPP1R1B, 0_RET, 0_SCRG1, 0_TMED7, 0_TMEM44, 0_ZBTB4] Hiperparameter set: [C = 0.17650658091446284, tol = 0.0008281800539328683, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.5073775069603055), 0.14285714285714285) 6 features: [0_ERBB2, 0_FADS1, 0_GDF5, 0_IGFBP2, 0_MRGPRX2, 0_SOSTDC1] Hiperparameter set: [C = 1.7521481946161754, tol = 1.7106731217718524e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.45120521647800216), 0.2) 4 features: [0_CDC25B, 0_CEACAM19, 0_KRT20, 0_KRT5] Hiperparameter set: [C = 1.3368207513590669, tol = 0.0003595452401525531, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.3642105263157895), 0.25) [0_ADH4, 0_VPS13B, 0_WDR67] Hiperparameter set: [C = 32.00762104054705, tol = 0.00010341898153750129, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.3635782638414217), 0.3333333333333333) [0_VPS13B, 0_WDR67] Hiperparameter set: [C = 32.00762104054705, tol = 0.00011486879133621941, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.3588157894736842), 0.5) [0_CDCA7] Hiperparameter set: [C = 0.053528372665353985, tol = 2.570965444534658e-05, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+(np.float64(0.2), 1.0) [] Hiperparameter set: [C = 18.661771306315938, tol = 6.441707291331244e-06, max_iter = 100, solver = lbfgs, penalty = l2, n_jobs = 1]
+Features in hall of fame by prevalence:
+/home/ugmd/Manuel_TFG/MONOMER_optimizacion_hiperparametro_tfg/py/plots/plot_utils.py:148: UserWarning: *c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+  ax.scatter(x, y, c=color, s=point_size)
+193 features: [0_GRB7, 0_MGC3771, 0_WDR67, 0_BAAT, 0_C14orf145, 0_ABCA3, 0_AMBP, 0_CDC25B, 0_CDKN2C, 0_ENPP1, 0_IGF1R, 0_KIAA1586, 0_KRT5, 0_PARP2, 0_PBOV1, 0_TULP1, 0_VIPR1, 0_C1orf94, 0_CEACAM5, 0_CEBPD, 0_CEP152, 0_CKS1B, 0_CLCN4, 0_COL28A1, 0_CPT1C, 0_CXorf40A, 0_DISP2, 0_DMRTC1, 0_DVWA, 0_EPB41L4B, 0_ESRRB, 0_FAM48B1, 0_HAO2, 0_IPO9, 0_KRT20, 0_LGALS7B, 0_LOC150622, 0_LOC283856, 0_MAP1LC3A, 0_MAPK15, 0_MLPH, 0_NETO2, 0_NPVF, 0_OR52E4, 0_PAK6, 0_PCDHGA7, 0_PIGN, 0_PLA2G2C, 0_PSKH2, 0_RAX2, 0_RNF2, 0_RP1-177G6.2, 0_SCRG1, 0_SHD, 0_SLC6A5, 0_TFF1, 0_TPSD1, 0_TSHR, 0_TSPAN16, 0_VMAC, 0_VPS13B, 0_WSCD2, 0_YPEL2, 0_ZNF556, 0_ABCG1, 0_ACSBG1, 0_ACSL1, 0_ADAM29, 0_ADH4, 0_ANKRD28, 0_ARMS2, 0_ARSF, 0_ATP1B3, 0_C12orf39, 0_C15orf32, 0_C1orf187, 0_C21orf81, 0_C21orf88, 0_C2orf27A, 0_C2orf40, 0_C4orf50, 0_C8orf4, 0_C9orf140, 0_CACNA1A, 0_CALB1, 0_CALR3, 0_CAMK2N2, 0_CCDC163P, 0_CCL24, 0_CDCA7, 0_CEACAM19, 0_CES4, 0_CLRN3, 0_CPA6, 0_CRELD1, 0_CRIP1, 0_CRLF1, 0_CSDC2, 0_CST2, 0_CTSL2, 0_CXorf58, 0_CXorf61, 0_DCAF12L1, 0_DEFB1, 0_DLX6, 0_DNAJC25-GNG10, 0_DUSP5P, 0_ECHS1, 0_EHD4, 0_EPHA8, 0_ERBB2, 0_EVX1, 0_FADS1, 0_FGB, 0_FGD3, 0_FOXB1, 0_FOXC1, 0_GADD45G, 0_GDF5, 0_GRXCR2, 0_GSTA4, 0_HBBP1, 0_HHIPL2, 0_HORMAD1, 0_IFIT1B, 0_IGFBP2, 0_IL1RL2, 0_IMP5, 0_INTS4L1, 0_KATNAL2, 0_KCNQ1DN, 0_KRT17, 0_LCT, 0_LECT2, 0_LOC100128191, 0_LOC100130148, 0_LOC100132247, 0_LOC116437, 0_LOC126536, 0_LOC284632, 0_LOC284661, 0_LOC341056, 0_LY6G6E, 0_MAPT, 0_MRGPRX2, 0_MRGPRX4, 0_NCRNA00162, 0_NEURL1B, 0_OPN1MW, 0_OR5E1P, 0_OTOP2, 0_PCBD1, 0_PCSK9, 0_PDZD9, 0_PELI2, 0_PHF16, 0_PM20D1, 0_PMAIP1, 0_POTEC, 0_PPP1R1B, 0_PPP3R2, 0_PRUNE, 0_PSPN, 0_RBMX2, 0_RET, 0_RNF133, 0_ROS1, 0_RPL23AP32, 0_SERPINA12, 0_SLC14A1, 0_SLC16A10, 0_SLC22A11, 0_SLC45A3, 0_SMR3A, 0_SNAPC1, 0_SOSTDC1, 0_SPINK1, 0_SUSD5, 0_SYNJ2, 0_TCF19, 0_TDGF3, 0_TGM7, 0_TMED7, 0_TMEM106C, 0_TMEM44, 0_TMEM86A, 0_TRPC2, 0_TSHB, 0_UBE2V1, 0_VWA2, 0_XAGE2, 0_ZBTB4, 0_ZSCAN4]
+
+BEST SUMS WITH SIZE 50
+Number of solutions = 50
+Features in hall of fame by prevalence:
+448 features: [0_CEACAM20, 0_ENPP1, 0_PARP2, 0_C3orf65, 0_FOXC1, 0_PHYHD1, 0_TFF1, 0_ASAH2, 0_LOC100132247, 0_NPFFR1, 0_RHBDL2, 0_ABCG1, 0_ANO4, 0_C14orf145, 0_DNAJC25-GNG10, 0_NPTXR, 0_OR2T27, 0_PLA2G2C, 0_RP1-177G6.2, 0_SCEL, 0_SERPINA12, 0_CD207, 0_CKS1B, 0_FAM43B, 0_IGFALS, 0_KCNG2, 0_KRTAP5-3, 0_LOC284632, 0_PCSK9, 0_PPP1R1B, 0_WDR67, 0_ACCN5, 0_CCDC126, 0_CRELD1, 0_DEFB1, 0_GRB7, 0_IFIT1B, 0_IGFBP2, 0_KRT32, 0_LOC100128076, 0_LOC153910, 0_MAMDC2, 0_OPN1MW, 0_SUSD5, 0_TSPAN16, 0_BAAT, 0_C15orf32, 0_CD44, 0_CPA6, 0_DCAF12L1, 0_DMRTC1, 0_KRT20, 0_LOC100130148, 0_NPVF, 0_PPIL5, 0_TSHR, 0_CDC25B, 0_CRIP1, 0_CSDC2, 0_CTSL2, 0_FAM48B1, 0_KHDRBS2, 0_LOC84740, 0_SLC6A5, 0_TNNI3, 0_TRPC2, 0_YARS2, 0_ABCA3, 0_ARSF, 0_C11orf88, 0_C3orf24, 0_CDH1, 0_CES4, 0_GRXCR2, 0_KIAA1586, 0_KRT17, 0_LCT, 0_LOC126536, 0_MAGEB3, 0_MRPS30, 0_NEFL, 0_PRG3, 0_PSKH2, 0_RBMY1A1, 0_SDCCAG8, 0_TRIM49, 0_T, 0_VIPR1, 0_XRRA1, 0_AMBP, 0_ATP1B3, 0_C12orf39, 0_C20orf108, 0_C2orf50, 0_C3orf36, 0_C4orf50, 0_C8orf4, 0_CACNA1A, 0_CALB1, 0_CDKN2C, 0_CEACAM5, 0_DCC, 0_EHD4, 0_FGB, 0_FGD3, 0_FOXB1, 0_HBBP1, 0_IGF1R, 0_IL1RL2, 0_IL5, 0_LOC100128191, 0_LOC728855, 0_MGC3771, 0_MRPL45, 0_NCRNA00032, 0_NEURL1B, 0_NODAL, 0_NRM, 0_PBOV1, 0_PDZRN3, 0_PMAIP1, 0_PRUNE, 0_RBM28, 0_ROS1, 0_SLC22A25, 0_SLC35F4, 0_SPACA4, 0_SPINK1, 0_SPINLW1, 0_SPRY4, 0_TMEM215, 0_TMEM59L, 0_TSHB, 0_VRK2, 0_ZSCAN4, 0_C16orf82, 0_C1orf227, 0_C1orf94, 0_C21orf81, 0_C2orf27A, 0_C9orf53, 0_CAPNS2, 0_CARD14, 0_CAV1, 0_CEP152, 0_CETP, 0_CPT1C, 0_CXorf58, 0_CXorf61, 0_DLX3, 0_FAM82B, 0_GML, 0_KCNK10, 0_LOC150622, 0_LOC154822, 0_LOC387646, 0_LOC91149, 0_NCRNA00162, 0_NETO2, 0_OR11H6, 0_OR1N2, 0_OR2A4, 0_OR2A7, 0_OR8U1, 0_OTC, 0_PDZD9, 0_PRSS33, 0_PTPN18, 0_RAX2, 0_SCRG1, 0_SERPINA3, 0_SERPINB7, 0_SHD, 0_SLC13A1, 0_SLC16A10, 0_SPINK4, 0_TPSD1, 0_WDR92, 0_WNT10B, 0_ZSWIM3, 0_ACSL1, 0_APOL5, 0_ASTL, 0_BEND5, 0_C15orf51, 0_C1orf187, 0_C6orf127, 0_C9orf170, 0_CAMK2N2, 0_CAMK4, 0_CCL24, 0_CEBPD, 0_CKMT1A, 0_CLCN4, 0_CLRN3, 0_COL22A1, 0_CPNE6, 0_CST2, 0_CS, 0_CXorf40A, 0_CYP11A1, 0_CYP7A1, 0_DISP2, 0_DLX6, 0_DVWA, 0_ECHS1, 0_EPB41L4B, 0_EPHA8, 0_EPX, 0_ESRRB, 0_F3, 0_FARS2, 0_FBXO5, 0_GADD45G, 0_GEN1, 0_GPR160, 0_GSTA4, 0_HAO2, 0_HDAC8, 0_HHIPL2, 0_HSP90B3P, 0_IPO9, 0_ISX, 0_KATNAL2, 0_KRT5, 0_LECT2, 0_LGALS7B, 0_LOC283856, 0_LOC731779, 0_LOXL2, 0_LY6G6E, 0_MAP1LC3A, 0_MAPK15, 0_MLPH, 0_MORC1, 0_MRGPRX3, 0_MYL7, 0_NOTCH2NL, 0_NR1I3, 0_NUDT2, 0_OR10V1, 0_OR52E4, 0_OR6B2, 0_OSR1, 0_PAK6, 0_PCDHGA7, 0_PELI2, 0_PIGN, 0_PPP3R2, 0_PSPN, 0_RAB6C, 0_RASA4, 0_RNF133, 0_RNF2, 0_RPL23AP32, 0_RPRM, 0_SERPINA4, 0_SLC22A11, 0_SMR3A, 0_SOSTDC1, 0_SOX21, 0_TACC2, 0_TCEAL3, 0_TCF19, 0_VMAC, 0_WSCD2, 0_XAGE2, 0_YPEL2, 0_ZNF556, 0_AADACL3, 0_ABCC2, 0_ACSBG1, 0_ANXA3, 0_AOX2P, 0_APLN, 0_APOLD1, 0_ARL17B, 0_ARMS2, 0_BCYRN1, 0_BDKRB2, 0_BTG4, 0_C10orf27, 0_C15orf55, 0_C17orf47, 0_C17orf96, 0_C1orf223, 0_C21orf90, 0_C3orf26, 0_C5orf30, 0_C5orf58, 0_C6orf41, 0_C6orf58, 0_C9orf40, 0_CAGE1, 0_CASC3, 0_CASP5, 0_CCDC163P, 0_CCDC18, 0_CCDC6, 0_CDCA7, 0_CDH10, 0_CDH22, 0_CECR4, 0_CHN2, 0_CIITA, 0_CLCNKB, 0_CNBD1, 0_COL28A1, 0_CPSF4L, 0_CRLF1, 0_CRYBA1, 0_CSN1S2A, 0_CUEDC1, 0_CYP21A2, 0_CYP4F11, 0_D4S234E, 0_DEFB129, 0_DEPDC4, 0_DLK1, 0_DMRTC2, 0_ELFN2, 0_EPHA6, 0_ERBB2, 0_EVX1, 0_EXT1, 0_FADS1, 0_FAM189A2, 0_FAM194A, 0_FAM5B, 0_FCRLB, 0_FMO4, 0_GABRA2, 0_GDF3, 0_GDF5, 0_GPAT2, 0_GPR128, 0_GPR4, 0_GPR89C, 0_GSPT1, 0_GUCA1B, 0_HCG4P6, 0_HGFAC, 0_HMGA2, 0_HORMAD1, 0_HRH3, 0_HRNR, 0_HSD3B1, 0_IL1F9, 0_IMP5, 0_INTS4L1, 0_ITGBL1, 0_KCNH2, 0_KCNQ1DN, 0_KRT6B, 0_LCTL, 0_LECT1, 0_LILRA1, 0_LOC100131496, 0_LOC116437, 0_LOC134466, 0_LOC145474, 0_LOC148145, 0_LOC148189, 0_LOC284232, 0_LOC284661, 0_LOC341056, 0_LOC91948, 0_MASTL, 0_MAT1A, 0_MBIP, 0_MBOAT1, 0_MDH1, 0_MGAT4C, 0_MMACHC, 0_MRO, 0_NANOS1, 0_NANOS3, 0_NEDD9, 0_NFE2, 0_NMS, 0_NOBOX, 0_NXF4, 0_OR14C36, 0_OR51I1, 0_OR5E1P, 0_OR7C1, 0_OTOP2, 0_PABPC5, 0_PCBD1, 0_PCSK2, 0_PDYN, 0_PELO, 0_PGLYRP4, 0_PIP5K1B, 0_PLD5, 0_PM20D1, 0_POTEC, 0_POU3F3, 0_PRMT8, 0_PSG2, 0_PTPN22, 0_PTPRC, 0_RASSF9, 0_RBMX2, 0_RGN, 0_RNF130, 0_RNF8, 0_SCNN1A, 0_SEPT14, 0_SEPT3, 0_SFRP1, 0_SH3BGRL, 0_SIGLEC14, 0_SLC25A24, 0_SLC45A3, 0_SNAPC1, 0_SNHG11, 0_SPARCL1, 0_SPRYD5, 0_STAC2, 0_STH, 0_SULT2B1, 0_SV2C, 0_SYNJ2, 0_TACR1, 0_TADA2A, 0_TCHH, 0_TDRD10, 0_TERC, 0_TFF3, 0_TF, 0_TGM7, 0_TMED7, 0_TMEM106C, 0_TRIM52, 0_TULP1, 0_UBE2V1, 0_UGT1A10, 0_UGT1A9, 0_VN1R5, 0_VPS13B, 0_WNT11, 0_WNT8A, 0_ZIC1, 0_ZNF236, 0_ZNF500, 0_ZNF880, 0_ZNF93]
+
+SAVING FEATURES AND FITNESSES FOR EACH SELECTED INDIVIDUAL TO FILES.
+
+CREATING GENERATION PLOTS IF POSSIBLE
+
+CREATING PLOTS OF EXPLORED FEATURES IF POSSIBLE
+
+CREATING PLOTS OF FEATURE STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HYPERPARAMETER EVOLUTION STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HALL OF FAME STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HYPERPARAMETER HALL OF FAME IF POSSIBLE
+
+CREATING PLOTS OF MONOTONIC TEST FRONTS IF POSSIBLE
+
+CREATING PLOTS OF PERFORMANCE BY CLASS IF POSSIBLE
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Factory HPE = NBHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/brca/hp/test_small_nb.ini
+Destination folder :  = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+
+RUNNING HYPERPARAMETER EVOLUTION NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (3-FOLDS CREATOR, POP 500, UNIFORM(0, 50), GEN 5, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 SYMMETRIC FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
+Machine = arcohtr04
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)
+Inner optimizer:
+Name = Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 500, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip)
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm
+Population size = 500
+Number of features in initial individuals = uniform(0, 50)
+Number of generations = 5
+Crossover probability = 0.33
+Mutation frequency = 1.0
+Mutation operator = symmetric flip
+Sorting strategy = NSGA2 with crowding distance with Clone Index full elitist and clone repurposing
+Hyperparameter evolution  = NBHyperparameterSetFactory
+Objectives = [Pam50 naive Bayes balanced accuracy, leanness]
+Hall of fame factories = [Pareto front factory, Best 50 by sum factory]
+Folds creator = 3-folds creator
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance lasso
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+
+Fold 0> OPTIMIZING ON FOLD NUMBER 0
+Fold 0> Number of workers = 25
+
+Fold 1> OPTIMIZING ON FOLD NUMBER 1
+Fold 1> Number of workers = 25
+
+Fold 2> OPTIMIZING ON FOLD NUMBER 2
+Fold 2> Number of workers = 25
+
+Fold 3> OPTIMIZING ON FOLD NUMBER 3
+Fold 3> Number of workers = 25
+
+Fold 4> OPTIMIZING ON FOLD NUMBER 4
+Fold 4> Number of workers = 25
+
+Fold 0> COMPUTING LOCAL ACTIVE FEATURES
+Fold 0> Computing active features for target column 0_Pam50
+Fold 0> Features before filter: 20203
+
+Fold 1> COMPUTING LOCAL ACTIVE FEATURES
+Fold 1> Computing active features for target column 0_Pam50
+Fold 1> Features before filter: 20203
+
+Fold 2> COMPUTING LOCAL ACTIVE FEATURES
+Fold 2> Computing active features for target column 0_Pam50
+Fold 2> Features before filter: 20203
+
+Fold 3> COMPUTING LOCAL ACTIVE FEATURES
+Fold 3> Computing active features for target column 0_Pam50
+Fold 3> Features before filter: 20203
+
+Fold 4> COMPUTING LOCAL ACTIVE FEATURES
+Fold 4> Computing active features for target column 0_Pam50
+Fold 4> Features before filter: 20203
+Fold 0> Features after any na, zero variance, and anova filters: 17852
+Fold 0> Features active in view: 17852
+
+Fold 0> CREATING INNER FOLDS
+
+Fold 0> RUNNING GENETIC ALGORITHM
+Fold 1> Features after any na, zero variance, and anova filters: 17770
+Fold 1> Features active in view: 17770
+
+Fold 1> CREATING INNER FOLDS
+
+Fold 1> RUNNING GENETIC ALGORITHM
+Fold 2> Features after any na, zero variance, and anova filters: 17758
+Fold 2> Features active in view: 17758
+
+Fold 2> CREATING INNER FOLDS
+
+Fold 2> RUNNING GENETIC ALGORITHM
+Fold 3> Features after any na, zero variance, and anova filters: 17721
+Fold 3> Features active in view: 17721
+
+Fold 3> CREATING INNER FOLDS
+
+Fold 3> RUNNING GENETIC ALGORITHM
+Fold 4> Features after any na, zero variance, and anova filters: 17646
+Fold 4> Features active in view: 17646
+
+Fold 4> CREATING INNER FOLDS
+
+Fold 4> RUNNING GENETIC ALGORITHM
+Fold 0>
+   	     	         	        	          Pam50 naive Bayes balanced accuracy           	                    leanness                    
+   	     	         	        	--------------------------------------------------------	------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std     	min      	avg      	max	std     
+0  	500  	928      	928     	0.199203	0.505101	0.744409	0.136618	0.0196078	0.1011   	1  	0.176352
+1  	513  	1162     	1196    	0.199203	0.538029	0.760128	0.139635	0.016129 	0.0970369	1  	0.113138
+2  	500  	1193     	1438    	0.2     	0.570275	0.760128	0.131554	0.015873 	0.0966774	1  	0.112649
+3  	500  	1259     	1695    	0.2     	0.600927	0.760128	0.127596	0.0153846	0.0937779	1  	0.113321
+4  	500  	1221     	1917    	0.2     	0.616931	0.764469	0.122868	0.0178571	0.092287 	1  	0.110772
+Fold 2>
+   	     	         	        	          Pam50 naive Bayes balanced accuracy           	                    leanness                    
+   	     	         	        	--------------------------------------------------------	------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std     	min      	avg      	max	std     
+0  	500  	903      	903     	0.199858	0.50464 	0.744763	0.126015	0.0196078	0.0784802	1  	0.122044
+1  	503  	1129     	1167    	0.199858	0.526386	0.745352	0.142536	0.015625 	0.100199 	1  	0.113748
+2  	500  	1200     	1423    	0.2     	0.564588	0.745352	0.130696	0.0153846	0.0983844	1  	0.114621
+3  	500  	1207     	1677    	0.2     	0.58749 	0.746157	0.127555	0.0153846	0.0970844	1  	0.113017
+4  	500  	1198     	1899    	0.2     	0.602692	0.75528 	0.126007	0.0149254	0.0974078	1  	0.112917
+Fold 1>
+   	     	         	        	      Pam50 naive Bayes balanced accuracy       	                    leanness                    
+   	     	         	        	------------------------------------------------	------------------------------------------------
+gen	evals	gen_feats	explored	min	avg     	max     	std          	min      	avg      	max	std     
+0  	500  	925      	925     	0.2	0.497767	0.732235	0.133696     	0.0196078	0.10345  	1  	0.181992
+1  	513  	1152     	1192    	0.2	0.534446	0.736402	0.127552     	0.0181818	0.0972903	1  	0.114732
+2  	500  	1194     	1442    	0.2	0.562527	0.750324	0.12783      	0.0166667	0.100155 	1  	0.116857
+3  	500  	1233     	1675    	0.2	0.586802	0.757834	0.121087     	0.016129 	0.0969711	1  	0.11219 
+4  	500  	1205     	1895    	0.2	0.601159	0.757834	0.119041     	0.016129 	0.0983653	1  	0.111951
+Fold 0> Optimization on fold finished in 00-00:05:20
+
+Fold 0> FEATURE SETS SELECTED
+
+Fold 0> PARETO FRONT
+Fold 0> Number of solutions = 22
+Fold 2> Optimization on fold finished in 00-00:05:19
+
+Fold 2> FEATURE SETS SELECTED
+
+Fold 2> PARETO FRONT
+Fold 2> Number of solutions = 15
+Fold 2> (np.float64(0.7552802929684036), 0.038461538461538464) 25 features: [0_ABCG1, 0_ACSBG1, 0_C14orf145, 0_CAMK4, 0_CENPW, 0_CFB, 0_CHFR, 0_DMRTC2, 0_ECHS1, 0_ERBB2, 0_LOC653544, 0_MAGEB3, 0_MRGPRX4, 0_NETO2, 0_NXF4, 0_PNLIPRP2, 0_PPP1R14C, 0_RNASE3, 0_SCNN1G, 0_SCRG1, 0_SERPIND1, 0_TFF3, 0_TGM3, 0_TREH, 0_ZNF578] Hiperparameter set: [var_smoothing = 1.0112675794720047e-08]
+Fold 2> (np.float64(0.7231361141353656), 0.041666666666666664) 23 features: [0_ASIP, 0_CEP152, 0_CHCHD7, 0_CKS1B, 0_COL22A1, 0_EGFR, 0_FGG, 0_HORMAD1, 0_IGFALS, 0_KRT20, 0_KRT6B, 0_MAGOH, 0_MBIP, 0_MICALL2, 0_NFE2, 0_PARP2, 0_PMAIP1, 0_RERGL, 0_RP1-177G6.2, 0_SFRP1, 0_SLCO5A1, 0_SPACA3, 0_TSHR] Hiperparameter set: [var_smoothing = 8.76675161297324e-07]
+Fold 2> (np.float64(0.7076727483174456), 0.043478260869565216) 22 features: [0_ADAM32, 0_C9orf53, 0_CEP152, 0_COL22A1, 0_EGFR, 0_FAM92B, 0_FGG, 0_FLJ43950, 0_GPR78, 0_GRB7, 0_HORMAD1, 0_KRT20, 0_KRT6B, 0_LOC284632, 0_OTOP2, 0_PARP2, 0_PLA2G2C, 0_PMAIP1, 0_RP1-177G6.2, 0_RPRM, 0_SFRP1, 0_SLCO5A1] Hiperparameter set: [var_smoothing = 9.09334777224974e-07]
+Fold 2> (np.float64(0.7019823860481361), 0.05263157894736842) 18 features: [0_CNTNAP5, 0_ENPP1, 0_GABBR2, 0_GRB7, 0_IGFL1, 0_LILRA1, 0_LOC729668, 0_MLPH, 0_MRPS30, 0_NLRP9, 0_PHYHD1, 0_PLEKHG4, 0_PPP1R14C, 0_SNCAIP, 0_TCF19, 0_TFF1, 0_USH2A, 0_ZSCAN18] Hiperparameter set: [var_smoothing = 2.043762042472844e-08]
+Fold 2> (np.float64(0.6988167504703512), 0.07142857142857142) 13 features: [0_ACSL1, 0_ATP1B3, 0_C12orf59, 0_CNGB1, 0_G6PD, 0_GRB7, 0_HHIPL2, 0_NUDT9P1, 0_PPP1R14C, 0_RMRP, 0_RNF8, 0_RUNDC1, 0_TCF19] Hiperparameter set: [var_smoothing = 1.4560899284628555e-10]
+Fold 2> (np.float64(0.6547273446954348), 0.09090909090909091) 10 features: [0_C6orf41, 0_DEFB1, 0_ERBB2, 0_MRGPRX4, 0_NARFL, 0_NCRNA00110, 0_PPP1R14C, 0_STH, 0_TCF19, 0_TMPO] Hiperparameter set: [var_smoothing = 6.33226191351973e-08]
+Fold 0> Features in hall of fame by prevalence:
+Fold 2> (np.float64(0.5903989995061142), 0.1111111111111111) 8 features: [0_ARHGAP36, 0_C14orf145, 0_FGG, 0_MOSC1, 0_MPHOSPH6, 0_POLR3A, 0_ROPN1, 0_SHD] Hiperparameter set: [var_smoothing = 3.848048909839499e-09]
+Fold 0> 234 features: [0_FOXC1, 0_WDR67, 0_MRPS30, 0_ERBB2, 0_GPR77, 0_FAM5B, 0_GRB7, 0_ISL2, 0_MYO10, 0_TCF19, 0_AGR3, 0_COL22A1, 0_FMO4, 0_PARP2, 0_C1orf227, 0_KRT20, 0_MLPH, 0_PMAIP1, 0_SERHL2, 0_TULP1, 0_ASCL3, 0_BEND7, 0_BTG4, 0_C16orf68, 0_C4orf45, 0_CCL24, 0_CDH22, 0_CST2, 0_DEFB131, 0_ESR1, 0_GBGT1, 0_GCNT2, 0_IL5, 0_ITGBL1, 0_KRT16, 0_KRT6B, 0_LOC148189, 0_MMP25, 0_NEFL, 0_NEURL1B, 0_OR5E1P, 0_PPP1R1B, 0_ROS1, 0_SERPINA3, 0_SERPINE1, 0_TMEM215, 0_TMEM59L, 0_TMUB2, 0_TP63, 0_TREH, 0_TSPAN19, 0_UTS2R, 0_ACER1, 0_ADARB2, 0_AMBP, 0_APOLD1, 0_ARSF, 0_ATP1B3, 0_BDKRB1, 0_C10orf50, 0_C14orf145, 0_C15orf51, 0_C1orf187, 0_C20orf108, 0_C4orf22, 0_CAMK4, 0_CCDC18, 0_CCDC80, 0_CDCA5, 0_CDCP2, 0_CECR4, 0_CGB2, 0_CNTN3, 0_CPT1C, 0_DLX6, 0_EPHA8, 0_FGB, 0_FGD3, 0_FLJ43950, 0_GDE1, 0_GLRA2, 0_HMGA2, 0_HSPA4L, 0_KRT6A, 0_LGI1, 0_LOC91149, 0_LY6D, 0_LY6G6E, 0_MAPT, 0_MMP12, 0_NLRP10, 0_OR1N2, 0_OR52B6, 0_OR5P3, 0_OSR1, 0_PCBD1, 0_PCSK9, 0_PLA2G2C, 0_POLR3E, 0_PRMT8, 0_RNASE3, 0_RNF2, 0_RNF8, 0_SCARNA12, 0_SEBOX, 0_SLC45A3, 0_SUB1, 0_UGT2B28, 0_USP17L2, 0_USP26, 0_VIPR1, 0_WDR92, 0_WFDC3, 0_ZNF626, 0_ZNF880, 0_AADAC, 0_AATF, 0_ACCN5, 0_ACSL1, 0_ADAMTS19, 0_ANKRD2, 0_ANXA3, 0_AQP10, 0_ATXN7L3, 0_C15orf32, 0_C20orf195, 0_C21orf88, 0_C2orf40, 0_C2orf50, 0_C2orf55, 0_C3orf65, 0_C6orf141, 0_C6orf227, 0_CAMK2B, 0_CCDC83, 0_CD300LF, 0_CD44, 0_CDH10, 0_CDK2, 0_CDV3, 0_CLEC12B, 0_CNKSR3, 0_CNTN6, 0_CSAD, 0_CXorf58, 0_CYP7A1, 0_DEFB1, 0_DEPDC4, 0_DUSP5P, 0_EHD4, 0_ERP27, 0_ESX1, 0_FADS1, 0_FAM111A, 0_FAM9C, 0_FBXO5, 0_FGFR2, 0_FLJ14107, 0_GNLY, 0_GRIN2A, 0_GRIN3A, 0_GRK5, 0_HHIPL2, 0_HORMAD1, 0_HOXD12, 0_HRASLS5, 0_HSP90B3P, 0_IFNA8, 0_IGFL1, 0_INSM2, 0_ITM2A, 0_KRTAP5-10, 0_LOC100128191, 0_LOC284632, 0_LRFN2, 0_LRRC37A, 0_MASTL, 0_MBOAT1, 0_MDS2, 0_MRGPRX2, 0_MRGPRX3, 0_MRPL45, 0_MYL7, 0_NBPF16, 0_NCRNA00164, 0_NEFH, 0_NLRP12, 0_NPC1, 0_NPFFR1, 0_NSA2, 0_NUDT16L1, 0_OLFM3, 0_OR13J1, 0_OR2A25, 0_OR2B11, 0_OR2M4, 0_ORC4L, 0_PCSK2, 0_PDE7A, 0_RAD52, 0_REV1, 0_RIN1, 0_RSPH6A, 0_RTP1, 0_SCN3B, 0_SCNN1A, 0_SEMA5A, 0_SH3TC1, 0_SLC14A1, 0_SLC22A2, 0_SLC38A6, 0_SLC39A2, 0_SLFNL1, 0_SLPI, 0_SNRPB2, 0_SPRY4, 0_STMN2, 0_SUV39H2, 0_TMED6, 0_TMEM106C, 0_TMEM132B, 0_TMEM14A, 0_TMEM45B, 0_TRIM63, 0_UGT1A9, 0_UMOD, 0_URM1, 0_VWC2, 0_WDR44, 0_XRRA1, 0_ZFP28, 0_ZNF471, 0_ZNF616, 0_ZNF74]
+
+Fold 0> BEST SUMS WITH SIZE 50
+Fold 2> (np.float64(0.533362666328314), 0.125) 7 features: [0_ART5, 0_CNKSR3, 0_ENPP1, 0_GPC5, 0_ROPN1, 0_SLC39A2, 0_WDR67] Hiperparameter set: [var_smoothing = 8.78032866885538e-10]
+Fold 2> (np.float64(0.529839364333534), 0.14285714285714285) 6 features: [0_ATP1B3, 0_C9orf53, 0_CEACAM5, 0_GRB7, 0_IPO9, 0_PARP2] Hiperparameter set: [var_smoothing = 4.092418324086019e-11]
+Fold 0> Number of solutions = 50
+Fold 2> (np.float64(0.5153350808635635), 0.16666666666666666) 5 features: [0_C9orf53, 0_FUCA2, 0_GRB7, 0_MPHOSPH6, 0_WDR67] Hiperparameter set: [var_smoothing = 1.4827448857487725e-09]
+Fold 2> (np.float64(0.4837265233715754), 0.2) 4 features: [0_FGG, 0_GJA3, 0_MPHOSPH6, 0_PPP1R14C] Hiperparameter set: [var_smoothing = 2.443768721034634e-07]
+Fold 2> (np.float64(0.46044839575803964), 0.25) [0_LIMD2, 0_MPHOSPH6, 0_TCF19] Hiperparameter set: [var_smoothing = 1.9282794217598164e-07]
+Fold 2> (np.float64(0.4218995237481291), 0.3333333333333333) [0_MPHOSPH6, 0_TCF19] Hiperparameter set: [var_smoothing = 1.7249986647853566e-07]
+Fold 2> (np.float64(0.36207706766917297), 0.5) [0_TFF1] Hiperparameter set: [var_smoothing = 1.5332165014417007e-07]
+Fold 2> (np.float64(0.2), 1.0) [] Hiperparameter set: [var_smoothing = 4.573030439376912e-08]
+Fold 2> Features in hall of fame by prevalence:
+Fold 2> 106 features: [0_GRB7, 0_MPHOSPH6, 0_PPP1R14C, 0_TCF19, 0_FGG, 0_C9orf53, 0_PARP2, 0_ATP1B3, 0_C14orf145, 0_CEP152, 0_COL22A1, 0_EGFR, 0_ENPP1, 0_ERBB2, 0_HORMAD1, 0_KRT20, 0_KRT6B, 0_MRGPRX4, 0_PMAIP1, 0_ROPN1, 0_RP1-177G6.2, 0_SFRP1, 0_SLCO5A1, 0_TFF1, 0_WDR67, 0_ABCG1, 0_ACSBG1, 0_ACSL1, 0_ADAM32, 0_ARHGAP36, 0_ART5, 0_ASIP, 0_C12orf59, 0_C6orf41, 0_CAMK4, 0_CEACAM5, 0_CENPW, 0_CFB, 0_CHCHD7, 0_CHFR, 0_CKS1B, 0_CNGB1, 0_CNKSR3, 0_CNTNAP5, 0_DEFB1, 0_DMRTC2, 0_ECHS1, 0_FAM92B, 0_FLJ43950, 0_FUCA2, 0_G6PD, 0_GABBR2, 0_GJA3, 0_GPC5, 0_GPR78, 0_HHIPL2, 0_IGFALS, 0_IGFL1, 0_IPO9, 0_LILRA1, 0_LIMD2, 0_LOC284632, 0_LOC653544, 0_LOC729668, 0_MAGEB3, 0_MAGOH, 0_MBIP, 0_MICALL2, 0_MLPH, 0_MOSC1, 0_MRPS30, 0_NARFL, 0_NCRNA00110, 0_NETO2, 0_NFE2, 0_NLRP9, 0_NUDT9P1, 0_NXF4, 0_OTOP2, 0_PHYHD1, 0_PLA2G2C, 0_PLEKHG4, 0_PNLIPRP2, 0_POLR3A, 0_RERGL, 0_RMRP, 0_RNASE3, 0_RNF8, 0_RPRM, 0_RUNDC1, 0_SCNN1G, 0_SCRG1, 0_SERPIND1, 0_SHD, 0_SLC39A2, 0_SNCAIP, 0_SPACA3, 0_STH, 0_TFF3, 0_TGM3, 0_TMPO, 0_TREH, 0_TSHR, 0_USH2A, 0_ZNF578, 0_ZSCAN18]
+
+Fold 2> BEST SUMS WITH SIZE 50
+Fold 2> Number of solutions = 50
+Fold 0> Features in hall of fame by prevalence:
+Fold 0> 367 features: [0_WDR67, 0_FOXC1, 0_FMO4, 0_ERBB2, 0_FAM5B, 0_TCF19, 0_ROS1, 0_GPR77, 0_ISL2, 0_MYO10, 0_NEURL1B, 0_UTS2R, 0_BEND7, 0_CDH22, 0_GRB7, 0_ITGBL1, 0_MMP25, 0_TMEM59L, 0_BTG4, 0_C1orf227, 0_DLX6, 0_KRT20, 0_TSPAN19, 0_BDKRB1, 0_LOC91149, 0_OR5E1P, 0_SERHL2, 0_UMOD, 0_AGR3, 0_CCDC18, 0_CPT1C, 0_GLRA2, 0_IL5, 0_PARP2, 0_SCARNA12, 0_ZNF880, 0_C16orf68, 0_CGB2, 0_HSPA4L, 0_LGI1, 0_OR5P3, 0_RNASE3, 0_SEBOX, 0_SPRY4, 0_ATP1B3, 0_C1orf187, 0_CCL24, 0_LY6D, 0_MMP12, 0_MRPS30, 0_PLA2G2C, 0_POLR3E, 0_PRMT8, 0_RNF8, 0_SLC45A3, 0_C10orf50, 0_FGB, 0_GCNT2, 0_KRT16, 0_SERPINA3, 0_SERPINE1, 0_ACCN5, 0_C15orf51, 0_C2orf40, 0_C4orf22, 0_CST2, 0_ESR1, 0_FADS1, 0_LOC148189, 0_UGT2B28, 0_ZNF626, 0_C3orf65, 0_CDCP2, 0_COL22A1, 0_HRASLS5, 0_MBOAT1, 0_NLRP10, 0_PPP1R1B, 0_RTP1, 0_SERPINA4, 0_TMED6, 0_APOLD1, 0_C20orf108, 0_CDK2, 0_EPHA8, 0_FBXO5, 0_FLJ14107, 0_FLJ43950, 0_HMGA2, 0_HORMAD1, 0_MLPH, 0_MT1DP, 0_PMAIP1, 0_TMEM215, 0_VIPR1, 0_ARSF, 0_C4orf45, 0_C6orf141, 0_CAMK2B, 0_CDCA5, 0_CECR4, 0_CNTN3, 0_CNTN6, 0_CYP7A1, 0_HHIPL2, 0_LOC284632, 0_OSR1, 0_PCBD1, 0_RAD52, 0_REV1, 0_RSPH6A, 0_SCN3B, 0_SLC38A6, 0_TMUB2, 0_TULP1, 0_URM1, 0_ZNF616, 0_AADAC, 0_ANXA3, 0_ASCL3, 0_C14orf145, 0_C15orf32, 0_C19orf40, 0_C20orf195, 0_C21orf88, 0_C2orf50, 0_C6orf127, 0_CCDC80, 0_CLEC12B, 0_CXorf58, 0_DEFB131, 0_DEFB1, 0_DUSP5P, 0_EHD4, 0_FAM111A, 0_FUCA2, 0_GBGT1, 0_GDE1, 0_GNLY, 0_GRIN3A, 0_HSPA1B, 0_IFNA8, 0_KCNQ1DN, 0_KRT6B, 0_MASTL, 0_MRGPRX2, 0_MTCP1, 0_NCRNA00164, 0_NEFL, 0_NUDT16L1, 0_OR2B11, 0_OR52B6, 0_PCSK9, 0_S1PR1, 0_SLC39A2, 0_SUB1, 0_TREH, 0_TRIM63, 0_TSHB, 0_VPREB1, 0_ZBTB16, 0_ABCA3, 0_ABCG1, 0_ACER1, 0_ACSL1, 0_ADAMTS17, 0_ADARB2, 0_AMBP, 0_AQP10, 0_ARL17B, 0_ASTL, 0_ATP13A2, 0_BEND5, 0_C11orf88, 0_C14orf178, 0_C3orf26, 0_C6orf227, 0_C9orf170, 0_CAMK4, 0_CDC7, 0_CDH10, 0_CDH9, 0_CLEC4F, 0_DAD1L, 0_DEPDC4, 0_DGAT2L6, 0_DHX35, 0_FAM47C, 0_FAM9C, 0_FARS2, 0_FGD3, 0_FIGLA, 0_G6PC2, 0_GLI1, 0_GNPTG, 0_HCG4P6, 0_ISX, 0_JMY, 0_KIR2DS4, 0_KRT6A, 0_LOC148145, 0_LOC221122, 0_LOC285375, 0_LOC339240, 0_LOC340357, 0_LRRC37A, 0_LY6G6E, 0_MAPK15, 0_MAPT, 0_MDS2, 0_MOSC1, 0_MTHFD1, 0_MYO18B, 0_NPC1, 0_NR1D1, 0_OR1N2, 0_OR4N3P, 0_ORC4L, 0_P2RY4, 0_PATL1, 0_PIF1, 0_PM20D1, 0_PPP1R14C, 0_PTGES, 0_RAET1E, 0_SIP1, 0_SLC22A11, 0_SLC46A1, 0_SPINK4, 0_STMN2, 0_THUMPD1, 0_TMEM132B, 0_TMEM27, 0_TP63, 0_UBAP2, 0_UGT1A9, 0_USP17L2, 0_USP26, 0_WDR92, 0_WFDC3, 0_AATF, 0_ADAMTS19, 0_ANKRD2, 0_ARNTL2, 0_ATP6V0A4, 0_ATXN7L3, 0_BANF2, 0_BEX1, 0_BRIX1, 0_C12orf39, 0_C17orf47, 0_C1orf94, 0_C2orf14, 0_C2orf55, 0_C2orf57, 0_C5orf47, 0_C6orf58, 0_CAMK2N2, 0_CAPNS2, 0_CCDC83, 0_CD300LF, 0_CD44, 0_CDH16, 0_CDKN2C, 0_CDV3, 0_CENPW, 0_CFB, 0_CKS1B, 0_CLIC4, 0_CNKSR3, 0_COL6A4P2, 0_CRYZL1, 0_CSPG5, 0_CSTT, 0_CXorf49B, 0_CXorf61, 0_CYP19A1, 0_DCX, 0_ERP27, 0_ESX1, 0_FGFR2, 0_FLJ26850, 0_FRMD7, 0_FUT7, 0_GNS, 0_GPR63, 0_GPR98, 0_GRIN2A, 0_HAR1A, 0_HBE1, 0_HOXD12, 0_HSP90B3P, 0_IGFL1, 0_INSM2, 0_ITM2A, 0_KIAA1486, 0_KIF3C, 0_KRTAP5-10, 0_LARP4, 0_LDOC1L, 0_LOC100128191, 0_LOC100130148, 0_LOC145783, 0_LOC388588, 0_LRFN2, 0_LRRC7, 0_MORN3, 0_MRGPRX3, 0_MRPL45, 0_MYL7, 0_NBPF16, 0_NCRNA00162, 0_NCRNA00171, 0_NEFH, 0_NLRP12, 0_NPFFR1, 0_NSA2, 0_NUP205, 0_ODF4, 0_OR13J1, 0_OR1M1, 0_OR2A25, 0_OR2A7, 0_OR2M4, 0_OR52E4, 0_OR52E6, 0_PCSK2, 0_PDE7A, 0_PF4V1, 0_PF4, 0_PINX1, 0_PPM1D, 0_PRDX6, 0_PRSS27, 0_PTCHD2, 0_RHBDL2, 0_RNF2, 0_SCNN1A, 0_SEMA5A, 0_SERPINB4, 0_SH3TC1, 0_SLC13A1, 0_SLC14A1, 0_SLC22A2, 0_SLC6A2, 0_SLFNL1, 0_SLPI, 0_SNRPB2, 0_SNTN, 0_SUV39H2, 0_TIMM10, 0_TMEM14A, 0_TMEM45B, 0_TMEM86A, 0_TPSAB1, 0_TRIM67, 0_TTL, 0_UCKL1AS, 0_VWC2, 0_WNT8A, 0_XRRA1, 0_ZFAND3, 0_ZFR2, 0_ZIC1, 0_ZNF471, 0_ZNF695, 0_ZSCAN4]
+Fold 1> Optimization on fold finished in 00-00:05:20
+
+Fold 1> FEATURE SETS SELECTED
+
+Fold 1> PARETO FRONT
+Fold 4>
+   	     	         	        	          Pam50 naive Bayes balanced accuracy           	                    leanness                    
+   	     	         	        	--------------------------------------------------------	------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std     	min      	avg      	max	std     
+0  	500  	941      	941     	0.191128	0.498532	0.700235	0.126901	0.0196078	0.0951132	1  	0.171991
+1  	513  	1187     	1215    	0.198236	0.52819 	0.715585	0.130312	0.0185185	0.0939392	1  	0.110606
+2  	500  	1216     	1472    	0.2     	0.555346	0.718641	0.124001	0.0185185	0.0971716	1  	0.114314
+3  	500  	1254     	1710    	0.2     	0.578357	0.734718	0.118553	0.0181818	0.095558 	1  	0.112548
+4  	500  	1247     	1936    	0.2     	0.59218 	0.741631	0.117065	0.0181818	0.0969164	1  	0.11299 
+Fold 2> Features in hall of fame by prevalence:
+Fold 2> 399 features: [0_C14orf145, 0_PARP2, 0_ERBB2, 0_ACSBG1, 0_GRB7, 0_NPFFR1, 0_SERPIND1, 0_CAMK4, 0_FAM189A2, 0_TCF19, 0_ENPP1, 0_SPACA3, 0_TSHB, 0_ECHS1, 0_PPP1R1B, 0_RP1-177G6.2, 0_C2orf57, 0_CEP152, 0_CKS1B, 0_NETO2, 0_NUDT6, 0_PPP1R14C, 0_PSKH2, 0_TMEM59L, 0_CNKSR3, 0_KRT20, 0_LIPC, 0_MPHOSPH6, 0_NXF4, 0_RGAG1, 0_RNASE3, 0_TFF3, 0_WDR67, 0_ABCG1, 0_APOLD1, 0_C15orf32, 0_C9orf53, 0_CARD14, 0_CFB, 0_COL22A1, 0_DCX, 0_HORMAD1, 0_MUC13, 0_RGN, 0_SCRG1, 0_TCHH, 0_TREH, 0_TSPAN16, 0_ART5, 0_ATP1B3, 0_C2orf50, 0_CENPW, 0_CHFR, 0_HHIPL2, 0_ISX, 0_KRT6B, 0_LOC653544, 0_MAGEB3, 0_MBIP, 0_MRGPRX4, 0_OR10V1, 0_OR5P3, 0_PNLIPRP2, 0_RHBG, 0_SCNN1G, 0_SERPINA4, 0_STAC2, 0_TEX19, 0_TGM3, 0_TGM7, 0_ZNF578, 0_BCYRN1, 0_C15orf26, 0_CXorf61, 0_CYSLTR1, 0_DLX6, 0_FOXC1, 0_GREB1L, 0_GRIN3A, 0_IGFL1, 0_IL2, 0_KCNH4, 0_LOC388692, 0_MIA2, 0_NEURL1B, 0_OR2A4, 0_OR2L3, 0_OR4D11, 0_PAQR7, 0_PCSK9, 0_PDC, 0_PLEKHG4, 0_RASGRP1, 0_RMND1, 0_RMRP, 0_ROPN1, 0_SFRP1, 0_SLCO5A1, 0_SPINK4, 0_SULT2B1, 0_XAGE2, 0_ZFR2, 0_ABCG2, 0_AR, 0_BLOC1S2, 0_C3orf26, 0_C3orf65, 0_CALB1, 0_CDKN1A, 0_CHCHD7, 0_CNGB1, 0_CRYZ, 0_CSDC2, 0_CXorf40A, 0_CYP2A7, 0_EXT1, 0_FAM48B1, 0_FAM92B, 0_FGG, 0_IGFALS, 0_IL13RA1, 0_IPO9, 0_ITGBL1, 0_LOC152024, 0_LY6G6E, 0_MASTL, 0_MLPH, 0_MOSC1, 0_MTCP1, 0_PLA2G2C, 0_PLXND1, 0_PRSS33, 0_RERGL, 0_SKAP1, 0_SLC39A2, 0_SLC39A5, 0_SLPI, 0_SPINK2, 0_TINAGL1, 0_TNNI3, 0_TRDN, 0_TRPC2, 0_TULP1, 0_WDR49, 0_ZSCAN18, 0_ADAD2, 0_AFAP1L2, 0_ALMS1P, 0_C12orf39, 0_C15orf55, 0_C1orf185, 0_C9orf40, 0_CCDC163P, 0_CEACAM20, 0_DEFB1, 0_DGAT2L6, 0_EGFR, 0_FAM27A, 0_FAM57B, 0_FAM63A, 0_FLJ43950, 0_FOXRED2, 0_G6PD, 0_GDF5, 0_GPC5, 0_GPR78, 0_GSPT1, 0_HRNR, 0_HSD17B12, 0_IL17A, 0_KIAA1731, 0_KIR2DS4, 0_LCN6, 0_LOC154822, 0_LOC389332, 0_MAP1LC3A, 0_MGAT4C, 0_NEFL, 0_NFE2, 0_NPPB, 0_NPTXR, 0_OR2A7, 0_OR2L13, 0_OSR1, 0_PCBD1, 0_PF4V1, 0_PLK5P, 0_PMAIP1, 0_PSD3, 0_RPRM, 0_RPS5, 0_SEPT7L, 0_SERPINA3, 0_SH3BGRL, 0_SLC2A7, 0_TFF1, 0_TMPO, 0_TSHR, 0_TSPAN19, 0_VIPR1, 0_WEE1, 0_ZNRF2, 0_ANKRD2, 0_ANO4, 0_AOX2P, 0_AREG, 0_BAP1, 0_BDKRB2, 0_BEND5, 0_C10orf72, 0_C2orf83, 0_C3orf51, 0_C4orf22, 0_C6orf218, 0_CASP14, 0_CCDC127, 0_CD82, 0_CDA, 0_CDH1, 0_CDKN2C, 0_CEACAM5, 0_CNKSR1, 0_COL28A1, 0_CRP, 0_CTAG1B, 0_CXorf27, 0_CYP7A1, 0_DCLK3, 0_DEPDC4, 0_DPP10, 0_FAR1, 0_GABBR2, 0_GART, 0_GDF15, 0_HAO2, 0_HKDC1, 0_HMGA2, 0_IGFL4, 0_INSM2, 0_ITPK1, 0_KCNA3, 0_KIRREL2, 0_KRT32, 0_KYNU, 0_LDLRAD1, 0_LOC284632, 0_LOC727896, 0_LOC729668, 0_MANBAL, 0_MC3R, 0_MICALL2, 0_MRO, 0_MST1, 0_NPAS2, 0_NPC1L1, 0_OR5P2, 0_OSTN, 0_PLA2G12A, 0_RASA4, 0_RBM46, 0_RNF8, 0_RTL1, 0_SILV, 0_SLC41A1, 0_SPACA4, 0_TAF9B, 0_TREML4, 0_USP17L2, 0_ZNF556, 0_ABCA3, 0_ACSL1, 0_ADAM32, 0_ADCYAP1, 0_ANKRD10, 0_ARFGEF1, 0_ARHGAP36, 0_ARL2, 0_ASIP, 0_BAIAP2L2, 0_C11orf87, 0_C12orf59, 0_C12orf5, 0_C14orf126, 0_C15orf23, 0_C1QL1, 0_C21orf121, 0_C21orf82, 0_C21orf84, 0_CACNA1A, 0_CCDC140, 0_CCDC6, 0_CDH10, 0_CEACAM19, 0_CEP192, 0_CES4, 0_CES7, 0_CKMT1A, 0_CLN6, 0_CNIH4, 0_CNTD2, 0_CNTNAP5, 0_CYP4Z1, 0_DLK2, 0_DMRTC2, 0_DYDC2, 0_DYNC1I1, 0_EFCAB6, 0_EFEMP2, 0_EFHB, 0_ENTHD1, 0_EPB41L4A, 0_EPHA6, 0_EPHA8, 0_FADS1, 0_FAM106A, 0_FOXB1, 0_FUCA2, 0_GALR2, 0_GCNT7, 0_GLRA3, 0_GLTPD1, 0_GLTP, 0_GMNN, 0_GPR128, 0_GPR50, 0_GPR89B, 0_HHAT, 0_HIST2H2AB, 0_HMGB2, 0_IFIT1B, 0_IGFBP2, 0_IKBIP, 0_IMMP1L, 0_KCNIP3, 0_KIAA1210, 0_KIAA1737, 0_LCTL, 0_LILRA1, 0_LIN28B, 0_LOC100009676, 0_LOC100190939, 0_LOC728554, 0_LOC93432, 0_LRRN1, 0_LSP1, 0_LTV1, 0_MAGOH, 0_MAMDC2, 0_MBOAT1, 0_MGC3771, 0_MRPS30, 0_MYO10, 0_NLRP9, 0_NT5DC1, 0_NTS, 0_NUDT9P1, 0_OPN1MW, 0_OR2T8, 0_OTOP2, 0_P2RX6, 0_PABPC5, 0_PAR1, 0_PHYHD1, 0_PLOD1, 0_PRPH2, 0_PSG5, 0_RBM14, 0_RORB, 0_RUNDC1, 0_SAMD13, 0_SCARB1, 0_SCN2B, 0_SEC22C, 0_SERPINB7, 0_SIK3, 0_SLC16A12, 0_SLC28A1, 0_SLC38A11, 0_SMAD5OS, 0_SNAI1, 0_SNCAIP, 0_SNORA2A, 0_SRA1, 0_SRXN1, 0_SUSD5, 0_TBPL2, 0_TDRD10, 0_TEKT3, 0_TMEFF2, 0_TMEM132C, 0_UBE2V1, 0_USH2A, 0_WNT8B, 0_WWOX, 0_ZNF251, 0_ZNF883, 0_ZP2, 0_ZPBP2, 0_ZSWIM3]
+Fold 1> Number of solutions = 20
+Fold 1> (np.float64(0.7578335261229998), 0.018867924528301886) 52 features: [0_ABCG1, 0_AQP10, 0_BTNL8, 0_C11orf53, 0_C14orf145, 0_C15orf32, 0_C3orf36, 0_CACNG4, 0_CAMK2B, 0_CDA, 0_CDC25B, 0_CES4, 0_CXorf58, 0_FAM48B1, 0_GPD1L, 0_GPR160, 0_GRXCR2, 0_HDAC8, 0_HORMAD1, 0_IGFL1, 0_IGSF22, 0_KIAA0146, 0_KRT20, 0_LILRA1, 0_LIPN, 0_LOC100130148, 0_LOC341056, 0_LY6G6D, 0_MAPK7, 0_MLPH, 0_MMP25, 0_MTA3, 0_NANOG, 0_NFE2, 0_NKPD1, 0_PCDHGA7, 0_PENK, 0_PSKH2, 0_PTENP1, 0_RDH8, 0_RERGL, 0_RPA4, 0_SCN3B, 0_SCNN1A, 0_SERPINA3, 0_SPANXN5, 0_TAS2R3, 0_TFF1, 0_TMEM59L, 0_TTC13, 0_WDR67, 0_ZP2] Hiperparameter set: [var_smoothing = 2.762397186137017e-07]
+Fold 1> (np.float64(0.750323886639676), 0.02631578947368421) 37 features: [0_ABCA3, 0_ABCG1, 0_AQP10, 0_C14orf145, 0_C3orf36, 0_CDC25B, 0_CDCA5, 0_CDH1, 0_CRELD1, 0_CXorf40A, 0_CXorf58, 0_ENTPD8, 0_FAM48B1, 0_FGB, 0_FLJ35024, 0_GLI1, 0_GPR160, 0_GRXCR2, 0_HORMAD1, 0_IL1F9, 0_LILRA1, 0_LOC148189, 0_LOC341056, 0_MLPH, 0_NEURL1B, 0_PCDHGA7, 0_PMAIP1, 0_PSKH2, 0_PTENP1, 0_RBMS1, 0_RERGL, 0_RPA4, 0_SCN3B, 0_SLAIN2, 0_SPATA1, 0_TAS2R3, 0_WDR67] Hiperparameter set: [var_smoothing = 3.5594042857409533e-07]
+Fold 1> (np.float64(0.7485135916714865), 0.02702702702702703) 36 features: [0_ABCA3, 0_ABCG1, 0_AQP10, 0_C14orf145, 0_C3orf36, 0_CDC25B, 0_CDCA5, 0_CDH1, 0_CRELD1, 0_CXorf40A, 0_CXorf58, 0_ENTPD8, 0_FAM48B1, 0_FGB, 0_FLJ35024, 0_GLI1, 0_GPR160, 0_GRXCR2, 0_HORMAD1, 0_LILRA1, 0_LOC148189, 0_LOC341056, 0_MLPH, 0_NEURL1B, 0_PCDHGA7, 0_PMAIP1, 0_PSKH2, 0_PTENP1, 0_RBMS1, 0_RERGL, 0_RPA4, 0_SCN3B, 0_SLAIN2, 0_SPATA1, 0_TAS2R3, 0_WDR67] Hiperparameter set: [var_smoothing = 3.8675023127306255e-07]
+Fold 1> (np.float64(0.7449948187777136), 0.029411764705882353) 33 features: [0_ABCA3, 0_ABCG1, 0_AQP10, 0_C14orf145, 0_C3orf36, 0_CDC25B, 0_CDCA5, 0_CDH1, 0_CRELD1, 0_CXorf40A, 0_CXorf58, 0_ENTPD8, 0_FAM48B1, 0_FGB, 0_FLJ35024, 0_GLI1, 0_GPR160, 0_HORMAD1, 0_IL1F9, 0_LOC148189, 0_LOC341056, 0_MLPH, 0_NEURL1B, 0_PCDHGA7, 0_PMAIP1, 0_PSKH2, 0_PTENP1, 0_RERGL, 0_SCN3B, 0_SLAIN2, 0_SPATA1, 0_TAS2R3, 0_WDR67] Hiperparameter set: [var_smoothing = 3.791706093871606e-07]
+Fold 1> (np.float64(0.7435713080778871), 0.041666666666666664) 23 features: [0_B3GALT5, 0_C4orf36, 0_C6orf97, 0_CCL11, 0_CTAG2, 0_FOXC1, 0_GPD1L, 0_HHLA2, 0_IQCC, 0_KRT17, 0_KRT20, 0_LOC100130148, 0_LOC341056, 0_MOSC1, 0_NANOG, 0_RAB6C, 0_SCNN1A, 0_SLC1A7, 0_TMEM100, 0_TMEM59L, 0_TMPO, 0_TPSD1, 0_WDR67] Hiperparameter set: [var_smoothing = 5.565173555555966e-07]
+Fold 1> (np.float64(0.7106352419510316), 0.043478260869565216) 22 features: [0_ANKAR, 0_AR, 0_C1orf177, 0_C3orf65, 0_CCDC127, 0_DEPDC4, 0_DNAJC13, 0_FOXC1, 0_G6PD, 0_MOXD1, 0_MTA3, 0_NSA2, 0_OR11H6, 0_PGGT1B, 0_PPP1R14C, 0_PPP1R1B, 0_PRSS33, 0_PRSS37, 0_SNTN, 0_TFF1, 0_TMEM215, 0_TMPO] Hiperparameter set: [var_smoothing = 5.948477201022124e-10]
+Fold 1> (np.float64(0.7099773472141894), 0.058823529411764705) 16 features: [0_AMBP, 0_ATP1B3, 0_C4orf36, 0_C6orf97, 0_CTAG2, 0_GRB7, 0_MRAP2, 0_NEURL1B, 0_PENK, 0_PPP1R1B, 0_SNAPC3, 0_SPATA1, 0_TFF1, 0_TMEM59L, 0_TMPO, 0_TPSD1] Hiperparameter set: [var_smoothing = 9.527729711679572e-07]
+Fold 1> (np.float64(0.6589705031810296), 0.0625) 15 features: [0_ABCA3, 0_ANXA6, 0_C10orf82, 0_ERBB2, 0_FAM43B, 0_FKTN, 0_IGF1R, 0_MASTL, 0_MIA, 0_MOSC1, 0_NPFFR1, 0_NPPA, 0_OR5P3, 0_RFX8, 0_VIPR1] Hiperparameter set: [var_smoothing = 3.1617817664626387e-12]
+Fold 1> (np.float64(0.6530894544052439), 0.07692307692307693) 12 features: [0_CSDC2, 0_FAM9A, 0_IGF1R, 0_KLHL1, 0_MASTL, 0_MIA, 0_MOSC1, 0_NPFFR1, 0_OR5P3, 0_PYGM, 0_RFX8, 0_VIPR1] Hiperparameter set: [var_smoothing = 3.5019528610218113e-07]
+Fold 1> (np.float64(0.6255664401388085), 0.08333333333333333) 11 features: [0_APOO, 0_ATP2B2, 0_C14orf145, 0_C6orf97, 0_CPNE6, 0_LOC145474, 0_MRGPRX3, 0_OR5P3, 0_ORMDL3, 0_SEMA3B, 0_TMEM106C] Hiperparameter set: [var_smoothing = 1.2238959771535912e-09]
+Fold 1> (np.float64(0.6196497252747253), 0.09090909090909091) 10 features: [0_CASC3, 0_CLCA4, 0_FOXC1, 0_GRXCR2, 0_PDE4DIP, 0_PPP1R1B, 0_RPH3AL, 0_SEMA3B, 0_ZNF471, 0_ZP1] Hiperparameter set: [var_smoothing = 1.3669648233054754e-07]
+Fold 1> (np.float64(0.605350997686524), 0.1) 9 features: [0_CLEC4F, 0_DBNDD2, 0_EPS8L3, 0_IGF1R, 0_LPA, 0_MRGPRE, 0_PPIL5, 0_PRSS33, 0_SUSD5] Hiperparameter set: [var_smoothing = 1.5212616105682766e-11]
+Fold 1> (np.float64(0.5772274436090227), 0.1111111111111111) 8 features: [0_ANKRD30A, 0_AOX2P, 0_CSNK1G3, 0_CYP3A7, 0_FOXC1, 0_GRXCR2, 0_MLPH, 0_THNSL1] Hiperparameter set: [var_smoothing = 8.071757759566205e-08]
+Fold 1> (np.float64(0.5741288316946213), 0.125) 7 features: [0_ENPP1, 0_ERBB2, 0_IGFALS, 0_KRT20, 0_PPIL5, 0_UGT2B28, 0_ZSCAN4] Hiperparameter set: [var_smoothing = 6.104425144538461e-10]
+Fold 1> (np.float64(0.528931342780027), 0.14285714285714285) 6 features: [0_AMBP, 0_FOXC1, 0_KLHL1, 0_KRT20, 0_SLC26A7, 0_TPSD1] Hiperparameter set: [var_smoothing = 2.0545453396165136e-08]
+Fold 1> (np.float64(0.5154623337189127), 0.16666666666666666) 5 features: [0_AMBP, 0_FOXC1, 0_KLHL1, 0_KRT20, 0_TPSD1] Hiperparameter set: [var_smoothing = 2.0428699031736237e-08]
+Fold 1> (np.float64(0.4906531954887218), 0.25) [0_DSCC1, 0_EDC4, 0_ERBB2] Hiperparameter set: [var_smoothing = 2.011873353819372e-12]
+Fold 1> (np.float64(0.4507371794871795), 0.3333333333333333) [0_FOXC1, 0_KLHL1] Hiperparameter set: [var_smoothing = 2.8497069267485943e-08]
+Fold 1> (np.float64(0.3487348178137652), 0.5) [0_ERBB2] Hiperparameter set: [var_smoothing = 1.6768721115598055e-12]
+Fold 1> (np.float64(0.2), 1.0) [] Hiperparameter set: [var_smoothing = 3.074852313763485e-09]
+Fold 1> Features in hall of fame by prevalence:
+Fold 1> 156 features: [0_FOXC1, 0_C14orf145, 0_GRXCR2, 0_KRT20, 0_LOC341056, 0_MLPH, 0_WDR67, 0_ABCA3, 0_ABCG1, 0_AQP10, 0_C3orf36, 0_CDC25B, 0_CXorf58, 0_ERBB2, 0_FAM48B1, 0_GPR160, 0_HORMAD1, 0_KLHL1, 0_NEURL1B, 0_PCDHGA7, 0_PSKH2, 0_PTENP1, 0_RERGL, 0_SCN3B, 0_SPATA1, 0_TAS2R3, 0_TPSD1, 0_AMBP, 0_C6orf97, 0_CDCA5, 0_CDH1, 0_CRELD1, 0_CXorf40A, 0_ENTPD8, 0_FGB, 0_FLJ35024, 0_GLI1, 0_IGF1R, 0_LILRA1, 0_LOC148189, 0_MOSC1, 0_OR5P3, 0_PMAIP1, 0_PPP1R1B, 0_RPA4, 0_SLAIN2, 0_TFF1, 0_TMEM59L, 0_TMPO, 0_C4orf36, 0_CTAG2, 0_GPD1L, 0_IL1F9, 0_LOC100130148, 0_MASTL, 0_MIA, 0_MTA3, 0_NANOG, 0_NPFFR1, 0_PENK, 0_PPIL5, 0_PRSS33, 0_RBMS1, 0_RFX8, 0_SCNN1A, 0_SEMA3B, 0_VIPR1, 0_ANKAR, 0_ANKRD30A, 0_ANXA6, 0_AOX2P, 0_APOO, 0_AR, 0_ATP1B3, 0_ATP2B2, 0_B3GALT5, 0_BTNL8, 0_C10orf82, 0_C11orf53, 0_C15orf32, 0_C1orf177, 0_C3orf65, 0_CACNG4, 0_CAMK2B, 0_CASC3, 0_CCDC127, 0_CCL11, 0_CDA, 0_CES4, 0_CLCA4, 0_CLEC4F, 0_CPNE6, 0_CSDC2, 0_CSNK1G3, 0_CYP3A7, 0_DBNDD2, 0_DEPDC4, 0_DNAJC13, 0_DSCC1, 0_EDC4, 0_ENPP1, 0_EPS8L3, 0_FAM43B, 0_FAM9A, 0_FKTN, 0_G6PD, 0_GRB7, 0_HDAC8, 0_HHLA2, 0_IGFALS, 0_IGFL1, 0_IGSF22, 0_IQCC, 0_KIAA0146, 0_KRT17, 0_LIPN, 0_LOC145474, 0_LPA, 0_LY6G6D, 0_MAPK7, 0_MMP25, 0_MOXD1, 0_MRAP2, 0_MRGPRE, 0_MRGPRX3, 0_NFE2, 0_NKPD1, 0_NPPA, 0_NSA2, 0_OR11H6, 0_ORMDL3, 0_PDE4DIP, 0_PGGT1B, 0_PPP1R14C, 0_PRSS37, 0_PYGM, 0_RAB6C, 0_RDH8, 0_RPH3AL, 0_SERPINA3, 0_SLC1A7, 0_SLC26A7, 0_SNAPC3, 0_SNTN, 0_SPANXN5, 0_SUSD5, 0_THNSL1, 0_TMEM100, 0_TMEM106C, 0_TMEM215, 0_TTC13, 0_UGT2B28, 0_ZNF471, 0_ZP1, 0_ZP2, 0_ZSCAN4]
+
+Fold 1> BEST SUMS WITH SIZE 50
+Fold 1> Number of solutions = 50
+Fold 3>
+   	     	         	        	          Pam50 naive Bayes balanced accuracy           	                    leanness                    
+   	     	         	        	--------------------------------------------------------	------------------------------------------------
+gen	evals	gen_feats	explored	min     	avg     	max     	std     	min      	avg      	max	std     
+0  	500  	914      	914     	0.199554	0.513128	0.729512	0.13329 	0.0196078	0.100527 	1  	0.187005
+1  	515  	1144     	1181    	0.2     	0.541298	0.759543	0.133368	0.0178571	0.0949232	1  	0.112675
+2  	500  	1193     	1434    	0.2     	0.566727	0.759543	0.127221	0.0175439	0.0974657	1  	0.112191
+3  	500  	1203     	1665    	0.2     	0.592573	0.761775	0.122802	0.0169492	0.0961999	1  	0.111533
+4  	500  	1213     	1886    	0.2     	0.602813	0.761775	0.123703	0.0169492	0.0985208	1  	0.111837
+Fold 4> Optimization on fold finished in 00-00:05:19
+
+Fold 4> FEATURE SETS SELECTED
+
+Fold 4> PARETO FRONT
+Fold 1> Features in hall of fame by prevalence:
+Fold 1> 238 features: [0_PSKH2, 0_WDR67, 0_ABCG1, 0_C14orf145, 0_MLPH, 0_NEURL1B, 0_TMEM59L, 0_C3orf36, 0_CDC25B, 0_CXorf58, 0_FAM48B1, 0_GRXCR2, 0_HORMAD1, 0_PCDHGA7, 0_RERGL, 0_GPR160, 0_RPA4, 0_TAS2R3, 0_TFF1, 0_LOC341056, 0_NANOG, 0_PTENP1, 0_LILRA1, 0_LOC148189, 0_SCN3B, 0_SERPINA3, 0_C11orf53, 0_CACNG4, 0_GPD1L, 0_HDAC8, 0_IGSF22, 0_NFE2, 0_PENK, 0_ZP2, 0_CDH1, 0_MAPK7, 0_RDH8, 0_CAMK2B, 0_BTNL8, 0_MMP25, 0_AQP10, 0_GRB7, 0_PMAIP1, 0_SLAIN2, 0_CDK19, 0_CRELD1, 0_CXorf40A, 0_FGB, 0_GLI1, 0_KRT20, 0_RBMS1, 0_SPATA1, 0_TMPO, 0_AMBP, 0_ENTPD8, 0_FOXC1, 0_SCNN1A, 0_TPSD1, 0_ABCA3, 0_C6orf97, 0_CDCA5, 0_CTAG2, 0_DUSP5P, 0_FLJ35024, 0_GDF5, 0_MTA3, 0_SPIN3, 0_STX2, 0_AGTR1, 0_ATP1B3, 0_C4orf36, 0_CHST7, 0_ERBB2, 0_FAM119B, 0_IL1F9, 0_KIAA0146, 0_LIPN, 0_LOC100130148, 0_LOC100189589, 0_LY6G6D, 0_MRAP2, 0_MRGPRX3, 0_PPP1R1B, 0_SERPINA6, 0_SNAPC3, 0_TCF19, 0_ABCB7, 0_ADAMTS18, 0_AGAP11, 0_ANKRD30A, 0_ANO4, 0_ASTL, 0_C14orf183, 0_C15orf32, 0_C1orf94, 0_C20orf108, 0_C3orf65, 0_C9orf170, 0_CDA, 0_CDH22, 0_CES4, 0_CLDN12, 0_CLEC4F, 0_COL20A1, 0_CPA6, 0_CTSL2, 0_CXorf61, 0_DCLK3, 0_DEFB1, 0_DISP2, 0_DMRTC2, 0_EP400, 0_EXOC3L2, 0_FADS1, 0_FGD3, 0_FMO6P, 0_GABRE, 0_GML, 0_GPR98, 0_HRNR, 0_IFNK, 0_IGF1R, 0_IGFL1, 0_ISX, 0_ITGA2, 0_KCNQ1DN, 0_KCNS1, 0_KIF20B, 0_KRT32, 0_LOC148145, 0_LOC389033, 0_NKPD1, 0_NOTCH2NL, 0_NPFFR1, 0_NPPA, 0_NRM, 0_OR10V1, 0_OR5B2, 0_PDK3, 0_PIP5K1P1, 0_PPIL5, 0_PRODH, 0_RFX8, 0_RPH3AL, 0_RPRM, 0_RQCD1, 0_SCARB1, 0_SEPT3, 0_SLC1A7, 0_SPANXN5, 0_ST8SIA6, 0_TMED6, 0_TSHB, 0_TSPAN1, 0_TTC13, 0_UMPS, 0_USP17L2, 0_WNT8A, 0_ZNF878, 0_AGXT2, 0_AHCTF1, 0_ANXA3, 0_B3GALT5, 0_B3GAT1, 0_BTF3, 0_C15orf55, 0_C1orf223, 0_C5orf30, 0_C9orf53, 0_CADM2, 0_CCDC127, 0_CCL11, 0_CCR9, 0_CHRNA5, 0_CHST2, 0_CLDN10, 0_CPNE6, 0_CRTAM, 0_CTXN3, 0_CYP17A1, 0_CYP21A2, 0_DBNDD2, 0_DGAT2L6, 0_DIO1, 0_DPCR1, 0_GIP, 0_GLIS2, 0_GPR77, 0_GRIN3A, 0_GSTA4, 0_HHLA2, 0_IFIT1B, 0_IGFALS, 0_IQCC, 0_KLHL1, 0_KRT17, 0_LECT1, 0_LRRC55, 0_LYPD6, 0_MMD, 0_MOSC1, 0_MSH2, 0_NEFL, 0_NGF, 0_NSA2, 0_OR13C2, 0_OR2A4, 0_ORMDL3, 0_PABPC5, 0_PARP14, 0_PCCB, 0_PCSK9, 0_PKD2L1, 0_PLEKHA9, 0_POP1, 0_PRSS33, 0_RAB6C, 0_RABGGTB, 0_RBMY1A1, 0_RNF2, 0_SBDSP1, 0_SERPINA12, 0_SNAPC1, 0_SP9, 0_SPATA20, 0_SUSD5, 0_TCF15, 0_TCHH, 0_TEX19, 0_TMEM100, 0_TREH, 0_TRIM29, 0_TRPC2, 0_TUBA3D, 0_WIPI2, 0_ZDHHC11, 0_ZFP112, 0_ZRSR2]
+Fold 4> Number of solutions = 15
+Fold 4> (np.float64(0.7416314287010395), 0.03225806451612903) 30 features: [0_ABCC2, 0_BARX2, 0_C14orf145, 0_C15orf26, 0_C15orf32, 0_C15orf55, 0_C3orf26, 0_CDRT15P, 0_CENPE, 0_CRYBB3, 0_CXorf22, 0_DEFB1, 0_DLX6, 0_ELAVL2, 0_GRIK1, 0_HRASLS5, 0_KRTAP5-3, 0_LOC283332, 0_MFSD1, 0_MPHOSPH6, 0_MUC20, 0_NLRP10, 0_ORMDL3, 0_OTX1, 0_PLOD1, 0_SLC22A11, 0_SLC26A5, 0_STAC2, 0_TCF19, 0_TMEM194B] Hiperparameter set: [var_smoothing = 9.11261153746908e-07]
+Fold 4> (np.float64(0.6968360229302161), 0.05263157894736842) 18 features: [0_C15orf32, 0_C15orf55, 0_C2orf50, 0_CAMK4, 0_CENPE, 0_ETAA1, 0_FAM5B, 0_FGD3, 0_FOXC1, 0_GRB7, 0_KGFLP1, 0_PMAIP1, 0_PPP1R1B, 0_SERPINA3, 0_SLC16A10, 0_SMC1B, 0_SPACA5, 0_TMEM170B] Hiperparameter set: [var_smoothing = 1.4858252568915919e-12]
+Fold 4> (np.float64(0.6839822661580462), 0.05555555555555555) 17 features: [0_C22orf31, 0_C4orf7, 0_CDC7, 0_CNKSR3, 0_FOXC1, 0_HIST3H3, 0_KRT5, 0_MRPS30, 0_NEFL, 0_NPFFR1, 0_OR11H6, 0_OR2A25, 0_ORMDL3, 0_PARP2, 0_PDZD9, 0_SLC16A10, 0_SPACA4] Hiperparameter set: [var_smoothing = 1.359109832595613e-11]
+Fold 4> (np.float64(0.6500337670523615), 0.0625) 15 features: [0_CENPE, 0_COL22A1, 0_ESRRB, 0_FOXC1, 0_GDF3, 0_KRT5, 0_MAPT, 0_OR2A25, 0_OR5E1P, 0_PLXNB1, 0_PPP1R1B, 0_SGSM1, 0_SLC16A10, 0_SLC39A2, 0_WDR67] Hiperparameter set: [var_smoothing = 4.661065212077321e-08]
+Fold 4> (np.float64(0.6479910010805457), 0.07142857142857142) 13 features: [0_CLEC4C, 0_DPP6, 0_GLUL, 0_GRIK1, 0_MAB21L1, 0_MGC3771, 0_MPHOSPH6, 0_MYH15, 0_NPFFR1, 0_PPP1R14C, 0_RGN, 0_SHD, 0_WDR67] Hiperparameter set: [var_smoothing = 4.108927958317807e-09]
+Fold 4> (np.float64(0.6434992753726996), 0.07692307692307693) 12 features: [0_AP1AR, 0_C14orf145, 0_C2orf50, 0_C9orf122, 0_FAM48B1, 0_FOXC1, 0_KLHL24, 0_NUP214, 0_ORMDL3, 0_SERPINA6, 0_SLMO1, 0_TDRD10] Hiperparameter set: [var_smoothing = 3.655234091831204e-11]
+Fold 4> (np.float64(0.6369256019744516), 0.08333333333333333) 11 features: [0_AGPAT6, 0_ERBB2, 0_FAM82B, 0_GLB1L3, 0_KRT5, 0_MUCL1, 0_PMAIP1, 0_RGN, 0_SLC14A1, 0_TCF19, 0_TFCP2L1] Hiperparameter set: [var_smoothing = 2.8476701802720043e-08]
+Fold 4> (np.float64(0.6120399708102592), 0.1111111111111111) 8 features: [0_C17orf96, 0_CEP152, 0_FOXC1, 0_GRB7, 0_HIST3H3, 0_NTS, 0_SERPINA3, 0_TMEM35] Hiperparameter set: [var_smoothing = 2.254458543724624e-08]
+Fold 4> (np.float64(0.5627298120778266), 0.14285714285714285) 6 features: [0_ERBB2, 0_MGC3771, 0_MUCL1, 0_OR2T4, 0_PMAIP1, 0_WDR67] Hiperparameter set: [var_smoothing = 3.457454035943312e-09]
+Fold 4> (np.float64(0.5532637007256846), 0.16666666666666666) 5 features: [0_MGC3771, 0_MUCL1, 0_OR2T4, 0_PMAIP1, 0_WDR67] Hiperparameter set: [var_smoothing = 4.875803830874172e-09]
+Fold 4> (np.float64(0.4951961464971628), 0.2) 4 features: [0_MLPH, 0_SERPINA6, 0_SOX11, 0_XAGE2] Hiperparameter set: [var_smoothing = 2.1664338534392787e-10]
+Fold 4> (np.float64(0.45159666995469083), 0.25) [0_CENPE, 0_FBXO5, 0_ORMDL3] Hiperparameter set: [var_smoothing = 1.8902207300695986e-10]
+Fold 4> (np.float64(0.4359538015561496), 0.3333333333333333) [0_FBXO5, 0_ORMDL3] Hiperparameter set: [var_smoothing = 2.6673527393351365e-10]
+Fold 4> (np.float64(0.3722744360902256), 0.5) [0_MLPH] Hiperparameter set: [var_smoothing = 5.385444378818633e-10]
+Fold 4> (np.float64(0.2), 1.0) [] Hiperparameter set: [var_smoothing = 1.8314800300331276e-08]
+Fold 4> Features in hall of fame by prevalence:
+Fold 4> 101 features: [0_FOXC1, 0_ORMDL3, 0_CENPE, 0_PMAIP1, 0_WDR67, 0_KRT5, 0_MGC3771, 0_MUCL1, 0_SLC16A10, 0_C14orf145, 0_C15orf32, 0_C15orf55, 0_C2orf50, 0_ERBB2, 0_FBXO5, 0_GRB7, 0_GRIK1, 0_HIST3H3, 0_MLPH, 0_MPHOSPH6, 0_NPFFR1, 0_OR2A25, 0_OR2T4, 0_PPP1R1B, 0_RGN, 0_SERPINA3, 0_SERPINA6, 0_TCF19, 0_ABCC2, 0_AGPAT6, 0_AP1AR, 0_BARX2, 0_C15orf26, 0_C17orf96, 0_C22orf31, 0_C3orf26, 0_C4orf7, 0_C9orf122, 0_CAMK4, 0_CDC7, 0_CDRT15P, 0_CEP152, 0_CLEC4C, 0_CNKSR3, 0_COL22A1, 0_CRYBB3, 0_CXorf22, 0_DEFB1, 0_DLX6, 0_DPP6, 0_ELAVL2, 0_ESRRB, 0_ETAA1, 0_FAM48B1, 0_FAM5B, 0_FAM82B, 0_FGD3, 0_GDF3, 0_GLB1L3, 0_GLUL, 0_HRASLS5, 0_KGFLP1, 0_KLHL24, 0_KRTAP5-3, 0_LOC283332, 0_MAB21L1, 0_MAPT, 0_MFSD1, 0_MRPS30, 0_MUC20, 0_MYH15, 0_NEFL, 0_NLRP10, 0_NTS, 0_NUP214, 0_OR11H6, 0_OR5E1P, 0_OTX1, 0_PARP2, 0_PDZD9, 0_PLOD1, 0_PLXNB1, 0_PPP1R14C, 0_SGSM1, 0_SHD, 0_SLC14A1, 0_SLC22A11, 0_SLC26A5, 0_SLC39A2, 0_SLMO1, 0_SMC1B, 0_SOX11, 0_SPACA4, 0_SPACA5, 0_STAC2, 0_TDRD10, 0_TFCP2L1, 0_TMEM170B, 0_TMEM194B, 0_TMEM35, 0_XAGE2]
+
+Fold 4> BEST SUMS WITH SIZE 50
+Fold 4> Number of solutions = 50
+Fold 3> Optimization on fold finished in 00-00:05:21
+
+Fold 3> FEATURE SETS SELECTED
+
+Fold 3> PARETO FRONT
+Fold 3> Number of solutions = 18
+Fold 3> (np.float64(0.7617747502261369), 0.027777777777777776) 35 features: [0_ACTR8, 0_C15orf32, 0_C1orf185, 0_C9orf170, 0_CLCN4, 0_CXorf58, 0_DEFB1, 0_DKFZp566F0947, 0_EPB41L4B, 0_ERBB2, 0_GABBR2, 0_GRB7, 0_HGFAC, 0_HMGB2, 0_IPO9, 0_LCTL, 0_LCT, 0_LOC100129055, 0_LOC148189, 0_LOC284632, 0_LOC347376, 0_LOC389033, 0_NANOS1, 0_NBEA, 0_NCRNA00032, 0_NPFFR1, 0_OCA2, 0_PARP2, 0_PSG4, 0_RP1-177G6.2, 0_ST8SIA6, 0_TGM3, 0_TMEM59L, 0_WDR67, 0_WDR92] Hiperparameter set: [var_smoothing = 1.3423943908017298e-07]
+Fold 3> (np.float64(0.7614913969054371), 0.029411764705882353) 33 features: [0_ACTR8, 0_C15orf32, 0_C1orf185, 0_C9orf170, 0_CLCN4, 0_CXorf58, 0_DEFB1, 0_DKFZp566F0947, 0_EPB41L4B, 0_ERBB2, 0_GABBR2, 0_GRB7, 0_HGFAC, 0_HMGB2, 0_IPO9, 0_LCTL, 0_LCT, 0_LOC100129055, 0_LOC148189, 0_LOC284632, 0_LOC347376, 0_LOC389033, 0_NANOS1, 0_NCRNA00032, 0_NPFFR1, 0_OCA2, 0_PARP2, 0_PSG4, 0_RP1-177G6.2, 0_ST8SIA6, 0_TMEM59L, 0_WDR67, 0_WDR92] Hiperparameter set: [var_smoothing = 1.3465785930314674e-07]
+Fold 3> (np.float64(0.756058103376296), 0.034482758620689655) 28 features: [0_ACTR8, 0_BIRC5, 0_C9orf170, 0_CDC25B, 0_CLCN4, 0_CXorf58, 0_DEFB1, 0_FAM107A, 0_FGF2, 0_GABBR2, 0_GRB7, 0_HGFAC, 0_HMGB2, 0_IPO9, 0_JAKMIP2, 0_KCTD3, 0_KRT20, 0_LCTL, 0_LCT, 0_LOC148189, 0_MRGPRX3, 0_NPFFR1, 0_PARP2, 0_RP1-177G6.2, 0_SLC25A14, 0_ST8SIA6, 0_TMEM59L, 0_WDR92] Hiperparameter set: [var_smoothing = 7.758851651505241e-07]
+Fold 3> (np.float64(0.7176039965523499), 0.04) 24 features: [0_ACTR8, 0_C14orf145, 0_C1orf185, 0_C1orf96, 0_C4orf23, 0_C9orf170, 0_CFHR1, 0_CNKSR3, 0_CXorf58, 0_ERBB2, 0_HGFAC, 0_HMGB2, 0_IPO9, 0_MLPH, 0_PARP2, 0_PRSS33, 0_SLC22A11, 0_SPRY4, 0_ST8SIA6, 0_TGM3, 0_USP2, 0_WDR92, 0_XAGE2, 0_ZC4H2] Hiperparameter set: [var_smoothing = 3.6247757800910757e-09]
+Fold 3> (np.float64(0.7170158870570548), 0.041666666666666664) 23 features: [0_ACTR8, 0_C14orf145, 0_C1orf185, 0_C1orf96, 0_C4orf23, 0_C9orf170, 0_CFHR1, 0_CNKSR3, 0_CXorf58, 0_ERBB2, 0_HGFAC, 0_HMGB2, 0_IPO9, 0_MLPH, 0_PARP2, 0_PRSS33, 0_SLC22A11, 0_SPRY4, 0_ST8SIA6, 0_TGM3, 0_USP2, 0_WDR92, 0_XAGE2] Hiperparameter set: [var_smoothing = 3.2829957997135857e-09]
+Fold 3> (np.float64(0.7104281738982732), 0.045454545454545456) 21 features: [0_C14orf145, 0_C1QL1, 0_C1orf96, 0_C4orf23, 0_CEACAM5, 0_CFHR1, 0_CNKSR3, 0_CXorf58, 0_ERBB2, 0_GCKR, 0_IPO9, 0_KRT14, 0_LOC100130386, 0_LOC731779, 0_MLPH, 0_PRSS33, 0_SLC22A11, 0_SPACA4, 0_SPRY4, 0_USP2, 0_XAGE2] Hiperparameter set: [var_smoothing = 3.6114611818344936e-09]
+Fold 3> (np.float64(0.6938440489151567), 0.047619047619047616) 20 features: [0_C14orf145, 0_C1QL1, 0_C1orf96, 0_C4orf23, 0_CEACAM5, 0_CFHR1, 0_CNKSR3, 0_CXorf58, 0_ERBB2, 0_GCKR, 0_IPO9, 0_KRT14, 0_LOC100130386, 0_LOC731779, 0_MLPH, 0_PRSS33, 0_SLC22A11, 0_SPACA4, 0_SPRY4, 0_XAGE2] Hiperparameter set: [var_smoothing = 3.6795854124403343e-09]
+Fold 3> (np.float64(0.6790736878942047), 0.05) 19 features: [0_AMBP, 0_C9orf170, 0_CCDC6, 0_CCDC79, 0_DUSP1, 0_FAM194A, 0_FAM83E, 0_GDF5, 0_KIF17, 0_MBOAT1, 0_ORMDL3, 0_PF4V1, 0_PM20D1, 0_QRFP, 0_ROS1, 0_TCEAL2, 0_TIAL1, 0_WDR67, 0_ZNF556] Hiperparameter set: [var_smoothing = 3.5289967894098565e-10]
+Fold 3> (np.float64(0.6748464664996732), 0.058823529411764705) 16 features: [0_ARL17B, 0_C12orf39, 0_C2orf40, 0_CASC3, 0_CDC25B, 0_DEFB1, 0_DPP10, 0_ESRRB, 0_FOXC1, 0_KCNF1, 0_ORMDL3, 0_PSKH2, 0_RET, 0_TAL2, 0_WIPI2, 0_XAGE2] Hiperparameter set: [var_smoothing = 1.7954968144143622e-07]
+Fold 4> Features in hall of fame by prevalence:
+Fold 4> 363 features: [0_FOXC1, 0_IL5, 0_MBOAT1, 0_C14orf145, 0_KRTAP5-3, 0_MPHOSPH6, 0_WDR67, 0_C2orf50, 0_CDKN2C, 0_CYP7A1, 0_GLB1L3, 0_GRB7, 0_C15orf55, 0_PARP2, 0_SPIC, 0_C15orf32, 0_HRASLS5, 0_MMACHC, 0_NQO1, 0_OLAH, 0_OTX1, 0_PAK6, 0_RNF113B, 0_C1QL1, 0_CDC7, 0_CDH10, 0_CPT1C, 0_DEFB1, 0_KHDRBS2, 0_KRT5, 0_NEFL, 0_OR3A1, 0_PMAIP1, 0_RAB5B, 0_ABCG1, 0_C10orf40, 0_C22orf31, 0_C9orf170, 0_CENPE, 0_CEP152, 0_CRHR2, 0_DLX4, 0_DLX6, 0_ESRRB, 0_GLUL, 0_GNPNAT1, 0_GRHL3, 0_GRIK1, 0_KRT20, 0_MASTL, 0_MRGPRX4, 0_NUDT2, 0_NXPH1, 0_OR52I1, 0_RCVRN, 0_RETN, 0_RNF2, 0_SFRP1, 0_SMPDL3A, 0_SPACA4, 0_TBX22, 0_TPSD1, 0_UBE2V1, 0_USP26, 0_XRRA1, 0_ANXA3, 0_CNKSR3, 0_ENPP1, 0_FGD3, 0_GDF5, 0_HOXD12, 0_LOC100132247, 0_LOC153910, 0_MFSD1, 0_NXPH2, 0_ORMDL3, 0_PLOD1, 0_PPP1R1B, 0_SERPINA12, 0_UBE2Z, 0_ATP1B3, 0_BEND7, 0_C17orf78, 0_C2orf27A, 0_CACNA1A, 0_FBXO5, 0_FLJ43950, 0_IGFALS, 0_LETM2, 0_LIPJ, 0_LOC145474, 0_LYZL2, 0_MLPH, 0_NEURL1B, 0_NPFFR1, 0_OR2A25, 0_PDZD9, 0_RAB7A, 0_RAMP3, 0_RGN, 0_RP1-177G6.2, 0_SERPINE1, 0_SLC45A3, 0_SNAPC1, 0_ADAM29, 0_C9orf84, 0_CCL24, 0_CD44, 0_CEACAM5, 0_CLCN4, 0_CNGA2, 0_CPNE6, 0_DCAF12L1, 0_DEGS1, 0_GABBR2, 0_GEMIN8, 0_GJB5, 0_HBBP1, 0_HIST3H3, 0_IL13RA2, 0_KGFLP1, 0_LCTL, 0_LOC100130148, 0_LOC348840, 0_LOC442454, 0_LOC653544, 0_LY6G6E, 0_MRPS30, 0_PKD1L1, 0_PSKH2, 0_PSPN, 0_RPRM, 0_SERPINA3, 0_SLC16A10, 0_SLC16A12, 0_SLC22A11, 0_SLC39A2, 0_SPINK1, 0_SPNS3, 0_STAC2, 0_TMEM194B, 0_TREH, 0_WDR92, 0_ZFYVE9, 0_ZIC1, 0_ABCC2, 0_ADAMTSL3, 0_ADCYAP1, 0_ADH1B, 0_AMBP, 0_ARL8B, 0_AXIN1, 0_BTBD17, 0_C11orf54, 0_C15orf26, 0_C2orf40, 0_C3orf26, 0_C3orf33, 0_C9orf40, 0_CAMK4, 0_CDA, 0_CDH1, 0_CDRT15P, 0_CEBPD, 0_CHODL, 0_CNTN3, 0_CRYBB3, 0_CRYGN, 0_CST2, 0_CTCF, 0_CXorf22, 0_DHRS7B, 0_DKFZP586I1420, 0_DPP6, 0_DVWA, 0_ELAVL2, 0_ERBB2, 0_FAM48B1, 0_FAM55D, 0_FAM69C, 0_FKBP1AP1, 0_FZD10, 0_GDF3, 0_GEM, 0_HNRNPH3, 0_IKBIP, 0_KIRREL2, 0_KRTAP3-2, 0_LIN28B, 0_LOC150622, 0_LOC283332, 0_LOC339674, 0_LOC389033, 0_LRTOMT, 0_MAGEB18, 0_MAPRE1, 0_MDH1, 0_MORC4, 0_MUC13, 0_MUC20, 0_NLRP10, 0_NUDT6, 0_OR2T4, 0_OR5K2, 0_OR6F1, 0_OSR1, 0_PGBD5, 0_PGLYRP2, 0_PGPEP1L, 0_PLXNB1, 0_PM20D1, 0_PROKR1, 0_QRFP, 0_RGPD6, 0_SFT2D2, 0_SLC26A5, 0_SLC38A6, 0_SMC1B, 0_SNX5, 0_SPACA5, 0_SUMO4, 0_SYNJ2, 0_TCF19, 0_TINAGL1, 0_TMC7, 0_TMEM163, 0_TMEM170B, 0_TRIML1, 0_ACSBG1, 0_ADORA3, 0_AGPAT2, 0_AGPAT6, 0_ALAS2, 0_AP3B1, 0_B3GNT5, 0_BAAT, 0_BARX2, 0_C15orf51, 0_C16orf70, 0_C17orf96, 0_C2CD4A, 0_C2orf55, 0_C3orf36, 0_C4orf7, 0_C6orf127, 0_C7orf13, 0_CASC3, 0_CCDC129, 0_CCDC6, 0_CCDC88B, 0_CDC123, 0_CDH22, 0_CKS1B, 0_CLEC4C, 0_CLEC5A, 0_CMKLR1, 0_CNTN6, 0_CPB1, 0_CPSF4L, 0_CRYBB2, 0_CSN1S2A, 0_CXCR2, 0_CYP27A1, 0_CYP4F11, 0_DDC, 0_DIO1, 0_DISP2, 0_DKFZp566F0947, 0_DMRTC1, 0_DNAH11, 0_DNAJC12, 0_DNAJC5G, 0_DRAM2, 0_ETAA1, 0_EXT1, 0_F7, 0_FADS1, 0_FAM199X, 0_FAM5B, 0_FAM9A, 0_FBXO47, 0_FEM1A, 0_FGB, 0_FIGLA, 0_GNA15, 0_GPR128, 0_GPR160, 0_GPR98, 0_HDAC8, 0_HMP19, 0_HRNR, 0_HSD17B3, 0_IFIT1B, 0_IL23R, 0_ISX, 0_KCNIP2, 0_KCNQ1DN, 0_KIR2DS4, 0_KRT6A, 0_KSR2, 0_LILRA6, 0_LOC100129055, 0_LOC100216001, 0_LOC148145, 0_LOC148189, 0_LOC340357, 0_LOC388588, 0_LOC728875, 0_LRRC69, 0_MAB21L1, 0_MBOAT2, 0_MC5R, 0_MMP25, 0_MOCOS, 0_MRPL45, 0_MUCL1, 0_NAA40, 0_NRM, 0_NUDT16L1, 0_OR11H6, 0_OR52N2, 0_OTOP2, 0_PCP4, 0_PGS1, 0_PID1, 0_PPEF2, 0_PPP1R14C, 0_PTCHD2, 0_PXT1, 0_RBM46, 0_RERGL, 0_RGS5, 0_RHBDL2, 0_RNF138, 0_SCEL, 0_SEPT3, 0_SERPINA4, 0_SHD, 0_SIAH2, 0_SLC14A1, 0_SLC26A9, 0_SLC6A5, 0_SMR3A, 0_SPACA3, 0_SPOCK3, 0_SRC, 0_STT3A, 0_STX8, 0_TCEAL8, 0_TEX19, 0_TFCP2L1, 0_TFDP2, 0_TGM7, 0_TMC5, 0_TMED6, 0_TMEM90A, 0_TMPO, 0_TNPO1, 0_TPMT, 0_TRIM63, 0_VIPR1, 0_ZBTB16, 0_ZBTB32]
+Fold 3> (np.float64(0.6549570672394105), 0.0625) 15 features: [0_BDKRB2, 0_C14orf145, 0_C9orf170, 0_CDC25B, 0_DUSP1, 0_ERBB2, 0_GPCPD1, 0_GSPT1, 0_LOC347376, 0_PF4V1, 0_PRSS33, 0_QRFP, 0_TIAL1, 0_TRIM27, 0_ZNF556] Hiperparameter set: [var_smoothing = 1.2917017266844873e-09]
+Fold 3> (np.float64(0.6434702877225726), 0.07692307692307693) 12 features: [0_EPB41L4B, 0_ERBB2, 0_HHLA2, 0_LOC347376, 0_NCRNA00032, 0_PF4V1, 0_PRSS33, 0_QRFP, 0_RERGL, 0_TFF3, 0_WDR67, 0_ZNF556] Hiperparameter set: [var_smoothing = 1.992380353542602e-09]
+Fold 3> (np.float64(0.6055277048432186), 0.08333333333333333) 11 features: [0_CTSL2, 0_GDF5, 0_INSIG2, 0_KRT20, 0_LMOD1, 0_LOC100130148, 0_OXA1L, 0_PCDHA13, 0_PSKH2, 0_S100G, 0_WBSCR26] Hiperparameter set: [var_smoothing = 8.806502559320213e-08]
+Fold 3> (np.float64(0.588957645201736), 0.16666666666666666) 5 features: [0_GDF5, 0_KRT17, 0_MBOAT1, 0_MRGPRX3, 0_TOPBP1] Hiperparameter set: [var_smoothing = 9.790642365220604e-07]
+Fold 3> (np.float64(0.49510987850000615), 0.2) 4 features: [0_C15orf51, 0_MGC3771, 0_ORMDL3, 0_WDR67] Hiperparameter set: [var_smoothing = 8.943222883664722e-07]
+Fold 3> (np.float64(0.446419285489172), 0.25) [0_KCNN2, 0_TFF3, 0_WDR67] Hiperparameter set: [var_smoothing = 9.72238236005125e-09]
+Fold 3> (np.float64(0.40171438138760074), 0.3333333333333333) [0_C9orf170, 0_PPIL5] Hiperparameter set: [var_smoothing = 2.6826019507782914e-09]
+Fold 3> (np.float64(0.33453947368421055), 0.5) [0_HORMAD1] Hiperparameter set: [var_smoothing = 1.494423868369426e-07]
+Fold 3> (np.float64(0.2), 1.0) [] Hiperparameter set: [var_smoothing = 3.4787443605127006e-10]
+Fold 3> Features in hall of fame by prevalence:
+Fold 3> 114 features: [0_C9orf170, 0_ERBB2, 0_CXorf58, 0_IPO9, 0_PRSS33, 0_WDR67, 0_ACTR8, 0_C14orf145, 0_HGFAC, 0_HMGB2, 0_PARP2, 0_ST8SIA6, 0_WDR92, 0_XAGE2, 0_C1orf185, 0_C1orf96, 0_C4orf23, 0_CFHR1, 0_CNKSR3, 0_DEFB1, 0_LOC347376, 0_MLPH, 0_SLC22A11, 0_SPRY4, 0_CDC25B, 0_CLCN4, 0_EPB41L4B, 0_GABBR2, 0_GDF5, 0_GRB7, 0_LCTL, 0_LCT, 0_LOC148189, 0_NCRNA00032, 0_NPFFR1, 0_ORMDL3, 0_PF4V1, 0_QRFP, 0_RP1-177G6.2, 0_TGM3, 0_TMEM59L, 0_USP2, 0_ZNF556, 0_C15orf32, 0_C1QL1, 0_CEACAM5, 0_DKFZp566F0947, 0_DUSP1, 0_GCKR, 0_KRT14, 0_KRT20, 0_LOC100129055, 0_LOC100130386, 0_LOC284632, 0_LOC389033, 0_LOC731779, 0_MBOAT1, 0_MRGPRX3, 0_NANOS1, 0_OCA2, 0_PSG4, 0_PSKH2, 0_SPACA4, 0_TFF3, 0_TIAL1, 0_AMBP, 0_ARL17B, 0_BDKRB2, 0_BIRC5, 0_C12orf39, 0_C15orf51, 0_C2orf40, 0_CASC3, 0_CCDC6, 0_CCDC79, 0_CTSL2, 0_DPP10, 0_ESRRB, 0_FAM107A, 0_FAM194A, 0_FAM83E, 0_FGF2, 0_FOXC1, 0_GPCPD1, 0_GSPT1, 0_HHLA2, 0_HORMAD1, 0_INSIG2, 0_JAKMIP2, 0_KCNF1, 0_KCNN2, 0_KCTD3, 0_KIF17, 0_KRT17, 0_LMOD1, 0_LOC100130148, 0_MGC3771, 0_NBEA, 0_OXA1L, 0_PCDHA13, 0_PM20D1, 0_PPIL5, 0_RERGL, 0_RET, 0_ROS1, 0_S100G, 0_SLC25A14, 0_TAL2, 0_TCEAL2, 0_TOPBP1, 0_TRIM27, 0_WBSCR26, 0_WIPI2, 0_ZC4H2]
+
+Fold 3> BEST SUMS WITH SIZE 50
+Fold 3> Number of solutions = 50
+Fold 3> Features in hall of fame by prevalence:
+Fold 3> 353 features: [0_WDR67, 0_RP1-177G6.2, 0_C15orf32, 0_TGM3, 0_GABBR2, 0_ERBB2, 0_HGFAC, 0_IPO9, 0_DEFB1, 0_LOC284632, 0_C14orf145, 0_GRB7, 0_LOC148189, 0_LOC347376, 0_TMEM59L, 0_CLCN4, 0_CXorf58, 0_LCTL, 0_NANOS1, 0_ACTR8, 0_DKFZp566F0947, 0_GDF5, 0_IL20RA, 0_KRT20, 0_NXPH2, 0_OCA2, 0_PARP2, 0_C1QL1, 0_GFRA1, 0_HMGB2, 0_NCRNA00032, 0_OR5E1P, 0_PSG4, 0_ST8SIA6, 0_C1orf185, 0_C9orf170, 0_EPB41L4B, 0_LCT, 0_LOC389033, 0_NPFFR1, 0_ADAMTSL3, 0_AMBP, 0_WDR92, 0_C1orf94, 0_CYP2B7P1, 0_FAM107A, 0_FOXC1, 0_MBOAT1, 0_RAX2, 0_RERGL, 0_SLC22A11, 0_VMAC, 0_CCNG2, 0_CTSL2, 0_FANCG, 0_FLJ45445, 0_HDAC8, 0_HORMAD1, 0_IL5, 0_LY6G6D, 0_MAP1LC3A, 0_METAP2, 0_MRGPRX4, 0_NEURL1B, 0_PCSK9, 0_PM20D1, 0_SIP1, 0_STAC2, 0_TCF19, 0_ACCN5, 0_C1orf96, 0_C2orf40, 0_C3orf36, 0_CDC25B, 0_CYP3A7, 0_FAM47C, 0_FARS2, 0_GRHL3, 0_HCG4P6, 0_KATNAL2, 0_KIAA1486, 0_KRT6B, 0_LOC100129055, 0_MMACHC, 0_NIPA2, 0_OR11H4, 0_PRSS33, 0_PSKH2, 0_QPCT, 0_STH, 0_SUSD5, 0_TFF3, 0_TMEM74, 0_UBE2V1, 0_XAGE2, 0_ACSBG1, 0_BAIAP2L2, 0_C12orf39, 0_C17orf98, 0_CPT1C, 0_DCX, 0_DPY19L2P2, 0_EFNA2, 0_FBXO5, 0_GDA, 0_GLI1, 0_HEMGN, 0_LOC145474, 0_MDS2, 0_MRGPRX3, 0_NXF4, 0_ORMDL3, 0_SLC14A1, 0_TSHB, 0_TUFM, 0_UFD1L, 0_AADACL3, 0_AR, 0_ASFMR1, 0_C22orf31, 0_C8orf46, 0_CACNA1A, 0_CCDC6, 0_CCL24, 0_CCL3L3, 0_CD207, 0_CDH22, 0_CHIT1, 0_FADS1, 0_FAM189A2, 0_GLIPR1L2, 0_KRT14, 0_KRT17, 0_LOC100130386, 0_NAIP, 0_NCRNA00164, 0_NOMO3, 0_OR2A7, 0_OR2L1P, 0_PCBD1, 0_PLEKHG4, 0_SCN3B, 0_SEMA3B, 0_SLC45A3, 0_STEAP4, 0_TAS2R60, 0_TDGF3, 0_TERC, 0_TFAP2E, 0_TFCP2L1, 0_TFF1, 0_TMEM45B, 0_ZNF556, 0_ABCG2, 0_AKAP9, 0_ANXA3, 0_ARL17B, 0_C15orf56, 0_C18orf26, 0_C5orf13, 0_C6orf191, 0_CEACAM19, 0_CEACAM5, 0_CEBPD, 0_CKS1B, 0_CNKSR3, 0_CRYZ, 0_DLX6, 0_DSN1, 0_FAM138D, 0_FAM83E, 0_GADD45G, 0_GFI1B, 0_HSP90B3P, 0_HSPA1B, 0_IGSF5, 0_KRTAP19-3, 0_LOC221122, 0_LOC283761, 0_LOC646498, 0_LOC731779, 0_OR14C36, 0_PBOV1, 0_PDZRN3, 0_PMAIP1, 0_PRND, 0_PSG7, 0_RPS5, 0_SFRP1, 0_SLC35F3, 0_SLC7A4, 0_SPACA4, 0_SPRY4, 0_TCTEX1D4, 0_TMTC4, 0_WSCD2, 0_ZFP82, 0_ACADM, 0_ADAM11, 0_ADAMTS18, 0_C13orf38, 0_C3orf65, 0_C4orf23, 0_C9orf53, 0_CETP, 0_CFHR1, 0_CLEC12A, 0_CPLX4, 0_CSN2, 0_CSRNP2, 0_DCAF12L1, 0_DNAH11, 0_ENPP1, 0_FAM69C, 0_FGF21, 0_GCKR, 0_GNS, 0_GPR156, 0_GSPT1, 0_HLA-DQA2, 0_IFNA8, 0_IP6K3, 0_ISX, 0_KCNF1, 0_LAPTM4B, 0_LOC100133991, 0_LPL, 0_MGC27382, 0_MLPH, 0_MRPS30, 0_NBEA, 0_OR3A1, 0_OSR1, 0_OSTN, 0_OTOP2, 0_PATE2, 0_PDZD9, 0_PLA2G1B, 0_PPP1R1B, 0_R3HDM2, 0_RTL1, 0_SHBG, 0_SHD, 0_SPRED3, 0_USP2, 0_VIPR1, 0_WBSCR26, 0_ZNRF2, 0_ZSCAN5B, 0_ACER2, 0_ALOX15, 0_APOLD1, 0_ARHGAP21, 0_ATP1B3, 0_ATP5EP2, 0_ATRIP, 0_BIRC5, 0_BTN1A1, 0_C11orf88, 0_C20orf108, 0_C5orf30, 0_CASP5, 0_CDH10, 0_CEACAM20, 0_CLEC12B, 0_CRHR2, 0_CS, 0_ELL, 0_EPHA6, 0_EPS8L3, 0_EXOC4, 0_FBXW8, 0_FES, 0_FGF2, 0_FLJ35024, 0_FLJ43950, 0_G6PD, 0_GALNT8, 0_GPR89C, 0_GREB1L, 0_GTF3A, 0_HAR1A, 0_HLA-J, 0_HMGA2, 0_HSPC159, 0_IFIT1B, 0_INSIG2, 0_INSM2, 0_JAKMIP2, 0_KCNMA1, 0_KCTD3, 0_KIR3DL2, 0_LGALS7B, 0_LGR4, 0_LMAN1L, 0_LMOD1, 0_LOC100130148, 0_LOC100131496, 0_LOC150622, 0_LOC284688, 0_MAOA, 0_MBIP, 0_MED17, 0_MT1DP, 0_MXD4, 0_NANP, 0_NEFL, 0_NKX6-3, 0_NOTUM, 0_NPAS4, 0_NPC1L1, 0_OR10V1, 0_OR5P3, 0_OXA1L, 0_PAEP, 0_PAR1, 0_PCDHA13, 0_PF4V1, 0_PLXNA3, 0_PM20D2, 0_POMGNT1, 0_POPDC2, 0_PPIL5, 0_PRPH2, 0_R3HDML, 0_RBM28, 0_RBMXL2, 0_RMND5B, 0_S100G, 0_SBK2, 0_SCEL, 0_SCGB1A1, 0_SDPR, 0_SERHL2, 0_SERPINH1, 0_SIGLEC14, 0_SLC25A14, 0_SLC25A24, 0_SPINK4, 0_SSX1, 0_ST7OT3, 0_SULT1A1, 0_TAPT1, 0_TIMM8B, 0_TPMT, 0_TSHR, 0_TULP1, 0_UBE2Z, 0_UCHL1, 0_UCKL1AS, 0_USH1C, 0_ZNF174, 0_ZNF506]
+Computation on different folds finished in 00-00:05:25
+
+APPLYING EVALUATORS
+
+EVALUATING HALL OF FAME PARETO FRONT
+
+APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
+Mean Jaccard all vs others for each fold
+[0.054017966664629144, 0.051620671061226295, 0.043838422766078466, 0.06970004536234324, 0.04165386915515578]
+Mean of folds = 0.05216619500188659
+
+APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
+Stability of features by weights: 0.1638799368050341
+Stability of features by unions: 0.1384948522734024
+Stability of features by spearman: 0.16415727858843238
+Stability of features by top 50: 0.18000000000000005
+
+APPLYING USAGE OF VIEWS
+Prevalence of features selected in each view
+mrna = 1.0
+Distribution of views in each fold
+[[1.0], [1.0], [1.0], [1.0], [1.0]]
+Stability of views = 1.0
+
+APPLYING FOLD SAVER
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/Pareto/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/Pareto/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 naive Bayes balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 naive Bayes balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.3420106841413256
+Train hypervolume: 0.34589226200065143
+Test hypervolume: 0.3211070641778532
+Cross hypervolume: 0.3250807563049436
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.34221784016201096
+Train hypervolume: 0.36121829305811
+Test hypervolume: 0.347534867921547
+Cross hypervolume: 0.33337589061632467
+
+Hypervolumes for fold 2
+Inner cross-validation hypervolume: 0.34068202815031834
+Train hypervolume: 0.3449364474603066
+Test hypervolume: 0.3413642256065014
+Cross hypervolume: 0.33785839717066435
+
+Hypervolumes for fold 3
+Inner cross-validation hypervolume: 0.33586462397371325
+Train hypervolume: 0.34135581311298674
+Test hypervolume: 0.3403592550787824
+Cross hypervolume: 0.3377227313346356
+
+Hypervolumes for fold 4
+Inner cross-validation hypervolume: 0.34353895399795986
+Train hypervolume: 0.350125565863842
+Test hypervolume: 0.3413944583681426
+Cross hypervolume: 0.3372669920650797
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.3408628260850656
+Train hypervolume: 0.34870567629917937
+Test hypervolume: 0.3383519742305653
+Cross hypervolume: 0.33426095349832957
+
+
+EVALUATING HALL OF FAME BEST SUMS WITH SIZE 50
+
+APPLYING MULTI-OBJECTIVE FEATURE VARIETY CROSS-CROSS_EVALUATOR
+Mean Jaccard all vs others for each fold
+[0.0776473727145127, 0.1507512080664441, 0.042556037709967784, 0.08295798627168997, 0.03098374984660648]
+Mean of folds = 0.07697927092184421
+
+APPLYING MULTI-OBJECTIVE FEATURE STABILITY CROSS-CROSS_EVALUATOR
+Stability of features by weights: 0.18823400756576447
+Stability of features by unions: 0.2115325731227159
+Stability of features by spearman: 0.22132028483715954
+Stability of features by top 50: 0.16600000000000004
+
+APPLYING USAGE OF VIEWS
+Prevalence of features selected in each view
+mrna = 1.0
+Distribution of views in each fold
+[[1.0], [1.0], [1.0], [1.0], [1.0]]
+Stability of views = 1.0
+
+APPLYING FOLD SAVER
+
+APPLYING HALL OF FAMES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/
+
+APPLYING CONFUSION MATRICES SAVER
+Path for hall of fames = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/hofs/sum50/confusion_matrix/
+
+APPLYING TWO-OBJECTIVES CROSS-PLOTTER
+Path for plots = ./brca/mrna/NB_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/objective_pairs/
+Creating plots for Pam50 naive Bayes balanced accuracy vs leanness
+Creating plots for each fold
+Creating plot for union of folds
+Creating plots for leanness vs Pam50 naive Bayes balanced accuracy
+Creating plots for each fold
+Creating plot for union of folds
+
+APPLYING HYPERVOLUME
+Hypervolumes for fold 0
+Inner cross-validation hypervolume: 0.33294877120515004
+Train hypervolume: 0.33554091264742025
+Test hypervolume: 0.3170304060644438
+Cross hypervolume: 0.3182120502860969
+
+Hypervolumes for fold 1
+Inner cross-validation hypervolume: 0.32534366671581116
+Train hypervolume: 0.35237931125639044
+Test hypervolume: 0.3473497140210007
+Cross hypervolume: 0.3284494848320282
+
+Hypervolumes for fold 2
+Inner cross-validation hypervolume: 0.32304348674260214
+Train hypervolume: 0.32919034937592817
+Test hypervolume: 0.32835206262073596
+Cross hypervolume: 0.32186372408194863
+
+Hypervolumes for fold 3
+Inner cross-validation hypervolume: 0.2819725356803334
+Train hypervolume: 0.2851981453185668
+Test hypervolume: 0.2910891372646273
+Cross hypervolume: 0.28800809602194355
+
+Hypervolumes for fold 4
+Inner cross-validation hypervolume: 0.3232645589486768
+Train hypervolume: 0.3271477186063773
+Test hypervolume: 0.31164898723416734
+Cross hypervolume: 0.31234152708453533
+
+Mean hypervolumes
+Inner cross-validation hypervolume: 0.31731460385851473
+Train hypervolume: 0.3258912874409366
+Test hypervolume: 0.31909406144099506
+Cross hypervolume: 0.31377497646131053
+
+
+OPTIMIZING FINAL MODEL ON WHOLE DATASET
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 18133
+Features active in view: 18133
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+   	     	         	        	      Pam50 naive Bayes balanced accuracy       	                    leanness                    
+   	     	         	        	------------------------------------------------	------------------------------------------------
+gen	evals	gen_feats	explored	min	avg     	max     	std          	min      	avg      	max	std     
+0  	500  	1072     	1072    	0.2	0.508605	0.758863	0.126497     	0.0196078	0.0835597	1  	0.149222
+1  	508  	1308     	1349    	0.2	0.534061	0.764803	0.135714     	0.0188679	0.0919363	1  	0.111486
+2  	500  	1330     	1594    	0.2	0.561836	0.764803	0.129775     	0.015873 	0.0950978	1  	0.113336
+3  	500  	1369     	1828    	0.2	0.584939	0.773789	0.12526      	0.015625 	0.0923743	1  	0.111142
+4  	500  	1365     	2040    	0.2	0.601879	0.773789	0.123021     	0.0153846	0.0933474	1  	0.110782
+Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 500, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip) with (multi-view lasso FI, multi-view none) final optimization execution time = 00-00:08:10
+
+FEATURE SETS SELECTED ON WHOLE DATASET
+
+PARETO FRONT
+Number of solutions = 24
+Features in hall of fame by prevalence:
+203 features: [0_MBOAT1, 0_PARP2, 0_TFF1, 0_WDR67, 0_ERBB2, 0_GDF5, 0_NEFL, 0_POU3F3, 0_RP1-177G6.2, 0_TCF19, 0_TSHR, 0_C14orf145, 0_C22orf31, 0_DLK1, 0_GPR160, 0_GRXCR2, 0_HLF, 0_INSL3, 0_MYO18B, 0_NPFFR1, 0_PDCD10, 0_TADA2A, 0_TMED7, 0_CDH22, 0_CKS1B, 0_CPA2, 0_DCX, 0_ENPP1, 0_GFRA1, 0_GSTA4, 0_MT1DP, 0_OR5P3, 0_PCSK2, 0_SCEL, 0_SLC14A1, 0_TEX19, 0_TUBA1B, 0_ZBTB16, 0_C15orf26, 0_CETP, 0_CLEC12A, 0_CST2, 0_CYP4F11, 0_EHD4, 0_FAM111A, 0_FAM43B, 0_FBXL3, 0_FLJ43950, 0_GABBR2, 0_GRB7, 0_HMGB2, 0_KRT17, 0_LOC100130148, 0_NOTCH2NL, 0_PPP1R14C, 0_PPP1R1B, 0_PRUNE, 0_SPACA4, 0_STX2, 0_TFRC, 0_XRRA1, 0_ZCCHC16, 0_BAAT, 0_C20orf108, 0_C3orf65, 0_C8orf46, 0_CAMK2N2, 0_CDKN2C, 0_CES4, 0_DLX6, 0_HRNR, 0_KRT20, 0_LETM2, 0_MRPS30, 0_NPTXR, 0_OR2T4, 0_OR52N2, 0_OSR1, 0_OXER1, 0_PITPNM3, 0_RASSF4, 0_RET, 0_SCN3B, 0_SERPINA3, 0_SERPINA6, 0_SH2D7, 0_SLC25A24, 0_STAC2, 0_TMEM59L, 0_UGT2B28, 0_ABCA3, 0_ADAM29, 0_AGRP, 0_ATP1B3, 0_C10orf27, 0_C12orf39, 0_C14orf53, 0_C15orf32, 0_C15orf51, 0_C1QL1, 0_C3orf16, 0_CACNG4, 0_CBLC, 0_CBR4, 0_CCDC18, 0_CCL24, 0_CEACAM19, 0_CLCN4, 0_CPA6, 0_CPSF4L, 0_CPT1C, 0_CRYZ, 0_CTRC, 0_DEFB1, 0_DNAJB1, 0_DPP10, 0_ECHS1, 0_EPHA8, 0_ESR1, 0_FGD3, 0_FMO4, 0_GABARAPL3, 0_GDF3, 0_GLYATL3, 0_GPR128, 0_GPR98, 0_GRHL3, 0_GUCA1B, 0_HAO2, 0_HBBP1, 0_HSD17B7P2, 0_IGFALS, 0_IL5, 0_INTS4L1, 0_ITGBL1, 0_KAT2B, 0_KATNAL2, 0_KCNG2, 0_KCNQ1DN, 0_KRTAP3-2, 0_LHCGR, 0_LOC100128076, 0_LOC100128191, 0_LOC100129055, 0_LOC148189, 0_LOC152024, 0_LOC284632, 0_LOC613037, 0_LOC643837, 0_LY6G6D, 0_MAPT, 0_MRGPRX2, 0_MRPL10, 0_MTCP1, 0_MUC4, 0_NHLRC4, 0_NUDT6, 0_NXF4, 0_OR1M1, 0_OR2L13, 0_OR5P2, 0_OTC, 0_PCBD1, 0_PSPN, 0_R3HCC1, 0_RASSF9, 0_RFX8, 0_RNF2, 0_RNF8, 0_ROS1, 0_SCNN1G, 0_SERPINA12, 0_SLC22A2, 0_SLC29A4, 0_SLC5A4, 0_SPOCK3, 0_SUSD5, 0_SUV39H2, 0_TACR1, 0_TCEAL5, 0_TCF23, 0_TCHHL1, 0_TDH, 0_TDRD10, 0_TFDP2, 0_TGM3, 0_TGM7, 0_TMEM215, 0_TMEM27, 0_TMEM86A, 0_TMUB2, 0_TP53TG5, 0_TPSD1, 0_TRA2B, 0_TSPAN16, 0_TTC39B, 0_TULP1, 0_UBE2Z, 0_WDSUB1, 0_XAGE2, 0_YARS2, 0_ZFP82, 0_ZNF556]
+
+BEST SUMS WITH SIZE 50
+Number of solutions = 50
+Features in hall of fame by prevalence:
+388 features: [0_RP1-177G6.2, 0_GDF5, 0_MBOAT1, 0_PARP2, 0_TSHR, 0_SLC14A1, 0_TFF1, 0_CKS1B, 0_ENPP1, 0_FLJ43950, 0_HLF, 0_INSL3, 0_NEFL, 0_PDCD10, 0_C22orf31, 0_CPA2, 0_CYP4F11, 0_DCX, 0_DLX6, 0_MYO18B, 0_NOTCH2NL, 0_C15orf26, 0_CDH22, 0_EHD4, 0_KRT20, 0_LOC100130148, 0_OR5P3, 0_PCSK2, 0_SCEL, 0_TEX19, 0_TUBA1B, 0_XRRA1, 0_ZBTB16, 0_C8orf46, 0_FAM111A, 0_TCF19, 0_ZCCHC16, 0_SH2D7, 0_ADAM29, 0_WDR67, 0_DLK1, 0_IL5, 0_C10orf27, 0_C14orf145, 0_C15orf32, 0_CSPG5, 0_FBXL3, 0_KCNG2, 0_RET, 0_ROS1, 0_SYNJ2, 0_TMEM59L, 0_UBE2Z, 0_CEACAM19, 0_CST2, 0_FGG, 0_FOXC1, 0_GABARAPL3, 0_GABBR2, 0_GRHL3, 0_HAO2, 0_HMGB2, 0_HRNR, 0_KRTAP3-2, 0_OR2T4, 0_PPP1R1B, 0_SERPINA6, 0_SPACA4, 0_ANO4, 0_C1orf227, 0_C2orf40, 0_CCDC18, 0_ERBB2, 0_GDF3, 0_GML, 0_HIST3H3, 0_INTS4L1, 0_KCNQ1DN, 0_MAPT, 0_MUC4, 0_NPFFR1, 0_NPTXR, 0_RASSF9, 0_SLC25A24, 0_TFDP2, 0_TMEM215, 0_ZFP82, 0_BAAT, 0_C11orf88, 0_CBLC, 0_CES4, 0_DNAJB1, 0_DPP10, 0_ECHS1, 0_FAM43B, 0_GPR160, 0_GRB7, 0_HBBP1, 0_IGFALS, 0_LCT, 0_LOC613037, 0_LY6G6D, 0_OR52E4, 0_PCBD1, 0_PPP1R14C, 0_RNF8, 0_SERPINA12, 0_SLC22A2, 0_SPOCK3, 0_TCF23, 0_TCHHL1, 0_TGM7, 0_TRA2B, 0_YARS2, 0_ZRSR2, 0_AADACL3, 0_ACSBG1, 0_C12orf39, 0_CCL24, 0_CETP, 0_CPA6, 0_DEFB1, 0_GPR128, 0_KRT17, 0_MLPH, 0_MRGPRX4, 0_MT1DP, 0_NXF4, 0_POU3F3, 0_RGN, 0_TAS2R60, 0_TTC7B, 0_ABCA3, 0_ACOXL, 0_AMBP, 0_BEND5, 0_BMP5, 0_C1orf177, 0_C1orf94, 0_C21orf88, 0_C21orf90, 0_C6orf41, 0_C9orf140, 0_CAMK4, 0_CAPNS2, 0_CDA, 0_CDC25B, 0_CDKN2C, 0_CEACAM20, 0_CEBPD, 0_CLEC12A, 0_CPT1C, 0_CRELD1, 0_CRYBA1, 0_CXorf61, 0_DAP3, 0_DCLK3, 0_DUSP5P, 0_EVX1, 0_FAM57B, 0_FLJ44054, 0_GFRA1, 0_GPCPD1, 0_GRID2IP, 0_HIST1H4D, 0_IGF1R, 0_KAT2B, 0_KRT6B, 0_LETM2, 0_LOC100129055, 0_LOC100132247, 0_MAPK15, 0_MGC3771, 0_MOAP1, 0_MRGPRX2, 0_MRO, 0_MRPL45, 0_MTCP1, 0_MYT1L, 0_NEURL1B, 0_NODAL, 0_OR10A6, 0_OR2L13, 0_OSR1, 0_PCSK9, 0_PHF16, 0_PRUNE, 0_PSD3, 0_RERGL, 0_RNASE3, 0_SCNN1A, 0_SCRG1, 0_SDSL, 0_SERPINA3, 0_SH3BGR, 0_SIAH2, 0_SLC45A3, 0_SLCO5A1, 0_SPINK4, 0_SUV39H2, 0_TCEAL5, 0_TMEM106C, 0_TMEM86A, 0_TSHB, 0_UGT1A9, 0_USP26, 0_ZNF556, 0_ZNF878, 0_ZPBP2, 0_ZSCAN4, 0_ACER1, 0_ADAMTS18, 0_ADAP1, 0_ADRB3, 0_AMZ2P1, 0_ANXA3, 0_AOAH, 0_APOL5, 0_ARHGAP5, 0_ASAH2, 0_ASTL, 0_ATP6V1G2, 0_BDKRB2, 0_BRI3BP, 0_C14orf53, 0_C15orf23, 0_C16orf72, 0_C1QL1, 0_C1orf185, 0_C1orf223, 0_C20orf108, 0_C2orf50, 0_C3orf16, 0_C3orf24, 0_CAMK2N2, 0_CASP5, 0_CBR4, 0_CCDC116, 0_CCDC163P, 0_CD86, 0_CDCA3, 0_CDRT15P, 0_CEP152, 0_CFB, 0_CLCN4, 0_CLRN3, 0_CNN2, 0_CNTD2, 0_CNTNAP5, 0_COL22A1, 0_COL28A1, 0_CPSF4L, 0_CRIP1, 0_CTRC, 0_CYP21A2, 0_DGAT2L6, 0_DLEU7, 0_DLK2, 0_DMRTC2, 0_DPP6, 0_DYDC2, 0_EPX, 0_ETFDH, 0_EXT1, 0_FABP5L3, 0_FAM82B, 0_FAM9A, 0_FANCL, 0_FARS2, 0_FGD3, 0_FGF8, 0_FMO4, 0_GABRA1, 0_GADD45G, 0_GNB3, 0_GPR21, 0_GRIK1, 0_GRXCR2, 0_GSTA4, 0_GUCA1B, 0_HBE1, 0_HILS1, 0_HIST1H2BA, 0_HMGA2, 0_HOXB2, 0_HRH3, 0_HS6ST1, 0_HSD17B7P2, 0_HSD3B1, 0_IFIT1B, 0_IGSF5, 0_ISM1, 0_ISX, 0_ITGBL1, 0_KATNAL2, 0_KRT6A, 0_KRTAP10-4, 0_LCN6, 0_LCTL, 0_LIPC, 0_LOC100128076, 0_LOC100128191, 0_LOC148189, 0_LOC150622, 0_LOC151162, 0_LOC152024, 0_LOC387646, 0_LOC388588, 0_LRRC17, 0_MANBAL, 0_MCART6, 0_MFSD1, 0_MOGAT1, 0_MPHOSPH6, 0_MRPS30, 0_MTA3, 0_MUC5B, 0_NETO2, 0_NLRP9, 0_NOP16, 0_NPC1L1, 0_NUDT16, 0_NUDT2, 0_NUDT6, 0_OR1M1, 0_OR2A4, 0_ORMDL3, 0_OTC, 0_OXER1, 0_PAK6, 0_PCDHA5, 0_PCP4, 0_PDC, 0_PF4V1, 0_PGAM4, 0_PGGT1B, 0_PIP5K1P1, 0_PLGLA, 0_PMAIP1, 0_POTEE, 0_PPIH, 0_PPM1J, 0_PPP3R2, 0_PRPF6, 0_PRSS33, 0_PSG5, 0_PTF1A, 0_R3HCC1, 0_RASSF4, 0_RETN, 0_RFX8, 0_RGS3, 0_RPE65, 0_RSPH10B2, 0_SAAL1, 0_SCN3B, 0_SEMA4G, 0_SERPINA4, 0_SH2D5, 0_SHD, 0_SILV, 0_SIP1, 0_SLC16A12, 0_SLC26A9, 0_SLC2A7, 0_SLC35F4, 0_SLC7A2, 0_SNAPC1, 0_SNUPN, 0_SPARCL1, 0_STAC2, 0_STMN2, 0_STX2, 0_TADA2A, 0_TBC1D22B, 0_TCL6, 0_TFCP2L1, 0_TFRC, 0_TMED7, 0_TMEM27, 0_TMUB2, 0_TPSD1, 0_TREH, 0_TULP1, 0_VWC2, 0_WDSUB1, 0_WNT8A, 0_WSCD2]
+
+SAVING FEATURES AND FITNESSES FOR EACH SELECTED INDIVIDUAL TO FILES.
+
+CREATING GENERATION PLOTS IF POSSIBLE
+
+CREATING PLOTS OF EXPLORED FEATURES IF POSSIBLE
+
+CREATING PLOTS OF FEATURE STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HYPERPARAMETER EVOLUTION STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HALL OF FAME STABILITY IF POSSIBLE
+
+CREATING PLOTS OF HYPERPARAMETER HALL OF FAME IF POSSIBLE
+
+CREATING PLOTS OF MONOTONIC TEST FRONTS IF POSSIBLE
+
+CREATING PLOTS OF PERFORMANCE BY CLASS IF POSSIBLE
+
+LOADING BRCA COHORT
+
+LOADING VIEWS
+Input directory = ./brca/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20203
+
+PLOTTING VIEWS
+/home/ugmd/Manuel_TFG/MONOMER_optimizacion_hiperparametro_tfg/py/plots/plot_utils.py:148: UserWarning: *c* argument looks like a single numeric RGB or RGBA sequence, which should be avoided as value-mapping will have precedence in case its length matches with *x* & *y*.  Please use the *color* keyword-argument or provide a 2D array with a single row if you intend to specify the same RGB or RGBA value for all points.
+  ax.scatter(x, y, c=color, s=point_size)
+Directory for plots = ./brca/input/plots
+Plotting view mrna
+
+LOADED 1081 SAMPLES.
+Objectives = [Pam50 random forest balanced accuracy, leanness]
+Factory HPE = ForestHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/brca/hp/test_small_rf.ini
+Destination folder :  = ./brca/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/
+
+RUNNING HYPERPARAMETER EVOLUTION NSGA-II MULTI-VIEW MULTI-OBJECTIVE OPTIMIZER (3-FOLDS CREATOR, POP 500, UNIFORM(0, 50), GEN 5, SORT CROWDCICR, CROSSOVER 0.33, MUTATION 1.0 SYMMETRIC FLIP) WITH (MULTI-VIEW LASSO FI, MULTI-VIEW NONE)
+Machine = arcohtr04
+
+OPTIMIZER DETAILS
+Multi-objective optimizer by fold
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)
+Inner optimizer:
+Name = Hyperparameter evolution NSGA-II multi-view multi-objective optimizer (3-folds creator, pop 500, uniform(0, 50), gen 5, sort CrowdCICR, crossover 0.33, mutation 1.0 symmetric flip)
+Nick = HPE_NSGA2_k3_pop500_uni0-50_gen5_CrowdCICR_c0.33_m1.0symm
+Population size = 500
+Number of features in initial individuals = uniform(0, 50)
+Number of generations = 5
+Crossover probability = 0.33
+Mutation frequency = 1.0
+Mutation operator = symmetric flip
+Sorting strategy = NSGA2 with crowding distance with Clone Index full elitist and clone repurposing
+Hyperparameter evolution  = ForestHyperparameterSetFactory
+Objectives = [Pam50 random forest balanced accuracy, leanness]
+Hall of fame factories = [Pareto front factory, Best 50 by sum factory]
+Folds creator = 3-folds creator
+Multi-view feature importance strategy by fold:
+multi-objective feature importance
+Feature importance for classification: multi-view feature importance lasso
+Feature importance for survival: multi-view feature importance none
+
+
+
+STARTING MULTI-OBJECTIVE OPTIMIZATION ON DIFFERENT FOLDS
+
+Fold 0> OPTIMIZING ON FOLD NUMBER 0
+Fold 0> Number of workers = 25
+
+Fold 1> OPTIMIZING ON FOLD NUMBER 1
+Fold 1> Number of workers = 25
+
+Fold 2> OPTIMIZING ON FOLD NUMBER 2
+Fold 2> Number of workers = 25
+
+Fold 3> OPTIMIZING ON FOLD NUMBER 3
+Fold 3> Number of workers = 25
+
+Fold 4> OPTIMIZING ON FOLD NUMBER 4
+Fold 4> Number of workers = 25
+
+Fold 0> COMPUTING LOCAL ACTIVE FEATURES
+Fold 0> Computing active features for target column 0_Pam50
+Fold 0> Features before filter: 20203
+
+Fold 1> COMPUTING LOCAL ACTIVE FEATURES
+Fold 1> Computing active features for target column 0_Pam50
+Fold 1> Features before filter: 20203
+
+Fold 2> COMPUTING LOCAL ACTIVE FEATURES
+Fold 2> Computing active features for target column 0_Pam50
+Fold 2> Features before filter: 20203
+
+Fold 3> COMPUTING LOCAL ACTIVE FEATURES
+Fold 3> Computing active features for target column 0_Pam50
+Fold 3> Features before filter: 20203
+
+Fold 4> COMPUTING LOCAL ACTIVE FEATURES
+Fold 4> Computing active features for target column 0_Pam50
+Fold 4> Features before filter: 20203
+Fold 0> Features after any na, zero variance, and anova filters: 17852
+Fold 0> Features active in view: 17852
+
+Fold 0> CREATING INNER FOLDS
+
+Fold 0> RUNNING GENETIC ALGORITHM
+Fold 2> Features after any na, zero variance, and anova filters: 17758
+Fold 2> Features active in view: 17758
+
+Fold 2> CREATING INNER FOLDS
+Fold 1> Features after any na, zero variance, and anova filters: 17770
+Fold 1> Features active in view: 17770
+
+Fold 1> CREATING INNER FOLDS
+
+Fold 2> RUNNING GENETIC ALGORITHM
+
+Fold 1> RUNNING GENETIC ALGORITHM
+Fold 3> Features after any na, zero variance, and anova filters: 17721
+Fold 3> Features active in view: 17721
+
+Fold 3> CREATING INNER FOLDS
+
+Fold 3> RUNNING GENETIC ALGORITHM
+Fold 4> Features after any na, zero variance, and anova filters: 17646
+Fold 4> Features active in view: 17646
+
+Fold 4> CREATING INNER FOLDS
+
+Fold 4> RUNNING GENETIC ALGORITHM
+/home/ugmd/miniconda3/envs/tfg_env_hpe/lib/python3.9/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 30 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

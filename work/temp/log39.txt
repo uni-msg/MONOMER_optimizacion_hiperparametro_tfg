@@ -1,0 +1,46 @@
+Date = 2026-09-07
+Machine = arcohtr04
+Workers = 18
+Setup = setups/tcga_kir/hp/500x1000/rf/nsga2_chs.ini
+Recursion limit = 100000
+
+LOADING TCGA_KIR COHORT
+
+LOADING VIEWS
+Input directory = ./tcga_kir/input/
+Loading view meth
+View does not exist.
+Loading view mirna
+View does not exist.
+Loading view mrna
+View loaded.
+Loading view rppaa
+View does not exist.
+Applying transformation to view mrna
+
+LOADING OUTCOMES
+
+GLOBAL PREPROCESSING OF VIEWS
+Preprocessing view mrna
+Types after preprocessing: [dtype('float64')]
+
+GLOBAL FEATURE SELECTION
+Filtering views using whole dataset.
+Filtering view mrna
+Features before filter: 20501
+Features after all na filter: 20501
+Features after zero variance filter: 20227
+
+PLOTTING VIEWS
+Directory for plots = ./tcga_kir/input/plots
+Plotting view mrna
+
+LOADED 795 SAMPLES.
+Objectives = [PanKidney random forest balanced accuracy, leanness]
+Factory HPE = ForestHyperparameterSetFactory
+Removing outcomes not necessary for objectives from input data.
+Creating 5 stratified folds.
+Number of outer folds = 5
+Copying config file to run directory
+Copy source = setups/tcga_kir/hp/500x1000/rf/nsga2_chs.ini
+Destination folder :  = ./tcga_kir/mrna/RF_bal_acc_leanness/5_folds/HPE_NSGA2_k3_pop500_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)/

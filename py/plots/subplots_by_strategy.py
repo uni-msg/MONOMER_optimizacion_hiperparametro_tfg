@@ -36,13 +36,15 @@ def subplots_by_strategy(
         else:
             n_colors = n_boxes
         color_list = default_color_list(n_colors=n_colors, desat=0.75)
+        classifier_labels = ["NB", "SVM", "RF", "LR"]
         for i in range(n_boxes):
             row, col = row_col_by_index(index=i, ncol=ncols)
             plot_axs = axs[row, col]
             if i < n_subplots:
                 plot_hofs = hofs[i]
-                letter = ascii_uppercase[i]
-                plot_axs.set_title(letter)
+                #letter = ascii_uppercase[i]
+                #plot_axs.set_title(letter)
+                plot_axs.set_title(classifier_labels[i])
                 row = i // ncols
                 if color_by_row:
                     color = color_list[row]

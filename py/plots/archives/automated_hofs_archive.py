@@ -5,7 +5,7 @@ from input_data.input_creators_archive import TCGA_DIG5_NICK, TCGA_OV_NICK, TCGA
     TCGA_DIG_TYPE_NICK, TCGA_LU2_NICK, TCGA_THCA2_NICK, TCGA_KIR3_NICK
 from input_data.kir_input_creator import KirInputCreator
 from input_data.luad_lusc_input_creator import LuadLuscInputCreator
-from plots.plot_labels import TCGA_BRCA_LAB, NB_LAB, RF_LAB, LR_LAB, SVM_LAB, NSGA2_LAB, NSGA2_CH_LAB, NSGA2_CHS_LAB, \
+from plots.plot_labels import HPE_NSGA2_CHS_LAB, TCGA_BRCA_LAB, NB_LAB, RF_LAB, LR_LAB, SVM_LAB, NSGA2_LAB, NSGA2_CH_LAB, NSGA2_CHS_LAB, \
     NSGA3_LAB, GF_LAB, RFE_LAB, LASSO_MO_LAB, main_and_inner_label, ALL_GA_LABS, ALL_INNER_LABS, \
     SWEDISH_LAB, TCGA_LU_LAB, TCGA_DIG5_LAB, TCGA_KI_LAB, TCGA_OV_LAB, TCGA_THCA3_LAB, TCGA_THCA_BL_LAB, \
     ALL_CV_DATASETS, ALL_MAIN, has_inner_model, TCGA_DIG_TYPE_LAB, TCGA_LU2_LAB, TCGA_THCA2_LAB, TCGA_KI3_LAB
@@ -64,6 +64,8 @@ def optimizer_dir_from_labels(main_lab: str, inner_lab: Optional[str]) -> str:
         return "NSGA2_k3_pop" + pop_size + "_uni0-50_gen1000_CrowdCI_c0.33_m1.0flip_(MV_lassoFI,none)"
     elif main_lab == NSGA2_CHS_LAB:
         return "NSGA2_k3_pop" + pop_size + "_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)"
+    elif main_lab == HPE_NSGA2_CHS_LAB:
+        return "HPE_NSGA2_k3_pop" + pop_size + "_uni0-50_gen1000_CrowdCICR_c0.33_m1.0symm_(MV_lassoFI,none)"
     elif main_lab == NSGA3_LAB:
         return "NSGA3_k3_pop" + pop_size + "_uni0-50_gen1000_NSGA3_c0.33_m1.0flip_(none,none)"
     elif main_lab == GF_LAB:

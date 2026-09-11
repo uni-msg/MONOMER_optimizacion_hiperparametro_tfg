@@ -1,7 +1,3 @@
-0_ESR1,0_FOXC1,0_HSPBAP1,0_KRT14,0_SKA1
-1,1,1,1,1
-1,1,0,1,1
-1,1,0,0,1
-1,1,0,0,0
-0,1,0,0,0
-0,0,0,0,0
+version https://git-lfs.github.com/spec/v1
+oid sha256:ac51162823364a64974925eb16114ebd3996d9dc5dae0cea0e8253364ad47622
+size 107

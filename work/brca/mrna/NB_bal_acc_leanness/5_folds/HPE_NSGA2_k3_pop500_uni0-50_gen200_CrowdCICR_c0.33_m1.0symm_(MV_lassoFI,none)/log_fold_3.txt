@@ -1,0 +1,18 @@
+
+OPTIMIZING ON FOLD NUMBER 3
+Number of workers = 1
+
+COMPUTING LOCAL ACTIVE FEATURES
+Computing active features for target column 0_Pam50
+Features before filter: 20203
+Features after any na, zero variance, and anova filters: 17721
+Features active in view: 17721
+
+CREATING INNER FOLDS
+
+RUNNING GENETIC ALGORITHM
+Generations completed = 11
+Generations completed = 22
+Exception caught while optimizing on fold 3
+Original exception: 
+

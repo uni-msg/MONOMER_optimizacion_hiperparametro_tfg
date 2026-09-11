@@ -1,4 +1,5 @@
 import random
+from typing import Optional
 
 from deap import tools
 
@@ -10,6 +11,7 @@ from hyperparam_manager.select_hp_manager import SelectHpManager
 from input_data.input_data import InputData
 from objective.social_objective import PersonalObjective
 from util.printer.printer import Printer, UnbufferedOutPrinter
+from hyperparameter_evolution.hyperparameter_set_factory import HyperparameterSetFactory
 
 
 class GAStrategySelector(GAStrategy):
@@ -20,7 +22,8 @@ class GAStrategySelector(GAStrategy):
             sorting_strategy: SortingStrategy,
             n_workers=1,
             workers_printer: Printer = UnbufferedOutPrinter(),
-            use_clone_repurposing: bool = False):
+            use_clone_repurposing: bool = False,
+            hyperparameter_set_factory: Optional[HyperparameterSetFactory] = None):
         super().__init__(SelectEvaluator(input_data=input_data, hp_manager=hp_manager,
                                          objectives=objectives,
                                          folds_list=folds_list,
@@ -28,11 +31,17 @@ class GAStrategySelector(GAStrategy):
                          objectives=objectives,
                          mating_prob=mating_prob, mutation_frequency=mutation_frequency,
                          sorting_strategy=sorting_strategy,
-                         use_clone_repurposing=use_clone_repurposing)
+                         use_clone_repurposing=use_clone_repurposing,
+                         hyperparameter_set_factory=hyperparameter_set_factory)
         self.__hp_manager = hp_manager
 
     def create_individual(self) -> PeculiarIndividualDense:
+        #Crea individuo
         res = PeculiarIndividualDense(n_objectives=self.n_objectives())
+
+        #Conjunto de HPE
+        res.set_hyperparameter_set(self.create_hyperparameters())
+
         for i in range(0, self.individual_size()):
             res.append(random.randint(0, self.__hp_manager.max_view_individual_index(i)))
         return res

@@ -1,7 +1,3 @@
-0_DEPDC1B,0_ESR1,0_FOXC1,0_PRC1,0_SOX10,0_ZNF641
-1,1,1,0,1,1
-1,1,1,0,1,0
-0,1,1,1,0,0
-0,1,1,0,0,0
-0,0,1,0,0,0
-0,0,0,0,0,0
+version https://git-lfs.github.com/spec/v1
+oid sha256:1631b0bafa6c6e227fdb4d49656893be319177e87848d503ae539ae301cdf4ed
+size 128
