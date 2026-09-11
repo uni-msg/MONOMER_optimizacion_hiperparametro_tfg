@@ -34,8 +34,8 @@ DATASETS = ["brca", "luad_lusc", "tcga_kir", "tcga_ov"]
 DATASET_LABELS = {
     "brca": "BRCA",
     "luad_lusc": "LUAD-LUSC",
-    "tcga_kir": "TCGA-KIR",
-    "tcga_ov": "TCGA-OV",
+    "tcga_kir": "KIR",
+    "tcga_ov": "OV",
 }
 DATASET_MARKERS = {
     "brca": "o",
@@ -220,7 +220,7 @@ def plot_relation(ax, df, hyperparameter, bal_acc_col, leanness_col):
     data["c"] = c.loc[valid].to_numpy()
 
     if data.empty:
-        ax.text(0.5, 0.5, "No usable data", ha="center", va="center", transform=ax.transAxes)
+        ax.text(0.5, 0.5, "No hay datos utilizables", ha="center", va="center", transform=ax.transAxes)
         return None
 
     last = None
@@ -249,8 +249,8 @@ def plot_relation(ax, df, hyperparameter, bal_acc_col, leanness_col):
         ax.set_xlabel(f"{pretty_name(hyperparameter)} (log scale)")
     else:
         ax.set_xlabel(pretty_name(hyperparameter))
-    ax.set_ylabel("Balanced Accuracy")
-    ax.set_title(f"{pretty_name(hyperparameter)} vs Balanced Accuracy", fontweight="bold")
+    ax.set_ylabel("Precisión balanceada")
+    ax.set_title(pretty_name(hyperparameter), fontweight="bold")
     ax.grid(True, linestyle=":", alpha=0.35)
     return last
 
@@ -308,8 +308,7 @@ def make_classifier_png(df, model, output_dir):
     )
 
     fig.suptitle(
-        f"{MODEL_LABELS[model]} — Hyperparameters vs objectives\n"
-        "mRNA | Outer CV folds 0–4 | All folds combined per dataset",
+        f"{MODEL_LABELS[model]} — Hiperparámetros vs Objetivos",
         fontsize=17,
         fontweight="bold",
         y=0.98,
@@ -328,6 +327,14 @@ def make_classifier_png(df, model, output_dir):
 
         if result is not None:
             last = result
+
+    # Increase font sizes for combined figures with more than two hyperparameters.
+    if n > 2:
+        for ax in axes[:len(mutable_numeric)]:
+            ax.title.set_fontsize(14)
+            ax.xaxis.label.set_fontsize(12)
+            ax.yaxis.label.set_fontsize(12)
+            ax.tick_params(axis="both", labelsize=10)
 
     for ax in axes[len(mutable_numeric):]:
         ax.axis("off")
@@ -375,8 +382,8 @@ def make_classifier_png(df, model, output_dir):
     )
 
     os.makedirs(output_dir, exist_ok=True)
-    path = os.path.join(output_dir, f"{model}_hyperparameters_vs_objectives.png")
-    fig.savefig(path, dpi=220, bbox_inches="tight")
+    path = os.path.join(output_dir, f"{model}_hyperparameters_vs_objectives.pdf")
+    fig.savefig(path, bbox_inches="tight")
     plt.close(fig)
     print(f"    [SAVED] {path}")
 
@@ -390,10 +397,10 @@ def make_classifier_png(df, model, output_dir):
         if scatter is not None:
             cb = fig.colorbar(scatter, ax=ax, pad=0.02)
             cb.set_label("Leanness (number of selected features)", rotation=270, labelpad=16)
-        fig.suptitle(f"{MODEL_LABELS[model]} — {pretty_name(hp)} vs Balanced Accuracy", fontsize=15, fontweight="bold")
+        fig.suptitle(pretty_name(hp), fontsize=15, fontweight="bold")
         fig.tight_layout(rect=[0, 0.06, 1, 0.95])
         safe = re.sub(r"[^A-Za-z0-9_.-]+", "_", str(hp))
-        fig.savefig(os.path.join(individual_dir, f"{safe}_vs_objectives.png"), dpi=220, bbox_inches="tight")
+        fig.savefig(os.path.join(individual_dir, f"{safe}_vs_objectives.pdf"), bbox_inches="tight")
         plt.close(fig)
 
 
@@ -441,18 +448,18 @@ def main():
     print("=" * 75)
     print(f"Work directory : {work_dir}")
     print(f"Output         : {output_dir}")
-    print("Datasets       : BRCA, LUAD-LUSC, TCGA-KIR, TCGA-OV")
-    print("Data           : outer folds 0–4 ONLY")
-    print("Final files    : EXCLUDED")
-    print("Fixed params   : EXCLUDED")
-    print("Categorical    : EXCLUDED")
+    print("Conjuntos de datos : BRCA, LUAD-LUSC, KIR, OV")
+    print("Datos         : solo folds externos 0–4")
+    print("Archivos finales : EXCLUIDOS")
+    print("Parámetros fijos : EXCLUIDOS")
+    print("Categóricos    : EXCLUIDOS")
     print("=" * 75)
 
     for model in models:
         analyze_model(work_dir, model, output_dir)
 
     print("\n" + "=" * 75)
-    print(" DONE")
+    print(" HECHO")
     print("=" * 75)
 
 

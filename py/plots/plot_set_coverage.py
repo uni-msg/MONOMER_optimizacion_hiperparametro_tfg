@@ -1,4 +1,4 @@
-"""Set Coverage (C-metric) heatmap generator for MONOMER.
+"""Generador de mapas de calor de cobertura de conjuntos (métrica C) para MONOMER.
 
 Computes C(A,B) = proportion of solutions in B dominated by A.
 Supports:
@@ -43,6 +43,21 @@ OUTPUT_DIR = os.path.join(WORK_DIR, "tuning_reports", "Set_Coverage")
 
 DATASETS = ["brca", "luad_lusc", "tcga_kir", "tcga_ov"]
 
+DATASET_LABELS = {
+    "brca": "BRCA",
+    "luad_lusc": "LUAD-LUSC",
+    "tcga_kir": "KIR",
+    "tcga_ov": "OV",
+}
+
+MODEL_LABELS = {
+    "naive_bayes": "Naive Bayes",
+    "svm": "SVM",
+    "RF": "Random Forest",
+    "logistic": "Regresión Logística",
+}
+
+
 MODELS_MAP = {
     "naive_bayes": "NB_bal_acc_leanness",
     "svm": "leanness_svm_bal_acc",
@@ -53,10 +68,10 @@ MODELS_MAP = {
 ALGOS = ["nsga2", "nsga2_ch", "nsga2_chs", "hpe_nsga2_chs"]
 
 ALGO_LABELS = {
-    "nsga2": NSGA2_LAB,
-    "nsga2_ch": NSGA2_CH_LAB,
-    "nsga2_chs": NSGA2_CHS_LAB,
-    "hpe_nsga2_chs": HPE_NSGA2_CHS_LAB,
+    "nsga2": "NSGA-II",
+    "nsga2_ch": "NSGA-II + CH",
+    "nsga2_chs": "NSGA-II + CHS",
+    "hpe_nsga2_chs": "HPE + NSGA-II + CHS",
 }
 
 DIFF_MODES = ("raw", "abs", "pct")
@@ -240,7 +255,7 @@ def _plot_matrix_heatmap(matrix, algo_labels, title, filename, diff_mode="raw"):
     cbar_label = {
         "raw": "C(A, B)",
         "abs": "C(A,B) − C(B,A)",
-        "pct": "Δ% (A vs B)",
+        "pct": "Diferencia porcentual (A frente a B)",
     }[diff_mode]
 
     annot = np.empty_like(matrix, dtype=object)
@@ -260,8 +275,8 @@ def _plot_matrix_heatmap(matrix, algo_labels, title, filename, diff_mode="raw"):
 
     sns.heatmap(matrix, mask=mask, annot=annot, fmt="", xticklabels=algo_labels, yticklabels=algo_labels, cmap="RdYlGn", vmin=vmin, vmax=vmax, center=0.0 if diff_mode != "raw" else None, cbar_kws={"label": cbar_label}, ax=ax, linewidths=1, linecolor="gray", square=True)
 
-    ax.set_xlabel("Algorithm B", fontsize=12)
-    ax.set_ylabel("Algorithm A", fontsize=12)
+    ax.set_xlabel("Algoritmo B", fontsize=12)
+    ax.set_ylabel("Algoritmo A", fontsize=12)
     ax.set_title(title, fontsize=14, fontweight="bold")
 
     plt.tight_layout()
@@ -308,13 +323,13 @@ def build_matrix(args):
     final_diff = cmatrix_to_diff(final_mat, diff_mode)
 
     suffix = {"raw": "", "abs": "_absdiff", "pct": "_pctdiff"}[diff_mode]
-    mode_tag = {"raw": "", "abs": " [abs diff]", "pct": " [% diff]"}[diff_mode]
+    mode_tag = {"raw": "", "abs": " [diferencia absoluta]", "pct": " [diferencia porcentual]"}[diff_mode]
 
     if args.dataset and args.model:
-        title = f"Set Coverage 4x4 — {args.dataset} / {args.model} ({args.setup}){mode_tag}"
+        title = f"Cobertura de conjuntos 4×4 — {args.dataset} / {args.model} ({args.setup}){mode_tag}"
         filename = f"matrix_{args.setup}_{args.dataset}_{args.model}{suffix}.png"
     else:
-        title = f"Set Coverage 4x4 — Global Average ({args.setup}){mode_tag}"
+        title = f"Cobertura de conjuntos 4×4 — Media global ({args.setup}){mode_tag}"
         filename = f"matrix_{args.setup}_global{suffix}.png"
 
     _plot_matrix_heatmap(final_diff, labels, title, filename, diff_mode=diff_mode)
@@ -333,19 +348,19 @@ def _plot_suite_heatmap(grid, dataset_labels, model_labels, algo_a_label, algo_b
     cbar_label = {
         "raw": f"C({algo_a_label}, {algo_b_label})",
         "abs": f"C({algo_a_label},{algo_b_label}) − C({algo_b_label},{algo_a_label})",
-        "pct": f"Δ% ({algo_a_label} vs {algo_b_label})",
+        "pct": f"Diferencia porcentual ({algo_a_label} frente a {algo_b_label})",
     }[diff_mode]
 
     fig, ax = plt.subplots(figsize=(10, 7))
 
     sns.heatmap(grid, annot=True, fmt=fmt, xticklabels=model_labels, yticklabels=dataset_labels, cmap="RdYlGn", vmin=vmin, vmax=vmax, center=0.0 if diff_mode != "raw" else None, cbar_kws={"label": cbar_label}, ax=ax, linewidths=1, linecolor="gray", square=True)
 
-    ax.set_xlabel("Model / Classifier", fontsize=12)
-    ax.set_ylabel("Dataset", fontsize=12)
+    ax.set_xlabel("Modelo / Clasificador", fontsize=12)
+    ax.set_ylabel("Conjunto de datos", fontsize=12)
 
-    mode_tag = {"raw": "", "abs": " [abs diff]", "pct": " [% diff]"}[diff_mode]
+    mode_tag = {"raw": "", "abs": " [diferencia absoluta]", "pct": " [diferencia porcentual]"}[diff_mode]
 
-    ax.set_title(f"Set Coverage Suite — C({algo_a_label}, {algo_b_label}) — {setup}{mode_tag}", fontsize=14, fontweight="bold")
+    ax.set_title(f"Cobertura de conjuntos — C({algo_a_label}, {algo_b_label}) — {setup}{mode_tag}", fontsize=14, fontweight="bold")
 
     plt.tight_layout()
     plt.savefig(os.path.join(OUTPUT_DIR, filename), dpi=300, bbox_inches="tight")
@@ -375,8 +390,8 @@ def build_suite(args):
                 if not np.isnan(value):
                     grid[i, j] = value
 
-    dataset_labels = [d.replace("_mini", " (mini)") for d in datasets]
-    model_labels = list(models)
+    dataset_labels = [DATASET_LABELS.get(d.replace("_mini", ""), d.replace("_mini", "")) + (" (mini)" if d.endswith("_mini") else "") for d in datasets]
+    model_labels = [MODEL_LABELS.get(model, model) for model in models]
 
     diff_mode = args.diff_mode
     suffix = {"raw": "", "abs": "_absdiff", "pct": "_pctdiff"}[diff_mode]
@@ -406,7 +421,7 @@ def build_pivot_grid(args):
     cbar_label = {
         "raw": "C(A, B)",
         "abs": "C(A,B) − C(B,A)",
-        "pct": "Δ% (A vs B)",
+        "pct": "Diferencia porcentual (A frente a B)",
     }[diff_mode]
 
     mats = {}
@@ -473,9 +488,9 @@ def build_pivot_grid(args):
     sm.set_array([])
     fig.colorbar(sm, cax=cbar_ax, label=cbar_label)
 
-    mode_tag = {"raw": "", "abs": " [abs diff]", "pct": " [% diff]"}[diff_mode]
+    mode_tag = {"raw": "", "abs": " [diferencia absoluta]", "pct": " [diferencia porcentual]"}[diff_mode]
 
-    fig.suptitle(f"Set Coverage 4×4 per algo pair — Big CV{mode_tag}", fontsize=14, fontweight="bold", y=0.98)
+    fig.suptitle(f"Cobertura de conjuntos 4×4 por par de algoritmos{mode_tag}", fontsize=14, fontweight="bold", y=0.98)
 
     plt.tight_layout(rect=[0, 0, 0.90, 0.95])
 
@@ -510,7 +525,7 @@ def build_big_grid(args):
     cbar_label = {
         "raw": "C(A, B)",
         "abs": "C(A,B) − C(B,A)",
-        "pct": "Δ% (A vs B)",
+        "pct": "Diferencia porcentual (A frente a B)",
     }[diff_mode]
 
     mats = {}
@@ -537,22 +552,22 @@ def build_big_grid(args):
 
             sns.heatmap(mat, mask=mask, annot=annot, fmt="", xticklabels=[] if i < n_datasets - 1 else algo_labels, yticklabels=[] if j > 0 else algo_labels, cmap="RdYlGn", vmin=vmin, vmax=vmax, center=0.0 if diff_mode != "raw" else None, cbar=False, ax=ax, linewidths=0.5, linecolor="gray", square=True)
 
-            ax.set_title(f"{dataset} / {model}", fontsize=9, fontweight="bold", pad=2)
+            ax.set_title(f"{DATASET_LABELS.get(dataset, dataset)} / {MODEL_LABELS.get(model, model)}", fontsize=9, fontweight="bold", pad=2)
 
             if j == 0:
-                ax.set_ylabel("Algorithm A", fontsize=8)
+                ax.set_ylabel("Algoritmo A", fontsize=8)
 
             if i == n_datasets - 1:
-                ax.set_xlabel("Algorithm B", fontsize=8)
+                ax.set_xlabel("Algoritmo B", fontsize=8)
 
     cbar_ax = fig.add_axes([0.92, 0.12, 0.015, 0.75])
     sm = plt.cm.ScalarMappable(cmap="RdYlGn", norm=plt.Normalize(vmin, vmax))
     sm.set_array([])
     fig.colorbar(sm, cax=cbar_ax, label=cbar_label)
 
-    mode_tag = {"raw": "", "abs": " [abs diff]", "pct": " [% diff]"}[diff_mode]
+    mode_tag = {"raw": "", "abs": " [diferencia absoluta]", "pct": " [diferencia porcentual]"}[diff_mode]
 
-    fig.suptitle(f"Set Coverage 4×4 — Big CV{mode_tag}", fontsize=14, fontweight="bold", y=0.98)
+    fig.suptitle(f"Cobertura de conjuntos 4×4{mode_tag}", fontsize=14, fontweight="bold", y=0.98)
 
     plt.tight_layout(rect=[0, 0, 0.90, 0.95])
 
@@ -571,10 +586,10 @@ def build_big_grid(args):
 # ---------------------------------------------------------------------------
 
 METRIC_DEFS = {
-    "chv": ("Cross Hypervolume", "chv_m"),
-    "schv": ("Soft CHV", "schv_m"),
-    "jaccard": ("Jaccard Stability", "var_m"),
-    "dice": ("Dice", "dice_m"),
+    "chv": ("Hipervolumen cruzado", "chv_m"),
+    "schv": ("Hipervolumen cruzado suavizado", "schv_m"),
+    "jaccard": ("Estabilidad Jaccard", "var_m"),
+    "dice": ("Coeficiente Dice", "dice_m"),
 }
 
 ALL_METRICS = list(METRIC_DEFS.keys())
@@ -656,7 +671,7 @@ def build_metric_grid(args):
             ax.set_title(ALGO_LABELS[algo].replace("\n", " "), fontsize=10, fontweight="bold")
 
             if j == 0:
-                ax.set_ylabel("Dataset", fontsize=8)
+                ax.set_ylabel("Conjunto de datos", fontsize=8)
 
         cbar_ax = fig.add_axes([0.92, 0.12, 0.015, 0.75])
         vmin, vmax = _global_bounds(algo_mats.values())
@@ -666,7 +681,7 @@ def build_metric_grid(args):
 
         fig.colorbar(sm, cax=cbar_ax, label=label)
 
-        fig.suptitle(f"{label} — per algorithm (Big CV)", fontsize=14, fontweight="bold", y=0.98)
+        fig.suptitle(f"{label} — por algoritmo", fontsize=14, fontweight="bold", y=0.98)
 
         plt.tight_layout(rect=[0, 0, 0.90, 0.95])
 
@@ -684,9 +699,9 @@ def build_metric_grid(args):
 # ---------------------------------------------------------------------------
 
 def main():
-    parser = argparse.ArgumentParser(description="Set Coverage (C-metric) heatmap generator for MONOMER.")
+    parser = argparse.ArgumentParser(description="Generador de mapas de calor de cobertura de conjuntos (métrica C) para MONOMER.")
 
-    parser.add_argument("--setup", choices=["small", "big"], default="big", help="small or big experiment configuration")
+    parser.add_argument("--setup", choices=["small", "big"], default="big", help="configuración de experimento pequeña o completa")
 
     parser.add_argument("--plot_type", choices=["matrix", "suite", "biggrid", "pivotgrid", "metricgrid"], required=True, help="Type of plot to generate")
 
@@ -713,21 +728,21 @@ def main():
 
         print("\n" + "=" * 60)
         print(" SET COVERAGE PLOTTER")
-        print(f"  Type:   {args.plot_type}")
-        print(f"  Diff:   {diff_mode}")
-        print(f"  Setup:  {args.setup}")
+        print(f"  Tipo:   {args.plot_type}")
+        print(f"  Diferencia: {diff_mode}")
+        print(f"  Configuración: {args.setup}")
 
         if args.dataset:
-            print(f"  Dataset: {args.dataset}")
+            print(f"  Conjunto de datos: {args.dataset}")
 
         if args.model:
-            print(f"  Model:   {args.model}")
+            print(f"  Modelo:   {args.model}")
 
         if args.algo_A:
-            print(f"  Algo A:  {args.algo_A}")
+            print(f"  Algoritmo A: {args.algo_A}")
 
         if args.algo_B:
-            print(f"  Algo B:  {args.algo_B}")
+            print(f"  Algoritmo B: {args.algo_B}")
 
         print("=" * 60 + "\n")
 

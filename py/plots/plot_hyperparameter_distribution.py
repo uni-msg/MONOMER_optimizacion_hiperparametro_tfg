@@ -4,7 +4,7 @@ MONOMER - Hyperparameter distribution analysis
 
 What this script produces
 -------------------------
-For each classifier, it creates ONE PNG containing several graphs:
+For each classifier, it creates UN PDF que contiene varios gráficos:
     - one graph/subplot per MUTABLE hyperparameter;
     - all 5 outer-CV folds are combined for each dataset;
     - each dataset has its own color;
@@ -34,7 +34,7 @@ Output:
         RF_hyperparameters_distribution.png
         logistic_hyperparameters_distribution.png
 
-Additionally, individual PNGs are generated for each mutable
+Además, se generan PDF individuales for each mutable
 hyperparameter. This makes it easy to reuse them separately if desired.
 """
 
@@ -62,8 +62,8 @@ DATASETS = ["brca", "luad_lusc", "tcga_kir", "tcga_ov"]
 DATASET_LABELS = {
     "brca": "BRCA",
     "luad_lusc": "LUAD-LUSC",
-    "tcga_kir": "TCGA-KIR",
-    "tcga_ov": "TCGA-OV",
+    "tcga_kir": "KIR",
+    "tcga_ov": "OV",
 }
 
 MODELS = {
@@ -82,13 +82,7 @@ MODEL_LABELS = {
 
 N_FOLDS = 5
 
-DATASET_COLORS = {
-    "brca": "#1f77b4",
-    "luad_lusc": "#ff7f0e",
-    "tcga_kir": "#2ca02c",
-    "tcga_ov": "#d62728",
-}
-
+DATASET_COLORS = {     "brca": "#1f77b4",     "luad_lusc": "#ff7f0e",     "tcga_kir": "#2ca02c",     "tcga_ov": "#d62728", } 
 
 # ============================================================================
 # PATHS
@@ -402,16 +396,14 @@ def plot_numeric_distribution(ax, df, column):
             showextrema=True,
         )
 
-        # Use the same dataset color for the violin and its points.
-        # Transparency keeps the violin as a soft "halo" around the data.
+        # The violin halo uses the same color as the corresponding dataset samples.
         for body, dataset in zip(violin["bodies"], datasets_present):
             color = DATASET_COLORS[dataset]
             body.set_facecolor(color)
             body.set_edgecolor(color)
             body.set_alpha(0.20)
 
-        # The violin body uses the dataset color. The extrema lines are
-        # neutral so they are not confused with BRCA's blue color.
+        # Violin extrema are neutral gray.
         for key in ("cmins", "cmaxes", "cbars"):
             if key in violin:
                 violin[key].set_color("#555555")
@@ -442,7 +434,6 @@ def plot_numeric_distribution(ax, df, column):
             label=DATASET_LABELS[dataset],
         )
 
-
     ax.set_xticks(positions)
     ax.set_xticklabels(
         [DATASET_LABELS[d] for d in datasets_present]
@@ -454,7 +445,7 @@ def plot_numeric_distribution(ax, df, column):
     if looks_log_scale(df[column]):
         ax.set_yscale("log")
         ax.set_ylabel(
-            f"{pretty_name(column)} (log scale)"
+            f"{pretty_name(column)} (escala logarítmica)"
         )
 
     ax.grid(
@@ -465,7 +456,7 @@ def plot_numeric_distribution(ax, df, column):
     )
 
     ax.set_title(
-        f"{pretty_name(column)} — distribution of evolved values",
+        pretty_name(column),
         fontweight="bold",
     )
 
@@ -553,7 +544,7 @@ def plot_categorical_distribution(ax, df, column):
     )
 
     ax.set_xlabel("Dataset")
-    ax.set_ylabel("Proportion of Pareto solutions")
+    ax.set_ylabel("Proporción de soluciones de Pareto")
     ax.set_ylim(0, 1.12)
 
     if len(categories) <= 10:
@@ -570,7 +561,7 @@ def plot_categorical_distribution(ax, df, column):
     )
 
     ax.set_title(
-        f"{pretty_name(column)} — distribution of evolved values",
+        pretty_name(column),
         fontweight="bold",
     )
 
@@ -674,8 +665,7 @@ def make_classifier_png(
     axes = axes.ravel()
 
     fig.suptitle(
-        f"{model_label} — Distribution of evolved hyperparameters\n"
-        f"mRNA | Outer CV folds 0–4 | All folds combined per dataset",
+        f"{model_label} — Distribución de hiperparámetros",
         fontsize=17,
         fontweight="bold",
         y=0.995,
@@ -692,27 +682,17 @@ def make_classifier_png(
     for ax in axes[len(mutable):]:
         ax.axis("off")
 
-    fig.text(
-        0.5,
-        0.01,
-        "Each point = one Pareto solution. "
-        "Color identifies the dataset; the five outer folds are combined.",
-        ha="center",
-        fontsize=10,
-    )
-
     fig.tight_layout(
-        rect=[0, 0.035, 1, 0.95]
+        rect=[0, 0, 1, 0.95]
     )
 
     combined_path = os.path.join(
         output_dir,
-        f"{model}_hyperparameters_distribution.png",
+        f"{model}_hyperparameters_distribution.pdf",
     )
 
     fig.savefig(
         combined_path,
-        dpi=220,
         bbox_inches="tight",
     )
 
@@ -765,7 +745,7 @@ def make_classifier_png(
 
         individual_path = os.path.join(
             individual_dir,
-            f"{safe_name}_distribution.png",
+            f"{safe_name}_distribution.pdf",
         )
 
         fig.savefig(
@@ -924,7 +904,7 @@ def main():
     print("=" * 75)
     print(f"Work directory : {work_dir}")
     print(f"Output         : {output_dir}")
-    print("Datasets       : BRCA, LUAD-LUSC, TCGA-KIR, TCGA-OV")
+    print("Conjuntos      : BRCA, LUAD-LUSC, KIR, OV")
     print("Data           : outer folds 0, 1, 2, 3, 4 ONLY")
     print("Final files    : EXCLUDED")
     print("Fixed params   : EXCLUDED")
@@ -941,7 +921,7 @@ def main():
     print(" DONE")
     print("=" * 75)
     print(
-        f"PNG files generated in:\n{output_dir}"
+        f"PDF files generated in:\n{output_dir}"
     )
 
 
